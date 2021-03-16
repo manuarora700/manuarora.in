@@ -4,6 +4,8 @@ import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import BlogPost from "@/components/BlogPost";
 import ProjectCard from "@/components/ProjectCard";
+import Timeline from "@/components/Timeline";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -87,8 +89,8 @@ export default function Home() {
           href="#"
           icon="more"
         />
-        {/* <Timeline />
-        <Subscribe /> */}
+        <Timeline />
+        <Contact />
       </div>
     </Container>
   );
