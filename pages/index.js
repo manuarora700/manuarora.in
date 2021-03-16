@@ -1,65 +1,95 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Container from "@/components/Container";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Link from "next/link";
+import BlogPost from "@/components/BlogPost";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+    <Container>
+      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+          Hey, I’m Manu Arora
         </h1>
+        <h2 className="prose text-gray-600 dark:text-gray-400 mb-16">
+          I’m a developer, writer, and creator. I work at{" "}
+          <span className="font-bold">
+            <span className="text-blue-500">m</span>roads
+          </span>{" "}
+          as a Software Engineer. You've discovered my piece on the internet
+          –&nbsp;
+          <Link href="/blog">
+            <a className="text-blue-500 hover:underline">
+              checkout my blog&nbsp;
+            </a>
+          </Link>
+          while you're here. <br />I write about technology, learning and memes.
+        </h2>
+        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
+          Most Popular
+        </h3>
+        <BlogPost
+          title="Why I started using NextJS in my workflow"
+          summary="A case study on how I ditched traditional React and started using NextJS along with it's features such as Image optimization & Routing."
+          slug="why-i-started-using-next-js"
+        />
+        <BlogPost
+          title="How to design a minimal and beautiful website which actually converts"
+          summary="Examining the tips and tricks used to make a website design a notch above the rest."
+          slug="how-to-design-beautiful-websites"
+        />
+        <BlogPost
+          title="Using real world projects to build better learning habits"
+          summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
+          slug="real-world-app-development"
+        />
+        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+          Projects
+        </h3>
+        <ProjectCard
+          title="PlaceholderTech"
+          description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
+          href="https://placeholdertech.in/"
+          icon="placeholdertech"
+        />
+        <ProjectCard
+          title="Playground"
+          description="An open-source playground to create HTML, CSS and Javascript components on the go."
+          href="https://play.placeholdertech.in/"
+          icon="play"
+        />
+        <ProjectCard
+          title="Feedmeback"
+          description="The easiest way to add comments or reviews to your static site. Built as part of React 2025."
+          href="https://feedmeback-beta.vercel.app/"
+          icon="fastfeedback"
+        />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+          Upcoming Projects
+        </h3>
+        <ProjectCard
+          title="Algochurn"
+          description="Your last moment friend before a Technical Interview round. Practice the most popular Data Structures & Algorithms"
+          href="#"
+          icon="algochurn"
+        />
+        <ProjectCard
+          title="VSCode Resume"
+          description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
+          href="#"
+          icon="vscode"
+        />
+        <ProjectCard
+          title="More projects coming soon.."
+          description="I get ideas all day 🙄, All of them are updated here as soon as I start working on them."
+          href="#"
+          icon="more"
+        />
+        {/* <Timeline />
+        <Subscribe /> */}
+      </div>
+    </Container>
+  );
 }
