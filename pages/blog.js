@@ -76,17 +76,17 @@ export default function Blog({ posts }) {
             <BlogPost
               title="Why I started using NextJS in my workflow"
               summary="A case study on how I ditched traditional React and started using NextJS along with it's features such as Image optimization & Routing."
-              slug="why-i-started-using-next-js"
+              slug="demo-post"
             />
             <BlogPost
               title="How to design a minimal and beautiful website which actually converts"
               summary="Examining the tips and tricks used to make a website design a notch above the rest."
-              slug="how-to-design-beautiful-websites"
+              slug="demo-post"
             />
             <BlogPost
               title="Using real world projects to build better learning habits"
               summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
-              slug="real-world-app-development"
+              slug="demo-post"
             />
           </>
         )}
