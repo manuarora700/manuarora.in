@@ -9,7 +9,11 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <Container>
+    <Container
+      title="Home – Manu Arora"
+      description="I'm a Software Developer and a Freelancer trying to build web apps that impacts millions of lives."
+      image="/avatar.jpg"
+    >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Hey, I’m Manu Arora

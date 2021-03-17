@@ -34,15 +34,15 @@ export default function Blog({ posts }) {
   return (
     <Container
       title="Blog – Manu Arora"
-      description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
+      description="Thoughts on the Software Development, Programming, Tech, Freelancing, Open Source and Memes"
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Blog
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-4">
-          {`I've been writing online since 2014, mostly about web development and tech careers.
-            In total, I've written ${posts.length} articles on this site.
+          {`I've been programming for almost 6 years now. Throughout this year, I've worked with various technologies. I'm here to share just that.
+            
             Use the search below to filter by title.`}
         </p>
         <div className="relative w-full mb-4">

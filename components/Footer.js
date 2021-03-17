@@ -47,16 +47,16 @@ export default function Footer() {
           </ExternalLink> */}
         </div>
         <div className="flex flex-col space-y-4">
-          <Link href="/projects">
+          <Link href="/dashboard">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Projects
+              Dashboard
             </a>
           </Link>
-          <Link href="/setup">
+          {/* <Link href="/setup">
             <a className="text-gray-500 hover:text-gray-600 transition">
               VSCode Setup
             </a>
-          </Link>
+          </Link> */}
           <Link href="/snippets">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Snippets

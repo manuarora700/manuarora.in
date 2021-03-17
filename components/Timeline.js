@@ -71,11 +71,6 @@ const FullTimeline = () => (
         Started contributing to open source on a daily basis. Contributed to
         smaller projects to learn more on the contributing part.
       </Step>
-
-      <Step title="Moved to Des Moines 🏙">
-        I moved Downtown DSM into a quaint 1BR apartment. Des Moines has always
-        felt like home growing up ~45 minutes away.
-      </Step>
     </ul>
     <Divider />
     <Year>2015</Year>

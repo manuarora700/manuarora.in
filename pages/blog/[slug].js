@@ -16,14 +16,12 @@ async function getPost(slug) {
   ).then((res) => res.json());
 
   const post = res.posts[0];
-  //   console.log(post);
 
   return post;
 }
 
 export async function getStaticProps({ params }) {
   const post = await getPost(params.slug);
-  console.log(post);
   return { props: { post } };
 }
 
@@ -39,7 +37,6 @@ export default function Blog(props) {
   //     components: MDXComponents,
   //   });
   const { post } = props;
-  console.log(("PROPS", props));
   const router = useRouter();
 
   if (router.isFallback) {
