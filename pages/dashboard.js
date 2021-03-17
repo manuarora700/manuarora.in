@@ -7,7 +7,7 @@ import GitHub from "@/components/metrics/Github";
 import Followers from "@/components/metrics/Followers";
 import Repositories from "@/components/metrics/Repositories";
 import TopTracks from "@/components/TopTracks";
-import NowPlaying from "@/components/NowPlaying";
+// import NowPlaying from "@/components/NowPlaying";
 // import TopTracks from "@/components/TopTracks";
 // Have one for twitter
 
@@ -42,7 +42,7 @@ export default function Dashboard() {
           <Gumroad />
           <Buttondown />
         </div> */}
-        <NowPlaying />
+        {/* <NowPlaying /> */}
 
         <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
           Top Tracks
