@@ -5,7 +5,7 @@ export default async (_, res) => {
   const { item } = await response.json();
   console.log("item - now-playing", item);
 
-  if (!item.length) {
+  if (!item) {
     const track = {};
 
     return res.status(200).json({ track });

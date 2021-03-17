@@ -6,7 +6,7 @@ export default async (_, res) => {
 
   console.log("items - top-tracks", items);
 
-  if (!items.length) {
+  if (!items) {
     const track = [];
 
     return res.status(200).json({ track });
