@@ -50,6 +50,7 @@ export default async (_, res) => {
     albumImageUrl,
     songUrl,
   };
+  console.log("track", track);
 
   res.setHeader(
     "Cache-Control",

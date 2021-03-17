@@ -7,7 +7,7 @@ export default async (_, res) => {
   const user = await userResponse.json();
   const repositories = await userReposResponse.json();
   // If GitHub API limit reached (demo purpose)
-  console.log(user);
+  // console.log(user);
   if (repositories.message) {
     return res.status(200).json({
       followers: null,
