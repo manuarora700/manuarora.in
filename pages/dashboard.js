@@ -6,7 +6,7 @@ import Container from "@/components/Container";
 import GitHub from "@/components/metrics/Github";
 import Followers from "@/components/metrics/Followers";
 import Repositories from "@/components/metrics/Repositories";
-import TopTracks from "@/components/TopTracks";
+// import TopTracks from "@/components/TopTracks";
 // import NowPlaying from "@/components/NowPlaying";
 // import TopTracks from "@/components/TopTracks";
 // Have one for twitter
@@ -52,7 +52,8 @@ export default function Dashboard() {
           Curious what I'm currently jamming to? Here's my top tracks on Spotify
           updated daily.
         </p>
-        <TopTracks />
+        {/* Currently archiving top tracks */}
+        {/* <TopTracks /> */}
       </div>
     </Container>
   );
