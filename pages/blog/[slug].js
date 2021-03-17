@@ -51,7 +51,7 @@ export default function Blog(props) {
       date={new Date(post?.published_at).toISOString()}
       type="article"
     >
-      <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
+      <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full blog">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           {post.title}
         </h1>
@@ -79,10 +79,10 @@ export default function Blog(props) {
         <div className="prose dark:prose-dark max-w-none w-full text-black blog-content">
           <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
         </div>
-        <div className="mt-8">
-          <Contact />
-        </div>
       </article>
+      <div className="max-w-2xl mx-auto">
+        <Contact />
+      </div>
     </Container>
   );
 

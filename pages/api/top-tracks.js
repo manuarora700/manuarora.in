@@ -4,8 +4,6 @@ export default async (_, res) => {
   const response = await getTopTracks();
   const { items } = await response.json();
 
-  console.log("items - top-tracks", items);
-
   if (!items) {
     const track = [];
 
@@ -17,10 +15,6 @@ export default async (_, res) => {
     songUrl: track.external_urls.spotify,
     title: track.name,
   }));
-
-  console.log("TRACKS", tracks);
-
-  //   console.log(tracks);
 
   res.setHeader(
     "Cache-Control",

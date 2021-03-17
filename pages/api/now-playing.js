@@ -3,7 +3,6 @@
 // export default async (_, res) => {
 //   const response = await getNowPlaying();
 //   const { item } = await response.json();
-//   console.log("item - now-playing", item);
 
 //   if (!item) {
 //     const track = {};
@@ -50,7 +49,6 @@ export default async (_, res) => {
     albumImageUrl,
     songUrl,
   };
-  console.log("track", track);
 
   res.setHeader(
     "Cache-Control",

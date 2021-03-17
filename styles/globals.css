@@ -29,6 +29,12 @@ body {
   }
 }
 
+.blog h1 {
+
+}
+
+/* On every page */
+
 .blog-heading {
   font-weight: 600;
 }

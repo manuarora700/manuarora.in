@@ -4,7 +4,6 @@ import fetcher from "@/lib/fetcher";
 
 export default function NowPlaying() {
   const { data } = useSWR("/api/now-playing", fetcher);
-  console.log("DATA", data);
 
   return (
     <div className="flex flex-row-reverse sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">

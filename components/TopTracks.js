@@ -5,7 +5,6 @@ import Track from "@/components/Track";
 
 export default function TopTracks() {
   const { data } = useSWR("/api/top-tracks", fetcher);
-  console.log("data", data);
 
   if (!data) {
     return null;
