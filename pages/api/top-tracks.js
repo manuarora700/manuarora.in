@@ -8,10 +8,6 @@ export default async (_, res) => {
 
   if (!items.length) {
     const track = [];
-    res.setHeader(
-      "Cache-Control",
-      "public, s-maxage=86400, stale-while-revalidate=43200"
-    );
 
     return res.status(200).json({ track });
   }
@@ -21,6 +17,8 @@ export default async (_, res) => {
     songUrl: track.external_urls.spotify,
     title: track.name,
   }));
+
+  console.log("TRACKS", tracks);
 
   //   console.log(tracks);
 
