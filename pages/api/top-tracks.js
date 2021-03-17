@@ -7,7 +7,7 @@ export default async (_, res) => {
   console.log("items - top-tracks", items);
 
   if (!items.length) {
-    const track = {};
+    const track = [];
     res.setHeader(
       "Cache-Control",
       "public, s-maxage=86400, stale-while-revalidate=43200"
