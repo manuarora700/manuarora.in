@@ -75,7 +75,7 @@ export default function Contact() {
         <input
           ref={inputEl}
           aria-label="Email for newsletter"
-          placeholder="tim@apple.com"
+          placeholder="manu@gmail.com"
           type="email"
           autoComplete="email"
           required
