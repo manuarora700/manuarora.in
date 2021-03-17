@@ -7,10 +7,13 @@ export default async (_, res) => {
   const user = await userResponse.json();
   const repositories = await userReposResponse.json();
   // If GitHub API limit reached (demo purpose)
+  console.log(user);
   if (repositories.message) {
     return res.status(200).json({
       followers: null,
       stars: null,
+      repoCount: null,
+      following: null,
     });
   }
   const mine = repositories.filter((repo) => !repo.fork);
@@ -27,5 +30,6 @@ export default async (_, res) => {
     followers: user.followers,
     stars,
     repoCount: user.public_repos,
+    following: user.following,
   });
 };

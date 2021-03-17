@@ -5,6 +5,7 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import GitHub from "@/components/metrics/Github";
 import Followers from "@/components/metrics/Followers";
+import Following from "@/components/metrics/Following";
 import Repositories from "@/components/metrics/Repositories";
 // import TopTracks from "@/components/TopTracks";
 // import NowPlaying from "@/components/NowPlaying";
@@ -36,13 +37,12 @@ export default function Dashboard() {
           {/* <Analytics /> */}
           <GitHub />
           <Followers />
-          <Repositories />
         </div>
-        {/* <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
-          <Gumroad />
-          <Buttondown />
-        </div> */}
-        {/* <NowPlaying /> */}
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
+          <Following />
+          <Repositories />
+        </div>{" "}
+        {/* <NowPlaying />
 
         <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
           Top Tracks

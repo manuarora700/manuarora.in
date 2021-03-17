@@ -54,14 +54,15 @@ export default function Footer() {
               Dashboard
             </a>
           </Link>
-          {/* <Link href="/setup">
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              VSCode Setup
-            </a>
-          </Link> */}
+
           <Link href="/snippets">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Snippets
+            </a>
+          </Link>
+          <Link href="/tweets">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Tweets
             </a>
           </Link>
         </div>
