@@ -1,29 +1,3 @@
-// import { getNowPlaying } from "@/lib/spotify";
-
-// export default async (_, res) => {
-//   const response = await getNowPlaying();
-//   const { item } = await response.json();
-
-//   if (!item) {
-//     const track = {};
-
-//     return res.status(200).json({ track });
-//   }
-//   const track = {
-//     trackName: item.name,
-//     albumName: item.album.name,
-//     artistName: item.artists[0].name,
-//     songUrl: item.external_urls.spotify,
-//   };
-
-//   res.setHeader(
-//     "Cache-Control",
-//     "public, s-maxage=86400, stale-while-revalidate=43200"
-//   );
-
-//   return res.status(200).json({ track });
-// };
-
 import { getNowPlaying } from "@/lib/spotify";
 
 export default async (_, res) => {
@@ -41,19 +15,17 @@ export default async (_, res) => {
   const albumImageUrl = song.item.album.images[0].url;
   const songUrl = song.item.external_urls.spotify;
 
-  const track = {
-    isPlaying,
-    title,
-    artist,
-    album,
-    albumImageUrl,
-    songUrl,
-  };
-
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=60, stale-while-revalidate=30"
   );
 
-  return res.status(200).json(track);
+  return res.status(200).json({
+    album,
+    albumImageUrl,
+    artist,
+    isPlaying,
+    songUrl,
+    title,
+  });
 };

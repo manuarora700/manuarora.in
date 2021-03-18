@@ -1,11 +1,16 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+  "name": "manuarora.in",
+  "description": "My personal blog and website",
+  "version": "1.0.0",
+  "author": {
+    "name": "Manu Arora",
+    "email": "contact@manuarora.in",
+    "url": "https://manuarora.in"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuarora700/personal-portfolio.git"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
