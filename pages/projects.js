@@ -37,6 +37,13 @@ export default function projects() {
           tags={["Freelancing", "React", "Node", "Firebase"]}
         />
         <ProjectCard
+          title="Golden Bells Academy"
+          description="✍🏻 An educational portal to watch educational videos, write and submit assignments, view results and more."
+          href="https://goldenbellsacademy.com/"
+          icon="gba"
+          tags={["commercial", "NextJS", "Firebase"]}
+        />
+        <ProjectCard
           title="Playground"
           description="An open-source playground to create HTML, CSS and Javascript components on the go."
           href="https://play.placeholdertech.in/"

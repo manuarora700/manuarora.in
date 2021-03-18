@@ -7,6 +7,11 @@
     "email": "contact@manuarora.in",
     "url": "https://manuarora.in"
   },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
