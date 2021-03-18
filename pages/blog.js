@@ -2,30 +2,31 @@ import { useState } from "react";
 
 import Container from "@/components/Container";
 import BlogPost from "@/components/BlogPost";
-// import { getAllFilesFrontMatter } from '@/lib/mdx';
+import { getAllFilesFrontMatter } from "@/lib/mdx";
 
-export const getStaticProps = async ({ params }) => {
-  const posts = await getPosts();
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter("blog");
 
   return { props: { posts } };
-};
-
-async function getPosts() {
-  const res = await fetch(
-    `${process.env.BLOG_URL}/ghost/api/v3/content/posts/?key=${process.env.CONTENT_API_KEY}&fields=title,slug,custom_excerpt,reading_time,published_at`
-  ).then((res) => res.json());
-
-  const frontMatter = res.posts;
-
-  return frontMatter;
 }
+
+// Ghost CMS Way
+// async function getPosts() {
+//   const res = await fetch(
+//     `${process.env.BLOG_URL}/ghost/api/v3/content/posts/?key=${process.env.CONTENT_API_KEY}&fields=title,slug,custom_excerpt,reading_time,published_at`
+//   ).then((res) => res.json());
+
+//   const frontMatter = res.posts;
+
+//   return frontMatter;
+// }
 
 export default function Blog({ posts }) {
   const [searchValue, setSearchValue] = useState("");
   const filteredBlogPosts = posts
     .sort(
       (a, b) =>
-        Number(new Date(b.published_at)) - Number(new Date(a.published_at))
+        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
     )
     .filter((frontMatter) =>
       frontMatter.title.toLowerCase().includes(searchValue.toLowerCase())
@@ -76,17 +77,17 @@ export default function Blog({ posts }) {
             <BlogPost
               title="Why I started using NextJS in my workflow"
               summary="A case study on how I ditched traditional React and started using NextJS along with it's features such as Image optimization & Routing."
-              slug="demo-post"
+              slug="css-with-react"
             />
             <BlogPost
               title="How to design a minimal and beautiful website which actually converts"
               summary="Examining the tips and tricks used to make a website design a notch above the rest."
-              slug="demo-post"
+              slug="css-with-react"
             />
             <BlogPost
               title="Using real world projects to build better learning habits"
               summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
-              slug="demo-post"
+              slug="css-with-react"
             />
           </>
         )}
@@ -99,12 +100,7 @@ export default function Blog({ posts }) {
           </p>
         )}
         {filteredBlogPosts.map((frontMatter) => (
-          <BlogPost
-            title={frontMatter.title}
-            key={frontMatter.title}
-            summary={frontMatter.custom_excerpt}
-            slug={frontMatter.slug}
-          />
+          <BlogPost key={frontMatter.title} {...frontMatter} />
         ))}
       </div>
     </Container>

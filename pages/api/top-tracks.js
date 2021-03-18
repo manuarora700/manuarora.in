@@ -20,6 +20,7 @@ export default async (_, res) => {
     "Cache-Control",
     "public, s-maxage=86400, stale-while-revalidate=43200"
   );
+  console.log("tracks", tracks);
 
   return res.status(200).json({ tracks });
 };

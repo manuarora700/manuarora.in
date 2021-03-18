@@ -1,6 +1,4 @@
 import Container from "@/components/Container";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import BlogPost from "@/components/BlogPost";
 import ProjectCard from "@/components/ProjectCard";
@@ -38,17 +36,17 @@ export default function Home() {
         <BlogPost
           title="Why I started using NextJS in my workflow"
           summary="A case study on how I ditched traditional React and started using NextJS along with it's features such as Image optimization & Routing."
-          slug="demo-post"
+          slug="css-with-react"
         />
         <BlogPost
           title="How to design a minimal and beautiful website which actually converts"
           summary="Examining the tips and tricks used to make a website design a notch above the rest."
-          slug="demo-post"
+          slug="css-with-react"
         />
         <BlogPost
           title="Using real world projects to build better learning habits"
           summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
-          slug="demo-post"
+          slug="css-with-react"
         />
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           Projects

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://manuarora.in/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/dashboard</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/projects</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/tweets</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/blog/css-with-react</loc>
+  </url>
+</urlset>

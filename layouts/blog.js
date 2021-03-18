@@ -2,16 +2,16 @@ import Image from "next/image";
 import { parseISO, format } from "date-fns";
 
 import Container from "@/components/Container";
-import Contact from "@/components/Contact";
 // import ViewCounter from "@/components/ViewCounter";
+import Contact from "@/components/Contact";
 
 export default function BlogLayout({ children, frontMatter }) {
   return (
     <Container
       title={`${frontMatter.title} – Manu Arora`}
-      description={frontMatter.custom_excerpt}
-      image={`https://manuarora.in${frontMatter.feature_image}`}
-      date={new Date(frontMatter.published_at).toISOString()}
+      description={frontMatter.summary}
+      image={`https://manuarora.in${frontMatter.image}`}
+      date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
@@ -30,7 +30,7 @@ export default function BlogLayout({ children, frontMatter }) {
             <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
               {frontMatter.by}
               {"Manu Arora / "}
-              {format(parseISO(frontMatter.published_at), "MMMM dd, yyyy")}
+              {format(parseISO(frontMatter.publishedAt), "MMMM dd, yyyy")}
             </p>
           </div>
           <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
@@ -42,10 +42,10 @@ export default function BlogLayout({ children, frontMatter }) {
         <div className="prose dark:prose-dark max-w-none w-full">
           {children}
         </div>
-        <div className="mt-8">
+        <div className="mt-8 w-full mx-auto">
           <Contact />
         </div>
-        <div className="text-sm text-gray-700 dark:text-gray-300">
+        {/* <div className="text-sm text-gray-700 dark:text-gray-300">
           <a
             href={discussUrl(frontMatter.slug)}
             target="_blank"
@@ -61,7 +61,7 @@ export default function BlogLayout({ children, frontMatter }) {
           >
             {"Edit on GitHub"}
           </a>
-        </div>
+        </div> */}
       </article>
     </Container>
   );
