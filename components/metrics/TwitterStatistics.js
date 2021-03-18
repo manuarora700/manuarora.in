@@ -11,7 +11,6 @@ export default function TwitterStatistics({ type }) {
   if (!data) {
     return null;
   }
-  console.log(data);
 
   //   useEffect(() => {
   //     return () => {};
@@ -21,7 +20,6 @@ export default function TwitterStatistics({ type }) {
   let following = data?.user?.public_metrics?.following_count;
   let count = data?.user?.public_metrics?.tweet_count;
   let username = data?.user?.username;
-  console.log(data.user.public_metrics.followers_count);
   const link = "/tweets";
 
   return (
