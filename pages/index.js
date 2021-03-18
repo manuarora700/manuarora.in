@@ -38,7 +38,7 @@ export default function Home() {
           summary="A case study on how I ditched traditional React and started using NextJS along with it's features such as Image optimization & Routing."
           slug="css-with-react"
         />
-        <BlogPost
+        {/* <BlogPost
           title="How to design a minimal and beautiful website which actually converts"
           summary="Examining the tips and tricks used to make a website design a notch above the rest."
           slug="css-with-react"
@@ -47,7 +47,7 @@ export default function Home() {
           title="Using real world projects to build better learning habits"
           summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
           slug="css-with-react"
-        />
+        /> */}
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           Projects
         </h3>

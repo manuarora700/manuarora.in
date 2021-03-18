@@ -2,7 +2,7 @@ import Image from "next/image";
 import { parseISO, format } from "date-fns";
 
 import Container from "@/components/Container";
-// import ViewCounter from "@/components/ViewCounter";
+import ViewCounter from "@/components/ViewCounter";
 import Contact from "@/components/Contact";
 
 export default function BlogLayout({ children, frontMatter }) {
@@ -36,7 +36,7 @@ export default function BlogLayout({ children, frontMatter }) {
           <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
             {frontMatter.readingTime.text}
             {` • `}
-            {/* <ViewCounter slug={frontMatter.slug} /> */}
+            <ViewCounter slug={frontMatter.slug} />
           </p>
         </div>
         <div className="prose dark:prose-dark max-w-none w-full">

@@ -23,6 +23,7 @@
     "@tailwindcss/typography": "^0.4.0",
     "comma-number": "^2.0.1",
     "date-fns": "^2.19.0",
+    "firebase-admin": "^9.5.0",
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.3",
     "next": "10.0.5",
