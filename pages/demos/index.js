@@ -27,6 +27,11 @@ export default function Demos() {
             link="demos/demo/gradient"
             description="Gradient text for headers"
           />
+          <DemosCard
+            title="Tailwind Card"
+            link="demos/demo/tailwindcard"
+            description="Simple tailwind css card"
+          />
         </div>
       </div>
     </Container>

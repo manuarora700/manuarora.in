@@ -21,6 +21,10 @@ export default function Snippets({ snippets }) {
           that I've been using for years that have helped me in developing
           applications and much more. 🔥
         </p>
+
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
+          User Interface
+        </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
           <ResourcesCard
             title="UI Gradients"
@@ -28,12 +32,7 @@ export default function Snippets({ snippets }) {
             websiteLink="uigradients.com"
             description="Get different gradient range"
           />
-          <ResourcesCard
-            title="Free Themes & Templates"
-            link="https://www.creative-tim.com/templates/free"
-            websiteLink="creative-tim.com"
-            description="Get free themes, templates & UI Kits"
-          />
+
           <ResourcesCard
             title="Minimal Icons Pack"
             link="https://www.heroicons.com"
@@ -46,7 +45,117 @@ export default function Snippets({ snippets }) {
             websiteLink="getwaves.io"
             description="Generate waves for your website."
           />
-          {/* https://getwaves.io/ */}
+
+          <ResourcesCard
+            title="Color schemes"
+            link="https://www.happyhues.co/"
+            websiteLink="happyhues.co"
+            description="Color schemes for a page"
+          />
+          <ResourcesCard
+            title="Free Illustrations"
+            link="https://lukaszadam.com/illustrations"
+            websiteLink="lukaszadam.com"
+            description="Free illustrations and icons"
+          />
+          <ResourcesCard
+            title="Paper Illustrations"
+            link="https://iconscout.com/paper-illustrations"
+            websiteLink="iconscout.com"
+            description="Free paper illustrations"
+          />
+          <ResourcesCard
+            title="Background generator"
+            link="https://bgjar.com/"
+            websiteLink="bgjar.com"
+            description="Generate beautfiful backgrounds"
+          />
+          <ResourcesCard
+            title="Avatar Library"
+            link="https://limitlessdesigns.io/avatar-illustrations/"
+            websiteLink="limitlessdesigns.io"
+            description="Free and unique Avatars"
+          />
+
+          {/* https://bgjar.com/ */}
+        </div>
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
+          Everyday use
+        </h2>
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          <ResourcesCard
+            title="Public APIs"
+            link="https://public-apis.xyz/"
+            websiteLink="public-apis.xyz"
+            description="Collection of public apis"
+          />
+          <ResourcesCard
+            title="EasyDB"
+            link="https://easydb.io/"
+            websiteLink="easydb.io"
+            description="One click DB deploy - no server"
+          />
+
+          <ResourcesCard
+            title="Background Remover"
+            link="https://www.remove.bg/"
+            websiteLink="remove.bg"
+            description="Remove bg in one click"
+          />
+          <ResourcesCard
+            title="Meta tag generator"
+            link="https://metatags.io/"
+            websiteLink="metatags.io"
+            description="Generate meta tags for any site"
+          />
+          <ResourcesCard
+            title="Picsum photos"
+            link="https://picsum.photos/"
+            websiteLink="picsum.photos"
+            description="Placeholder randon images"
+          />
+          <ResourcesCard
+            title="Code image"
+            link="https://codeimg.io/"
+            websiteLink="codeimg.io"
+            description="Convert code into beautiful snippets"
+          />
+          <ResourcesCard
+            title="Responsively"
+            link="https://responsively.app/"
+            websiteLink="responsively.app"
+            description="Tool to check responsiveness"
+          />
+          <ResourcesCard
+            title="Dev Fonts"
+            link="https://devfonts.gafi.dev/"
+            websiteLink="devfonts.gafi.dev"
+            description="Dev fonts for developers"
+          />
+          {/*  */}
+        </div>
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
+          Free Themes
+        </h2>
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          <ResourcesCard
+            title="Free Templates"
+            link="http://www.mashup-template.com/templates.html"
+            websiteLink="mashup-template.com"
+            description="Modern HTML templates"
+          />
+          <ResourcesCard
+            title="Landing Stock"
+            link="https://landingstock.com/"
+            websiteLink="landingstock.com"
+            description="Free landing page designs"
+          />
+          <ResourcesCard
+            title="Free Themes & Templates"
+            link="https://www.creative-tim.com/templates/free"
+            websiteLink="creative-tim.com"
+            description="Get free themes, templates & UI Kits"
+          />
         </div>
       </div>
     </Container>
