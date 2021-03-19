@@ -57,6 +57,11 @@ export default function Footer() {
               Tweets
             </a>
           </Link>
+          <Link href="/resources">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Resources
+            </a>
+          </Link>
         </div>
       </div>
     </footer>
