@@ -8,8 +8,8 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <Container
-      title="Home – Manu Arora"
-      description="I'm a Software Developer and a Freelancer trying to build web apps that impacts millions of lives."
+      title="Manu Arora - Developer, Writer, Creator"
+      description="Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner."
       image="/avatar.jpg"
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
