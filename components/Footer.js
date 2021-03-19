@@ -62,6 +62,11 @@ export default function Footer() {
               Resources
             </a>
           </Link>
+          <Link href="/demos">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Live Demos
+            </a>
+          </Link>
         </div>
       </div>
     </footer>
