@@ -17,6 +17,10 @@
   </url>
 
   <url>
+    <loc>https://manuarora.in/resources</loc>
+  </url>
+
+  <url>
     <loc>https://manuarora.in/tweets</loc>
   </url>
 
@@ -29,6 +33,14 @@
   </url>
 
   <url>
+    <loc>https://manuarora.in/snippets/gradient-text</loc>
+  </url>
+
+  <url>
     <loc>https://manuarora.in/snippets/spotify</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/snippets/tailwind-card</loc>
   </url>
 </urlset>
