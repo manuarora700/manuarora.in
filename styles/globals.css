@@ -162,3 +162,7 @@ input[type="email"] {
 .step > h3 {
   @apply my-0;
 }
+
+.step > h2 {
+  @apply my-0;
+}

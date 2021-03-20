@@ -9,6 +9,8 @@ import ConsCard from "@/components/ConsCard";
 // import Analytics from "@/components/metrics/Analytics";
 // import YouTube from "@/components/metrics/Youtube";
 import Step from "@/components/Step";
+import StepLarge from "@/components/StepLarge";
+import StepCheck from "@/components/StepCheck";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -31,6 +33,8 @@ const MDXComponents = {
   ConsCard,
   ProsCard,
   Step,
+  StepLarge,
+  StepCheck,
   Tweet,
 };
 

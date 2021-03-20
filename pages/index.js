@@ -34,9 +34,9 @@ export default function Home() {
           Most Popular
         </h3>
         <BlogPost
-          title="Why I started using NextJS in my workflow"
-          summary="A case study on how I ditched traditional React and started using NextJS along with it's features such as Image optimization & Routing."
-          slug="css-with-react"
+          title="Top 5 courses and resources to learn Next JS in 2021"
+          summary="Get the top 5 resources to learn Next JS in 2021 and take your React skills to the next level."
+          slug="top-5-nextjs-resources"
         />
         {/* <BlogPost
           title="How to design a minimal and beautiful website which actually converts"
