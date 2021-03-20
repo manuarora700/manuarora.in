@@ -24,30 +24,30 @@ export default function Contact() {
     e.preventDefault();
     setForm({ state: "loading" });
 
-    // const res = await fetch("/api/subscribe", {
-    //   body: JSON.stringify({
-    //     email: inputEl.current.value,
-    //   }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   method: "POST",
-    // });
+    const res = await fetch("/api/sendgrid", {
+      body: JSON.stringify({
+        email: inputEl.current.value,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
 
-    // const { error } = await res.json();
-    // if (error) {
-    //   setForm({
-    //     state: "error",
-    //     message: error,
-    //   });
-    //   return;
-    // }
+    const { error } = await res.json();
+    if (error) {
+      setForm({
+        state: "error",
+        message: error,
+      });
+      return;
+    }
 
     // trackGoal("JYFUFMSF", 0);
     inputEl.current.value = "";
     setForm({
       state: "success",
-      message: `Hooray! You're now on the list. I'll get back to you soon.`,
+      message: `Hooray! You're now on the list. Check your inbox or promotions for a mail.`,
     });
   };
 
