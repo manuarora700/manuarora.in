@@ -30,6 +30,11 @@ export default function Footer() {
               Dashboard
             </a>
           </Link>
+          <Link href="/projects">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Projects
+            </a>
+          </Link>
         </div>
         <div className="flex flex-col space-y-4">
           <ExternalLink href="https://github.com/manuarora700">
