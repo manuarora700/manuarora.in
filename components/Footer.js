@@ -35,7 +35,9 @@ export default function Footer() {
           <ExternalLink href="https://github.com/manuarora700">
             GitHub
           </ExternalLink>
-
+          <ExternalLink href="https://linkedin.com/in/manuarora28">
+            LinkedIn
+          </ExternalLink>
           <ExternalLink href="https://twitter.com/mannupaaji">
             Twitter
           </ExternalLink>
