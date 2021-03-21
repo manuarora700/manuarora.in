@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://github.com/manuarora700/portfolio-website">
+    <img src="https://manuarora.in/logo.png" alt="Logo" width="80" height="80">
+  </a>
+  </p>
 
-## Getting Started
+# manuarora.in
 
-First, run the development server:
+This is my personal website. Here I write blogs, add code snippets, code live demos, and add resources for everybody else to look refer.
+
+The application is built with **Next.js/React/MDX**
+
+## Overview
+
+- `pages/api/*` - API routes for the [`Dashboard`](https://manuarora.in/dashboard). Contains Twitter, Spotify, and Google Analytics APIs.
+
+- `pages/blog/*` - Static pages rendered using MDX
+
+- `pages/resources` - [Resources](https://manuarora.in/resources) page
+
+- `pages/snippets` - [Snippets](https://manuarora.in/snippets) page to see all the ready to use code snippets.
+
+- `pages/tweets` - my favourite [Tweets](https://manuarora.in/tweets) from the twitter world.
+
+- `pages/*` - All other static pages.
+
+## Installation
 
 ```bash
-npm run dev
-# or
+
+git clone https://github.com/manuarora700/portfolio-website.git
+
+cd portfolio-website
+
+yarn
+
 yarn dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or use NPM
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+git clone https://github.com/manuarora700/portfolio-website.git
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+cd portfolio-website
 
-## Learn More
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Running locally
 
-## Deploy on Vercel
+To run the project locally, create a `.env.local` file and add the required API credentials there. Reference [`.env.example`](https://github.com/manuarora700/portfolio-website/blob/master/.env.example) from the source for the list of API keys required.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Built Using
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://nextjs.org)
+
+- [Tailwindcss](https://tailwindcss.com)
+
+- [MDX](https://github.com/mdx-js/mdx)
+
+- [Vercel](https://vercel.com)
+
+- [Firebase](https://firebase.google.com/)
+
+Special thanks to [Lee Rob](https://github.com/leerob) for creating such a beautiful theme that is very well structured and looks amazing on all devices. All the design inspiration and MDX structure come from him.
+
+If you're interested in learning Next.js and building real-world applications with it, I strongly suggest taking Lee's course [React 2025](https://react2025.com). I have taken it myself and can vouch for it.
