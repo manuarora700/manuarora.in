@@ -88,6 +88,21 @@ export default function MovingCard() {
       <div className="flex flex-none">
         <MovingCard rotateClass="rotate-12" />
       </div>
+      <div className="flex flex-none">
+        <MovingCard rotateClass="rotate-12" />
+      </div>
+      <div className="flex flex-none">
+        <MovingCard rotateClass="rotate-12" />
+      </div>
+      <div className="flex flex-none">
+        <MovingCard rotateClass="rotate-12" />
+      </div>
+      <div className="flex flex-none">
+        <MovingCard rotateClass="rotate-12" />
+      </div>
+      <div className="flex flex-none">
+        <MovingCard rotateClass="rotate-12" />
+      </div>
     </div>
   );
 }
