@@ -32,6 +32,11 @@ export default function Demos() {
             link="demos/demo/tailwindcard"
             description="Simple tailwind css card"
           />
+          <DemosCard
+            title="Moving Cards"
+            link="demos/demo/movingcard"
+            description="Moving tailwind css cards"
+          />
         </div>
       </div>
     </Container>

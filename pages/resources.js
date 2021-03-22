@@ -27,6 +27,12 @@ export default function Snippets({ snippets }) {
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
           <ResourcesCard
+            title="Tailwind UI Kit"
+            link="https://www.tailwind-kit.com/"
+            websiteLink="tailwind-kit.com"
+            description="Free tailwind UI Components"
+          />
+          <ResourcesCard
             title="UI Gradients"
             link="https://uigradients.com"
             websiteLink="uigradients.com"
