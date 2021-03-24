@@ -90,6 +90,25 @@ export default function Snippets({ snippets }) {
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
           <ResourcesCard
+            title="Lorem Ipsum"
+            link="https://loripsum.net/"
+            websiteLink="loripsum.net"
+            description="Advanced lorem text"
+          />
+          <ResourcesCard
+            title="Browser Lite"
+            link="https://marketplace.visualstudio.com/items?itemName=antfu.browse-lite"
+            websiteLink="marketplace.visualstudio.com"
+            description="Browser inside VSCode"
+          />
+
+          <ResourcesCard
+            title="Site Inspector"
+            link="https://www.getsiteinspector.com/"
+            websiteLink="getsiteinspector.com"
+            description="Inspect your site for errors"
+          />
+          <ResourcesCard
             title="Public APIs"
             link="https://public-apis.xyz/"
             websiteLink="public-apis.xyz"
