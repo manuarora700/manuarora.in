@@ -86,6 +86,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
               height="385"
               viewBox="0 0 366 385"
               fill="none"
+              stroke="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -162,7 +163,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
 
             <svg
               className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
-              fill="#000000"
+              fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 100 100"
               width="100px"
