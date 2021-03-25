@@ -163,6 +163,8 @@ export default function Snippets({ snippets }) {
             websiteLink="peek.link"
             description="Custom thumbnails for social media"
           />
+
+          {/* https://resumeworded.com/ */}
         </div>
         <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
           Free Themes
@@ -185,6 +187,18 @@ export default function Snippets({ snippets }) {
             link="https://www.creative-tim.com/templates/free"
             websiteLink="creative-tim.com"
             description="Get free themes, templates & UI Kits"
+          />
+        </div>
+
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
+          Productivity
+        </h2>
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          <ResourcesCard
+            title="LinkedIn analysis"
+            link="https://resumeworded.com"
+            websiteLink="resumeworded.com/"
+            description="Analyse your LinkedIn profile"
           />
         </div>
       </div>
