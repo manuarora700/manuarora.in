@@ -1,0 +1,36 @@
+---
+title: "Loader"
+description: "A simple reusable loader in React"
+logo: "react.png"
+---
+
+```js
+export default function Loader({ show }) {
+  return show ? <div className="loader"></div> : null;
+}
+```
+
+```css
+/* Loader */
+
+.loader {
+  border: 10px solid #eef0f1;
+  border-top: 10px solid #3b49df;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+```
+
+[Live Demo](http://manuarora.in/demos/demo/loader)
+[Source Code](https://github.com/manuarora700/portfolio-website/tree/master/pages/demos/demo/loader)
