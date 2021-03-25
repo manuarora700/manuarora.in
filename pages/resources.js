@@ -157,7 +157,12 @@ export default function Snippets({ snippets }) {
             websiteLink="devfonts.gafi.dev"
             description="Dev fonts for developers"
           />
-          {/*  */}
+          <ResourcesCard
+            title="Peek Links"
+            link="https://peek.link/index.html"
+            websiteLink="peek.link"
+            description="Custom thumbnails for social media"
+          />
         </div>
         <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
           Free Themes
