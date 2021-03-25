@@ -37,6 +37,11 @@ export default function Demos() {
             link="demos/demo/movingcard"
             description="Moving tailwind css cards"
           />
+          <DemosCard
+            title="Simple Loader"
+            link="demos/demo/loader"
+            description="A reusable react loading spinner"
+          />
         </div>
       </div>
     </Container>
