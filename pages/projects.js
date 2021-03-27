@@ -44,6 +44,13 @@ export default function projects() {
           tags={["commercial", "NextJS", "Firebase"]}
         />
         <ProjectCard
+          title="Devmedium"
+          description="📝 A Blogging application platform like Dev.to and Medium with Image uploads, real-time likes and custom usernames"
+          href="https://devmedium.vercel.app/"
+          icon="devmedium"
+          tags={["NextJS", "Firestore", "Firebase"]}
+        />
+        <ProjectCard
           title="Playground"
           description="An open-source playground to create HTML, CSS and Javascript components on the go."
           href="https://play.placeholdertech.in/"

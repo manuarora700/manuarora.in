@@ -1,0 +1,344 @@
+---
+title: "How I built a blogging platform like Medium with Next.js and Firebase"
+publishedAt: "2020-03-27"
+summary: "Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
+image: "/static/images/blogging-platform-nextjs/devmedium"
+---
+
+<VideoDemo src="/videos/devmedium.mov" />
+
+I recently took a course on Next.js with Firebase by [Fireship.io](https://fireship.io) to essentially learn how to Integrate Next.js with Firebase services like Firestore, Storage, Real Time Database and Authentication. I learned quite a few things about how to beautifully extract features of Next.js like `Server-Side Rendering` and `Incremental Static Regeneration` and integrate them in a blogging platform, wherever they are most suitable.
+
+The features of [DevMedium](https://devmedium.vercel.app) are:
+
+<StepCheck title="Server-Side rendered content on the go 🚀" />
+<StepCheck title="Image upload with Firebase storage 📸" />
+<StepCheck title="Create / Read / Update / Delete posts ✍🏻" />
+<StepCheck title="Custom Username creation 🙆🏻‍♂️" />
+<StepCheck title="Signin with Google 🤙🏻" />
+<StepCheck title="Incremental Static Regeneration, Static Site Generation 🦾" />
+<StepCheck title="Like other posts you love, Unlike if not ❤️" />
+<StepCheck title="Write posts in Markdown with Live Preview, Render in HTML 🌿" />
+
+## Application Breakdown
+
+The complete source code of the application can be found in my [Github Repo - DevMedium](https://github.com/manuarora700/devmedium)
+
+The application is divided into various categories, where each category serves its own purpose.
+
+- `/pages/*` contains all the routes which are being served.
+- `/components/*` contains all the reusable components which we import into our pages directory.
+- `/lib/*` contains all the library methods and helper functions. For example, we keep custom Hooks, Firebase related things here.
+- `/styles/*` contains all the styling related stuff.
+- `/public/*` contains all the public facing data, like logos, client side JS etc.
+
+Essentially, the application flow looks like this:
+
+- A user comes, registers on the application.
+- After successful registration, the user is redirected to the username screen, where they can generate a unique username.
+- After successful username creation, they are redirected to the home page, where they can create posts.
+- They can go to the homepage and see all the posts written by all the users.
+- They can heart a post they like, or unheart it.
+- On the admin page, A user can see their created posts.
+- They can perform Create / Read / Update / Delete operations, all in real time.
+- They can edit their content live in markdown, click on `preview` to get a real time preview of the blog they are about to publish.
+- A user can decide to publish or unpublish a blog.
+
+Lets move over to each step and discover the various approaches and caveats there are:
+
+## Authentication
+
+<Image
+  src="/static/images/blogging-platform-nextjs/authpage.png"
+  width={1000}
+  height={300}
+/>
+
+For signing in, Google Signin is used which comes bundled with Firebase Authentication. It is an excellent way to add authentication to our FUll-stack applications because it requires minimum configuration.
+Initialize your application with firebase auth and use it as follows:
+
+```jsx:/lib/firebase.js
+import "firebase/auth";
+
+// code...
+
+
+export const auth = firebase.auth();
+
+```
+
+```jsx:/pages/enter.js
+import { auth, firestore, googleAuthProvider } from "../lib/firebase";
+// code...
+
+function SignInButton() {
+  const signInWithGoogle = async () => {
+    await auth.signInWithPopup(googleAuthProvider);
+  };
+  return (
+    <button className="btn-google" onClick={signInWithGoogle}>
+      <img src={`/google.png`} /> Sign in with Google
+    </button>
+  );
+}
+```
+
+Now, we need to store the information in our firebase firestore. For that we create two fields, `users` and `usernames` which have two-way mapping.
+This is a simple way of authenticating a user with Firebase.
+
+## Username creation
+
+<Image
+  src="/static/images/blogging-platform-nextjs/username.png"
+  width={1000}
+  height={400}
+/>
+
+Firebase does not come with a custom username or unique username fields, so we create it by ourselves from scratch.
+The username creation for in itself is very complex and requires some other packages as well (for simplicity, we'll use `lodash.debounce`).
+The overview is as follows:
+
+- The user signs in -> redirected to the username creation form (If they don't already have a username).
+- When the user starts typing for a name, we use a technique called debounce. That is we wait for the user to stop typing (we can specify the waiting time) and then perform a read on the database to check if the username already exists in the `username` collection. This way, we minimize the number of `read` operations on the firestore database.
+- We `batch.set()` if the user decides to choose a username. Which means if the username is available, we commit the data in both `users` collection and `usernames` collection. Te `batch.set()` function allows to either set both the values at the same time, or both fail at the same time.
+
+```jsx:pages/enter.js
+// username creation form
+// Hit the database for username match after each debounced change
+// useCallback is required for DEBOUNCE - lodash package function to work
+
+  const checkUsername = useCallback(
+    debounce(async (username) => {
+      if (username.length >= 3) {
+        const ref = firestore.doc(`usernames/${username}`);
+        const { exists } = await ref.get();
+        console.log("Firestore read executed!");
+        setIsValid(!exists);
+        setLoading(false);
+      }
+    }, 500),
+    []
+  );
+ // rest of the code
+  return (
+    !username && (
+      <section>
+        <h3>Choose Username</h3>
+        <form onSubmit={onSubmit}>
+          <input
+            name="username"
+            placeholder="username"
+            value={formValue}
+            onChange={onChange}
+          />
+          <UsernameMessage
+            username={formValue}
+            isValid={isValid}
+            loading={loading}
+          />
+          <button type="submit" className="btn-green" disabled={!isValid}>
+            Choose
+          </button>
+
+        </form>
+      </section>
+    )
+  );
+```
+
+## Homepage
+
+<Image
+  src="/static/images/blogging-platform-nextjs/homepage.png"
+  width={2392}
+  height={1570}
+/>
+
+The Homepage contains a Navbar with Links to various pages. On the Homepage, We first set the `LIMIT` value to whatever number of posts we want to show on the page. We use complete Server-Side Rendering here since the data can change more often on this particular page.
+We then query the firebase firestore for the `LIMIT` (lets say 10) number of posts and fetch more data when `Load More` button is clicked.
+This is an optimization technique since we donot want to show all the posts at once. If we do, it'll be lots of read operations for a single user and will take more time.
+
+Once the user clicks on load more, we can generate another set of 10 posts using firebase methods and render it on the client in real-time.
+
+```jsx:/index.js
+// Max post to query per page
+const LIMIT = 5;
+
+export async function getServerSideProps(context) {
+  const postsQuery = firestore
+    .collectionGroup("posts")
+    .where("published", "==", true)
+    .orderBy("createdAt", "desc")
+    .limit(LIMIT);
+
+  const posts = (await postsQuery.get()).docs.map(postToJSON);
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+
+
+//  Code...
+
+<PostFeed posts={posts} />
+
+{!loading && !postsEnd && (
+<button className="" onClick={getMorePosts}>
+    Load More
+</button>
+)}
+<Loader show={loading} />
+
+ const getMorePosts = async () => {
+    const last = posts[posts.length - 1];
+
+    const cursor =
+      typeof last.createdAt === "number"
+        ? fromMillis(last.createdAt)
+        : last.createdAt;
+
+    const query = firestore
+      .collectionGroup("posts")
+      .where("published", "==", true)
+      .orderBy("createdAt", "desc")
+      .startAfter(cursor)
+      .limit(LIMIT);
+
+    const newPosts = (await query.get()).docs.map((doc) => doc.data());
+
+  };
+
+```
+
+## Admin page - Posts creation and Management page
+
+<Image
+  src="/static/images/blogging-platform-nextjs/admin.png"
+  width={2410}
+  height={1544}
+/>
+
+Here, A user, which is logged in, can see their created posts (published and unpublished) and create new posts. While the CRUD of managed posts are easy to understand, the creation of a post is interesting here.
+We use `Loadsh - kebabcase` package to safely create a slug for the post title that we create. We then store the posts in a `Sub - Collection` called `posts` in usernames collection. Instead of creating a root level `posts` collection, we created a nested subcollection inside of `usernames` collection which will have ID as the `slug` of the post.
+
+The posts collection has various fields associated with it like `createdAt`, `updatedAt`, `title`, `slug` etcetera.
+
+Once a post is created, The user is redirected to the post edit page where the user can set the post to `published: boolean` values and upload images, write content, preview it and more.
+
+<Image
+  src="/static/images/blogging-platform-nextjs/editpost.png"
+  width={2366}
+  height={1520}
+/>
+
+The `Image Upload` feature takes help of Firebase `Storage` to store images in Storage bucket.
+
+```jsx:Components/ImageUploader.js
+import { auth, storage, STATE_CHANGED } from "@lib/firebase";
+
+// code ...
+
+  const uploadFile = async (e) => {
+    // Get the file
+    const file = Array.from(e.target.files)[0];
+    const extension = file.type.split("/")[1];
+
+    // Makes reference to the storage bucket location
+    const ref = storage.ref(
+      `uploads/${auth.currentUser.uid}/${Date.now()}.${extension}`
+    );
+    setUploading(true);
+
+    // Starts the upload
+    const task = ref.put(file);
+
+    // Listen to updates to upload task
+    task.on(STATE_CHANGED, (snapshot) => {
+      const pct = (
+        (snapshot.bytesTransferred / snapshot.totalBytes) *
+        100
+      ).toFixed(0);
+      setProgress(pct);
+    });
+
+    // Get downloadURL AFTER task resolves (Note: this is not a native Promise)
+    task
+      .then((d) => ref.getDownloadURL())
+      .then((url) => {
+        setDownloadURL(url);
+        setUploading(false);
+      });
+
+```
+
+Once the user clicks on the image upload, the Loading spinner comes, and we show a `% Upload` field. This field is generated with the help of `task` and `STATE_CHANGED` listeners provided by Firebase.
+
+## Routes
+
+All the routes are nexted under the `pages` folder.
+
+- `/index.js` - Landing page, Render all the posts here with Like Counter feature and Load more feature.
+- `enter.js` - A Login page, with Three components, 'SignIn', 'SignOut' and 'UserForm' which are rendered based on the Auth State of the user.
+- `/[username]/index.js` - User Profile page, Here the user can see all the posts from him along with the username. This route is public, Anyone can see any user with their posts.
+- `/[username]/[slug].js` - A Single post page, here the user can see the post in detail (The actual blog post).
+- `/admin/index.js` - This is the Admin's psot page. See all your Published and unpublished posts. Also you create a new post here.
+- `/admin/[slug].js` - Here you perform CRUD on whatever you post you want to, The slug is the unique identifier for the post you want to perfom CRUD on.
+
+Additionally, firestore rules are deployed to make sure the database remains secure and is only accessed in a way we want.
+
+## Important Decisions on SSR, ISR and SSG
+
+While developing the application, It is really important to keep in mind which strategy you want to use and how do you plan on using it.
+For example, The index page, i.e. the home page is dynamic in nature, that means the content on the page can change pretty often and we want to see the latest content there
+for that scenario, we use `getServerSideProps` , i.e. Server-Side Rendering so that we get the most up to date page there.
+
+For the `edit-post` page or the `posts` page, we use something called Incremental Static Regeneration, which means that we fetch the data after some time limit periodically.
+On the posts page, we fetch the data every 100ms and see if it has changed. If it is not changed, we stick to the static version of the page. If it does infact change, we get the latest post from the server and cache it.
+
+```jsx:/[username]/[slug].js
+export async function getStaticProps({ params }) {
+  const { username, slug } = params;
+  const userDoc = await getUserWithUsername(username);
+
+  let post;
+  let path;
+
+  if (userDoc) {
+    const postRef = userDoc.ref.collection("posts").doc(slug);
+    post = postToJSON(await postRef.get());
+
+    path = postRef.path;
+  }
+
+  return {
+    props: { post, path },
+    revalidate: 100,
+  };
+}
+```
+
+Here, the `revalidate` option is responsible for fetching the data periodically.
+
+Apart from that, all the other components which do not even require any data, can be generated as static HTML and rendered on the page.
+
+## Miscellaneous
+
+- The `HeartCounter` in itself is a component which is related to a Post and a User both. A Post can have Many hearts so it is a one-to-many relationship.
+- The `Metatags` component is a reusable piece of component which can be used on every page to generate metatags for that page for every social media network or search engine bots.
+- We have a custom `404 page` which is rendered when a page is not found.
+  <Image
+    src="/static/images/blogging-platform-nextjs/404.png"
+    width={2418}
+    height={1306}
+  />
+- We have a `AuthCheck` component which checks the Auth on every level of the tree. `useContext()` and `createContext()` is used for managing state (particularly Auth State) in the entire application.
+
+That was a basic overview of the entire application.
+
+If you liked it, make sure you ⭐️ the [GitHub Repo](https://github.com/manuarora700/devmedium) 🔥
+
+[Live Demo](https://devmedium.vercel.app)
+[Source Code](https://github.com/manuarora700/devmedium)

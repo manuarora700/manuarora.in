@@ -38,6 +38,11 @@ export default function Home() {
           summary="Get the top 5 resources to learn Next JS in 2021 and take your React skills to the next level."
           slug="top-5-nextjs-resources"
         />
+        <BlogPost
+          title="How I built a blogging platform like Medium with Next.js"
+          summary="Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
+          slug="blogging-platform-nextjs"
+        />
         {/* <BlogPost
           title="How to design a minimal and beautiful website which actually converts"
           summary="Examining the tips and tricks used to make a website design a notch above the rest."
