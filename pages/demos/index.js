@@ -42,6 +42,11 @@ export default function Demos() {
             link="demos/demo/loader"
             description="A reusable react loading spinner"
           />
+          <DemosCard
+            title="React Toasts"
+            link="demos/demo/toast"
+            description="A reusable react toast notification"
+          />
         </div>
       </div>
     </Container>
