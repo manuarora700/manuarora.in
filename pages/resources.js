@@ -89,6 +89,13 @@ export default function Snippets({ snippets }) {
           Everyday use
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          {/* https://css.gg/ */}
+          <ResourcesCard
+            title="Free Icons (700+)"
+            link="https://css.gg/"
+            websiteLink="css.gg"
+            description="Collection of 700+ free icons"
+          />
           <ResourcesCard
             title="Lorem Ipsum"
             link="https://loripsum.net/"
@@ -163,13 +170,27 @@ export default function Snippets({ snippets }) {
             websiteLink="peek.link"
             description="Custom thumbnails for social media"
           />
+          <ResourcesCard
+            title="100 Day UI"
+            link="https://100dailyui.webflow.io/ "
+            websiteLink="100dailyui.webflow.io"
+            description="Free Figma mockups and elements"
+          />
+          {/* https://100dailyui.webflow.io/ */}
 
           {/* https://resumeworded.com/ */}
         </div>
         <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
           Free Themes
         </h2>
+        {/* https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit */}
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          <ResourcesCard
+            title="Free Pixel Theme"
+            link="https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit"
+            websiteLink="themesberg.com"
+            description="Free modern, clean Bootstrap 4+ Theme"
+          />
           <ResourcesCard
             title="Free Templates"
             link="http://www.mashup-template.com/templates.html"
