@@ -29,6 +29,14 @@ export default function projects() {
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
           Full-Stack
         </h3>
+
+        <ProjectCard
+          title="Covid Rescue"
+          description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
+          href="https://covidrescue.co.in/"
+          icon="covidrescue"
+          tags={["Open Source", "Next.js", "Twitter"]}
+        />
         <ProjectCard
           title="PlaceholderTech"
           description="We build modern, blazing-fast web applications which helps your business grow and increase sales."

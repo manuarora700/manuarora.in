@@ -9,6 +9,25 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
       rel="noopener noreferrer"
     >
       <div className="flex items-center border border-gray-200 dark:border-gray-800 rounded p-4">
+        {/* */}
+        {icon === "covidrescue" && (
+          <div className="h-8 w-8 ml-2 mr-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              />
+            </svg>
+          </div>
+        )}
         {icon === "gba" && (
           <div className="h-8 w-8 ml-2 mr-4">
             <svg
@@ -50,7 +69,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
               <path
                 fill-rule="evenodd"
                 d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </div>
