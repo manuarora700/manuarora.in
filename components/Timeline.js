@@ -152,9 +152,23 @@ export default function Timeline() {
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
         Timeline
       </h3>
+      <Year>2021</Year>
+      <ul>
+        <Step title="Created covidrescue.co.in 💊">
+          Created <a href="https://www.covidrescue.co.in">covidrescue.co.in</a>
+          to help people with verified leads on Oxygen, Remdesivir, Food, Beds,
+          ICU, Medicines and more.
+        </Step>
+        <Step title="Created Covid-19 Vaccination slots notification system 💉">
+          Integrated Vaccination slots notification system in covidrescue web
+          app. Notified people whenever vaccination slot was available in their
+          area and city.
+        </Step>
+      </ul>
+
       <Year>2020</Year>
       <ul>
-        <Step title="Joined mroads">
+        <Step title="Joined mroads 🎉">
           {" "}
           Joined{" "}
           <span className="font-bold">
