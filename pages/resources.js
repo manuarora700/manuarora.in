@@ -26,6 +26,13 @@ export default function Snippets({ snippets }) {
           User Interface
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          {/* https://storyset.com/ */}
+          <ResourcesCard
+            title="Story Set"
+            link="https://storyset.com/"
+            websiteLink="storyset.com"
+            description="Beautiful illustrations and icons"
+          />
           <ResourcesCard
             title="Tailwind UI Kit"
             link="https://www.tailwind-kit.com/"
