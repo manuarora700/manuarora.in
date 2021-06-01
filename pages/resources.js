@@ -33,6 +33,12 @@ export default function Snippets({ snippets }) {
             description="Generate free avatars for multipurpose use."
           />
           <ResourcesCard
+            title="Undesign - Free Resoureces"
+            link="https://undesign.learn.uno/"
+            websiteLink="undesign.learn.uno"
+            description="Generate free Icons, illustrations and more"
+          />
+          <ResourcesCard
             title="Haikei app"
             link="https://app.haikei.app/"
             websiteLink="app.haikei.app"
