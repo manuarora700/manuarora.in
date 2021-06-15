@@ -74,8 +74,7 @@ export const StaticLinkPreview = ({ children, url }) => {
         }}
       >
         <HoverCardPrimitive.Trigger
-          href={url}
-          className={cx(GRADIENT_LINK, FOCUS_VISIBLE_OUTLINE)}
+          className={cx(GRADIENT_LINK, FOCUS_VISIBLE_OUTLINE, "cursor-pointer")}
         >
           {children}
         </HoverCardPrimitive.Trigger>
