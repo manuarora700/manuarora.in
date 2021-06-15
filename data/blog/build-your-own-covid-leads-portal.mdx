@@ -1,0 +1,220 @@
+---
+title: "Build your own Covid Resource and leads portal with the Twitter API and Next.js"
+publishedAt: "2020-05-25"
+summary: "Create your own verified leads portal with Next.js and Twitter API from start to finish for $0, Deploy it on AWS and serve the needy."
+image: "/static/images/build-your-own-covid-leads-portal/covid.png"
+---
+
+<Image
+  src="/static/images/build-your-own-covid-leads-portal/covid.png"
+  width={1000}
+  height={650}
+/>
+
+Recently, me and my team developed a Covid Resouces and verified Leads portal [covidrescue.co.in](https://covidrescue.co.in/) which helped thousands of people around India find Beds, Remdesivir, Oxygen Cylinders, Food and more.
+
+Along with the resources and leads, we helped people with finding `Vaccination slots` around their areas. To solve this problem, we came up a notification system where in a person can enter their email, select Age criteria and submit to get a notification over their mail whenever a slot is available.
+
+- Complete source code: [Source Code](https://github.com/placeholdertech/covidrescue.co.in)
+- Website: [covidrescue.co.in](http://covidrescue.co.in/)
+- Vaccine Notifier: [Notifications](https://covidrescue.co.in/vaccine)
+
+> In the month of May, 452,028 tweets were pulled and we are still counting.
+
+<Image
+  src="/static/images/build-your-own-covid-leads-portal/tweets-pulled.png"
+  width={1148}
+  height={310}
+/>
+
+There were various challenges faced by us during the development of this portal. From fetching the tweets to filter them, From hosting it on Vercel to hosting it on an EC2 instance. I'm here to share my learnings with you so that you can start implementing your own versions of it and help the people who need it the most.
+
+## Overview and Tech Stack
+
+There were mainly **Two Approaches** to this portal, **JAMStack** and **MERN Stack**. But finally we went on with Database as **MySQL** and ditched **firebase** because why not.
+
+- [Next.js](https://nextjs.org/) for frontend and serverless APIs.
+- [Tailwindcss](https://tailwindcss.com/) for easy styling.
+- [Amazon EC2 Instance](https://aws.amazon.com/) for hosting Next.js application.
+- [Node.js](https://nodejs.org/) for back-end and running our **cron-job** on the server.
+- [Twitter API](https://developer.twitter.com/) for Fetching tweets from Twitter.
+- [Cowin API](https://apisetu.gov.in/) for fetching notification slots and vaccination notification.
+
+Fetching data from **Twitter** using their API is pretty easy, thanks to their [developer documentation](https://developer.twitter.com/). The tweets look something like this:
+
+<Tweet id={"1397993424306020357"} />
+
+The **Flow** of the application looks something like this:
+
+1. User lands on the homepage. By default `Delhi` city is selected. All the resources and leads will be shown for Delhi.
+2. The Twitter API is called to show the first 10 results using their `recent` and `filter` API. Refer documentation for more info
+
+```Javascript
+export const prepareQuery = (city, resource, preference) => {
+  city = city.toLowerCase();
+  if (resource)
+    resource = resource.toLowerCase();
+
+  if (preference === 'get') {
+    if (resource)
+      return `covid available ${resource} ${city} (${escapeTermsForAvailable.join(" ")}) -is:retweet -is:reply -is:quote`;
+    else {
+      return `covid available ${city} (${resources.join(" OR ")}) (${escapeTermsForAvailable.join(" ")}) -is:retweet -is:reply -is:quote`;
+    }
+  }
+  if (preference === 'give') {
+
+    if (resource) {
+      return `covid need ${resource} ${city} "donor" -is:retweet -is:reply -is:quote`;
+    } else {
+      return `covid need ${city} (${resources.join(" OR ")})  "donor" -is:retweet -is:reply -is:quote`;
+    }
+
+  }
+}
+```
+
+3. Prepare the query with Escape the terms which are not necessary for a `receiver` and concentrate on terms like `available, availability, verified` etc.
+4. Fire off the Twitter API to get 10 results. We fetch only 10 at a time because Twitter only gives you **500,000 API calls per month** which can exhaust really quickly. To make the API and the website efficient, we query for the first 10 results. When the user clicks on `Load More`, we again call the API with the Next 10 results.
+
+```Javascript
+export const getTweetsBasedOnCrieteria = async (city, resource, preference, nextToken=null) => {
+    ...
+    ...
+    ...
+    if (resource)
+    queryString = prepareQuery(city, resource, preference);
+    else
+        queryString = prepareQuery(city, null, preference);
+
+    // if nextToken is available need to fetch next page records
+    // Otherwise fetch first page records
+    if (nextToken) {
+        nextToken = '&next_token=' + nextToken
+        preparedUrl = `https://api.twitter.com/2/tweets/search/recent?query=${queryString}&${queryParams}${nextToken}`;
+
+    } else {
+        preparedUrl = `https://api.twitter.com/2/tweets/search/recent?query=${queryString}&${queryParams}`;
+    }
+    ...
+    ...
+    ...
+```
+
+5. After preparing the query with the required parameters, we hit the `/api/twitter` Serverless API provided by Next.js (Love this feature) and call the Twitter API. Results are fetched and displayed based on the parameters specified by the user.
+
+## Getting the Twitter API
+
+<Image
+  src="/static/images/build-your-own-covid-leads-portal/twitter-developer.png"
+  width={1080}
+  height={700}
+/>
+
+Follow these steps to sign up for the Twitter API.
+
+- Head over to [Twitter for Developers](https://developer.twitter.com/en/) and sign up for an account.
+- Signup for an API key.
+- You'll receive a set of Question as to why do you want to user twitter, Answer the questions appropriately according to your use case.
+- Sign up for a `Standard Project`.
+- Within 1 day, you'll receive access to the developers portal over your mail.
+- Go to the portal, and click on `Generate API Keys`
+- You'll reveive `Twitter API Key`, `Twitter API Secret` , `Twitter Bearer Token`, `Twitter Access Token` and `Twitter Access Secret`.
+- For us, the most important one is the `Twitter Bearer Token`. Feed it in the .env.local file in your local directory.
+- Example of an env file can be found on the [GitHub Repo](https://github.com/PlaceholderTech/covidrescue.co.in/blob/master/.env.example)
+
+Once the **Twitter API** credentials are available, you can directly add the variables in your `.env.local` file and run the application locally.
+
+**Note:** To run it on `Vercel`, you'll need to enter environment variables on their portal.
+
+## Vaccination notification page - Cron Job
+
+<Image
+  src="/static/images/build-your-own-covid-leads-portal/notification.png"
+  width={1080}
+  height={700}
+/>
+
+This page was the **hardest to build** not because of the code, but because of the **Cowin API limits** and **Cowin Portal Accessibility issues**. Let's see how we solved this problem.
+
+The flow is simple:
+
+- The user lands on the `/vaccine` page, They have to enter either the `Pincode` or their `District` for which they want to book notification slots.
+- Once the user selects any of the **Two criterias**, Cowin API is called with the respective parameters.
+- Once they pick a pincode for notification registeration, A user is registered in MySQL database (With their email, preference and pincode).
+- A server-side **cron-job** runs every 1 minute which polls the `Cowin API` for slots availability.
+- If a slot is available, an **Email** is sent to the user and their email is removed from the database. It is only a once-off service. The user has to register again if they want to get the notifications again.
+
+```Javascript
+// Importing required packages
+const cron = require("node-cron");
+const express = require("express");
+const fs = require("fs");
+const axios = require("axios");
+
+app = express();
+
+// Setting a cron job
+cron.schedule("* * * * *", async function() {
+
+    // Data to write on file
+    let data = await axios.get('https://covidrescue.co.in/api/check-send-notification');
+
+    console.log(data.status.toString(), " ", JSON.stringify(data.data))
+});
+
+app.listen(3001);
+```
+
+The `check-send-notification` is our own serverless API in Next.js, which checks if the slots are available, **Sending of the emails** are determined by this very API only. The purpose of Cron job is to poll this API every 1 minute.
+
+## Statewise Reports
+
+<Image
+  src="/static/images/build-your-own-covid-leads-portal/statewise.png"
+  width={1080}
+  height={700}
+/>
+
+The **Statewise distribution** page contains a **MAP** which shows details of all the states in India. Stats are displayed on the right side with `%increase and %decrease in numbers`
+
+<Image
+  src="/static/images/build-your-own-covid-leads-portal/table.png"
+  width={1080}
+  height={700}
+/>
+
+**A Table** shows the data for each state with respective parameters like `Active number of cases`, `Total recoveries` etc.
+
+## Hosting - AWS versus Vercel
+
+<Image
+  src="/static/images/build-your-own-covid-leads-portal/compare.png"
+  width={1080}
+  height={700}
+/>
+
+Initially, [covidrescue.co.in](https://covidrescue.co.in/) was hosted on [Vercel](https://vercel.com/) and I personally love Vercel. Almost all of my projects are hosted on Vercel including [manuarora.in](https://manuarora.in/) But there were a few issues:
+
+- **Issue # 1: ** The Cowin API is **NOT ACCESSIBLE** outside India. Therefore we needed more control on the region of our hosting platform. Since we were using the free Hobby account of vercel, we had no choice.
+- **Issue # 2: ** Image optimizations. The portal has Images all over it and Vercel does Image optimizations on the Go. Since there were a lot of images, we quickly exhausted our quota of Image optimization and got a warning from Vercel. Again, we have no choice.
+- **Issue # 3: ** Running the Cron-job. There was no way for us to run the cron job on vercel. One of the option was **GitHub Actions** but we decided to go for a dedicated server instead.
+  To solve this problem, we migrated from [Vercel](https://vercel.com) to [AWS](https://aws.amazon.com)
+
+The application is currently hosted on a Small instance of EC2. We are running **MySQL, Next.js and the Cron job** in one instance. (We could improve on this one, but for now it is fine I think).
+
+## Conclusion
+
+It was an amazing experience building this application from scratch **within 4 days** (Yes, the MVP was live in 2 days, completely deployed in 4 days).
+
+We learnt a lot of things on the go, like
+
+- **Managing our own server** and making sure it is up all the time.
+- **Writing cron jobs** to make sure our users get the notificaitons.
+- **Optimizing API Calls** to make sure we don't exhaust our limits and still serve the purpuse.
+- **Continuous Integration, Continuous Deployment** so that we could improve every minute, hour and day.
+- **Rapid Styling** with tailwind CSS so that we don't have to touch the mighty css files again.
+- **Simple and minimal design** so that our users don't get confused and get what they need ASAP.
+- **No revenue generated, No ADS run, No sponsorships** because we wanted to HELP and HELP ONLY and didn't want to confuse the users with ads.
+
+If you liked it, Give it a ⭐️ on [GitHub](https://github.com/placeholdertech/covidrescue.co.in) and help amplify this website.

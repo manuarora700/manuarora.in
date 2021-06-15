@@ -31,6 +31,13 @@ export default function projects() {
         </h3>
 
         <ProjectCard
+          title="Tailwind Master Kit"
+          description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
+          href="https://tailwindmasterkit.com/"
+          icon="tailwindmasterkit"
+          tags={["Tailwind", "Next.js", "Freemium"]}
+        />
+        <ProjectCard
           title="Covid Rescue"
           description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
           href="https://covidrescue.co.in/"

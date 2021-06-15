@@ -22,7 +22,43 @@ export default function Snippets({ snippets }) {
           applications and much more. 🔥
         </p>
 
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
+          Utilities
+        </h2>
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          <ResourcesCard
+            title="Get Avaataars"
+            link="https://getavataaars.com/"
+            websiteLink="getavataaars.com"
+            description="Generate free avatars for multipurpose use."
+          />
+          <ResourcesCard
+            title="Undesign - Free Resoureces"
+            link="https://undesign.learn.uno/"
+            websiteLink="undesign.learn.uno"
+            description="Generate free Icons, illustrations and more"
+          />
+          <ResourcesCard
+            title="Haikei app"
+            link="https://app.haikei.app/"
+            websiteLink="app.haikei.app"
+            description="Generate SVG bogs, waves (single, multiple)."
+          />
+          <ResourcesCard
+            title="Ray"
+            link="https://ray.so/"
+            websiteLink="ray.so"
+            description="Convert code to beautiful images"
+          />
+          <ResourcesCard
+            title="Neumorphism design"
+            link="https://neumorphism.io/"
+            websiteLink="neumorphism.io"
+            description="Get neuphormism theme layouts for your cards and websites"
+          />
+        </div>
+
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
           User Interface
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
@@ -92,7 +128,7 @@ export default function Snippets({ snippets }) {
 
           {/* https://bgjar.com/ */}
         </div>
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
           Everyday use
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
@@ -187,7 +223,7 @@ export default function Snippets({ snippets }) {
 
           {/* https://resumeworded.com/ */}
         </div>
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
           Free Themes
         </h2>
         {/* https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit */}
@@ -218,7 +254,7 @@ export default function Snippets({ snippets }) {
           />
         </div>
 
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white">
+        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
           Productivity
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">

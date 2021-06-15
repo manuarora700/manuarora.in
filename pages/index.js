@@ -103,6 +103,13 @@ export default function Home() {
           Projects
         </h3>
         <ProjectCard
+          title="Tailwind Master Kit"
+          description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
+          href="https://tailwindmasterkit.com/"
+          icon="tailwindmasterkit"
+          tags={["Tailwind", "Next.js", "Freemium"]}
+        />
+        <ProjectCard
           title="Covid Rescue"
           description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
           href="https://covidrescue.co.in/"
@@ -114,12 +121,6 @@ export default function Home() {
           description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
           href="https://placeholdertech.in/"
           icon="placeholdertech"
-        />
-        <ProjectCard
-          title="Playground"
-          description="An open-source playground to create HTML, CSS and Javascript components on the go."
-          href="https://play.placeholdertech.in/"
-          icon="play"
         />
         <ProjectCard
           title="Feedmeback"

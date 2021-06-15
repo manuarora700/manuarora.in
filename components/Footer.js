@@ -76,6 +76,16 @@ export default function Footer() {
           </Link>
         </div>
       </div>
+      <p className="flex flex-row text-gray-400">
+        Built with{" "}
+        <a href="https://nextjs.org">
+          <img src="/logos/nextjs.svg" className="h-6 w-6 mx-1" />
+        </a>{" "}
+        and
+        <a href="https://tailwindcss.com">
+          <img src="/logos/tailwind.svg" className="h-6 w-6 mx-1" />
+        </a>
+      </p>
     </footer>
   );
 }
