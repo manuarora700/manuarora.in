@@ -5,7 +5,25 @@ import ProjectCard from "@/components/ProjectCard";
 import Timeline from "@/components/Timeline";
 import Contact from "@/components/Contact";
 
+import { LIGHT_COLORS } from "@/lib/constants";
+
+import { shuffleArray } from "@/lib/shuffleArray";
+import { useEffect, useState } from "react";
+import { RainbowHighlight } from "@/ui/RainbowHighlight";
+
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+import { useIsFontReady } from "@/lib/useIsFontReady";
+import { LinkPreview } from "@/components/LinkPreview";
+import { StaticLinkPreview } from "@/components/StaticLinkPreview";
+
 export default function Home() {
+  const [colors, setColors] = useState([]);
+
+  const isFontReady = useIsFontReady();
+
+  useEffect(() => {
+    setColors(shuffleArray(LIGHT_COLORS));
+  }, []);
   return (
     <Container
       title="Manu Arora - Developer, Writer, Creator"
@@ -13,23 +31,51 @@ export default function Home() {
       image="/avatar.jpg"
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-          Hey, I’m Manu Arora
-        </h1>
-        <h2 className="prose text-gray-600 dark:text-gray-400 mb-16">
-          I’m a developer, writer, and creator. I work at{" "}
-          <span className="font-bold">
-            <span className="text-blue-500">m</span>roads
-          </span>{" "}
-          as a Software Engineer. You've discovered my piece on the internet
-          –&nbsp;
-          <Link href="/blog">
-            <a className="text-blue-500 hover:underline">
-              checkout my blog&nbsp;
-            </a>
-          </Link>
-          while you're here. <br />I write about technology, learning and memes.
-        </h2>
+        <RoughNotationGroup show={isFontReady}>
+          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+            Hey, I’m{" "}
+            <RainbowHighlight color={colors[0]}>
+              <span className="dark:text-black">Manu Arora</span>
+            </RainbowHighlight>{" "}
+          </h1>
+
+          <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-loose">
+            I’m a developer, writer, and creator. I work at{" "}
+            <span className="font-bold">
+              <span className="text-blue-500">m</span>roads
+            </span>{" "}
+            as a{" "}
+            <RainbowHighlight color={colors[1]}>
+              <span className="dark:text-black">Software Engineer.</span>
+            </RainbowHighlight>{" "}
+            You've discovered my piece on the internet –&nbsp;
+            <RoughNotation
+              type="underline"
+              multiline={true}
+              animationDuration={1500}
+              animationDelay={1700}
+              strokeWidth={2}
+              iterations={3}
+              padding={5}
+              color={colors[3]}
+            >
+              <Link
+                href="/blog"
+                className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
+              >
+                <a className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600">
+                  <LinkPreview url="https://manuarora.in/blog">
+                    Checkout my blog
+                  </LinkPreview>
+                </a>
+              </Link>
+            </RoughNotation>{" "}
+            while you're here. <br />I write about technology, learning and{" "}
+            <StaticLinkPreview url="https://manuarora.in/drake.jpeg">
+              memes.
+            </StaticLinkPreview>
+          </h2>
+        </RoughNotationGroup>
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
           Most Popular
         </h3>
