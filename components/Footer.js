@@ -78,12 +78,15 @@ export default function Footer() {
       </div>
       <p className="flex flex-row text-gray-400">
         Built with{" "}
-        <a href="https://nextjs.org">
+        <a href="https://nextjs.org" target="__blank">
           <img src="/logos/nextjs.svg" className="h-6 w-6 mx-1" />
         </a>{" "}
-        and
-        <a href="https://tailwindcss.com">
+        <a href="https://tailwindcss.com" target="__blank">
           <img src="/logos/tailwind.svg" className="h-6 w-6 mx-1" />
+        </a>{" "}
+        and{" "}
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="__blank">
+          &nbsp; 💛
         </a>
       </p>
     </footer>
