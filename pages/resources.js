@@ -26,11 +26,18 @@ export default function Snippets({ snippets }) {
           Utilities
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          {/* https://hypercolor.dev/ */}
           <ResourcesCard
             title="Get Avaataars"
             link="https://getavataaars.com/"
             websiteLink="getavataaars.com"
             description="Generate free avatars for multipurpose use."
+          />
+          <ResourcesCard
+            title="Hypercolor"
+            link="https://hypercolor.dev"
+            websiteLink="hypercolor.dev"
+            description="Tailwind gradients"
           />
           <ResourcesCard
             title="Undesign - Free Resoureces"
