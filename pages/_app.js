@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "@/lib/gtag";
+import Banner from "@/components/Banner";
 
 import MDXComponents from "@/components/MDXComponents";
 
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class">
       <MDXProvider components={MDXComponents}>
+        <Banner />
         <Component {...pageProps} />
       </MDXProvider>
     </ThemeProvider>
