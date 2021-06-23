@@ -47,6 +47,11 @@ export default function Demos() {
             link="demos/demo/toast"
             description="A reusable react toast notification"
           />
+          <DemosCard
+            title="Border Gradient"
+            link="demos/demo/borderGradient"
+            description="Add gradients to border"
+          />
         </div>
       </div>
     </Container>
