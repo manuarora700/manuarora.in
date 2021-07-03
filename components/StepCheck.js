@@ -27,7 +27,7 @@
 export default function StepCheck({ title }) {
   return (
     <div className="flex font-small items-baseline mb-2">
-      <div className="h-4 w-4 mr-2">
+      <div className="">
         <svg
           className="h-5 w-5 mr-2 text-green-500 inline-block"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export default function StepCheck({ title }) {
           />
         </svg>
       </div>
-      <span>{title}</span>
+      <span class="content-center">{title}</span>
     </div>
   );
 }

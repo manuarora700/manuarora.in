@@ -10,7 +10,11 @@ import ConsCard from "@/components/ConsCard";
 // import YouTube from "@/components/metrics/Youtube";
 import Step from "@/components/Step";
 import StepLarge from "@/components/StepLarge";
+import StepLargeCustom from "@/components/StepLargeCustom";
+import HighlightBox from "@/components/HighlightBox";
 import StepCheck from "@/components/StepCheck";
+import Divider from "@/components/Divider";
+import Table from "@/components/Table";
 import VideoDemo from "./VideoDemo";
 
 const CustomLink = (props) => {
@@ -38,6 +42,10 @@ const MDXComponents = {
   StepCheck,
   Tweet,
   VideoDemo,
+  HighlightBox,
+  Divider,
+  Table,
+  StepLargeCustom,
 };
 
 export default MDXComponents;
