@@ -16,6 +16,8 @@ import StepCheck from "@/components/StepCheck";
 import Divider from "@/components/Divider";
 import Table from "@/components/Table";
 import VideoDemo from "./VideoDemo";
+import VideoComponent from "./VideoComponent";
+import Button from "./Button";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -46,6 +48,8 @@ const MDXComponents = {
   Divider,
   Table,
   StepLargeCustom,
+  VideoComponent,
+  Button,
 };
 
 export default MDXComponents;
