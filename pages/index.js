@@ -30,7 +30,7 @@ export default function Home() {
       description="Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner."
       image="/avatar.jpg"
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+      <div className="flex flex-col justify-center items-start max-w-4xl mx-auto mb-16">
         <RoughNotationGroup show={isFontReady}>
           <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
             Hey, I’m{" "}
@@ -79,16 +79,20 @@ export default function Home() {
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
           Most Popular
         </h3>
-        <BlogPost
-          title="Top 5 courses and resources to learn Next JS in 2021"
-          summary="Get the top 5 resources to learn Next JS in 2021 and take your React skills to the next level."
-          slug="top-5-nextjs-resources"
-        />
-        <BlogPost
-          title="How I built a blogging platform like Medium with Next.js"
-          summary="Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
-          slug="blogging-platform-nextjs"
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <BlogPost
+            title="Top 5 courses and resources to learn Next JS in 2021"
+            summary="Get the top 5 resources to learn Next JS in 2021 and take your React skills to the next level."
+            slug="top-5-nextjs-resources"
+            image="/static/images/top-5-nextjs-resources/nextjs.png"
+          />
+          <BlogPost
+            title="How I built a blogging platform like Medium with Next.js"
+            summary="Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
+            slug="blogging-platform-nextjs"
+            image="/static/images/blogging-platform-nextjs/homepage.png"
+          />
+        </div>
         {/* <BlogPost
           title="How to design a minimal and beautiful website which actually converts"
           summary="Examining the tips and tricks used to make a website design a notch above the rest."
