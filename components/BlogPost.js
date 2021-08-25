@@ -4,13 +4,17 @@ import format from "comma-number";
 
 import fetcher from "@/lib/fetcher";
 
-const BlogPost = ({ title, summary, slug }) => {
+const BlogPost = ({ title, summary, slug, image }) => {
   const { data } = useSWR(`/api/views/${slug}`, fetcher);
   const views = data?.total;
 
   return (
     <Link href={`/blog/${slug}`}>
       <a className="w-full">
+        <div className="h-full">
+          <img src={image} className="rounded-lg mb-2 object-cover" />
+        </div>
+
         <div className="mb-8 w-full">
           <div className="flex flex-col md:flex-row justify-between">
             <h4 className="text-lg blog-heading md:text-xl mb-2 w-full text-gray-900 dark:text-gray-100">

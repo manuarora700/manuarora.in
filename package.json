@@ -47,16 +47,16 @@
     "swr": "^0.5.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.3.2",
     "globby": "11.0.2",
     "image-size": "^0.9.3",
-    "postcss": "^8.2.8",
+    "postcss": "^8.3.6",
     "prettier": "2.2.1",
     "rehype": "^11.0.0",
     "remark-frontmatter": "^3.0.0",
     "remark-parse": "^9.0.0",
     "remark-stringify": "^9.0.1",
-    "tailwindcss": "^2.0.3",
+    "tailwindcss": "^2.2.7",
     "unified": "^9.2.0",
     "unist-util-visit": "^2.0.3"
   }
