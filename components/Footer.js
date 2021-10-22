@@ -47,18 +47,18 @@ export default function Footer() {
             YouTube
           </ExternalLink> */}
         </div>
-        {/* <div className="flex flex-col space-y-4">
-          <Link href="/snippets">
+        <div className="flex flex-col space-y-4">
+          {/*<Link href="/snippets">
             <a className="text-gray-500 transition hover:text-gray-600">
               Snippets
             </a>
-          </Link>
+          </Link>*/}
           <Link href="/tweets">
             <a className="text-gray-500 transition hover:text-gray-600">
               Tweets
             </a>
           </Link>
-          <Link href="/resources">
+          {/*<Link href="/resources">
             <a className="text-gray-500 transition hover:text-gray-600">
               Resources
             </a>
@@ -67,8 +67,8 @@ export default function Footer() {
             <a className="text-gray-500 transition hover:text-gray-600">
               Live Demos
             </a>
-          </Link>
-        </div> */}
+          </Link>*/}
+        </div>
       </div>
       <p className="flex flex-row text-gray-400">
         Built with{" "}
