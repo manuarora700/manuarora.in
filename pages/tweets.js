@@ -1,12 +1,12 @@
 import Container from "@/components/Container";
 import Tweet from "@/components/Tweet";
 import { getTweets } from "@/lib/twitter";
-import { appConfig } from "constants/app";
+import { NAME } from "constants/app";
 
 export default function Tweets({ tweets }) {
   return (
     <Container
-      title={`Tweets – ${appConfig.name}`}
+      title={`Tweets – ${NAME}`}
       description="A collection of tweets that make me laugh, make me think and make me learn."
     >
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
