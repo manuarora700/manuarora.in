@@ -6,6 +6,8 @@ import { useTheme } from "next-themes";
 
 import Footer from "@/components/Footer";
 
+import { appConfig } from "constants/app";
+
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
@@ -16,8 +18,8 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Manu Arora – Developer, writer, creator.",
-    description: `Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.`,
+    title: appConfig.title,
+    description: appConfig.description,
     image: "https://manuarora.in/static/images/banner.png",
     type: "website",
     ...customMeta,
@@ -31,11 +33,14 @@ export default function Container(props) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://manuarora.in${router.asPath}`}
+          content={`https://${appConfig.domain}${router.asPath}`}
         />
-        <link rel="canonical" href={`https://manuarora.in${router.asPath}`} />
+        <link
+          rel="canonical"
+          href={`https://${appConfig.domain}${router.asPath}`}
+        />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Manu Arora" />
+        <meta property="og:site_name" content={appConfig.name} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
@@ -48,14 +53,14 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 my-0 md:my-8 mx-auto bg-white dark:bg-black bg-opacity-60">
+      <nav className="flex items-center justify-between w-full max-w-4xl p-8 mx-auto my-0 bg-white sticky-nav md:my-8 dark:bg-black bg-opacity-60">
         <a href="#skip" className="sr-only focus:not-sr-only">
           Skip to content
         </a>
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10"
+          className="w-10 h-10 p-3 bg-gray-200 rounded dark:bg-gray-800"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           {mounted && (
@@ -64,7 +69,7 @@ export default function Container(props) {
               viewBox="0 0 24 24"
               fill="currentColor"
               stroke="currentColor"
-              className="h-4 w-4 text-gray-800 dark:text-gray-200"
+              className="w-4 h-4 text-gray-800 dark:text-gray-200"
             >
               {theme === "dark" ? (
                 <path
@@ -86,32 +91,32 @@ export default function Container(props) {
         </button>
         <div>
           <NextLink href="/">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">Home</a>
+            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Home</a>
           </NextLink>
-          <NextLink href="/blog">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">Blog</a>
+          {/* <NextLink href="/blog">
+            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Blog</a>
           </NextLink>
 
           <NextLink href="/dashboard">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
+            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
               Dashboard
             </a>
           </NextLink>
           <NextLink href="/snippets">
-            <a className="p-1 sm:p-4 hidden md:inline text-gray-900 dark:text-gray-100">
+            <a className="hidden p-1 text-gray-900 sm:p-4 md:inline dark:text-gray-100">
               Snippets
             </a>
           </NextLink>
           <NextLink href="/projects">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
+            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
               Projects
             </a>
-          </NextLink>
+          </NextLink> */}
         </div>
       </nav>
       <main
         id="skip"
-        className="flex flex-col justify-center bg-white dark:bg-black px-8 text-gray-900 dark:text-gray-100"
+        className="flex flex-col justify-center px-8 text-gray-900 bg-white dark:bg-black dark:text-gray-100"
       >
         {children}
         <Footer />

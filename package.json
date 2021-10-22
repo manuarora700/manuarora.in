@@ -1,11 +1,11 @@
 {
-  "name": "manuarora.in",
+  "name": "personal-portfolio",
   "description": "My personal blog and website",
   "version": "1.0.0",
   "author": {
-    "name": "Manu Arora",
-    "email": "contact@manuarora.in",
-    "url": "https://manuarora.in"
+    "name": "Muhammad Azhar",
+    "email": "azharmuham12@gmail.com",
+    "url": "https://a3har.com"
   },
   "scripts": {
     "dev": "next dev",
@@ -15,7 +15,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manuarora700/personal-portfolio.git"
+    "url": "git+https://github.com/a3har/personal-portfolio.git"
   },
   "dependencies": {
     "@headlessui/react": "^1.2.0",

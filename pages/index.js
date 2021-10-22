@@ -15,6 +15,7 @@ import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useIsFontReady } from "@/lib/useIsFontReady";
 import { LinkPreview } from "@/components/LinkPreview";
 import { StaticLinkPreview } from "@/components/StaticLinkPreview";
+import { appConfig } from "constants/app";
 
 export default function Home() {
   const [colors, setColors] = useState([]);
@@ -26,30 +27,30 @@ export default function Home() {
   }, []);
   return (
     <Container
-      title="Manu Arora - Developer, Writer, Creator"
-      description="Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner."
+      title={appConfig.title}
+      description={appConfig.description}
       image="/avatar.jpg"
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
         <RoughNotationGroup show={isFontReady}>
-          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
             Hey, I’m{" "}
             <RainbowHighlight color={colors[0]}>
-              <span className="dark:text-black">Manu Arora</span>
+              <span className="dark:text-black">{appConfig.name}</span>
             </RainbowHighlight>{" "}
           </h1>
 
-          <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-loose">
+          <h2 className="mt-4 mb-16 font-light leading-loose tracking-wide text-gray-600 dark:text-gray-400">
             I’m a developer, writer, and creator. I work at{" "}
-            <span className="font-bold">
-              <span className="text-blue-500">m</span>roads
-            </span>{" "}
+            <a className="font-bold" href="https://glood.ai">
+              Glood AI
+            </a>{" "}
             as a{" "}
             <RainbowHighlight color={colors[1]}>
               <span className="dark:text-black">Software Engineer.</span>
             </RainbowHighlight>{" "}
             You've discovered my piece on the internet –&nbsp;
-            <RoughNotation
+            {/* <RoughNotation
               type="underline"
               multiline={true}
               animationDuration={1500}
@@ -73,10 +74,10 @@ export default function Home() {
             while you're here. <br />I write about technology, learning and{" "}
             <StaticLinkPreview url="https://brobible.com/wp-content/uploads/2017/08/thats-what-she-said.jpg?quality=90&w=650">
               memes.
-            </StaticLinkPreview>
+            </StaticLinkPreview> */}
           </h2>
         </RoughNotationGroup>
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
+        {/* <h3 className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           Most Popular
         </h3>
         <BlogPost
@@ -88,7 +89,7 @@ export default function Home() {
           title="How I built a blogging platform like Medium with Next.js"
           summary="Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
           slug="blogging-platform-nextjs"
-        />
+        /> */}
         {/* <BlogPost
           title="How to design a minimal and beautiful website which actually converts"
           summary="Examining the tips and tricks used to make a website design a notch above the rest."
@@ -99,7 +100,7 @@ export default function Home() {
           summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
           slug="css-with-react"
         /> */}
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+        {/* <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           Projects
         </h3>
         <ProjectCard
@@ -131,11 +132,11 @@ export default function Home() {
         <Link href="/projects">
           <a
             type="button"
-            className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
+            className="flex items-center px-4 py-2 mx-auto my-4 text-sm font-medium text-gray-900 rounded-md dark:text-gray-100"
           >
             See More
             <svg
-              className="h-4 w-4 ml-1"
+              className="w-4 h-4 ml-1"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -151,7 +152,7 @@ export default function Home() {
           </a>
         </Link>
 
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+        <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           Upcoming Projects
         </h3>
         <ProjectCard
@@ -171,9 +172,9 @@ export default function Home() {
           description="I get ideas all day 🙄, All of them are updated here as soon as I start working on them."
           href="#"
           icon="more"
-        />
-        <Timeline />
-        <Contact />
+        /> */}
+        {/* <Timeline /> */}
+        {/* <Contact /> */}
       </div>
     </Container>
   );

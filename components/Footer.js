@@ -1,9 +1,11 @@
 import Link from "next/link";
 import NowPlaying from "@/components/NowPlaying";
 
+import { appConfig } from "constants/app";
+
 const ExternalLink = ({ href, children }) => (
   <a
-    className="text-gray-500 hover:text-gray-600 transition"
+    className="text-gray-500 transition hover:text-gray-600"
     target="_blank"
     rel="noopener noreferrer"
     href={href}
@@ -14,75 +16,67 @@ const ExternalLink = ({ href, children }) => (
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8">
-      <NowPlaying />
-      <hr className="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
-      <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
+    <footer className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-8">
+      {/* <NowPlaying /> */}
+      <hr className="w-full mb-8 border-gray-200 border-1 dark:border-gray-800" />
+      <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
           <Link href="/">
-            <a className="text-gray-500 hover:text-gray-600 transition">Home</a>
+            <a className="text-gray-500 transition hover:text-gray-600">Home</a>
           </Link>
-          <Link href="/blog">
-            <a className="text-gray-500 hover:text-gray-600 transition">Blog</a>
+          {/* <Link href="/blog">
+            <a className="text-gray-500 transition hover:text-gray-600">Blog</a>
           </Link>
           <Link href="/dashboard">
-            <a className="text-gray-500 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600">
               Dashboard
             </a>
           </Link>
           <Link href="/projects">
-            <a className="text-gray-500 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600">
               Projects
             </a>
-          </Link>
+          </Link> */}
         </div>
         <div className="flex flex-col space-y-4">
-          <ExternalLink href="https://github.com/manuarora700">
-            GitHub
-          </ExternalLink>
-          <ExternalLink href="https://linkedin.com/in/manuarora28">
-            LinkedIn
-          </ExternalLink>
-          <ExternalLink href="https://twitter.com/mannupaaji">
-            Twitter
-          </ExternalLink>
-          <ExternalLink href="https://instagram.com/maninthere">
-            Instagram
-          </ExternalLink>
+          <ExternalLink href={appConfig.github}>GitHub</ExternalLink>
+          <ExternalLink href={appConfig.linkedIn}>LinkedIn</ExternalLink>
+          <ExternalLink href={appConfig.twitter}>Twitter</ExternalLink>
+          <ExternalLink href={appConfig.instagram}>Instagram</ExternalLink>
           {/* <ExternalLink href="https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw">
             YouTube
           </ExternalLink> */}
         </div>
-        <div className="flex flex-col space-y-4">
+        {/* <div className="flex flex-col space-y-4">
           <Link href="/snippets">
-            <a className="text-gray-500 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600">
               Snippets
             </a>
           </Link>
           <Link href="/tweets">
-            <a className="text-gray-500 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600">
               Tweets
             </a>
           </Link>
           <Link href="/resources">
-            <a className="text-gray-500 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600">
               Resources
             </a>
           </Link>
           <Link href="/demos">
-            <a className="text-gray-500 hover:text-gray-600 transition">
+            <a className="text-gray-500 transition hover:text-gray-600">
               Live Demos
             </a>
           </Link>
-        </div>
+        </div> */}
       </div>
       <p className="flex flex-row text-gray-400">
         Built with{" "}
         <a href="https://nextjs.org" target="__blank">
-          <img src="/logos/nextjs.svg" className="h-6 w-6 mx-1" />
+          <img src="/logos/nextjs.svg" className="w-6 h-6 mx-1" />
         </a>{" "}
         <a href="https://tailwindcss.com" target="__blank">
-          <img src="/logos/tailwind.svg" className="h-6 w-6 mx-1" />
+          <img src="/logos/tailwind.svg" className="w-6 h-6 mx-1" />
         </a>{" "}
         and{" "}
         <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="__blank">

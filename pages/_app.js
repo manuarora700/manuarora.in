@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class">
       <MDXProvider components={MDXComponents}>
-        <Banner />
+        {/* <Banner /> */}
         <Component {...pageProps} />
       </MDXProvider>
     </ThemeProvider>
