@@ -1,7 +1,7 @@
 import Link from "next/link";
 import NowPlaying from "@/components/NowPlaying";
 
-import { appConfig } from "constants/app";
+import * as Social from "constants/social";
 
 const ExternalLink = ({ href, children }) => (
   <a
@@ -26,23 +26,23 @@ export default function Footer() {
           </Link>
           {/* <Link href="/blog">
             <a className="text-gray-500 transition hover:text-gray-600">Blog</a>
-          </Link>
+          </Link> */}
           <Link href="/dashboard">
             <a className="text-gray-500 transition hover:text-gray-600">
               Dashboard
             </a>
           </Link>
-          <Link href="/projects">
+          {/* <Link href="/projects">
             <a className="text-gray-500 transition hover:text-gray-600">
               Projects
             </a>
-          </Link> */}
+          </Link>  */}
         </div>
         <div className="flex flex-col space-y-4">
-          <ExternalLink href={appConfig.github}>GitHub</ExternalLink>
-          <ExternalLink href={appConfig.linkedIn}>LinkedIn</ExternalLink>
-          <ExternalLink href={appConfig.twitter}>Twitter</ExternalLink>
-          <ExternalLink href={appConfig.instagram}>Instagram</ExternalLink>
+          <ExternalLink href={Social.GITHUB_URL}>GitHub</ExternalLink>
+          <ExternalLink href={Social.LINKEDIN_URL}>LinkedIn</ExternalLink>
+          <ExternalLink href={Social.TWITTER_URL}>Twitter</ExternalLink>
+          <ExternalLink href={Social.INSTAGRAM_URL}>Instagram</ExternalLink>
           {/* <ExternalLink href="https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw">
             YouTube
           </ExternalLink> */}

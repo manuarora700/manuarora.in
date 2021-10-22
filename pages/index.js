@@ -15,7 +15,7 @@ import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useIsFontReady } from "@/lib/useIsFontReady";
 import { LinkPreview } from "@/components/LinkPreview";
 import { StaticLinkPreview } from "@/components/StaticLinkPreview";
-import { appConfig } from "constants/app";
+import * as AppConfig from "constants/app";
 
 export default function Home() {
   const [colors, setColors] = useState([]);
@@ -27,8 +27,8 @@ export default function Home() {
   }, []);
   return (
     <Container
-      title={appConfig.title}
-      description={appConfig.description}
+      title={AppConfig.TITLE}
+      description={AppConfig.DESCRIPTION}
       image="/avatar.jpg"
     >
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
@@ -36,7 +36,7 @@ export default function Home() {
           <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
             Hey, I’m{" "}
             <RainbowHighlight color={colors[0]}>
-              <span className="dark:text-black">{appConfig.name}</span>
+              <span className="dark:text-black">{AppConfig.NAME}</span>
             </RainbowHighlight>{" "}
           </h1>
 

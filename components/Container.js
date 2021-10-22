@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 
 import Footer from "@/components/Footer";
 
-import { appConfig } from "constants/app";
+import * as AppConfig from "constants/app";
 
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
@@ -18,9 +18,9 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: appConfig.title,
-    description: appConfig.description,
-    image: "https://manuarora.in/static/images/banner.png",
+    title: AppConfig.TITLE,
+    description: AppConfig.DESCRIPTION,
+    image: `https://${AppConfig.DOMAIN}/static/images/banner.png`,
     type: "website",
     ...customMeta,
   };
@@ -33,14 +33,14 @@ export default function Container(props) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://${appConfig.domain}${router.asPath}`}
+          content={`https://${AppConfig.DOMAIN}${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://${appConfig.domain}${router.asPath}`}
+          href={`https://${AppConfig.DOMAIN}${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content={appConfig.name} />
+        <meta property="og:site_name" content={AppConfig.NAME} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
@@ -95,14 +95,14 @@ export default function Container(props) {
           </NextLink>
           {/* <NextLink href="/blog">
             <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Blog</a>
-          </NextLink>
+          </NextLink> */}
 
           <NextLink href="/dashboard">
             <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
               Dashboard
             </a>
           </NextLink>
-          <NextLink href="/snippets">
+          {/* <NextLink href="/snippets">
             <a className="hidden p-1 text-gray-900 sm:p-4 md:inline dark:text-gray-100">
               Snippets
             </a>
