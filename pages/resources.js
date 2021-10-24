@@ -97,6 +97,14 @@ export default function Snippets({ snippets }) {
             websiteLink="heroicons.com"
             description="Get free icons"
           />
+
+          <ResourcesCard
+            title="Open Source Icons Pack"
+            link="https://tabler-icons.io/"
+            websiteLink="tabler-icons.io"
+            description="More free icons"
+          />
+
           <ResourcesCard
             title="Waves & SVG blobs"
             link="https://getwaves.io/"

@@ -39,6 +39,33 @@ export default function projects() {
           Icon={Icons.GreNinja}
           tags={["Angular", "Firebase", "Merriam-Webster"]}
         />
+        <ProjectCard
+          title="Medical Record Documentation System"
+          description="An efficient way to digitize paper lab reports and navigate through the data"
+          href="https://github.com/a3har/MRDS"
+          Icon={Icons.Stethoscope}
+          tags={["Python", "AWS", "Medicine"]}
+        />
+
+        <h3 className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+          Others
+        </h3>
+
+        <ProjectCard
+          title="Food Menu - UI Design"
+          description="View the restaurant menu before you enter it."
+          href="https://www.figma.com/file/dSFqCEq0OQ4s1KmPunV8jk/Food-Menu?node-id=0%3A1"
+          Icon={Icons.Pizza}
+          tags={["Figma", "UI Design"]}
+        />
+
+        <ProjectCard
+          title="Lab Report Crawler - Machine Learning"
+          description="Machine Learning model that can detect the important parts of a medical lab report so that structured data can be extracted from it."
+          href="https://github.com/a3har/Lab_report_detector"
+          Icon={Icons.MedicalReport}
+          tags={["Machine Learning", "Detectron", "Colab"]}
+        />
 
         <a
           href="https://github.com/a3har"

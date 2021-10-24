@@ -10,7 +10,9 @@ export default function ProjectCard({ title, description, href, Icon, tags }) {
       rel="noopener noreferrer"
     >
       <div className="flex items-center p-4 border border-gray-200 rounded dark:border-gray-800">
-        <div className="w-8 h-full ml-2 mr-4">{Icon && <Icon />}</div>
+        <div className="h-full ">
+          {Icon && <Icon className="w-8 ml-2 mr-4" />}
+        </div>
         <div>
           <h4 className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
             {title}
