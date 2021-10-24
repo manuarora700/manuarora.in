@@ -10,7 +10,10 @@ module.exports = {
     if (isServer) {
       require("./scripts/generate-sitemap");
     }
-
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
     return config;
   },
 };

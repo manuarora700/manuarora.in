@@ -4,6 +4,7 @@ import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 import Contact from "@/components/Contact";
 import { NAME } from "constants/app";
+import Icons from "@/components/Icons";
 
 export default function projects() {
   return (
@@ -28,14 +29,14 @@ export default function projects() {
           title="Checkout Upsells & Promotions - Dashboard"
           description="One Click Native Checkout Promotions Builder to increase AoV"
           href="https://apps.shopify.com/checkout-upsell-promotions"
-          icon="checkoutdashboard"
+          Icon={Icons.Glood}
           tags={["Tailwind", "React", "Shopify"]}
         />
         <ProjectCard
           title="GRE Ninja"
           description="Learn important GRE words easily on GREninja app with flashcards, contextual image and podcasts."
           href="https://play.google.com/store/apps/details?id=com.GREninja.GRE.vocabulary"
-          icon="greninja"
+          Icon={Icons.GreNinja}
           tags={["Angular", "Firebase", "Merriam-Webster"]}
         />
 

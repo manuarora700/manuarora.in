@@ -23,6 +23,7 @@
     "@mdx-js/react": "^1.6.22",
     "@radix-ui/react-hover-card": "0.0.3",
     "@sendgrid/mail": "^7.4.2",
+    "@svgr/webpack": "^5.5.0",
     "@tailwindcss/typography": "^0.4.0",
     "clsx": "^1.1.1",
     "comma-number": "^2.0.1",

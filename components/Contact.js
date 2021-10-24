@@ -54,10 +54,10 @@ export default function Contact() {
   return (
     <div className="w-full p-6 my-4 border border-blue-200 rounded dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
       <h5 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-100">
-        Want to make a friend? Let's talk.
+        Want to make a new friend? Let's talk.
       </h5>
       <p className="my-1 text-gray-800 dark:text-gray-200">
-        Drop a hi and lets find our shared interests.
+        Drop a "Hi" and lets find our shared interests.
       </p>
       <a
         href="https://wa.me/8943145293?text=Hi, Got your number from the portfolio"
@@ -67,7 +67,7 @@ export default function Contact() {
         Chat on WhatsApp
       </a>
 
-      {/* <Divider />
+      <Divider />
       <p className="my-1 text-gray-800 dark:text-gray-200">
         Drop in your email ID and I will get back to you.
       </p>
@@ -87,7 +87,7 @@ export default function Contact() {
         >
           {form.state === "Sending" ? <LoadingSpinner /> : "Send"}
         </button>
-      </form> */}
+      </form>
 
       {form.state === "error" ? (
         <ErrorMessage>{form.message}</ErrorMessage>
