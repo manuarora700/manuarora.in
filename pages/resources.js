@@ -1,6 +1,8 @@
 import Container from "@/components/Container";
 import ResourcesCard from "@/components/ResourcesCard";
 
+import { NAME } from "constants/app";
+
 export default function Snippets({ snippets }) {
   // TODO: Make sections for each type, ex: Javascript, HTML CSS etc
   return (

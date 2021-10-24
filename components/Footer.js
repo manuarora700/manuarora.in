@@ -48,22 +48,22 @@ export default function Footer() {
           </ExternalLink> */}
         </div>
         <div className="flex flex-col space-y-4">
-          {/*<Link href="/snippets">
+          {/* <Link href="/snippets">
             <a className="text-gray-500 transition hover:text-gray-600">
               Snippets
             </a>
-          </Link>*/}
+          </Link> */}
           <Link href="/tweets">
             <a className="text-gray-500 transition hover:text-gray-600">
               Tweets
             </a>
           </Link>
-          {/*<Link href="/resources">
+          <Link href="/resources">
             <a className="text-gray-500 transition hover:text-gray-600">
               Resources
             </a>
           </Link>
-          <Link href="/demos">
+          {/*<Link href="/demos">
             <a className="text-gray-500 transition hover:text-gray-600">
               Live Demos
             </a>
