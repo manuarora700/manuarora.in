@@ -16,6 +16,7 @@ import { useIsFontReady } from "@/lib/useIsFontReady";
 import { LinkPreview } from "@/components/LinkPreview";
 import { StaticLinkPreview } from "@/components/StaticLinkPreview";
 import * as AppConfig from "constants/app";
+import Icons from "@/components/Icons";
 
 export default function Home() {
   const [colors, setColors] = useState([]);
@@ -45,11 +46,12 @@ export default function Home() {
             <a className="font-bold" href="https://glood.ai">
               Glood AI
             </a>{" "}
-            as a{" "}
+            as a{"   "}
             <RainbowHighlight color={colors[1]}>
               <span className="dark:text-black">Software Engineer.</span>
             </RainbowHighlight>{" "}
-            You've discovered my piece on the internet –&nbsp;
+            You've discovered my place on the internet
+            {/* –&nbsp; */}
             {/* <RoughNotation
               type="underline"
               multiline={true}
@@ -100,35 +102,31 @@ export default function Home() {
           summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
           slug="css-with-react"
         /> */}
-        {/* <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+        <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           Projects
         </h3>
         <ProjectCard
-          title="Tailwind Master Kit"
-          description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
-          href="https://tailwindmasterkit.com/"
-          icon="tailwindmasterkit"
-          tags={["Tailwind", "Next.js", "Freemium"]}
+          title="Checkout Upsells & Promotions - Dashboard"
+          description="One Click Native Checkout Promotions Builder to increase AoV"
+          href="https://apps.shopify.com/checkout-upsell-promotions"
+          Icon={Icons.Glood}
+          tags={["Tailwind", "React", "Shopify"]}
         />
         <ProjectCard
-          title="Covid Rescue"
-          description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
-          href="https://covidrescue.co.in/"
-          icon="covidrescue"
-          tags={["Open Source", "Next.js", "Twitter"]}
+          title="GRE Ninja"
+          description="Learn important GRE words easily on GREninja app with flashcards, contextual image and podcasts."
+          href="https://play.google.com/store/apps/details?id=com.GREninja.GRE.vocabulary"
+          Icon={Icons.GreNinja}
+          tags={["Angular", "Firebase", "Merriam-Webster"]}
         />
         <ProjectCard
-          title="PlaceholderTech"
-          description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
-          href="https://placeholdertech.in/"
-          icon="placeholdertech"
+          title="Medical Record Documentation System"
+          description="An efficient way to digitize paper lab reports and navigate through the data"
+          href="https://github.com/a3har/MRDS"
+          Icon={Icons.Stethoscope}
+          tags={["Python", "AWS", "Medicine"]}
         />
-        <ProjectCard
-          title="Feedmeback"
-          description="The easiest way to add comments or reviews to your static site. Built as part of React 2025."
-          href="https://feedmeback-beta.vercel.app/"
-          icon="fastfeedback"
-        />
+
         <Link href="/projects">
           <a
             type="button"
@@ -151,28 +149,6 @@ export default function Home() {
             </svg>
           </a>
         </Link>
-
-        <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-          Upcoming Projects
-        </h3>
-        <ProjectCard
-          title="Algochurn"
-          description="Your last moment friend before a Technical Interview round. Practice the most popular Data Structures & Algorithms"
-          href="#"
-          icon="algochurn"
-        />
-        <ProjectCard
-          title="VSCode Resume"
-          description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
-          href="#"
-          icon="vscode"
-        />
-        <ProjectCard
-          title="More projects coming soon.."
-          description="I get ideas all day 🙄, All of them are updated here as soon as I start working on them."
-          href="#"
-          icon="more"
-        /> */}
         {/* <Timeline /> */}
         <Contact />
       </div>

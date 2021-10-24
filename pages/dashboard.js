@@ -34,9 +34,9 @@ export default function Dashboard() {
           <Unsplash />
           <YouTube />
         </div> */}
-        {/* <div className="grid w-full grid-cols-1 gap-4 my-2 sm:grid-cols-2"> */}
-        {/* <Analytics /> */}
-        {/* <GitHub />
+        <div className="grid w-full grid-cols-1 gap-4 my-2 sm:grid-cols-2">
+          {/* <Analytics /> */}
+          <GitHub />
           <Followers />
         </div>
         <div className="grid w-full grid-cols-1 gap-4 my-2 sm:grid-cols-2">
@@ -49,8 +49,8 @@ export default function Dashboard() {
         </div>{" "}
         <div className="grid w-full grid-cols-1 gap-4 my-2 sm:grid-cols-2">
           <TwitterStatistics type="total_tweets" />
-          <Analytics />
-        </div>{" "} */}
+          {/* <Analytics /> */}
+        </div>
         <h2 className="mt-16 mb-4 text-3xl font-bold tracking-tight text-black dark:text-white">
           Top Tracks
         </h2>

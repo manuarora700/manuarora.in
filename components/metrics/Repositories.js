@@ -8,7 +8,7 @@ export default function Repositories() {
   const { data } = useSWR("/api/github", fetcher);
 
   const repoCount = format(data?.repoCount);
-  const link = "https://github.com/manuarora700";
+  const link = "https://github.com/a3har";
 
   return (
     <MetricCard header="GitHub Repositories" link={link} metric={repoCount} />
