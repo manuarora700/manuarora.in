@@ -174,7 +174,7 @@ export default function Home() {
           icon="more"
         /> */}
         {/* <Timeline /> */}
-        {/* <Contact /> */}
+        <Contact />
       </div>
     </Container>
   );

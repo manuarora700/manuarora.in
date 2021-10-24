@@ -12,7 +12,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 export default function Contact() {
   const Divider = () => {
     return (
-      <div className="border border-gray-200 dark:border-gray-600 w-full my-8" />
+      <div className="w-full my-8 border border-gray-200 dark:border-gray-600" />
     );
   };
   const [form, setForm] = useState(false);
@@ -52,16 +52,16 @@ export default function Contact() {
   };
 
   return (
-    <div className="border border-blue-200 rounded p-6 my-4 w-full dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
-      <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
-        Want to hire me as a freelancer? Let's discuss.
+    <div className="w-full p-6 my-4 border border-blue-200 rounded dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
+      <h5 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-100">
+        Want to make a friend? Let's talk.
       </h5>
       <p className="my-1 text-gray-800 dark:text-gray-200">
-        Drop your message and let's discuss about your project.
+        Drop a hi and lets find our shared interests.
       </p>
       <a
-        href="https://wa.me/919587738861?text=I want to work on a project with you"
-        className="mt-4 px-4 text-center w-full font-bold h-8 bg-green-400 dark:bg-green-400 text-gray-900 py-1 dark:text-gray-900 rounded"
+        href="https://wa.me/8943145293?text=Hi, Got your number from the portfolio"
+        className="w-full h-8 px-4 py-1 mt-4 font-bold text-center text-gray-900 bg-green-400 rounded dark:bg-green-400 dark:text-gray-900"
         type="submit"
       >
         Chat on WhatsApp
@@ -75,14 +75,14 @@ export default function Contact() {
         <input
           ref={inputEl}
           aria-label="Email for newsletter"
-          placeholder="manu@gmail.com"
+          placeholder="azharmuham12@gmail.com"
           type="email"
           autoComplete="email"
           required
-          className="px-4 py-2 mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full border-gray-300 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+          className="block w-full px-4 py-2 mt-1 text-gray-900 bg-white border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
         />
         <button
-          className="flex items-center justify-center absolute right-1 top-1 px-4 font-bold h-8 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded w-28"
+          className="absolute flex items-center justify-center h-8 px-4 font-bold text-gray-900 bg-gray-100 rounded right-1 top-1 dark:bg-gray-700 dark:text-gray-100 w-28"
           type="submit"
         >
           {form.state === "Sending" ? <LoadingSpinner /> : "Send"}

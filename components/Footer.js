@@ -32,11 +32,11 @@ export default function Footer() {
               Dashboard
             </a>
           </Link>
-          {/* <Link href="/projects">
+          <Link href="/projects">
             <a className="text-gray-500 transition hover:text-gray-600">
               Projects
             </a>
-          </Link>  */}
+          </Link>
         </div>
         <div className="flex flex-col space-y-4">
           <ExternalLink href={Social.GITHUB_URL}>GitHub</ExternalLink>

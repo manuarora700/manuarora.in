@@ -5,15 +5,15 @@ export default function Snippets({ snippets }) {
   // TODO: Make sections for each type, ex: Javascript, HTML CSS etc
   return (
     <Container
-      title="Resources – Manu Arora"
+      title={`Resources – ${NAME}`}
       description="Helpful websites that I've been using for years that have helped me in developing
       applications and much more"
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Resources
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
+        <p className="mb-4 text-gray-600 dark:text-gray-400">
           Helpful{" "}
           <span className="bg-gray-100 border rounded-md px-1 py-0.5 tracking-tight dark:text-gray-300 dark:bg-gray-700">
             websites
@@ -22,10 +22,10 @@ export default function Snippets({ snippets }) {
           applications and much more. 🔥
         </p>
 
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
+        <h2 className="mt-8 text-xl font-bold tracking-tight text-black border-b-4 border-green-300 md:text-2xl dark:text-white">
           Utilities
         </h2>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+        <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
           {/* https://hypercolor.dev/ */}
           <ResourcesCard
             title="Get Avaataars"
@@ -65,10 +65,10 @@ export default function Snippets({ snippets }) {
           />
         </div>
 
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
+        <h2 className="mt-8 text-xl font-bold tracking-tight text-black border-b-4 border-green-300 md:text-2xl dark:text-white">
           User Interface
         </h2>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+        <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
           {/* https://storyset.com/ */}
           <ResourcesCard
             title="Story Set"
@@ -135,10 +135,10 @@ export default function Snippets({ snippets }) {
 
           {/* https://bgjar.com/ */}
         </div>
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
+        <h2 className="mt-8 text-xl font-bold tracking-tight text-black border-b-4 border-green-300 md:text-2xl dark:text-white">
           Everyday use
         </h2>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+        <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
           {/* https://css.gg/ */}
           <ResourcesCard
             title="Free Icons (700+)"
@@ -230,11 +230,11 @@ export default function Snippets({ snippets }) {
 
           {/* https://resumeworded.com/ */}
         </div>
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
+        <h2 className="mt-8 text-xl font-bold tracking-tight text-black border-b-4 border-green-300 md:text-2xl dark:text-white">
           Free Themes
         </h2>
         {/* https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit */}
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+        <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
           <ResourcesCard
             title="Free Pixel Theme"
             link="https://themesberg.com/product/ui-kit/pixel-free-bootstrap-5-ui-kit"
@@ -261,10 +261,10 @@ export default function Snippets({ snippets }) {
           />
         </div>
 
-        <h2 className="font-bold text-xl md:text-2xl tracking-tight mt-8 text-black dark:text-white border-b-4 border-green-300">
+        <h2 className="mt-8 text-xl font-bold tracking-tight text-black border-b-4 border-green-300 md:text-2xl dark:text-white">
           Productivity
         </h2>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+        <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
           <ResourcesCard
             title="LinkedIn analysis"
             link="https://resumeworded.com"

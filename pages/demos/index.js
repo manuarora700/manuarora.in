@@ -1,19 +1,20 @@
 import Container from "@/components/Container";
 import DemosCard from "@/components/DemosCard";
 import ResourcesCard from "@/components/ResourcesCard";
+import { NAME } from "constants/app";
 
 export default function Demos() {
   // TODO: Make sections for each type, ex: Javascript, HTML CSS etc
   return (
     <Container
-      title="Live Demos – Manu Arora"
+      title={`Live Demos – ${NAME}`}
       description="Live Demo pages for all the code snippets and blogs I've written."
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           Live Demos
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
+        <p className="mb-4 text-gray-600 dark:text-gray-400">
           <span className="bg-gray-100 border rounded-md px-1 py-0.5 tracking-tight dark:text-gray-300 dark:bg-gray-700">
             Live Demos
           </span>{" "}
@@ -21,8 +22,8 @@ export default function Demos() {
           demos for those here. The source code is attached here and in the blog
           too. 🙌🏻
         </p>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
-          <DemosCard
+        <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
+          {/* <DemosCard
             title="Gradient"
             link="demos/demo/gradient"
             description="Gradient text for headers"
@@ -51,7 +52,7 @@ export default function Demos() {
             title="Border Gradient"
             link="demos/demo/borderGradient"
             description="Add gradients to border"
-          />
+          /> */}
         </div>
       </div>
     </Container>

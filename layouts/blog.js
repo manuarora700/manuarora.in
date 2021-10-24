@@ -5,21 +5,22 @@ import Container from "@/components/Container";
 import ViewCounter from "@/components/ViewCounter";
 import Contact from "@/components/Contact";
 import Link from "next/link";
+import { NAME } from "constants/app";
 
 export default function BlogLayout({ children, frontMatter }) {
   return (
     <Container
-      title={`${frontMatter.title} – Manu Arora`}
+      title={`${frontMatter.title} – ${NAME}`}
       description={frontMatter.summary}
       image={`https://manuarora.in${frontMatter.image}`}
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
     >
-      <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
+      <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-16">
         <Link href="/blog">
           <a>
             <svg
-              className="h-8 w-8 dark:text-white text-gray-500"
+              className="w-8 h-8 text-gray-500 dark:text-white"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -34,34 +35,34 @@ export default function BlogLayout({ children, frontMatter }) {
             </svg>
           </a>
         </Link>
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           {frontMatter.title}
         </h1>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
+        <div className="flex flex-col items-start justify-between w-full mt-2 mb-8 md:flex-row md:items-center">
           <div className="flex items-center">
             <Image
-              alt="Manu Arora"
+              alt={`${NAME}`}
               height={24}
               width={24}
               src="/avatar.jpg"
               className="rounded-full"
             />
-            <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
+            <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
               {frontMatter.by}
-              {"Manu Arora / "}
+              {`${NAME} / `}
               {format(parseISO(frontMatter.publishedAt), "MMMM dd, yyyy")}
             </p>
           </div>
-          <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
+          <p className="mt-2 text-sm text-gray-500 min-w-32 md:mt-0">
             {frontMatter.readingTime.text}
             {` • `}
             <ViewCounter slug={frontMatter.slug} />
           </p>
         </div>
-        <div className="prose dark:prose-dark max-w-none w-full">
+        <div className="w-full prose dark:prose-dark max-w-none">
           {children}
         </div>
-        <div className="mt-8 w-full mx-auto">
+        <div className="w-full mx-auto mt-8">
           <Contact />
         </div>
         {/* <div className="text-sm text-gray-700 dark:text-gray-300">

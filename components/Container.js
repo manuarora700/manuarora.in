@@ -106,12 +106,12 @@ export default function Container(props) {
             <a className="hidden p-1 text-gray-900 sm:p-4 md:inline dark:text-gray-100">
               Snippets
             </a>
-          </NextLink>
+          </NextLink>*/}
           <NextLink href="/projects">
             <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">
               Projects
             </a>
-          </NextLink> */}
+          </NextLink>
         </div>
       </nav>
       <main

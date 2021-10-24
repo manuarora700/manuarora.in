@@ -1,19 +1,21 @@
+import Icons from "./Icons";
+
 export default function ProjectCard({ title, description, href, icon, tags }) {
   // const tags = ["GitHub", "React", "JamStack"];
   return (
     <a
-      className="mb-4 hover:shadow"
+      className="w-full mb-4 hover:shadow"
       href={href}
       aria-label={title}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="flex items-center border border-gray-200 dark:border-gray-800 rounded p-4">
+      <div className="flex items-center p-4 border border-gray-200 rounded dark:border-gray-800">
         {/* */}
         {icon === "tailwindmasterkit" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             {/*  
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100"
             */}
 
             <svg
@@ -22,7 +24,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
               viewBox="0 0 260 260"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100 "
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100 "
             >
               <rect width="260" height="260" rx="11" fill="#FBBF24" />
               <path
@@ -40,28 +42,91 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
             </svg>
           </div>
         )}
-        {icon === "covidrescue" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+        {icon === "greninja" && (
+          <div className="w-8 h-8 ml-2 mr-4">
+            <svg viewBox="0 0 180 180">
+              <g
+                transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                fill="#000000"
+                stroke="none"
+              >
+                <path
+                  d="M0 900 l0 -900 900 0 900 0 0 224 0 225 -52 5 c-29 3 -105 10 -168
+16 -222 22 -464 82 -595 148 -332 167 -474 471 -479 1025 l-1 157 -252 0 -253
+0 0 -900z m458 683 l-3 -38 -107 -3 -108 -3 0 -30 c0 -67 39 -119 103 -134 24
+-6 27 -5 27 19 0 21 -5 26 -25 26 -22 0 -25 4 -25 35 0 33 2 35 33 35 17 0 49
+3 70 6 l37 7 0 -113 0 -113 -71 7 c-38 3 -87 13 -107 22 -77 32 -131 111 -132
+190 0 28 -5 44 -15 48 -9 3 -15 19 -15 41 l0 35 171 0 170 0 -3 -37z m30 -444
+c-6 -96 -22 -118 -91 -126 l-45 -5 69 -60 c38 -33 69 -62 69 -64 0 -2 -22 -4
+-49 -4 -42 0 -56 6 -115 50 l-66 51 0 -51 0 -50 -45 0 -45 0 0 170 0 170 161
+0 162 0 -5 -81z m22 -393 c0 -33 -1 -33 -52 -40 -29 -3 -79 -6 -110 -6 -51 0
+-58 -2 -58 -20 0 -18 7 -20 85 -20 l85 0 0 -40 0 -40 -80 0 c-78 0 -80 -1 -80
+-25 0 -24 1 -24 108 -27 l107 -3 3 -37 3 -38 -175 0 -176 0 0 165 0 165 170 0
+170 0 0 -34z m125 -466 l0 -125 -42 -3 -43 -3 0 131 0 131 43 -3 42 -3 0 -125z
+m183 43 c106 -69 112 -71 112 -48 0 23 4 25 45 25 l45 0 0 -106 c0 -81 -3
+-104 -12 -98 -7 4 -66 43 -130 86 l-118 78 0 -55 0 -55 -40 0 -40 0 0 131 c0
+101 3 129 13 123 6 -4 63 -41 125 -81z m397 0 c-1 -95 -15 -122 -81 -161 -55
+-31 -88 -26 -92 15 -3 29 1 34 32 47 38 16 56 41 56 80 l0 26 -100 0 -100 0 0
+40 0 41 143 -3 142 -3 0 -82z m-911 -3 c58 -38 108 -70 111 -70 3 0 5 34 5 75
+l0 75 45 0 45 0 0 -160 0 -160 -120 80 c-66 44 -122 80 -125 80 -3 0 -5 -22
+-5 -50 l0 -50 -45 0 -45 0 0 131 c0 111 2 130 15 126 8 -4 62 -38 119 -77z
+m1268 18 c3 -46 6 -53 26 -56 18 -3 22 -10 22 -38 0 -30 -3 -34 -25 -34 -22 0
+-25 -4 -25 -35 0 -33 -2 -35 -35 -35 -33 0 -35 2 -35 35 l0 35 -80 0 c-70 0
+-81 -2 -90 -21 -10 -17 -64 -49 -85 -49 -12 0 -4 69 10 80 11 9 15 33 15 91
+l0 79 149 0 150 0 3 -52z"
+                />
+                <path
+                  d="M260 1115 c0 -24 2 -25 70 -25 68 0 70 1 70 25 0 24 -2 25 -70 25
+-68 0 -70 -1 -70 -25z"
+                />
+                <path
+                  d="M1340 305 c0 -12 16 -15 80 -15 64 0 80 3 80 15 0 12 -16 15 -80 15
+-64 0 -80 -3 -80 -15z"
+                />
+                <path
+                  d="M680 1606 c0 -4 23 -50 51 -102 28 -52 48 -94 45 -94 -3 0 -32 13
+-63 29 -32 17 -59 28 -61 26 -3 -2 15 -55 38 -117 40 -109 73 -158 105 -158
+22 0 38 -76 31 -142 l-7 -57 63 -73 c35 -40 97 -108 139 -151 l76 -78 44 37
+c24 20 97 88 163 151 l118 115 -6 52 c-4 29 -4 65 0 80 6 24 10 27 33 21 14
+-4 35 -15 47 -26 20 -19 21 -19 48 10 l27 29 -32 11 c-17 6 -45 11 -60 11 -16
+0 -29 4 -29 9 0 15 99 34 146 27 l44 -6 0 45 c0 42 -2 45 -22 40 -63 -14 -105
+-24 -125 -30 -20 -6 -17 6 37 142 84 214 83 205 9 147 -34 -27 -94 -73 -133
+-103 -39 -29 -97 -75 -128 -102 -31 -27 -61 -49 -67 -49 -5 0 -19 30 -30 68
+-11 37 -26 90 -34 117 l-15 50 -12 -30 c-6 -16 -25 -68 -40 -115 -16 -46 -33
+-86 -38 -88 -4 -1 -51 37 -103 85 -80 76 -120 110 -241 212 -10 8 -18 11 -18
+7z m245 -525 c96 -205 166 -341 176 -341 3 0 71 108 150 240 79 131 147 239
+151 240 4 0 1 -19 -7 -41 -9 -23 -15 -77 -15 -122 l0 -80 -122 -124 c-68 -69
+-131 -129 -142 -135 -22 -12 -40 3 -172 154 l-94 106 0 95 c0 77 -5 107 -25
+161 -14 37 -25 72 -25 78 0 26 36 -41 125 -231z"
+                />
+                <path
+                  d="M880 1061 c0 -38 25 -112 43 -128 29 -26 57 -36 57 -20 0 19 -75 150
+-88 155 -7 2 -12 -1 -12 -7z"
+                />
+                <path
+                  d="M1269 974 c-28 -42 -48 -78 -45 -82 13 -13 74 28 88 60 22 47 32 98
+19 98 -6 0 -33 -34 -62 -76z"
+                />
+              </g>
+            </svg>
+          </div>
+        )}
+
+        {icon === "checkoutdashboard" && (
+          <div className="w-8 h-8 ml-2 mr-4">
             <svg
+              viewBox="0 0 46 21"
+              fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100 "
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-              />
+              <path d="M45.16.049L31.157 0c-4.44 0-8.364 1.998-10.08 5.68C19.363 1.997 15.44 0 10.997 0 5.034 0 0 3.6 0 10.049s5.034 10.048 10.997 10.048c4.443 0 8.366-1.996 10.08-5.68 1.716 3.684 5.64 5.68 10.08 5.68 5.965 0 10.999-3.587 10.999-10.049 0-2.301-.644-4.238-1.74-5.78L45.16.048zM10.997 15.05c-2.983 0-5.032-2.057-5.032-5.002 0-2.897 2.05-5 5.032-5 2.983 0 5.034 2.11 5.034 5 0 2.945-2.051 5.002-5.034 5.002zm20.16 0c-2.98 0-5.032-2.057-5.032-5.002 0-2.897 2.051-5 5.032-5 2.98 0 5.033 2.11 5.033 5 0 2.945-2.05 5.002-5.033 5.002z" />
             </svg>
           </div>
         )}
         {icon === "gba" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <svg
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
@@ -71,9 +136,9 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon === "devmedium" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <svg
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -89,9 +154,9 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon === "github" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <svg
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
@@ -105,9 +170,9 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon === "ipl" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <svg
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -123,11 +188,11 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon === "music" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <span className="sr-only">Music Streaming Application</span>
 
             <svg
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100"
               class="w-6 h-6"
               fill="none"
               stroke="currentColor"
@@ -144,11 +209,11 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon == "placeholdertech" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <span className="sr-only">PlaceholderTech</span>
 
             <svg
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100"
               width="366"
               height="385"
               viewBox="0 0 366 385"
@@ -225,11 +290,11 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon == "play" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <span className="sr-only">Play Placeholdertech</span>
 
             <svg
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-lg dark:text-gray-100"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 100 100"
@@ -241,10 +306,10 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon == "fastfeedback" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <span className="sr-only">Feedmeback</span>
             <svg
-              className="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-sm dark:text-gray-100"
               viewBox="0 0 46 32"
             >
               <path
@@ -255,11 +320,11 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon == "algochurn" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <span className="sr-only">Algochurn</span>
 
             <svg
-              className="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-sm dark:text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -276,11 +341,11 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
         )}
 
         {icon == "vscode" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <span className="sr-only">Vscode Resume</span>
 
             <svg
-              className="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-sm dark:text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
@@ -290,11 +355,11 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           </div>
         )}
         {icon == "more" && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="w-8 h-8 ml-2 mr-4">
             <span className="sr-only">Vscode Resume</span>
 
             <svg
-              className="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100"
+              className="w-8 h-8 text-gray-900 min-w-sm dark:text-gray-100"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -329,7 +394,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
               <p className="leading-5 text-gray-700 dark:text-gray-300">
                 {description}
               </p>
-              <div className="pt-2 flex md:flex-row space-x-2">
+              <div className="flex pt-2 space-x-2 md:flex-row">
                 {tags?.map((tag, idx) => (
                   <p
                     key={idx}

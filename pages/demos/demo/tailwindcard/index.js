@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import { NAME } from "constants/app";
 
 export default function CardBasic() {
   return (
     <div>
-      <div className="bg-gray-200 h-screen">
+      <div className="h-screen bg-gray-200">
         <div className="px-8">
           <Link href="https://manuarora.in/snippets/tailwind-card">
             <a>
@@ -12,13 +13,13 @@ export default function CardBasic() {
                 <img
                   src="https://picsum.photos/id/237/200/300"
                   alt="image-text"
-                  className="rounded-tr-md rounded-tl-md h-48 w-full lg:h-auto lg:w-2/5 lg:rounded-bl-md lg:rounded-tr-none"
+                  className="w-full h-48 rounded-tr-md rounded-tl-md lg:h-auto lg:w-2/5 lg:rounded-bl-md lg:rounded-tr-none"
                 />
-                <div className="bg-white p-8 rounded-bl-md rounded-br-md lg:rouned-bl-none lg:rounded-tr-md">
-                  <h2 className="text-gray-700 font-semibold">
+                <div className="p-8 bg-white rounded-bl-md rounded-br-md lg:rouned-bl-none lg:rounded-tr-md">
+                  <h2 className="font-semibold text-gray-700">
                     Tailwind Ui Card
                   </h2>
-                  <p className="text-sm text-gray-600 mt-4">
+                  <p className="mt-4 text-sm text-gray-600">
                     Tailwind UI card is built with Tailwindcss, this minimal
                     card can be used for several purposes including business
                     cards, pricing and in general.
@@ -26,19 +27,19 @@ export default function CardBasic() {
                   <div className="flex items-center mt-8">
                     <div className="flex items-center">
                       <img
-                        className="h-10 w-10 rounded-full"
+                        className="w-10 h-10 rounded-full"
                         src="https://manuarora.in/avatar.jpg"
                         alt="avatar"
                       />
                       <div className="ml-4">
-                        <p className="text-gray-800 text-sm font-semibold">
-                          Manu Arora
+                        <p className="text-sm font-semibold text-gray-800">
+                          {NAME}
                         </p>
-                        <p className="text-gray-400 text-sm">Next JS</p>
+                        <p className="text-sm text-gray-400">Next JS</p>
                       </div>
                     </div>
 
-                    <div className="w-8 h-8 ml-auto bg-gray-200 rounded-full flex items-center justify-center">
+                    <div className="flex items-center justify-center w-8 h-8 ml-auto bg-gray-200 rounded-full">
                       <svg
                         width="16"
                         viewBox="0 -22 512 511"
