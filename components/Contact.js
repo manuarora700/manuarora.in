@@ -67,11 +67,11 @@ export default function Contact() {
         Chat on WhatsApp
       </a>
 
-      <Divider />
+      {/* <Divider />
       <p className="my-1 text-gray-800 dark:text-gray-200">
         Drop in your email ID and I will get back to you.
       </p>
-      {/* <form className="relative my-4" onSubmit={subscribe}>
+      <form className="relative my-4" onSubmit={subscribe}>
         <input
           ref={inputEl}
           aria-label="Email for newsletter"
