@@ -61,7 +61,7 @@ export default function Contact() {
       </p>
       <a
         href="https://wa.me/8943145293?text=Hi, Got your number from the portfolio"
-        className="w-full h-8 px-4 py-1 mt-4 font-bold text-center text-gray-900 bg-green-400 rounded dark:bg-green-400 dark:text-gray-900"
+        className="block w-full h-8 px-4 py-1 mt-4 font-bold text-center text-gray-900 bg-green-400 rounded dark:bg-green-400 dark:text-gray-900"
         type="submit"
       >
         Chat on WhatsApp
