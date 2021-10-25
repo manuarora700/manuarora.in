@@ -2,13 +2,13 @@ import { useState } from "react";
 
 const Divider = () => {
   return (
-    <div className="border border-gray-200 dark:border-gray-600 w-full my-8" />
+    <div className="w-full my-8 border border-gray-200 dark:border-gray-600" />
   );
 };
 
 const Year = ({ children }) => {
   return (
-    <h3 className="text-lg md:text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
+    <h3 className="mb-4 text-lg font-bold tracking-tight text-gray-900 md:text-xl dark:text-gray-100">
       {children}
     </h3>
   );
@@ -19,7 +19,7 @@ const Step = ({ title, children }) => {
     <li className="mb-4 ml-2">
       <div className="flex items-center mb-2 text-green-700 dark:text-green-300">
         <span className="sr-only">Check</span>
-        <svg className="h-4 w-4 mr-2" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24">
           <g
             fill="none"
             stroke="currentColor"
@@ -33,7 +33,9 @@ const Step = ({ title, children }) => {
         </svg>
         <p className="font-medium text-gray-900 dark:text-gray-100">{title}</p>
       </div>
-      <p className="text-gray-700 dark:text-gray-400 ml-6">{children}</p>
+      <div className="flex flex-col ml-6 text-gray-700 dark:text-gray-400">
+        {children}
+      </div>
     </li>
   );
 };
@@ -41,105 +43,95 @@ const Step = ({ title, children }) => {
 const FullTimeline = () => (
   <>
     <Divider />
-    <Year>2018</Year>
+    <Year>2019</Year>
     <ul>
-      <Step title="Internship - Intel 🤘🏻">
-        Got an Internship at Intel as a Machine Learning Intern. Developed a
-        Pothole Detection System & Face Averaging system using Machine Learning.
-      </Step>
-      <Step title="Entrepreneurial Workshops 🔩">
-        Organised workshops (Part of E-Cell) on topics like Entrepreneurship and
-        Web Development.
-      </Step>
-      <Step title="Full-Stack Journey 🔩">
-        Learnt NodeJS, MongoDB, MySQL along with React and the best practices to
-        build products and web apps which can scale easily.
+      <Step title="Reached finals on Intech Olympiad 2019 🎊">
+        <div>
+          Hustled to be among the 16 finalists from around 20,000 participants
+          nation wide. Developed an{" "}
+          <a
+            className="pr-1 text-yellow-500"
+            href="https://github.com/a3har/online_marketplace"
+            target="_blank"
+          >
+            Online Marketplace for two-wheeler reselling
+          </a>
+          using WordPress and Django as part of the hackathon.
+        </div>
       </Step>
     </ul>
     <Divider />
     <Year>2016</Year>
     <ul>
-      <Step title="Startup - Aceternity 💣">
-        Started a web development and digital marketing agency from scratch.
-        Generated revenue and designed websites for clients.
+      <Step title="Developed interest in Web Development 🚀">
+        Started noticing the power of HTML and CSS in developing real world
+        applications. Messed around a little with WordPress and Django.
+        Developed a hostel management system to automate hand written registers
+        that had to be maintained manually
       </Step>
-      <Step title="React Enthusiast ⚒">
-        Was introducted to React, took up a course on Udemy to get the hang of
-        it. I haven't stopped since then.
-      </Step>
-      <Step title="Open Source Contributions ⚙️">
-        Started contributing to open source on a daily basis. Contributed to
-        smaller projects to learn more on the contributing part.
+      <Step title="Joined University 📜">
+        Moved to India to study Computer Science formally in Rajagiri School of
+        Engineering and Technology.
       </Step>
     </ul>
     <Divider />
     <Year>2015</Year>
     <ul>
-      <Step title="Started College 🔥">
-        Opted for Computer Science B.Tech Degree from University of Petroleum
-        and Energy Studies, Dehradun.
+      <Step title="Developed an online diary 📓">
+        Developed a feature packed online diary using just C++ as part of the
+        12th Grade CS Project. It had an address book, a TO-DO list, Tic Tac Toe
+        and much more.
       </Step>
-      <Step title="Introduced to Open Source ⚡️">
-        My Domain was Open Source Software and Open Standards. I got to know
-        about Free Software Foundation, Git and GitHub and Linux systems.
-      </Step>
-      <Step title="jQuery fanboy 🙌🏻">
-        Started working with jQuery, I was amazed by the level of simplicity it
-        provided back then.
-      </Step>
-      <Step title="C and C++ 🙌🏻">
-        Started learning logics and basic programming fundamentals with Object
-        Oriented Programming. C was intimidating, C++ was fun.
-      </Step>
-      <Step title="First Back 😂">
-        I consider this as an achievement. If you're a CS Engineer, you must
-        have a back in Mathematics.
+      <Step title="Plays on Stage Live 🤘🏼">
+        It felt absolutely insane when an introverted kid like me decided to
+        take this step and got to play with an amazing set of musicians.
       </Step>
     </ul>
     <Divider />
     <Year>2014</Year>
     <ul>
-      <Step title="Completed 12th Grade 📜">
-        Completed 12th grade with 93.6% Marks in Science stream. Again, a big
-        achievement for me.
+      <Step title="Got my first smartphone 📱">
+        I got a Samsung Galaxy Note 3 right after it launched. I finally felt
+        like one of the cool kids.
       </Step>
-      <Step title="Developed interest in Web Development 🚀">
-        One of my friends introduced me to Web Development. I started off by
-        making simple HTML, CSS websites with a keen interest in design.
-      </Step>
-    </ul>
-    <Divider />
-    <Year>2012</Year>
-    <ul>
-      <Step title="Completed 10th Grade 📜">
-        Scored 9/10 CGPA in 10th Grade. For me it was huge.
-      </Step>
-      <Step title="Wanted to take up Humanities 🌪❤️">
-        I always wanted to become a Civil Servant. Though my parents didn't
-        agree and that let me to opt for Science stream.
-      </Step>
-      <Step title="Theatre and Drama 💂🏼‍♀️">
-        Acted in my first ever skit in school.
+      <Step title="Bought My First Guitar 🎸">
+        I saved up some cash and bought my first acoustic guitar. I use this
+        even to this day.
       </Step>
     </ul>
     <Divider />
-    <Year>2008</Year>
+    <Year>2011</Year>
     <ul>
-      <Step title="First Computer 💻">
-        I played GTA San Andreas all day, everyday.
+      <Step title="I Learn Visual Basic 🖥">
+        This step made me feel more like a programmer since I could make
+        programs with GUI. I made a simple address book application.
       </Step>
     </ul>
     <Divider />
-    <Year>2001</Year>
+    <Year>2009</Year>
     <ul>
-      <Step title="Moved to Jaipur, Rajasthan 🌆">
-        We moved to Jaipur from our Hometown.
+      <Step title="I Learn C++ 🖥">
+        Dad thought it would be a good idea for me ( 6th Grade ) to listen to my
+        elder brother's C++ classes. He was right.
+      </Step>
+      <Step title="Our House Gets An Internet Connection 🌏">
+        The entire family (5) had a 2 GB/ month connection. Spent most of my
+        time on Farmville ( Facebook game ) planting crops.
       </Step>
     </ul>
     <Divider />
-    <Year>1998</Year>
+    <Year>2004</Year>
     <ul>
-      <Step title="An Enginner was Born in India 👶🏼 🍼" />
+      <Step title="Joined School 📖">
+        A place where I have a love / hate relationship. Hated the teachers,
+        Loved the people. Friends I made at the starting remain the same to this
+        day
+      </Step>
+    </ul>
+    <Divider />
+    <Year>1999</Year>
+    <ul>
+      <Step title="An Engineer was Born in Bahrain 👶🏼 🍼" />
     </ul>
   </>
 );
@@ -149,61 +141,152 @@ export default function Timeline() {
 
   return (
     <>
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+      <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
         Timeline
       </h3>
       <Year>2021</Year>
       <ul>
-        <Step title="Created covidrescue.co.in 💊">
-          Created <a href="https://www.covidrescue.co.in">covidrescue.co.in</a>
-          to help people with verified leads on Oxygen, Remdesivir, Food, Beds,
-          ICU, Medicines and more.
+        <Step
+          title={
+            <div>
+              Developed a dashboard for{" "}
+              <a
+                className="pr-1 text-yellow-500"
+                href="https://apps.shopify.com/checkout-upsell-promotions"
+                target="_blank"
+              >
+                Checkout Upsell & Promotions
+              </a>{" "}
+              💸
+            </div>
+          }
+        >
+          Worked on a brand new product for Glood.AI by creating a dashboard for
+          it using React, TailwindCSS and other tools.
         </Step>
-        <Step title="Created Covid-19 Vaccination slots notification system 💉">
-          Integrated Vaccination slots notification system in covidrescue web
-          app. Notified people whenever vaccination slot was available in their
-          area and city.
+        <Step
+          title={
+            <div>
+              Joined{" "}
+              <a
+                className="pr-1 text-yellow-500"
+                href="https://glood.ai"
+                target="_blank"
+              >
+                Glood.AI
+              </a>{" "}
+              🎉
+            </div>
+          }
+        >
+          <span>🔸Joined a blazing fast paced startup as employee #1</span>
+          <span>
+            🔸Worked on the flagship product{" "}
+            <a
+              className="pr-1 text-yellow-500"
+              href="https://apps.shopify.com/recommendation-kit"
+              target="_blank"
+            >
+              Personalized Recommendations.
+            </a>
+          </span>
+          <span>
+            🔸Catered to customer support to gather feedback and then
+            implemented features / fixed bugs for the same.
+          </span>
+          <span>
+            🔸Wore multiple hats and got to work with experienced veterans
+          </span>
         </Step>
       </ul>
 
       <Year>2020</Year>
       <ul>
-        <Step title="Joined mroads 🎉">
-          {" "}
-          Joined{" "}
-          <span className="font-bold">
-            <span className="text-blue-500">m</span>roads
-          </span>{" "}
-          as a Software Development Engineer. Working on their Flagship product
-          as a Front-End Developer.
+        <Step
+          title={
+            <div>
+              Joined{" "}
+              <a
+                className="pr-1 text-yellow-500"
+                href="https://www.cognizant.com"
+                target="_blank"
+              >
+                Cognizant
+              </a>{" "}
+              🎉
+            </div>
+          }
+        >
+          <span>🔸Worked on cloud technologies like AWS IoT Greengrass</span>
+          <span>
+            🔸Developed a Career Portal using DotNet Core MVC, AWS
+            ElasticBeanstalk and S3.
+          </span>
         </Step>
-        <Step title="Cleared GATE 2019 💯">
-          Cleared GATE 2019 after 8 months of continuous studies. I still hate
-          Computer System Architecture & Organization.
+        <Step title="Graduated with multiple job offers 👨🏼‍🎓">
+          Had 3 offers in hand from Indias top MNCs. Decided to join Cognizant
+          as a Programmer Analyst Trainee
         </Step>
-        <Step title="Competitive Programming 🏆">
-          Cleared Hackerrank and Hackerearth contests. Got a strong grip on
-          Competitive Programming.
-        </Step>
-        <Step title="Taught programming to students🥳">
-          Taught fundamental programming to school students. It included Basic C
-          programming, Introduction to Web Development and logic building.
+        <Step title="Joined Verboculary as an intern 🎉">
+          <span>
+            🔸Developed reusable components in Angular, Ionic and Typescript for
+            <a
+              className="px-1 text-yellow-500"
+              href="https://play.google.com/store/apps/details?id=com.GREninja.GRE.vocabulary"
+              target="_blank"
+            >
+              GRE Ninja
+            </a>
+          </span>
+          <span>🔸Designing and Prototyping of screens in Figma</span>
+          <span>🔸Dockerization and Setting up CI / CD pipeline</span>
         </Step>
       </ul>
       <Divider />
       <Year>2019</Year>
       <ul>
-        <Step title="Placements - Got Placed ✨">
-          Had 3 offers in Hand. 1 On-Campus and 2 Off-Campus in the Software
-          Developer (Full-Stack) roles.
+        <Step title="Elected as Treasurer for CSI 🙋🏼‍♂️">
+          <span>
+            🔸Conducted IDEA Pitching, Technical Workshops, Poster Designing and
+            other events as part of the EXEC-COM for Computer Society of India (
+            CSI Student Branch ) .
+          </span>
+          <span>🔸Spearheaded Coder of the Month</span>
+          <span>
+            🔸Won second place for Code Debugging at the CSI STATE STUDENT
+            CONVENTION
+          </span>
         </Step>
-        <Step title="Full-Stack Applications 🚀">
-          Started freelancing, developed full-stack applications for clients
-          ranging from E-Commerce stores to static landing pages.
+        <Step title="Got hands dirty with Machine Learning 🧑🏼‍💻">
+          <div>
+            Developed a{" "}
+            <a
+              className="text-yellow-500 "
+              href="https://github.com/a3har/Lab_report_detector"
+              target="_blank"
+            >
+              model
+            </a>{" "}
+            to detect the important parts of a printed lab report. Initially
+            used Yolo v4 to train the annotated images but then tried Detectron
+            and found better results.{" "}
+          </div>
         </Step>
-        <Step title="GATE Preparation ⚛️">
-          Started preparing for GATE (Graduate Aptitute Test in Engineering).
-          Learnt all the Computer Science subjects again from scratch.
+        <Step title="Developed medical record documentation system 🧑🏼‍⚕️">
+          <div>
+            Created a{" "}
+            <a
+              className="text-yellow-500 "
+              href="https://github.com/a3har/MRDS"
+              target="_blank"
+            >
+              system
+            </a>{" "}
+            to digitize paper lab reports and extract structured data as part of
+            my final year project at the university. Used AWS Textract and
+            Regular Expression to achieve it and created a web service using
+            Django
+          </div>
         </Step>
       </ul>
       {isShowingFullTimeline ? (
@@ -211,12 +294,12 @@ export default function Timeline() {
       ) : (
         <button
           type="button"
-          className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
+          className="flex items-center px-4 py-2 mx-auto my-4 text-sm font-medium text-gray-900 rounded-md dark:text-gray-100"
           onClick={() => showFullTimeline(true)}
         >
           See More
           <svg
-            className="h-4 w-4 ml-1"
+            className="w-4 h-4 ml-1"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

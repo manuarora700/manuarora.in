@@ -149,7 +149,7 @@ export default function Home() {
             </svg>
           </a>
         </Link>
-        {/* <Timeline /> */}
+        <Timeline />
         <Contact />
       </div>
     </Container>
