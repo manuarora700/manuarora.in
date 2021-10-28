@@ -9,7 +9,7 @@ export default function GitHub() {
 
   const stars = format(data?.stars);
   const followers = format(data?.followers);
-  const link = "https://github.com/manuarora700";
+  const link = "https://github.com/a3har";
 
   return <MetricCard header="GitHub Stars" link={link} metric={stars} />;
 }

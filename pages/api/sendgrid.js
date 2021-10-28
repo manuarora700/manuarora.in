@@ -39,7 +39,7 @@ export default async (req, res) => {
               <p class="footer" style="font-size: 16px;padding-bottom: 20px;border-bottom: 1px solid #D1D5DB;">Regards<br>Muhammad Azhar<br>Software Developer<br>+91 8943145293</p>
               <div class="footer-links" style="display: flex;justify-content: center;align-items: center;">
                 <a href="https://a3har.com/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Website</a>
-                <a href="https://manuarora.in/blog/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Blog</a>
+                <a href="https://a3har.com/blog/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Blog</a>
                 <a href="https://github.com/a3har/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">GitHub</a>
                 <a href="https://www.instagram.com/m_a3har/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Instagram</a>
                 <a href="https://www.linkedin.com/in/a3har/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">LinkedIn</a>
