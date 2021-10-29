@@ -72,7 +72,7 @@ export default function Blog({ posts }) {
         </div>
         {!searchValue && (
           <>
-            <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+            {/* <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
               Most Popular
             </h3>
             <BlogPost
@@ -84,7 +84,7 @@ export default function Blog({ posts }) {
               title="How I built a blogging platform like Medium with Next.js"
               summary="Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
               slug="blogging-platform-nextjs"
-            />
+            /> */}
             {/* <BlogPost
               title="How to design a minimal and beautiful website which actually converts"
               summary="Examining the tips and tricks used to make a website design a notch above the rest."
