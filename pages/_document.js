@@ -89,12 +89,12 @@ class MyDocument extends Document {
             sizes="32x32"
             href="/static/favicons/favicon-32x32.png"
           />
-          <link
+          {/* <link
             rel="icon"
             type="image/png"
             sizes="96x96"
             href="/static/favicons/favicon-96x96.png"
-          />
+          /> */}
           <link
             rel="icon"
             type="image/png"
