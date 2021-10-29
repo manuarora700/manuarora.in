@@ -52,6 +52,14 @@ export default function projects() {
         </h3>
 
         <ProjectCard
+          title="Only1 Dashboard - Frontend"
+          description="A feature packed dashboard for team management."
+          href="https://only1.a3har.com"
+          Icon={Icons.Only1}
+          tags={["React", "Frontend"]}
+        />
+
+        <ProjectCard
           title="Food Menu - UI Design"
           description="View the restaurant menu before you enter it."
           href="https://www.figma.com/file/dSFqCEq0OQ4s1KmPunV8jk/Food-Menu?node-id=0%3A1"
