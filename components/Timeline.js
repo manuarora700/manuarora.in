@@ -45,7 +45,21 @@ const FullTimeline = () => (
     <Divider />
     <Year>2019</Year>
     <ul>
-      <Step title="Reached finals on Intech Olympiad 2019 🎊">
+      <Step
+        title={
+          <div>
+            Reached finals on{" "}
+            <a
+              className="pr-1 text-yellow-500"
+              href="https://portal.coepvlab.ac.in/InTechOlympiad/welcome"
+              target="_blank"
+            >
+              Intech Olympiad
+            </a>
+            2019 🎊
+          </div>
+        }
+      >
         <div>
           Hustled to be among the 16 finalists from around 20,000 participants
           nation wide. Developed an{" "}
