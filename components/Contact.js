@@ -9,6 +9,8 @@ import SuccessMessage from "@/components/SuccessMessage";
 import ErrorMessage from "@/components/ErrorMessage";
 import LoadingSpinner from "@/components/LoadingSpinner";
 
+import * as Social from "constants/social";
+
 export default function Contact() {
   const Divider = () => {
     return (
@@ -60,7 +62,7 @@ export default function Contact() {
         Drop a "Hi" and lets find our shared interests.
       </p>
       <a
-        href="https://wa.me/918943145293?text=Hi, Got your number from the portfolio"
+        href={`https://wa.me/${Social.COUNTRY_CODE_PNO}${Social.PHONE_NO}?text=Hi, Got your number from the portfolio`}
         className="block w-full h-8 px-4 py-1 mt-4 font-bold text-center text-gray-900 bg-green-400 rounded dark:bg-green-400 dark:text-gray-900"
         type="submit"
       >
@@ -75,7 +77,7 @@ export default function Contact() {
         <input
           ref={inputEl}
           aria-label="Email for newsletter"
-          placeholder="azharmuham12@gmail.com"
+          placeholder={Social.EMAIL_ID}
           type="email"
           autoComplete="email"
           required
