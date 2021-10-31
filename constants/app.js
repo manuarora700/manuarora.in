@@ -3,12 +3,12 @@ function getName() {
 }
 
 function getTitle() {
-  return `${getName()} - Developer, Writer, Creator`;
+  return `${getName()} - Developer, Builder`;
 }
 
 export const NAME = process.env.NAME || "Muhammad Azhar";
 
-export const TITLE = `${getName()} - Developer, Writer, Creator`;
+export const TITLE = `${getName()} - Developer, Builder`;
 
 export const DESCRIPTION =
   "Full-Stack developer, JavaScript enthusiast and a Learner.";

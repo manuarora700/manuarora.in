@@ -38,22 +38,24 @@ export default function Home() {
         </div>
         <RoughNotationGroup show={isFontReady}>
           <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-            Hey, I’m{" "}
+            <span className="pr-3">Hey, I’m</span>
             <RainbowHighlight color={colors[0]}>
               <span className="dark:text-black">{AppConfig.NAME}</span>
             </RainbowHighlight>{" "}
           </h1>
 
           <h2 className="mt-4 mb-16 font-light leading-loose tracking-wide text-gray-600 dark:text-gray-400">
-            I’m a developer, writer, and creator. I work at{" "}
-            <a className="font-bold" href="https://glood.ai">
+            <span className="pr-1">I’m a developer and builder. I work at</span>
+            <a className="pr-1 font-bold" href="https://glood.ai">
               Glood AI
-            </a>{" "}
-            as a{"   "}
+            </a>
+            <span className="pr-2">as a</span>
             <RainbowHighlight color={colors[1]}>
-              <span className="dark:text-black">Software Engineer.</span>
-            </RainbowHighlight>{" "}
-            You've discovered my place on the internet
+              <span className="-ml-1 dark:text-black">Software Engineer.</span>
+            </RainbowHighlight>
+            <span className="pl-1">
+              You've discovered my place on the internet
+            </span>
             {/* –&nbsp; */}
             {/* <RoughNotation
               type="underline"
