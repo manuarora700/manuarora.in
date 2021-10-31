@@ -43,7 +43,7 @@ export default async (req, res) => {
                 <a href="https://github.com/a3har/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">GitHub</a>
                 <a href="https://www.instagram.com/m_a3har/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Instagram</a>
                 <a href="https://www.linkedin.com/in/a3har/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">LinkedIn</a>
-                <a href="https://twitter.com/musthafa_azhar/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Twitter</a>
+                <a href="https://twitter.com/m_a3har/" style="text-decoration: none;margin: 8px;color: #9CA3AF;">Twitter</a>
                 
               </div>
               </div>
