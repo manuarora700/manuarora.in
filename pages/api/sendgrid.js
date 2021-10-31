@@ -32,7 +32,7 @@ export default async (req, res) => {
               <p>Thank you for contacting me through my website. I'm excited to know more about you.</p>
               <p><span class="spantext" style="font-weight: bold;">Reply</span> to this email with your fascinating ideas and I will get back to you.</p>
               <p>Meanwhile, <a class="blog" href="https://a3har.com/blog/" style="text-decoration: none;color: blue;font-weight: bold;">checkout my blog</a> to get more insights about me.</p>
-              <p>Or simply, just say Hi :) <a href="https://wa.me/8943145293?text=Hi" target="__blank" class="whatsapp" style="text-decoration: none;font-weight: bold;background: #10B981;padding: 4px;border-radius: 5px;color: white;">WhatsApp</a></p>
+              <p>Or simply, just say Hi :) <a href="https://wa.me/918943145293?text=Hi" target="__blank" class="whatsapp" style="text-decoration: none;font-weight: bold;background: #10B981;padding: 4px;border-radius: 5px;color: white;">WhatsApp</a></p>
               <br>
               </div>
               <img src="https://a3har.com/logo.png" class="logo-image" style="height: 50px;width: 50px;border-radius: 5px;overflow: hidden;">
