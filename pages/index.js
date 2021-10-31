@@ -33,6 +33,9 @@ export default function Home() {
       image="/avatar.jpg"
     >
       <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
+        <div className="flex flex-row justify-center w-full mb-8">
+          <Icons.NotionAvatar className="w-56 " />
+        </div>
         <RoughNotationGroup show={isFontReady}>
           <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
             Hey, I’m{" "}

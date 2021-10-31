@@ -143,6 +143,13 @@ export default function Snippets({ snippets }) {
             description="Free and unique Avatars"
           />
 
+          <ResourcesCard
+            title="Notion Style Avatars"
+            link="https://cvbox.org/"
+            websiteLink="https://cvbox.org/"
+            description="Create high quality free notion styles avatars"
+          />
+
           {/* https://bgjar.com/ */}
         </div>
         <h2 className="mt-8 text-xl font-bold tracking-tight text-black border-b-4 border-green-300 md:text-2xl dark:text-white">
