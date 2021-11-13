@@ -154,6 +154,10 @@ export default function Timeline() {
       </h3>
       <Year>2021</Year>
       <ul>
+      <Step title="Built Tailwind Master Kit 🪁">
+          Built <a href="https://www.tailwindmasterkit.com">TailwindMasterKit</a>
+          , A SaaS marketplace for beautiful, handcrafted Website components built with and for Tailwind supported websites. Built the components from the ground up for React and HTML in 30+ categories.
+        </Step>
         <Step title="Created covidrescue.co.in 💊">
           Created <a href="https://www.covidrescue.co.in">covidrescue.co.in</a>
           to help people with verified leads on Oxygen, Remdesivir, Food, Beds,
