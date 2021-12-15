@@ -23,7 +23,7 @@
     "@mdx-js/react": "^1.6.22",
     "@radix-ui/react-hover-card": "0.0.3",
     "@sendgrid/mail": "^7.4.2",
-    "@tailwindcss/typography": "^0.4.0",
+    "@tailwindcss/typography": "github:tailwindcss/typography",
     "clsx": "^1.1.1",
     "comma-number": "^2.0.1",
     "date-fns": "^2.19.0",
@@ -47,16 +47,16 @@
     "swr": "^0.5.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.4.0",
     "globby": "11.0.2",
     "image-size": "^0.9.3",
-    "postcss": "^8.2.8",
+    "postcss": "^8.4.5",
     "prettier": "2.2.1",
     "rehype": "^11.0.0",
     "remark-frontmatter": "^3.0.0",
     "remark-parse": "^9.0.0",
     "remark-stringify": "^9.0.1",
-    "tailwindcss": "^2.0.3",
+    "tailwindcss": "^3.0.2",
     "unified": "^9.2.0",
     "unist-util-visit": "^2.0.3"
   }

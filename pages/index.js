@@ -31,51 +31,62 @@ export default function Home() {
       image="/avatar.jpg"
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <RoughNotationGroup show={isFontReady}>
-          <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-            Hey, I’m{" "}
-            <RainbowHighlight color={colors[0]}>
-              <span className="dark:text-black">Manu Arora</span>
-            </RainbowHighlight>{" "}
-          </h1>
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="flex md:w-3/4 flex-col">
+            <RoughNotationGroup show={isFontReady}>
+              <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+                Hey, I’m{" "}
+                <RainbowHighlight color={colors[0]}>
+                  <span className="dark:text-black">Manu Arora</span>
+                </RainbowHighlight>{" "}
+              </h1>
 
-          <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-loose">
-            I’m a developer, writer, and creator. I work at{" "}
-            <span className="font-bold">
-              <span className="text-blue-500">m</span>roads
-            </span>{" "}
-            as a{" "}
-            <RainbowHighlight color={colors[1]}>
-              <span className="dark:text-black">Software Engineer.</span>
-            </RainbowHighlight>{" "}
-            You've discovered my piece on the internet –&nbsp;
-            <RoughNotation
-              type="underline"
-              multiline={true}
-              animationDuration={1500}
-              animationDelay={1700}
-              strokeWidth={2}
-              iterations={3}
-              padding={5}
-              color={colors[3]}
-            >
-              <Link
-                href="/blog"
-                className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
-              >
-                <a className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600">
-                  <LinkPreview url="https://manuarora.in/blog">
-                    Checkout my blog
-                  </LinkPreview>
-                </a>
-              </Link>
-            </RoughNotation>{" "}
-            while you're here. <br />I write about technology, learning and{" "}
-            <StaticLinkPreview url="https://brobible.com/wp-content/uploads/2017/08/thats-what-she-said.jpg?quality=90&w=650">
-              memes.
-            </StaticLinkPreview>
-          </h2>
-        </RoughNotationGroup>
+              <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-normal">
+                I’m a developer, writer, and creator. I work at{" "}
+                <span className="font-bold">
+                  <span className="text-blue-500">m</span>roads
+                </span>{" "}
+                as a{" "}
+                <span className="dark:text-black font-bold">
+                  Software Engineer.{" "}
+                </span>
+                You've discovered my piece on the internet.{" "}
+                <RoughNotation
+                  type="underline"
+                  multiline={true}
+                  animationDuration={1500}
+                  animationDelay={1700}
+                  strokeWidth={2}
+                  iterations={3}
+                  padding={5}
+                  color={colors[3]}
+                >
+                  <Link
+                    href="/blog"
+                    className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
+                  >
+                    <a className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600">
+                      <LinkPreview url="https://manuarora.in/blog">
+                        Checkout my blog
+                      </LinkPreview>
+                    </a>
+                  </Link>
+                </RoughNotation>{" "}
+                while you're here. <br />I write about technology, learning and{" "}
+                <StaticLinkPreview url="https://brobible.com/wp-content/uploads/2017/08/thats-what-she-said.jpg?quality=90&w=650">
+                  memes.
+                </StaticLinkPreview>
+              </h2>
+            </RoughNotationGroup>
+          </div>
+
+          <div className="md:flex hidden md:w-1/4 flex-col">
+            <img
+              src="avatar-new.png"
+              className="rounded-full max-w-[200px] shadow-xl shadow-cyan-500/50"
+            />
+          </div>
+        </div>
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
           Most Popular
         </h3>
@@ -89,16 +100,7 @@ export default function Home() {
           summary="Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
           slug="blogging-platform-nextjs"
         />
-        {/* <BlogPost
-          title="How to design a minimal and beautiful website which actually converts"
-          summary="Examining the tips and tricks used to make a website design a notch above the rest."
-          slug="css-with-react"
-        />
-        <BlogPost
-          title="Using real world projects to build better learning habits"
-          summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
-          slug="css-with-react"
-        /> */}
+
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           Projects
         </h3>
