@@ -74,6 +74,11 @@ export default function Footer() {
               Live Demos
             </a>
           </Link>
+          <Link href="/freecodecamp">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              freeCodeCamp
+            </a>
+          </Link>
         </div>
       </div>
       <p className="flex flex-row text-gray-400">

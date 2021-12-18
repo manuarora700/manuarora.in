@@ -47,7 +47,7 @@ export default function Home() {
                   <span className="text-blue-500">m</span>roads
                 </span>{" "}
                 as a{" "}
-                <span className="dark:text-black font-bold">
+                <span className="dark:text-white font-bold">
                   Software Engineer.{" "}
                 </span>
                 You've discovered my piece on the internet.{" "}
