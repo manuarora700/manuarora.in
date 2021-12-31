@@ -180,7 +180,7 @@ const Metadata = () => {
       <meta name="robots" content="follow, index" />
       <meta
         content={`A curated list of box shadows for TailwindCSS. Available in classes, JIT
-        and config mode. Click to copy styles and paste it in your HTML div section to apply box shadows instantly`}
+        and vanilla CSS. Click to copy styles and paste it in your HTML div section to apply box shadows instantly.`}
         name="description"
       />
       <meta
@@ -193,7 +193,7 @@ const Metadata = () => {
       <meta
         property="og:description"
         content={`A curated list of box shadows for TailwindCSS. Available in classes, JIT
-        and config mode. Click to copy styles and paste it in your HTML div section to apply box shadows instantly`}
+        and vanilla CSS. Click to copy styles and paste it in your HTML div section to apply box shadows instantly.`}
       />
       <meta
         property="og:title"
@@ -213,7 +213,7 @@ const Metadata = () => {
       <meta
         name="twitter:description"
         content={`A curated list of box shadows for TailwindCSS. Available in classes, JIT
-        and config mode. Click to copy styles and paste it in your HTML div section to apply box shadows instantly`}
+        and vanilla CSS. Click to copy styles and paste it in your HTML div section to apply box shadows instantly.`}
       />
       {/* FIXME: Add Image */}
 
