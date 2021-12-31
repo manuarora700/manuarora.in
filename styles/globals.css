@@ -166,3 +166,9 @@ input[type="email"] {
 .step > h2 {
   @apply my-0;
 }
+
+@layer components {
+  .card-style-boxshadows {
+    @apply mx-auto  text-black font-light text-sm  h-56 w-56 rounded-md bg-white flex items-center justify-center;
+  }
+}

@@ -79,6 +79,11 @@ export default function Footer() {
               freeCodeCamp
             </a>
           </Link>
+          <Link href="/boxshadows">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Box Shadows
+            </a>
+          </Link>
         </div>
       </div>
       <p className="flex flex-row text-gray-400">

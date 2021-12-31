@@ -1,0 +1,6 @@
+shadow-[_rgba(50,_50,_93,_0.25)_0px_30px_60px_-12px_inset,_rgba(0,_0,_0,_0.3)_0px_18px_36px_-18px_inset]
+shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]
+shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] 
+shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px]
+shadow-[0_3px_10px_rgb(0,0,0,0.2)]
+shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]

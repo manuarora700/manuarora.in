@@ -28,7 +28,7 @@ export default function Home() {
     <Container
       title="Manu Arora - Developer, Writer, Creator"
       description="Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner."
-      image="/avatar.jpg"
+      image="/avatar-new.png"
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <div className="flex flex-col md:flex-row justify-between">
@@ -50,7 +50,19 @@ export default function Home() {
                 <span className="dark:text-white font-bold">
                   Software Engineer.{" "}
                 </span>
-                You've discovered my piece on the internet.{" "}
+                You've discovered my piece on the internet.
+                <br /> Building{" "}
+                <LinkPreview url="https://tailwindmasterkit.com">
+                  <span className="text-black dark:text-white">
+                    Tailwind Master Kit{" "}
+                  </span>
+                </LinkPreview>
+                and{" "}
+                <LinkPreview url="https://manuarora.in/boxshadows">
+                  <span className="text-black dark:text-white">
+                    Tailwind Box Shadows <br /> <br />
+                  </span>
+                </LinkPreview>
                 <RoughNotation
                   type="underline"
                   multiline={true}
@@ -67,14 +79,16 @@ export default function Home() {
                   >
                     <a className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600">
                       <LinkPreview url="https://manuarora.in/blog">
-                        Checkout my blog
+                        <span className="text-black dark:text-white">
+                          Checkout my blog
+                        </span>
                       </LinkPreview>
                     </a>
                   </Link>
                 </RoughNotation>{" "}
                 while you're here. <br />I write about technology, learning and{" "}
                 <StaticLinkPreview url="https://brobible.com/wp-content/uploads/2017/08/thats-what-she-said.jpg?quality=90&w=650">
-                  memes.
+                  <span className="text-black dark:text-white">memes.</span>
                 </StaticLinkPreview>
               </h2>
             </RoughNotationGroup>

@@ -2,7 +2,12 @@ const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./pages/**/*.js", "./components/**/*.js", "./layouts/**/*.js"],
+  purge: [
+    "./pages/**/*.js",
+    "./components/**/*.js",
+    "./layouts/**/*.js",
+    "./safelist.txt",
+  ],
   darkMode: "class",
   mode: "jit",
   theme: {
