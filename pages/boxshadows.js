@@ -200,7 +200,10 @@ const Metadata = () => {
         content={`Box Shadows - Custom box shadows for TailwindCSS`}
       />
       {/* FIXME: Add Image */}
-      <meta property="og:image" content={`/boxshadows.png`} />
+      <meta
+        property="og:image"
+        content={`https://manuarora.in/boxshadows.png`}
+      />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@mannupaaji" />
       <meta
@@ -214,7 +217,10 @@ const Metadata = () => {
       />
       {/* FIXME: Add Image */}
 
-      <meta name="twitter:image" content={`/boxshadows.png`} />
+      <meta
+        name="twitter:image"
+        content={`https://manuarora.in/boxshadows.png`}
+      />
     </Head>
   );
 };
