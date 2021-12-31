@@ -4,6 +4,10 @@
   </a>
   </p>
 
+# UPDATE 🚀
+
+Added [Tailwind Box Shadows](https://manuarora.in/boxshadows) - Get a curated list of box shadows - Click to copy and paste to enable box shadows on your cards seamlessly! Comes with a feature to convert vanilla CSS code to Tailwind JIT code.
+
 # manuarora.in
 
 This is my personal website. Here I write blogs, add code snippets, code live demos, and add resources for everybody else to look refer.
@@ -71,3 +75,7 @@ To run the project locally, create a `.env.local` file and add the required API 
 Special thanks to [Lee Rob](https://github.com/leerob) for creating such a beautiful theme that is very well structured and looks amazing on all devices. All the design inspiration and MDX structure come from him.
 
 If you're interested in learning Next.js and building real-world applications with it, I strongly suggest taking Lee's course [React 2025](https://react2025.com). I have taken it myself and can vouch for it.
+
+# Support
+
+<a href="https://www.buymeacoffee.com/manuarora" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>

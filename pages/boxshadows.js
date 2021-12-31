@@ -158,13 +158,20 @@ const CustomNav = ({ onModalClick }) => {
         </a>
       </Link>
       <div>
+        <a
+          href="https://github.com/manuarora700/manuarora.in/blob/master/pages/boxshadows.js"
+          target="__blank"
+          className="text-gray-400 underline invisible md:visible text-sm font-normal mr-4"
+        >
+          Code? Here.
+        </a>
         <button
           onClick={onModalClick}
           className="text-white invisible md:visible border border-gray-700 bg-black text-sm font-normal rounded-md px-2 py-2 mr-4"
         >
           Custom CSS to JIT 🚀
         </button>
-        <button className="text-[#EA532A] font-bold border border-[#EA532A] rounded-md px-2 py-2">
+        <button className="text-[#EA532A] text-sm font-bold border border-[#EA532A] rounded-md px-2 py-2">
           Upvote on ProductHunt
         </button>
       </div>
