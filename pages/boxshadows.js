@@ -32,6 +32,7 @@ export default function BoxShadows() {
               name={card.name}
               shadow={card.shadow}
               vanillaCSS={card.vanillaCSS}
+              customCSS={card?.customCSS}
             />
           ))}
         </div>
@@ -47,7 +48,7 @@ export default function BoxShadows() {
 }
 // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-const Card = ({ shadow, name, vanillaCSS }) => {
+const Card = ({ shadow, name, vanillaCSS, customCSS }) => {
   const [copied, setCopied] = useState(false);
   const classNames = (...classes) => classes.join(" ");
 
@@ -84,6 +85,7 @@ const Card = ({ shadow, name, vanillaCSS }) => {
     <div
       className={classNames(
         "relative flex flex-col card-style-boxshadows group overflow-hidden",
+        customCSS,
         shadow
       )}
     >
