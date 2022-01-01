@@ -28,6 +28,12 @@ export default function Snippets({ snippets }) {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
           {/* https://hypercolor.dev/ */}
           <ResourcesCard
+            title="Tailwind Box Shadows"
+            link="https://manuarora.in/boxshadows"
+            websiteLink="manuarora.in/boxshadows"
+            description="Beautiful box shadows for TailwindCSS"
+          />
+          <ResourcesCard
             title="Get Avaataars"
             link="https://getavataaars.com/"
             websiteLink="getavataaars.com"
