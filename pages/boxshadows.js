@@ -36,7 +36,7 @@ export default function BoxShadows() {
           ))}
         </div>
 
-        <div className="w-full lg:max-w-2xl md:mx-4 px-4 sm:mx-auto">
+        <div className="w-full lg:max-w-2xl  px-4 sm:mx-auto">
           <Contact />
           <Footer />
         </div>
