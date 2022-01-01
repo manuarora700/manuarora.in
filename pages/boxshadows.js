@@ -36,10 +36,11 @@ export default function BoxShadows() {
           ))}
         </div>
 
-        <div className="w-full lg:max-w-2xl mx-4 sm:mx-auto">
+        <div className="w-full lg:max-w-2xl md:mx-4 px-4 sm:mx-auto">
           <Contact />
+          <Footer />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );
@@ -49,6 +50,7 @@ export default function BoxShadows() {
 const Card = ({ shadow, name, vanillaCSS }) => {
   const [copied, setCopied] = useState(false);
   const classNames = (...classes) => classes.join(" ");
+
   const copyTextValue = (text) => {
     var textArea = document.createElement("textarea");
     textArea.value = text;
