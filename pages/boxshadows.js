@@ -175,9 +175,13 @@ const CustomNav = ({ onModalClick }) => {
         >
           Custom CSS to JIT 🚀
         </button>
-        <button className="text-[#EA532A] text-sm font-bold border border-[#EA532A] rounded-md px-2 py-2">
+        <a
+          href="https://www.producthunt.com/posts/tailwind-box-shadows"
+          target="__blank"
+          className="text-[#EA532A] text-sm font-bold border border-[#EA532A] rounded-md px-2 py-2"
+        >
           Upvote on ProductHunt
-        </button>
+        </a>
       </div>
     </nav>
   );
