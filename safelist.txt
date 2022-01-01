@@ -13,3 +13,7 @@ shadow-[0_8px_30px_rgb(0,0,0,0.12)]
 shadow-[inset_-12px_-8px_40px_#46464620]
 shadow-[0_10px_20px_rgba(240,_46,_170,_0.7)]
 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]
+shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]
+shadow-[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]
+shadow-blue-500/20
+shadow-2xl

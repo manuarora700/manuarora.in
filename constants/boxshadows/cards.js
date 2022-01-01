@@ -70,6 +70,21 @@ const cards = [
       "shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]",
     vanillaCSS: `box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;`,
   },
+  {
+    name: "Intense",
+    shadow: "shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]",
+    vanillaCSS: `box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;`,
+  },
+  {
+    name: "Subtle",
+    shadow: "shadow-[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]",
+    vanillaCSS: `box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;`,
+  },
+  {
+    name: "TailwindCSS",
+    shadow: "shadow-2xl shadow-blue-500/20",
+    vanillaCSS: `box-shadow: 0 25px 50px -12px #3b82f620;`,
+  },
 ];
 
 export default cards;
