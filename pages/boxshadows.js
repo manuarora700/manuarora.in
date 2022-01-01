@@ -49,11 +49,11 @@ export default function BoxShadows() {
           <Contact />
           <Footer />
         </div>
-        {/* <Footer /> */}
       </div>
     </div>
   );
 }
+
 // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 const Card = ({ shadow, name, vanillaCSS, customCSS }) => {
@@ -199,7 +199,7 @@ const Metadata = () => {
   const router = useRouter();
   return (
     <Head>
-      <title>{`Box Shadows - Custom box shadows for TailwindCSS`}</title>
+      <title>{`Box Shadows - Beautiful box shadows for TailwindCSS`}</title>
       <meta name="robots" content="follow, index" />
       <meta
         content={`A curated list of box shadows for TailwindCSS. Available in classes, JIT
@@ -220,7 +220,7 @@ const Metadata = () => {
       />
       <meta
         property="og:title"
-        content={`Box Shadows - Custom box shadows for TailwindCSS`}
+        content={`Box Shadows - Beautiful box shadows for TailwindCSS`}
       />
       {/* FIXME: Add Image */}
       <meta
@@ -231,7 +231,7 @@ const Metadata = () => {
       <meta name="twitter:site" content="@mannupaaji" />
       <meta
         name="twitter:title"
-        content={`Box Shadows - Custom box shadows for TailwindCSS`}
+        content={`Box Shadows - Beautiful box shadows for TailwindCSS`}
       />
       <meta
         name="twitter:description"
