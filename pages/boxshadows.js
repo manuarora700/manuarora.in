@@ -26,15 +26,23 @@ export default function BoxShadows() {
         {visible && <Modal onModalClick={onModalClick} />}
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center w-full gap-y-20 mb-40">
-          {cards.map((card, idx) => (
+          <>
+            {cards.map((card, idx) => (
+              <Card
+                key={`${card.name} - ${idx}`}
+                name={card.name}
+                shadow={card.shadow}
+                vanillaCSS={card.vanillaCSS}
+                customCSS={card?.customCSS}
+              />
+            ))}
             <Card
-              key={`${card.name} - ${idx}`}
-              name={card.name}
-              shadow={card.shadow}
-              vanillaCSS={card.vanillaCSS}
-              customCSS={card?.customCSS}
+              name={`Adding more, bookmark to stay updated. 😇`}
+              shadow={`shadow-xl`}
+              vanillaCSS={`box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);`}
+              customCSS={`border shadow-xl bg-gradient-to-r from-red-500 to-pink-500 text-white`}
             />
-          ))}
+          </>
         </div>
 
         <div className="w-full lg:max-w-2xl  px-4 sm:mx-auto">
@@ -96,7 +104,7 @@ const Card = ({ shadow, name, vanillaCSS, customCSS }) => {
       >
         <p className="text-white">Copied! 🎉</p>
       </div>
-      <p className="group-hover:hidden">{name}</p>
+      <p className="group-hover:hidden text-center">{name}</p>
       <div className="absolute -top-8 bg-black text-white px-2 py-1 text-center rounded-md opacity-0 group-hover:opacity-100 transition duration-100 ease-linear">
         Click buttons to copy
       </div>
