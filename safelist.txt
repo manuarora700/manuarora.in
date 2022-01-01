@@ -17,3 +17,6 @@ shadow-[rgba(0,_0,_0,_0.4)_0px_30px_90px]
 shadow-[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]
 shadow-blue-500/20
 shadow-2xl
+shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]
+shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]
+shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]
