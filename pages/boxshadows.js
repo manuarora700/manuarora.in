@@ -132,7 +132,18 @@ const Card = ({ shadow, name, vanillaCSS, customCSS }) => {
 const Header = () => {
   return (
     <div className="mb-20 flex flex-col items-center justify-center w-full">
-      <h1 className="font-bold text-xl md:text-3xl tracking-normal mb-4 text-black dark:text-white mx-auto mt-10">
+      <a
+        href="https://www.producthunt.com/posts/tailwind-box-shadows?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-tailwind-box-shadows"
+        target="_blank"
+      >
+        <img
+          src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=325075&theme=dark&period=daily"
+          alt="Tailwind Box Shadows - Curated list of box shadows for your cards to stand out | Product Hunt"
+          // style="width: 250px; height: 54px;"
+          className="h-12 w-auto mt-20 mb-0"
+        />
+      </a>
+      <h1 className="font-bold text-xl md:text-3xl tracking-normal mb-4 text-black dark:text-white mx-auto mt-4">
         Box Shadows for{" "}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
           TailwindCSS
@@ -183,12 +194,26 @@ const CustomNav = ({ onModalClick }) => {
         >
           Custom CSS to JIT 🚀
         </button>
-        <a
+        {/* <a
           href="https://www.producthunt.com/posts/tailwind-box-shadows"
           target="__blank"
           className="text-[#EA532A] text-sm font-bold border border-[#EA532A] rounded-md px-2 py-2"
         >
           Upvote on ProductHunt
+        </a> */}
+        <a
+          href="https://www.producthunt.com/posts/tailwind-box-shadows?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tailwind-box-shadows"
+          target="_blank"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=325075&theme=dark"
+            alt="Tailwind Box Shadows - Curated list of box shadows for your cards to stand out | Product Hunt"
+            // style={"width: 250px; height: 54px;"}
+            // style={{ width: "250px", height: "54px" }}
+            className="h-10 w-auto"
+            // width="250"
+            // height="54"
+          />
         </a>
       </div>
     </nav>
