@@ -101,6 +101,12 @@ const cards = [
     shadow: "shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]",
     vanillaCSS: `box-shadow: rgba(7, 65, 210, 0.1) 0px 9px 30px`,
   },
+  {
+    name: "Studydesk",
+    shadow:
+      "shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]",
+    vanillaCSS: `box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1);`,
+  },
 ];
 
 export default cards;
