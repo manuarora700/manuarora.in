@@ -22,3 +22,4 @@ shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]
 shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]
 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]
 shadow-[5px_5px_0px_0px_rgba(109,40,217)]
+text-purple-700 rotate-1 border-2 border-purple-700 rounded-md
