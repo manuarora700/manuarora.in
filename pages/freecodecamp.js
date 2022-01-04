@@ -42,6 +42,12 @@ export default function FreeCodeCamp() {
             image="freecodecamp/sendgrid.png"
             date="October 21, 2021"
           />
+          <Project
+            link="https://www.freecodecamp.org/news/how-to-create-beautiful-box-shadows-in-html-and-css/"
+            title="Create Beautiful box shadows with HTML, CSS and TailwindCSS"
+            image="freecodecamp/boxshadows.png"
+            date="January 3, 2022"
+          />
         </div>
 
         <Contact />
