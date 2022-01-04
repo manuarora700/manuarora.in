@@ -107,6 +107,13 @@ const cards = [
       "shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]",
     vanillaCSS: `box-shadow: 0px 4px 16px rgba(17,17,26,0.1), 0px 8px 24px rgba(17,17,26,0.1), 0px 16px 56px rgba(17,17,26,0.1);`,
   },
+  {
+    name: "PurpleStamp",
+    shadow:
+      "shadow-[5px_5px_0px_0px_rgba(109,40,217)]",
+    vanillaCSS: `box-shadow: 5px 5px 0px 0px rgba(109,40,217);`,
+    customCSS: "text-purple-700 rotate-1 border-2 border-purple-700 rounded-md"
+  },
 ];
 
 export default cards;
