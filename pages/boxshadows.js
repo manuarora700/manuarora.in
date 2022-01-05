@@ -36,8 +36,7 @@ export default function BoxShadows() {
                 customCSS={card?.customCSS}
               />
             ))}
-            <Card
-              name={`Adding more, bookmark to stay updated. 😇`}
+            <StaticCard
               shadow={`shadow-xl`}
               vanillaCSS={`box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);`}
               customCSS={`border shadow-xl bg-gradient-to-r from-red-500 to-pink-500 text-white`}
@@ -54,6 +53,35 @@ export default function BoxShadows() {
   );
 }
 
+const StaticCard = ({ shadow, name, vanillaCSS, customCSS }) => {
+  const classNames = (...classes) => classes.join(" ");
+  return (
+    <div
+      className={classNames(
+        "relative flex flex-col card-style-boxshadows group overflow-hidden",
+        customCSS,
+        shadow
+      )}
+    >
+      <div className="text-center">
+        Adding more, bookmark to stay updated, and maybe 👇🏻😇
+        <a
+          href="https://www.buymeacoffee.com/manuarora"
+          className="flex items-center justify-center rounded-md overflow-hidden mt-2"
+          target="_blank"
+        >
+          <img
+            src="https://cdn.buymeacoffee.com/buttons/default-orange.png"
+            alt="Buy Me A Coffee"
+            height="41"
+            width="174"
+            className="rounded-md"
+          />
+        </a>{" "}
+      </div>
+    </div>
+  );
+};
 // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 const Card = ({ shadow, name, vanillaCSS, customCSS }) => {
