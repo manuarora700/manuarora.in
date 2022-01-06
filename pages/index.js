@@ -28,7 +28,7 @@ export default function Home() {
     <Container
       title="Manu Arora - Developer, Writer, Creator"
       description="Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner."
-      image="/avatar-new.png"
+      image="/static/images/banner.png"
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <div className="flex flex-col md:flex-row justify-between">
