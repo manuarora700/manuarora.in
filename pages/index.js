@@ -86,7 +86,7 @@ export default function Home() {
                   </Link>
                 </RoughNotation>{" "}
                 while you're here. <br />I write about technology, learning and{" "}
-                <StaticLinkPreview url="https://brobible.com/wp-content/uploads/2017/08/thats-what-she-said.jpg?quality=90&w=650">
+                <StaticLinkPreview url="https://manuarora.in/radhey-bhaiya.jpeg">
                   <span className="text-black dark:text-white">memes.</span>
                 </StaticLinkPreview>
               </h2>
