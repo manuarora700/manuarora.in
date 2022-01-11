@@ -15,11 +15,20 @@ import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useIsFontReady } from "@/lib/useIsFontReady";
 import { LinkPreview } from "@/components/LinkPreview";
 import { StaticLinkPreview } from "@/components/StaticLinkPreview";
+import { useTheme } from "next-themes";
 
 export default function Home() {
   const [colors, setColors] = useState([]);
+  // const [tempInterval, setTempInterval] = useState(null);
+
+  let tempInterval;
 
   const isFontReady = useIsFontReady();
+  const { theme, setTheme } = useTheme();
+
+  const play = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   useEffect(() => {
     setColors(shuffleArray(LIGHT_COLORS));
@@ -87,7 +96,13 @@ export default function Home() {
                 </RoughNotation>{" "}
                 while you're here. <br />I write about technology, learning and{" "}
                 <StaticLinkPreview url="https://manuarora.in/radhey-bhaiya.jpeg">
-                  <span className="text-black dark:text-white">memes.</span>
+                  <span
+                    onMouseEnter={play}
+                    onMouseLeave={play}
+                    className="text-black dark:text-white"
+                  >
+                    memes.
+                  </span>
                 </StaticLinkPreview>
               </h2>
             </RoughNotationGroup>
