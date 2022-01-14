@@ -16,6 +16,9 @@ module.exports = {
         "blue-opaque": "rgb(13 42 148 / 18%)",
         cyan: colors.cyan,
       },
+      boxShadow: {
+        custom: "3px 3px 0px 0px rgba(33,33,33)",
+      },
       fontFamily: {
         sans: ["Inter", ...fontFamily.sans],
       },

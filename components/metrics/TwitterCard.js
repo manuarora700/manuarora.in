@@ -1,6 +1,6 @@
 export default function TwitterCard({ header, link, metric }) {
   return (
-    <div className="metric-card border border-gray-200 dark:border-gray-800 rounded p-4 max-w-72 w-full">
+    <div className="metric-card  dark:border-gray-800  p-4 max-w-72 w-full rounded-md shadow-custom border-2 border-[#212121]">
       <a
         aria-label={header}
         target="_blank"

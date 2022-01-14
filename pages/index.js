@@ -50,16 +50,18 @@ export default function Home() {
               </h1>
 
               <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-normal">
-                I’m a developer, writer, and creator. I work at{" "}
+                🖥 I’m a developer, writer, and creator. <br />
+                🗒 I work at{" "}
                 <span className="font-bold">
                   <span className="text-blue-500">m</span>roads
                 </span>{" "}
                 as a{" "}
                 <span className="dark:text-white font-bold">
                   Software Engineer.{" "}
-                </span>
-                You've discovered my piece on the internet.
-                <br /> Building{" "}
+                </span>{" "}
+                <br />
+                🤗 You've discovered my piece on the internet.
+                <br /> 🔨 Building{" "}
                 <LinkPreview url="https://tailwindmasterkit.com">
                   <span className="text-black dark:text-white">
                     Tailwind Master Kit{" "}
@@ -68,10 +70,10 @@ export default function Home() {
                 and{" "}
                 <LinkPreview url="https://manuarora.in/boxshadows">
                   <span className="text-black dark:text-white">
-                    Tailwind Box Shadows <br /> <br />
+                    Tailwind Box Shadows <br />
                   </span>
                 </LinkPreview>
-                <RoughNotation
+                {/* <RoughNotation
                   type="underline"
                   multiline={true}
                   animationDuration={1500}
@@ -80,21 +82,22 @@ export default function Home() {
                   iterations={3}
                   padding={5}
                   color={colors[3]}
+                > */}
+                <Link
+                  href="/blog"
+                  className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
                 >
-                  <Link
-                    href="/blog"
-                    className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
-                  >
-                    <a className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600">
-                      <LinkPreview url="https://manuarora.in/blog">
-                        <span className="text-black dark:text-white">
-                          Checkout my blog
-                        </span>
-                      </LinkPreview>
-                    </a>
-                  </Link>
-                </RoughNotation>{" "}
-                while you're here. <br />I write about technology, learning and{" "}
+                  <a className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600">
+                    <LinkPreview url="https://manuarora.in/blog">
+                      <span className="text-black dark:text-white">
+                        ✍🏼 Checkout my blog{" "}
+                      </span>
+                    </LinkPreview>
+                  </a>
+                </Link>
+                {/* </RoughNotation>{" "} */}
+                while you're here. <br />
+                🤩 I write about technology, learning and{" "}
                 <StaticLinkPreview url="https://manuarora.in/radhey-bhaiya.jpeg">
                   <span
                     onMouseEnter={play}

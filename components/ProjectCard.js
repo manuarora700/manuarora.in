@@ -2,7 +2,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
   // const tags = ["GitHub", "React", "JamStack"];
   return (
     <a
-      className="mb-4 hover:shadow"
+      className="mb-4 hover:shadow rounded-md shadow-custom border-2 border-[#212121]"
       href={href}
       aria-label={title}
       target="_blank"
