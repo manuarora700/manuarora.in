@@ -50,7 +50,7 @@ export default function Home() {
               </h1>
 
               <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-normal">
-                🖥 I’m a developer, writer, and creator. <br />
+                🖥 I’m a developer, writer, and acreator. <br />
                 🗒 I work at{" "}
                 <span className="font-bold">
                   <span className="text-blue-500">m</span>roads
@@ -60,8 +60,9 @@ export default function Home() {
                   Software Engineer.{" "}
                 </span>{" "}
                 <br />
-                🤗 You've discovered my piece on the internet.
-                <br /> 🔨 Building{" "}
+                {/* 🤗 You've discovered my piece on the internet.
+                <br />  */}
+                🔨 Building{" "}
                 <LinkPreview url="https://tailwindmasterkit.com">
                   <span className="text-black dark:text-white">
                     Tailwind Master Kit{" "}
@@ -83,7 +84,7 @@ export default function Home() {
                   padding={5}
                   color={colors[3]}
                 > */}
-                <Link
+                {/* <Link
                   href="/blog"
                   className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
                 >
@@ -94,10 +95,21 @@ export default function Home() {
                       </span>
                     </LinkPreview>
                   </a>
-                </Link>
+                </Link> */}
                 {/* </RoughNotation>{" "} */}
-                while you're here. <br />
-                🤩 I write about technology, learning and{" "}
+                {/* while you're here. <br /> */}
+                🐥 I{" "}
+                <a
+                  className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600"
+                  target="__blank"
+                >
+                  <LinkPreview url="https://twitter.com/mannupaaji">
+                    <span className=" text-blue-500 dark:text-blue-500">
+                      Tweet
+                    </span>
+                  </LinkPreview>
+                </a>{" "}
+                about technology, learning and{" "}
                 <StaticLinkPreview url="https://manuarora.in/radhey-bhaiya.jpeg">
                   <span
                     onMouseEnter={play}
