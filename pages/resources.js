@@ -40,6 +40,13 @@ export default function Snippets({ snippets }) {
             description="Generate free avatars for multipurpose use."
           />
           <ResourcesCard
+            title="Remove Backgrounds"
+            link="https://www.experte.com/background-remover"
+            websiteLink="experte.com"
+            description="Remove backgrounds - in HD"
+          />
+
+          <ResourcesCard
             title="Hypercolor"
             link="https://hypercolor.dev"
             websiteLink="hypercolor.dev"
