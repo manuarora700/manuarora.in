@@ -50,7 +50,7 @@ export default function Home() {
               </h1>
 
               <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-normal">
-                🖥 I’m a developer, writer, and acreator. <br />
+                🖥 I’m a developer, writer, and a creator. <br />
                 🗒 I work at{" "}
                 <span className="font-bold">
                   <span className="text-blue-500">m</span>roads
