@@ -74,6 +74,12 @@ export default function Home() {
                     Tailwind Box Shadows <br />
                   </span>
                 </LinkPreview>
+                🧑🏻‍🏫 Love to teach programming at{" "}
+                <LinkPreview url="https://www.codementor.io/@manuarorawork?refer=badge">
+                  <span className="text-black dark:text-white">
+                    Codementor <br />
+                  </span>
+                </LinkPreview>
                 {/* <RoughNotation
                   type="underline"
                   multiline={true}
