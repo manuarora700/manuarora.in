@@ -80,30 +80,12 @@ export default function Home() {
                     Codementor <br />
                   </span>
                 </LinkPreview>
-                {/* <RoughNotation
-                  type="underline"
-                  multiline={true}
-                  animationDuration={1500}
-                  animationDelay={1700}
-                  strokeWidth={2}
-                  iterations={3}
-                  padding={5}
-                  color={colors[3]}
-                > */}
-                {/* <Link
-                  href="/blog"
-                  className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
-                >
-                  <a className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600">
-                    <LinkPreview url="https://manuarora.in/blog">
-                      <span className="text-black dark:text-white">
-                        ✍🏼 Checkout my blog{" "}
-                      </span>
-                    </LinkPreview>
-                  </a>
-                </Link> */}
-                {/* </RoughNotation>{" "} */}
-                {/* while you're here. <br /> */}
+                💯 Embracing Entrepreneurship at
+                <LinkPreview url="https://www.placeholdertech.in">
+                  <span className="text-black dark:text-white">
+                    PlaceholderTech <br />
+                  </span>
+                </LinkPreview>
                 🐥 I{" "}
                 <a
                   className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600"
