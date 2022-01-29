@@ -80,7 +80,7 @@ export default function Home() {
                     Codementor <br />
                   </span>
                 </LinkPreview>
-                💯 Embracing Entrepreneurship at
+                💯 Embracing Entrepreneurship at{" "}
                 <LinkPreview url="https://www.placeholdertech.in">
                   <span className="text-black dark:text-white">
                     PlaceholderTech <br />
