@@ -45,6 +45,7 @@ export async function getStaticProps() {
     "1116362674319908864",
     "1360610614490501126",
     "1371103308425928708",
+    "1487444357980762114",
   ]);
 
   return { props: { tweets } };
