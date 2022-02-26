@@ -190,7 +190,7 @@ export default function Home() {
         <ProjectCard
           title="Algochurn"
           description="Your last moment friend before a Technical Interview round. Practice the most popular Data Structures & Algorithms"
-          href="#"
+          href="https://algochurn.com"
           icon="algochurn"
         />
         <ProjectCard

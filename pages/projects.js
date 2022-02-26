@@ -128,7 +128,7 @@ export default function projects() {
         <ProjectCard
           title="Algochurn"
           description="Your last moment friend before a Technical Interview round. Practice the most popular Data Structures & Algorithms"
-          href="#"
+          href="https://algochurn.com"
           icon="algochurn"
           tags={["NextJS", "Tailwind", "MongoDB", "NodeJS"]}
         />
