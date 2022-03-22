@@ -26,7 +26,12 @@ export default function Snippets({ snippets }) {
           Utilities
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
-          {/* https://hypercolor.dev/ */}
+          <ResourcesCard
+            title="Mantine"
+            link="https://mantine.dev/"
+            websiteLink="mantine.dev"
+            description="Beautiful Components with Hooks and functions"
+          />
           <ResourcesCard
             title="Tailwind Box Shadows"
             link="https://manuarora.in/boxshadows"
