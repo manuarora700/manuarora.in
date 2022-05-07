@@ -38,19 +38,27 @@ export default function projects() {
           tags={["Tailwind", "Next.js", "Freemium"]}
         />
         <ProjectCard
-          title="Covid Rescue"
-          description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
-          href="https://covidrescue.co.in/"
-          icon="covidrescue"
-          tags={["Open Source", "Next.js", "Twitter"]}
-        />
-        <ProjectCard
           title="PlaceholderTech"
           description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
           href="https://placeholdertech.in/"
           icon="placeholdertech"
           tags={["Freelancing", "React", "Node", "Firebase"]}
         />
+        <ProjectCard
+          title="CodeExe"
+          description="Compile and Execute code online in 10+ languages with output, input test cases and interactive editor."
+          href="https://react-code-editor-compile-execute.vercel.app/"
+          icon="code"
+          tags={["Open Source", "React", "TailwindCSS", "Monaco"]}
+        />
+        <ProjectCard
+          title="Covid Rescue"
+          description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
+          href="https://covidrescue.co.in/"
+          icon="covidrescue"
+          tags={["Open Source", "Next.js", "Twitter"]}
+        />
+
         <ProjectCard
           title="Golden Bells Academy"
           description="✍🏻 An educational portal to watch educational videos, write and submit assignments, view results and more."

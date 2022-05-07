@@ -122,14 +122,14 @@ export default function Home() {
           Most Popular
         </h3>
         <BlogPost
-          title="Top 5 courses and resources to learn Next JS in 2021"
-          summary="Get the top 5 resources to learn Next JS in 2021 and take your React skills to the next level."
-          slug="top-5-nextjs-resources"
+          title="Ace the Javascript Interview - Practical questions to help you clear your next interview"
+          summary="Ace your next Javascript Interview - Practice these topics in depth with examples and code snippets."
+          slug="ace-the-javascript-interview"
         />
         <BlogPost
-          title="How I built a blogging platform like Medium with Next.js"
-          summary="Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
-          slug="blogging-platform-nextjs"
+          title="Free protfolio website template that gets you hired in 2021"
+          summary="Build a modern, minimal portfolio website with Next.js and tailwindcss for developers that gets you hired for Full Stack Developer roles in 2021."
+          slug="developer-portfolio-website"
         />
 
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
@@ -143,12 +143,13 @@ export default function Home() {
           tags={["Tailwind", "Next.js", "Freemium"]}
         />
         <ProjectCard
-          title="Covid Rescue"
-          description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
-          href="https://covidrescue.co.in/"
-          icon="covidrescue"
-          tags={["Open Source", "Next.js", "Twitter"]}
+          title="CodeExe"
+          description="Compile and Execute code online in 10+ languages with output, input test cases and interactive editor."
+          href="https://react-code-editor-compile-execute.vercel.app/"
+          icon="code"
+          tags={["Open Source", "React", "TailwindCSS", "Monaco"]}
         />
+
         <ProjectCard
           title="PlaceholderTech"
           description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
