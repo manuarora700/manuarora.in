@@ -142,12 +142,13 @@ export default function Home() {
           icon="tailwindmasterkit"
           tags={["Tailwind", "Next.js", "Freemium"]}
         />
+
         <ProjectCard
-          title="CodeExe"
-          description="Compile and Execute code online in 10+ languages with output, input test cases and interactive editor."
-          href="https://react-code-editor-compile-execute.vercel.app/"
-          icon="code"
-          tags={["Open Source", "React", "TailwindCSS", "Monaco"]}
+          title="Algochurn"
+          description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
+          href="https://algochurn.com"
+          icon="algochurn"
+          tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
         />
 
         <ProjectCard
@@ -155,12 +156,14 @@ export default function Home() {
           description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
           href="https://placeholdertech.in/"
           icon="placeholdertech"
+          tags={["Web Dev Agency", "Products", "Freemium"]}
         />
         <ProjectCard
           title="Feedmeback"
           description="The easiest way to add comments or reviews to your static site. Built as part of React 2025."
           href="https://feedmeback-beta.vercel.app/"
           icon="fastfeedback"
+          tags={["Next.js", "Stripe", "TailwindCSS"]}
         />
         <Link href="/projects">
           <a
@@ -188,12 +191,7 @@ export default function Home() {
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           Upcoming Projects
         </h3>
-        <ProjectCard
-          title="Algochurn"
-          description="Your last moment friend before a Technical Interview round. Practice the most popular Data Structures & Algorithms"
-          href="https://algochurn.com"
-          icon="algochurn"
-        />
+
         <ProjectCard
           title="VSCode Resume"
           description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
