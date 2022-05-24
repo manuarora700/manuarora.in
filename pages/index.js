@@ -69,9 +69,9 @@ export default function Home() {
                   </span>
                 </LinkPreview>
                 and{" "}
-                <LinkPreview url="https://manuarora.in/boxshadows">
+                <LinkPreview url="https://algochurn.com">
                   <span className="text-black dark:text-white">
-                    Tailwind Box Shadows <br />
+                    Algochurn <br />
                   </span>
                 </LinkPreview>
                 🧑🏻‍🏫 Love to teach programming at{" "}

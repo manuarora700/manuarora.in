@@ -23,16 +23,16 @@ export default function FreeCodeCamp() {
         </h2>
         <div className="flex flex-col items-center sm:flex-row sm:space-x-8 w-full">
           <Project
+            link="https://www.freecodecamp.org/news/how-to-build-react-based-code-editor/"
+            title="How to Build a Code Editor with React that Compiles and Executes in 40+ Languages"
+            image="freecodecamp/codeeditor.png"
+            date="May 25, 2022"
+          />
+          <Project
             link="https://www.freecodecamp.org/news/integrate-a-payment-gateway-in-next-js-and-react-with-razorpay-and-tailwindcss/"
             title="How to Set Up a Payment Gateway in Next.js and React with Razorpay and TailwindCSS"
             image="freecodecamp/payments.png"
             date="Dec 22, 2021"
-          />
-          <Project
-            link="https://www.freecodecamp.org/news/how-to-build-a-portfolio-site-with-nextjs-tailwindcss/"
-            title="Build a developers portfolio website with Next.js and TailwindCSS"
-            image="freecodecamp/portfolio.png"
-            date="September 21, 2021"
           />
         </div>
         <div className="flex flex-col items-center sm:flex-row sm:space-x-8 w-full">
@@ -50,6 +50,15 @@ export default function FreeCodeCamp() {
           />
         </div>
 
+        <div className="flex flex-col items-center sm:flex-row sm:space-x-8 w-full">
+          <Project
+            link="https://www.freecodecamp.org/news/how-to-build-a-portfolio-site-with-nextjs-tailwindcss/"
+            title="Build a developers portfolio website with Next.js and TailwindCSS"
+            image="freecodecamp/portfolio.png"
+            date="September 21, 2021"
+          />
+        </div>
+
         <Contact />
       </div>
     </Container>
@@ -59,14 +68,14 @@ export default function FreeCodeCamp() {
 const Project = ({ link, image, title, date }) => {
   return (
     <a href={link} className=" w-3/4 sm:w-1/2 mb-10" target="__blank">
-      <div className="flex-shrink-0 rounded-lg shadow-xl shadow-gray-500/20 dark:shadow-blue-500/20 overflow-hidden min-h-[400px]">
+      <div className="flex-shrink-0 rounded-lg shadow-xl shadow-gray-500/20 dark:shadow-blue-500/20 overflow-hidden ">
         <div className="overflow-hidden">
           <img
             src={image}
             className="transition hover:scale-125 duration-[2000ms]"
           />
         </div>
-        <div className="flex flex-col justify-between mx-4 my-4  min-h-[200px]">
+        <div className="flex flex-col justify-between mx-4 my-4  ">
           <h2 className="font-bold text-lg mb-14">{title}</h2>
           <p className="text-sm font-light">{date}</p>
         </div>
