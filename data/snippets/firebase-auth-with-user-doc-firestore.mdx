@@ -1,0 +1,261 @@
+---
+title: "Authentication (Firebase)"
+description: "Authenticate user and store in Firestore."
+logo: "firebase.png"
+---
+
+Create a User Context
+
+```typescript:context.ts
+import { createContext } from 'react'
+export const UserContext = createContext({ user: null, authLoading: true })
+```
+
+Add the Provider in the App.js (Next.js `_app.jsx` file is used here)
+
+```typescript:_app.jsx
+import 'regenerator-runtime/runtime'
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+import Script from 'next/script'
+import { UserContext } from '../lib/context'
+import { useUserData } from '../lib/hooks'
+
+function MyApp({ Component, pageProps }: AppProps) {
+  const userData = useUserData()
+  return (
+    <>
+      <UserContext.Provider value={userData}>
+        <Component {...pageProps} />
+      </UserContext.Provider>
+    </>
+  )
+}
+
+export default MyApp
+
+```
+
+Initialize firebase app with YOUR configurations.
+
+```typescript:firebase.ts
+
+import { initializeApp, getApps, getApp } from 'firebase/app'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
+import {
+  getFirestore,
+  collection,
+  where,
+  getDocs,
+  query,
+  limit,
+} from 'firebase/firestore'
+import { getStorage } from 'firebase/storage'
+
+// Get this from project settings (Settings -> Project settings -> Found at the bottom.)
+const firebaseConfig = {
+  apiKey: 'YOUR_API_KEY',
+  authDomain: 'YOUR_AUTH_DOMAIN',
+  projectId: 'YOUR_PROJECT_ID',
+  storageBucket: 'YOUR_STORAGE_BUCKET',
+  messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+  appId: 'YOUR_APP_ID',
+  measurementId: 'YOUR_MEASUREMENT_ID',
+}
+function createFirebaseApp(config) {
+  try {
+    return getApp()
+  } catch {
+    return initializeApp(config)
+  }
+}
+
+const firebaseApp = createFirebaseApp(firebaseConfig)
+
+export const auth = getAuth(firebaseApp)
+export const googleAuthProvider = new GoogleAuthProvider()
+
+
+export const firestore = getFirestore(firebaseApp)
+
+// Storage exports
+export const storage = getStorage(firebaseApp)
+export const STATE_CHANGED = 'state_changed'
+```
+
+Hook to check for auth state change
+
+```typescript:hooks.ts
+import { doc, onSnapshot, getFirestore } from 'firebase/firestore'
+import { auth, firestore } from './firebase'
+import { useEffect, useState } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useRouter } from 'next/router'
+
+// Custom hook to read  auth record and user profile doc
+export function useUserData() {
+  const [user, loading] = useAuthState(auth)
+  const router = useRouter()
+
+  useEffect(() => {
+    // turn off realtime subscription
+    let unsubscribe
+
+    if (user) {
+      const ref = doc(getFirestore(), 'users', user.uid)
+      unsubscribe = onSnapshot(ref, (doc) => {console.log('doc', doc)})
+    }
+
+    return unsubscribe
+  }, [user])
+
+  return { user, authLoading: loading }
+}
+```
+
+When auth state changes - context updates and components rerender.
+
+Use the logic in your protected routes and login components
+
+```typescript:login.tsx
+import { signInWithPopup } from 'firebase/auth'
+import { doc, getFirestore, getDoc, setDoc } from 'firebase/firestore'
+import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { useContext, useEffect } from 'react'
+import MetadataComponent from '../components/MetadataComponent'
+import { UserContext } from '../lib/context'
+import { auth, googleAuthProvider } from '../lib/firebase'
+
+const Login: NextPage = () => {
+  const router = useRouter()
+
+  const { user, authLoading } = useContext(UserContext)
+  useEffect(() => {
+    if (!authLoading && user) {
+      // user is already logged in.
+      redirectToDashboard()
+    }
+  }, [user])
+  const redirectToDashboard = () => {
+    router.push('/dashboard')
+  }
+
+  const signInWithGoogle = async () => {
+    signInWithPopup(auth, googleAuthProvider)
+      .then((res) => {
+        console.log('successful', res)
+
+        writeUserToFirestore(res.user)
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+  }
+
+  const writeUserToFirestore = async (currentUser) => {
+    const userRef = doc(getFirestore(), 'users', currentUser.uid)
+    const userDoc = await getDoc(userRef)
+
+    if (!userDoc.exists()) {
+      const userData = {
+        displayName: currentUser.displayName,
+        email: currentUser.email,
+        photoURL: currentUser.photoURL,
+        uid: currentUser.uid,
+        isAdmin: false,
+      }
+      await setDoc(userRef, userData)
+      redirectToDashboard()
+    } else {
+      console.log('user already exists...')
+      redirectToDashboard()
+    }
+  }
+
+  const signOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        console.log('signed out')
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+  }
+
+  return (
+    <div className="flex h-screen w-full items-center justify-center bg-[#111827]">
+      <MetadataComponent />
+      <main className="flex flex-col items-center justify-center">
+        <button
+          onClick={signInWithGoogle}
+          className="rounded-md border border-white px-4 py-2 text-white"
+        >
+          Sign in with google
+        </button>
+      </main>
+    </div>
+  )
+}
+
+export default Login
+
+
+```
+
+```typescript:Dashboard.tsx
+import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { useContext, useEffect } from 'react'
+import MetadataComponent from '../components/MetadataComponent'
+import { UserContext } from '../lib/context'
+import { auth } from '../lib/firebase'
+
+const Dashboard: NextPage = () => {
+  const router = useRouter()
+
+  const { user, authLoading } = useContext(UserContext)
+  useEffect(() => {
+    if (!authLoading && !user) {
+      redirectToLogin()
+    }
+  }, [authLoading, user])
+  console.log('user...', user)
+  console.log('authLoading...', authLoading)
+
+  const redirectToLogin = () => {
+    router.push('/login')
+  }
+  const signOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        console.log('signed out')
+        router.push('/login')
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+  }
+
+  return (
+    <div className="flex h-screen w-full items-center justify-center bg-[#111827]">
+      <MetadataComponent />
+      <main className="flex flex-col items-center justify-center">
+        <p className="text-white">Dashboard</p>
+        <button
+          onClick={signOut}
+          className="rounded-md border border-white px-4 py-2 text-white"
+        >
+          Signout
+        </button>
+      </main>
+    </div>
+  )
+}
+
+export default Dashboard
+
+
+```
