@@ -152,11 +152,30 @@ export default function Timeline() {
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
         Timeline
       </h3>
+      <Year>2022</Year>
+      <ul>
+        <Step title="Built and launched Algochurn 🎉">
+          Built{" "}
+          <a href="https://algochurn.com" target="__blank">
+            Algochurn
+          </a>
+          , A platform to practice DS ALgo along with front-end to ace your next
+          technical interview.
+        </Step>
+        <Step title="Promoted to Senior Software Engineer 🎉">
+          Promoted to Senior Software Engineer - Worked on applications handling
+          20,000+ users per day. Working on Web, Mobile, and even TV
+          applications. 🔥
+        </Step>
+      </ul>
       <Year>2021</Year>
       <ul>
-      <Step title="Built Tailwind Master Kit 🪁">
-          Built <a href="https://www.tailwindmasterkit.com">TailwindMasterKit</a>
-          , A SaaS marketplace for beautiful, handcrafted Website components built with and for Tailwind supported websites. Built the components from the ground up for React and HTML in 30+ categories.
+        <Step title="Built Tailwind Master Kit 🪁">
+          Built{" "}
+          <a href="https://www.tailwindmasterkit.com">TailwindMasterKit</a>, A
+          SaaS marketplace for beautiful, handcrafted Website components built
+          with and for Tailwind supported websites. Built the components from
+          the ground up for React and HTML in 30+ categories.
         </Step>
         <Step title="Created covidrescue.co.in 💊">
           Created <a href="https://www.covidrescue.co.in">covidrescue.co.in</a>
