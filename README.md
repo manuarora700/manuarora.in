@@ -10,7 +10,7 @@ Added [Tailwind Box Shadows](https://manuarora.in/boxshadows) - Get a curated li
 
 # manuarora.in
 
-This is my personal website. Here I write blogs, add code snippets, code live demos, and add resources for everybody else to look refer.
+This is my personal website. Here I write blogs, add code snippets, code live demos, and add resources for everybody else to look and refer.
 
 The application is built with **Next.js/React/MDX**
 
