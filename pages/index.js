@@ -51,62 +51,15 @@ export default function Home() {
             </a>
             <span className="pr-2">as a</span>
             <RainbowHighlight color={colors[1]}>
-              <span className="-ml-1 dark:text-black">Software Engineer.</span>
+              <span className="-ml-1 dark:text-black">
+                Senior Software Engineer.
+              </span>
             </RainbowHighlight>
             <span className="pl-1">
               You've discovered my place on the internet
             </span>
-            {/* –&nbsp; */}
-            {/* <RoughNotation
-              type="underline"
-              multiline={true}
-              animationDuration={1500}
-              animationDelay={1700}
-              strokeWidth={2}
-              iterations={3}
-              padding={5}
-              color={colors[3]}
-            >
-              <Link
-                href="/blog"
-                className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none"
-              >
-                <a className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600">
-                  <LinkPreview url="https://manuarora.in/blog">
-                    Checkout my blog
-                  </LinkPreview>
-                </a>
-              </Link>
-            </RoughNotation>{" "}
-            while you're here. <br />I write about technology, learning and{" "}
-            <StaticLinkPreview url="https://brobible.com/wp-content/uploads/2017/08/thats-what-she-said.jpg?quality=90&w=650">
-              memes.
-            </StaticLinkPreview> */}
           </h2>
         </RoughNotationGroup>
-        {/* <h3 className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
-          Most Popular
-        </h3>
-        <BlogPost
-          title="Top 5 courses and resources to learn Next JS in 2021"
-          summary="Get the top 5 resources to learn Next JS in 2021 and take your React skills to the next level."
-          slug="top-5-nextjs-resources"
-        />
-        <BlogPost
-          title="How I built a blogging platform like Medium with Next.js"
-          summary="Insights and structure of devmedium, A blogging platform built with Next.js with features like custom usernames, create blogs and various optimization techniques"
-          slug="blogging-platform-nextjs"
-        /> */}
-        {/* <BlogPost
-          title="How to design a minimal and beautiful website which actually converts"
-          summary="Examining the tips and tricks used to make a website design a notch above the rest."
-          slug="css-with-react"
-        />
-        <BlogPost
-          title="Using real world projects to build better learning habits"
-          summary="In this guide, you will learn how to take an idea and convert it into a real world application, while learning on the go."
-          slug="css-with-react"
-        /> */}
         <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           Projects
         </h3>
