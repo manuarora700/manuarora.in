@@ -136,6 +136,13 @@ export default function projects() {
         </h3>
 
         <ProjectCard
+          title="StyledNext"
+          description="Professional, modern and beautiful templates built with Next.js and TailwindCSS"
+          href="https://stylednext.com"
+          icon="vscode"
+          tags={["NextJS", "Tailwind", "Hackerearth"]}
+        />
+        <ProjectCard
           title="VSCode Resume"
           description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
           href="#"
