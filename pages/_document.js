@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { GA_TRACKING_ID } from "@/lib/gtag";
-import Script from "next/script";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -28,7 +27,7 @@ class MyDocument extends Document {
           `,
             }}
           />
-          <Script async src="https://cdn.splitbee.io/sb.js" />
+          <script async src="https://cdn.splitbee.io/sb.js" />
 
           <link
             rel="icon"
