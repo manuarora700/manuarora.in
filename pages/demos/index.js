@@ -52,6 +52,11 @@ export default function Demos() {
             link="demos/demo/borderGradient"
             description="Add gradients to border"
           />
+          <DemosCard
+            title="Navbar Hover"
+            link="demos/demo/navbarEffect"
+            description="Add gradients to border"
+          />
         </div>
       </div>
     </Container>
