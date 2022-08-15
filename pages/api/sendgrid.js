@@ -6,7 +6,7 @@ export default async (req, res) => {
   try {
     // console.log("REQ.BODY", req.body);
     await sendgrid.send({
-      to: req.body.email,
+      to: [req.body.email, "manuarorawork@gmail.com"],
       from: "manuarorawork@gmail.com",
       cc: "manuarorawork@gmail.com",
       subject: "Greetings! Thankyou for contacting me",
