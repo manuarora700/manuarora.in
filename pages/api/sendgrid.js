@@ -8,6 +8,7 @@ export default async (req, res) => {
     await sendgrid.send({
       to: req.body.email,
       from: "manuarorawork@gmail.com",
+      cc: "manuarorawork@gmail.com",
       subject: "Greetings! Thankyou for contacting me",
       html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <html lang="en">
