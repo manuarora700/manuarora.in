@@ -9,9 +9,6 @@ import { LIGHT_COLORS } from "@/lib/constants";
 
 import { shuffleArray } from "@/lib/shuffleArray";
 import { useEffect, useState } from "react";
-import { RainbowHighlight } from "@/ui/RainbowHighlight";
-
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useIsFontReady } from "@/lib/useIsFontReady";
 import { LinkPreview } from "@/components/LinkPreview";
 import { StaticLinkPreview } from "@/components/StaticLinkPreview";
@@ -41,74 +38,68 @@ export default function Home() {
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex md:w-3/4 flex-col">
-            <RoughNotationGroup show={isFontReady}>
-              <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-                Hey, I’m{" "}
-                <RainbowHighlight color={colors[0]}>
-                  <span className="dark:text-black">Manu Arora</span>
-                </RainbowHighlight>{" "}
-              </h1>
+            <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+              Hey, I’m
+              <span className="dark:text-black">Manu Arora</span>
+            </h1>
 
-              <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-normal">
-                🖥 I’m a developer, writer, and a creator. <br />
-                🗒 I work at{" "}
-                <span className="font-bold">
-                  <span className="text-blue-500">m</span>roads
-                </span>{" "}
-                as a{" "}
-                <span className="dark:text-white font-bold">
-                  Software Engineer.{" "}
-                </span>{" "}
-                <br />
-                {/* 🤗 You've discovered my piece on the internet.
-                <br />  */}
-                🔨 Building{" "}
-                <LinkPreview url="https://tailwindmasterkit.com">
-                  <span className="text-black dark:text-white">
-                    Tailwind Master Kit{" "}
+            <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-normal">
+              🖥 I’m a developer, writer, and a creator. <br />
+              🗒 I work at{" "}
+              <span className="font-bold">
+                <span className="text-blue-500">m</span>roads
+              </span>{" "}
+              as a{" "}
+              <span className="dark:text-white font-bold">
+                Software Engineer.{" "}
+              </span>{" "}
+              <br />
+              🔨 Building{" "}
+              <LinkPreview url="https://tailwindmasterkit.com">
+                <span className="text-black dark:text-white">
+                  Tailwind Master Kit{" "}
+                </span>
+              </LinkPreview>
+              and{" "}
+              <LinkPreview url="https://algochurn.com">
+                <span className="text-black dark:text-white">
+                  Algochurn <br />
+                </span>
+              </LinkPreview>
+              🧑🏻‍🏫 Love to teach programming at{" "}
+              <LinkPreview url="https://www.codementor.io/@manuarorawork?refer=badge">
+                <span className="text-black dark:text-white">
+                  Codementor <br />
+                </span>
+              </LinkPreview>
+              💯 Embracing Entrepreneurship at{" "}
+              <LinkPreview url="https://www.placeholdertech.in">
+                <span className="text-black dark:text-white">
+                  PlaceholderTech <br />
+                </span>
+              </LinkPreview>
+              🐥 I{" "}
+              <a
+                className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600"
+                target="__blank"
+              >
+                <LinkPreview url="https://twitter.com/mannupaaji">
+                  <span className=" text-blue-500 dark:text-blue-500">
+                    Tweet
                   </span>
                 </LinkPreview>
-                and{" "}
-                <LinkPreview url="https://algochurn.com">
-                  <span className="text-black dark:text-white">
-                    Algochurn <br />
-                  </span>
-                </LinkPreview>
-                🧑🏻‍🏫 Love to teach programming at{" "}
-                <LinkPreview url="https://www.codementor.io/@manuarorawork?refer=badge">
-                  <span className="text-black dark:text-white">
-                    Codementor <br />
-                  </span>
-                </LinkPreview>
-                💯 Embracing Entrepreneurship at{" "}
-                <LinkPreview url="https://www.placeholdertech.in">
-                  <span className="text-black dark:text-white">
-                    PlaceholderTech <br />
-                  </span>
-                </LinkPreview>
-                🐥 I{" "}
-                <a
-                  className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600"
-                  target="__blank"
+              </a>{" "}
+              about technology, learning and{" "}
+              <StaticLinkPreview url="https://manuarora.in/radhey-bhaiya.jpeg">
+                <span
+                  onMouseEnter={play}
+                  onMouseLeave={play}
+                  className="text-black dark:text-white"
                 >
-                  <LinkPreview url="https://twitter.com/mannupaaji">
-                    <span className=" text-blue-500 dark:text-blue-500">
-                      Tweet
-                    </span>
-                  </LinkPreview>
-                </a>{" "}
-                about technology, learning and{" "}
-                <StaticLinkPreview url="https://manuarora.in/radhey-bhaiya.jpeg">
-                  <span
-                    onMouseEnter={play}
-                    onMouseLeave={play}
-                    className="text-black dark:text-white"
-                  >
-                    memes.
-                  </span>
-                </StaticLinkPreview>
-              </h2>
-            </RoughNotationGroup>
+                  memes.
+                </span>
+              </StaticLinkPreview>
+            </h2>
           </div>
 
           <div className="md:flex hidden md:w-1/4 flex-col">

@@ -113,7 +113,7 @@ export default function Container(props) {
         </button>
         <div>
           {links.map((navLink, index) => (
-            <NextLink href="/">
+            <NextLink href={navLink.link}>
               <a
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
