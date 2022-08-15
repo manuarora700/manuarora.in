@@ -6,12 +6,15 @@ import { useTheme } from "next-themes";
 
 import Footer from "@/components/Footer";
 
+import { AnimatePresence, motion } from "framer-motion";
+
 export default function Container(props) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
   // After mounting, we have access to the theme
   useEffect(() => setMounted(true), []);
+  let [hoveredIndex, setHoveredIndex] = useState(null);
 
   const { children, ...customMeta } = props;
   const router = useRouter();
@@ -22,6 +25,30 @@ export default function Container(props) {
     type: "website",
     ...customMeta,
   };
+
+  const links = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "Blog",
+      link: "/blog",
+    },
+
+    {
+      name: "Dashboard",
+      link: "/dashboard",
+    },
+    {
+      name: "Snippets",
+      link: "/snippets",
+    },
+    {
+      name: "Projects",
+      link: "/projects",
+    },
+  ];
 
   return (
     <div className="bg-white dark:bg-black">
@@ -85,10 +112,36 @@ export default function Container(props) {
           )}
         </button>
         <div>
-          <NextLink href="/">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">Home</a>
-          </NextLink>
-          <NextLink href="/blog">
+          {links.map((navLink, index) => (
+            <NextLink href="/">
+              <a
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+              >
+                <AnimatePresence>
+                  {hoveredIndex === index && (
+                    <motion.span
+                      className="absolute inset-0 rounded-lg bg-gray-100"
+                      layoutId="hoverBackground"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                      exit={{
+                        opacity: 0,
+                        transition: { duration: 0.15, delay: 0.2 },
+                      }}
+                    />
+                  )}
+                </AnimatePresence>
+
+                <span className="relative z-10">{navLink.name}</span>
+              </a>
+              {/* <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
+                Home
+              </a> */}
+            </NextLink>
+          ))}
+          {/* <NextLink href="/blog">
             <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">Blog</a>
           </NextLink>
 
@@ -106,7 +159,7 @@ export default function Container(props) {
             <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
               Projects
             </a>
-          </NextLink>
+          </NextLink> */}
         </div>
       </nav>
       <main
