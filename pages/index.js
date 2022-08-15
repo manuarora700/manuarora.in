@@ -39,8 +39,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex md:w-3/4 flex-col">
             <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-              Hey, I’m
-              <span className="dark:text-black">Manu Arora</span>
+              Hey, I’m <span className="dark:text-black">Manu Arora</span>
             </h1>
 
             <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-normal">
