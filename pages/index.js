@@ -50,7 +50,7 @@ export default function Home() {
               </span>{" "}
               as a{" "}
               <span className="dark:text-white font-bold">
-                Software Engineer.{" "}
+                Senior Software Engineer.{" "}
               </span>{" "}
               <br />
               🔨 Building{" "}
