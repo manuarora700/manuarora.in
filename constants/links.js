@@ -11,12 +11,7 @@ export const links = [
     href: "https://manuarora.in",
     icon: "🚀",
   },
-  {
-    id: 6,
-    name: "LinkedIn",
-    href: "https://linkedin.com/in/manuarora28",
-    icon: "🫡",
-  },
+
   {
     id: 1,
     name: "Tailwind Master Kit",
@@ -34,7 +29,13 @@ export const links = [
     id: 8,
     name: "PlaceholderTech",
     href: "https://placeholdertech.in",
-    icon: "💻",
+    icon: "⚡️",
+  },
+  {
+    id: 6,
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/manuarora28",
+    icon: "🫡",
   },
   {
     id: 3,
