@@ -27,6 +27,12 @@ export default function Snippets({ snippets }) {
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
           <ResourcesCard
+            title="Beautiful Mockups"
+            link="https://shots.so"
+            websiteLink="shots.so"
+            description="Beautiful Mobile and Web Mockups"
+          />
+          <ResourcesCard
             title="Tailwind Snippets"
             link=" https://snippets.alexandru.so/"
             websiteLink="Alexandru.so"
