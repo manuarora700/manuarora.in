@@ -20,7 +20,7 @@ export default function Links() {
             key={el?.href}
             href={el?.href}
             target="__blank"
-            className="border-2 border-gray-200 rounded-md py-2 px-4 w-full mb-4 hover:bg-gray-100"
+            className="dark:hover:bg-gray-700 dark:border-gray-600 border-2 border-gray-200 rounded-md py-2 px-4 w-full mb-4 hover:bg-gray-100"
           >
             <span className="inline-block mr-2">{el?.icon}</span>{" "}
             <span className="font-bold">{el?.name}</span>
