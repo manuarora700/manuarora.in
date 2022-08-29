@@ -136,30 +136,8 @@ export default function Container(props) {
 
                 <span className="relative z-10">{navLink.name}</span>
               </a>
-              {/* <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
-                Home
-              </a> */}
             </NextLink>
           ))}
-          {/* <NextLink href="/blog">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">Blog</a>
-          </NextLink>
-
-          <NextLink href="/dashboard">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
-              Dashboard
-            </a>
-          </NextLink>
-          <NextLink href="/snippets">
-            <a className="p-1 sm:p-4 hidden md:inline text-gray-900 dark:text-gray-100">
-              Snippets
-            </a>
-          </NextLink>
-          <NextLink href="/projects">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">
-              Projects
-            </a>
-          </NextLink> */}
         </div>
       </nav>
       <main
