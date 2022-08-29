@@ -126,14 +126,14 @@ export default function Chat() {
       exitBeforeEnter
       onExitComplete={() => null}
     >
-      <div class="fixed right-2 md:right-10 bottom-10 flex flex-col items-end z-20">
+      <div class="fixed right-4 md:right-10 bottom-10 flex flex-col items-end z-20">
         {open && (
           <motion.div
             variants={dropIn}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="mb-4 rounded-xl shadow-xl bg-white dark:bg-gray-900  flex flex-col overflow-hidden mx-4 md:mx-0"
+            className="mb-4 rounded-xl shadow-2xl bg-white dark:bg-gray-900  flex flex-col overflow-hidden mx-4 md:mx-0"
           >
             <div className="p-4 bg-gray-100 dark:bg-gray-800">
               <h2 className="text-gray-700 font-bold text-xl dark:text-white">
