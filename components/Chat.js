@@ -126,14 +126,14 @@ export default function Chat() {
       exitBeforeEnter
       onExitComplete={() => null}
     >
-      <div class="fixed right-10 bottom-10 flex flex-col items-end z-20">
+      <div class="fixed right-2 md:right-10 bottom-10 flex flex-col items-end z-20">
         {open && (
           <motion.div
             variants={dropIn}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="mb-4 rounded-xl shadow-xl bg-white dark:bg-gray-900  flex flex-col overflow-hidden"
+            className="mb-4 rounded-xl shadow-xl bg-white dark:bg-gray-900  flex flex-col overflow-hidden mx-4 md:mx-0"
           >
             <div className="p-4 bg-gray-100 dark:bg-gray-800">
               <h2 className="text-gray-700 font-bold text-xl dark:text-white">
@@ -194,7 +194,7 @@ export default function Chat() {
         )}
         <button
           onClick={handleButtonClick}
-          class="bg-gray-100 dark:bg-gray-900 w-14 h-14 rounded-full hidden md:flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200"
+          class="bg-gray-100 dark:bg-gray-900 w-14 h-14 rounded-full  flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
