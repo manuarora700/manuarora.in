@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import { FreelanceCard } from "@/components/FreelanceCard";
 import ResourcesCard from "@/components/ResourcesCard";
+import Testimonials from "@/components/Testimonials";
 import { links } from "@/constants/links";
 import Link from "next/link";
 
@@ -10,7 +11,7 @@ export default function Freelance() {
       title="Freelancing – Manu Arora"
       description="Freelance projects and SaaS application that I've developed."
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
+      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-4 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Freelancing
         </h1>
@@ -159,6 +160,13 @@ export default function Freelance() {
             </svg>
           </a>
         </Link>
+        <h2 className="font-bold text-2xl md:text-3xl tracking-tight text-black dark:text-white">
+          Testimonials
+        </h2>
+      </div>
+      <div className="relative overflow-hidden mb-8">
+        <div className="absolute inset-0  bg-gradient-to-r from-white/90 dark:from-black/90 via-transparent dark:via-transparent to-white/90 dark:to-black/90 z-20"></div>
+        <Testimonials />
       </div>
     </Container>
   );
