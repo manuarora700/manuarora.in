@@ -194,7 +194,7 @@ export default function Chat() {
         )}
         <button
           onClick={handleButtonClick}
-          class="bg-gray-100 dark:bg-gray-900 w-14 h-14 rounded-full  flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200"
+          class="bg-gray-100 dark:bg-gray-900 w-14 h-14 rounded-full  flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200 shadow-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
