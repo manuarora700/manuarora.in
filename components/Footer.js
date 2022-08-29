@@ -54,6 +54,11 @@ export default function Footer() {
           <ExternalLink href="https://instagram.com/maninthere">
             Instagram
           </ExternalLink>
+          <Link href="/freelance">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Freelancing
+            </a>
+          </Link>
           {/* <ExternalLink href="https://www.youtube.com/channel/UCZMli3czZnd1uoc1ShTouQw">
             YouTube
           </ExternalLink> */}

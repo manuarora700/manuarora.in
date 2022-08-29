@@ -49,6 +49,45 @@ export default function Container(props) {
       link: "/projects",
     },
   ];
+  const mobileLinks = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "Projects",
+      link: "/projects",
+    },
+    {
+      name: "Blog",
+      link: "/blog",
+    },
+
+    {
+      name: "Snippets",
+      link: "/snippets",
+    },
+    {
+      name: "Resources",
+      link: "/resources",
+    },
+    {
+      name: "Freelancing",
+      link: "/freelance",
+    },
+    {
+      name: "Box Shadows",
+      link: "/boxshadows",
+    },
+    {
+      name: "FreeCodeCamp",
+      link: "/freecodecamp",
+    },
+    {
+      name: "Dashboard",
+      link: "/dashboard",
+    },
+  ];
 
   return (
     <div className="bg-white dark:bg-black">
@@ -111,35 +150,18 @@ export default function Container(props) {
             </svg>
           )}
         </button>
-        <div>
-          {links.map((navLink, index) => (
-            <NextLink href={navLink.link}>
-              <a
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
-              >
-                <AnimatePresence>
-                  {hoveredIndex === index && (
-                    <motion.span
-                      className="absolute inset-0 rounded-lg bg-gray-100"
-                      layoutId="hoverBackground"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1, transition: { duration: 0.15 } }}
-                      exit={{
-                        opacity: 0,
-                        transition: { duration: 0.15, delay: 0.2 },
-                      }}
-                    />
-                  )}
-                </AnimatePresence>
-
-                <span className="relative z-10">{navLink.name}</span>
-              </a>
-            </NextLink>
-          ))}
+        <div className="hidden sm:block">
+          <Desktop
+            links={links}
+            hoveredIndex={hoveredIndex}
+            setHoveredIndex={setHoveredIndex}
+          />
+        </div>
+        <div className="block sm:hidden" links={mobileLinks}>
+          <Mobile links={mobileLinks} />
         </div>
       </nav>
+
       <main
         id="skip"
         className="flex flex-col justify-center bg-white dark:bg-black px-8 text-gray-900 dark:text-gray-100"
@@ -150,3 +172,133 @@ export default function Container(props) {
     </div>
   );
 }
+
+export const Mobile = ({ links }) => {
+  const [open, setOpen] = useState(false);
+  const router = useRouter();
+  const dropIn = {
+    hidden: {
+      y: "-4vh",
+      opacity: 0,
+    },
+    visible: {
+      y: "0",
+      opacity: 1,
+      transition: {
+        duration: 0.1,
+        type: "spring",
+        damping: 25,
+        stiffness: 500,
+      },
+    },
+    exit: {
+      y: "4vh",
+      opacity: 0,
+    },
+  };
+  const handleClick = (link) => {
+    setOpen(false);
+    router.push(link);
+  };
+
+  useEffect(() => {
+    console.log("open value", open);
+  }, [open]);
+
+  return (
+    <div className="w-full flex flex-row items-center space-x-2">
+      <button
+        onClick={() => handleClick(links[0].link)}
+        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+      >
+        {links[0]?.name}
+      </button>
+      <button
+        onClick={() => handleClick(links[1].link)}
+        className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+      >
+        {links[1]?.name}
+      </button>
+
+      <button
+        onClick={() => setOpen(!open)}
+        className="p-2 rounded-md bg-gray-200 dark:bg-gray-800"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-black dark:text-white"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+      <AnimatePresence
+        initial={false}
+        exitBeforeEnter
+        onExitComplete={() => null}
+      >
+        {open && (
+          <motion.div
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="absolute inset-x-0 mx-auto top-20 flex flex-col w-[90%]   p-4 rounded-lg shadow-xl z-[999] bg-white dark:bg-gray-800 divide-y dark:divide-gray-700"
+          >
+            {[...links].splice(2).map((el) => (
+              <button
+                key={el?.link}
+                onClick={() => handleClick(el.link)}
+                className="relative font-bold px-1 py-4 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900 text-left"
+              >
+                <AnimatePresence>
+                  <span className="relative z-10">{el.name}</span>
+                </AnimatePresence>
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export const Desktop = ({ links, hoveredIndex, setHoveredIndex }) => {
+  return (
+    <>
+      {links.map((navLink, index) => (
+        <NextLink href={navLink.link}>
+          <a
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+          >
+            <AnimatePresence>
+              {hoveredIndex === index && (
+                <motion.span
+                  className="absolute inset-0 rounded-lg bg-gray-100"
+                  layoutId="hoverBackground"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                  exit={{
+                    opacity: 0,
+                    transition: { duration: 0.15, delay: 0.2 },
+                  }}
+                />
+              )}
+            </AnimatePresence>
+
+            <span className="relative z-10">{navLink.name}</span>
+          </a>
+        </NextLink>
+      ))}
+    </>
+  );
+};
