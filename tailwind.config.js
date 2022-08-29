@@ -1,4 +1,4 @@
-const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
+const { spacing, fontFamily, scale } = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 module.exports = {
@@ -12,6 +12,25 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      animation: {
+        blog: "blob 7s infinite",
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) ",
+          },
+          "33%": {
+            transform: "translate(4px, -4px) ",
+          },
+          "66%": {
+            transform: "translate(-8px, 8px) ",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) ",
+          },
+        },
+      },
       colors: {
         "blue-opaque": "rgb(13 42 148 / 18%)",
         cyan: colors.cyan,

@@ -7,6 +7,7 @@ import * as gtag from "@/lib/gtag";
 import Banner from "@/components/Banner";
 
 import MDXComponents from "@/components/MDXComponents";
+import Chat from "@/components/Chat";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }) {
       <MDXProvider components={MDXComponents}>
         <Banner />
         <Component {...pageProps} />
+        <Chat />
       </MDXProvider>
     </ThemeProvider>
   );

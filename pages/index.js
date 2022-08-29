@@ -36,7 +36,7 @@ export default function Home() {
       description="Full-Stack developer, JavaScript enthusiast, Freelancer, Tech Blogger and a Learner. I love building products and web apps that impact millions of lives."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row justify-between items-start">
           <div className="flex md:w-3/4 flex-col">
             <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
               Hey, I’m Manu Arora
@@ -101,12 +101,17 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="md:flex hidden md:w-1/4 flex-col">
+          <a
+            href="https://twitter.com/mannupaaji"
+            className="md:flex hidden md:w-1/4 flex-col relative"
+            target="__blank"
+          >
+            <div className="absolute w-full h-full rounded-full transform scale-110 shadow-xl bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500" />
             <img
               src="avatar-new.png"
-              className="rounded-full max-w-[200px] shadow-xl shadow-cyan-500/50"
+              className="rounded-full max-w-[200px]  z-0"
             />
-          </div>
+          </a>
         </div>
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
           Most Popular
