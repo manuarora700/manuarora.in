@@ -73,8 +73,8 @@ export default function Chat() {
     setLoading(true);
     const res = await fetch("/api/chat", {
       body: JSON.stringify({
-        email: email,
-        message: message,
+        email: email.value,
+        message: message.value,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -92,6 +92,16 @@ export default function Chat() {
     setSuccess(`Submitted successfully! It's time to celebrate`);
     setError(false);
     setLoading(false);
+    setFormState({
+      email: {
+        value: "",
+        error: "",
+      },
+      message: {
+        value: "",
+        error: "",
+      },
+    });
   };
 
   const handleButtonClick = () => {
