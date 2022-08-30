@@ -160,14 +160,14 @@ export default function Freelance() {
             </svg>
           </a>
         </Link>
-        <h2 className="font-bold text-2xl md:text-3xl tracking-tight text-black dark:text-white">
+        {/* <h2 className="font-bold text-2xl md:text-3xl tracking-tight text-black dark:text-white">
           Testimonials
-        </h2>
+        </h2> */}
       </div>
-      <div className="relative overflow-hidden mb-8">
+      {/* <div className="relative overflow-hidden mb-14">
         <div className="absolute inset-0  bg-gradient-to-r from-white/90 dark:from-black/90 via-transparent dark:via-transparent to-white/90 dark:to-black/90 z-20"></div>
         <Testimonials />
-      </div>
+      </div> */}
     </Container>
   );
 }

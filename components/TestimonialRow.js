@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 
 const TestimonialRow = ({ children, speed, playing }) => {
-  const scrollerRef = React.useRef();
-  const clonedScrollerRef = React.useRef();
-  const hoverRef = React.useRef(false);
-  const playingRef = React.useRef(playing);
+  const scrollerRef = useRef(null);
+  const clonedScrollerRef = useRef(null);
+  const hoverRef = useRef(false);
+  const playingRef = useRef(playing);
 
   React.useEffect(() => {
     playingRef.current = playing;
