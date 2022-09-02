@@ -32,6 +32,13 @@ export default function Snippets({ snippets }) {
             websiteLink="shots.so"
             description="Beautiful Mobile and Web Mockups"
           />
+
+          <ResourcesCard
+            title="Email Templates with Tailwind"
+            link="https://maizzle.com/"
+            websiteLink="maizzle.com"
+            description="Email Templates with Tailwind and HTML"
+          />
           <ResourcesCard
             title="Tailwind Snippets"
             link=" https://snippets.alexandru.so/"
