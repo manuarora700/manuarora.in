@@ -1,8 +1,5 @@
 import Container from "@/components/Container";
 import { FreelanceCard } from "@/components/FreelanceCard";
-import ResourcesCard from "@/components/ResourcesCard";
-import Testimonials from "@/components/Testimonials";
-import { links } from "@/constants/links";
 import Link from "next/link";
 
 export default function Freelance() {
@@ -160,14 +157,7 @@ export default function Freelance() {
             </svg>
           </a>
         </Link>
-        {/* <h2 className="font-bold text-2xl md:text-3xl tracking-tight text-black dark:text-white">
-          Testimonials
-        </h2> */}
       </div>
-      {/* <div className="relative overflow-hidden mb-14">
-        <div className="absolute inset-0  bg-gradient-to-r from-white/90 dark:from-black/90 via-transparent dark:via-transparent to-white/90 dark:to-black/90 z-20"></div>
-        <Testimonials />
-      </div> */}
     </Container>
   );
 }
