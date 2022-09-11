@@ -122,7 +122,7 @@ export default function Home() {
           slug="ace-the-javascript-interview"
         />
         <BlogPost
-          title="Free protfolio website template that gets you hired in 2021"
+          title="Free portfolio website template that gets you hired in 2021"
           summary="Build a modern, minimal portfolio website with Next.js and tailwindcss for developers that gets you hired for Full Stack Developer roles in 2021."
           slug="developer-portfolio-website"
         />
