@@ -5,7 +5,7 @@ export async function getServerSideProps({ res }) {
   const feed = new RSS({
     title: "Manu Arora",
     site_url: "https://manuarora.in",
-    feed_url: "https://leerob.io/feed.xml",
+    feed_url: "https://manuarora.in/feed.xml",
   });
 
   const posts = await getAllFilesFrontMatter("blog");
