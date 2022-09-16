@@ -230,17 +230,19 @@ export default function Home() {
           href="#"
           icon="more"
         />
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
-          Tech Talks
-        </h3>
-        <Talks
-          title={`Crafting the perfect portfolio website for developers`}
-          description={` Talked about how to effectively utilise a portfolio website to
+        <div className=" my-6 md:my-10">
+          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+            Tech Talks
+          </h3>
+          <Talks
+            title={`Crafting the perfect portfolio website for developers`}
+            description={` Talked about how to effectively utilise a portfolio website to
           put yourself in the best position to win.`}
-          company={`roc8.careers`}
-          image={`/talks/roc8.png`}
-          url={`https://www.youtube.com/watch?v=yKVCl1jFkQQ`}
-        />
+            company={`roc8.careers`}
+            image={`/talks/roc8.png`}
+            url={`https://www.youtube.com/watch?v=yKVCl1jFkQQ`}
+          />
+        </div>
 
         <Timeline />
         <Contact />
