@@ -55,21 +55,23 @@ export default function Home() {
               </span>{" "}
               <br />
               🔨 Building{" "}
+              <LinkPreview url="https://algochurn.com">
+                <span className="text-black dark:text-white">Algochurn </span>
+              </LinkPreview>
+              //{" "}
               <LinkPreview url="https://tailwindmasterkit.com">
                 <span className="text-black dark:text-white">
-                  Tailwind Master Kit{" "}
+                  Tailwind Master Kit <br />
                 </span>
               </LinkPreview>
-              and{" "}
-              <LinkPreview url="https://algochurn.com">
-                <span className="text-black dark:text-white">
-                  Algochurn <br />
-                </span>
-              </LinkPreview>
-              🧑🏻‍🏫 Love to teach programming at{" "}
+              🧑🏻‍🏫 Mentoring folks at{" "}
               <LinkPreview url="https://www.codementor.io/@manuarorawork?refer=badge">
+                <span className="text-black dark:text-white">Codementor</span>
+              </LinkPreview>{" "}
+              //{" "}
+              <LinkPreview url="https://mentorcruise.com/mentor/manuarora">
                 <span className="text-black dark:text-white">
-                  Codementor <br />
+                  MentorCruise <br />
                 </span>
               </LinkPreview>
               💯 Embracing Entrepreneurship at{" "}
