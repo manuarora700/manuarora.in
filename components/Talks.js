@@ -4,7 +4,7 @@ const Talks = ({ url, company, image, title, description }) => {
   return (
     <a
       href={url}
-      className="flex flex-col md:flex-row space-x-0 md:space-x-4"
+      className="flex flex-col md:flex-row space-x-0 md:space-x-4 mb-10"
       target="__blank"
     >
       <img src={image} className="rounded-md w-72 mb-4 md:mb-0" />

@@ -233,8 +233,8 @@ export default function Home() {
           icon="more"
         />
         <div className=" my-6 md:my-10">
-          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
-            Tech Talks
+          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 mt-8 text-black dark:text-white">
+            Tech Talks and Videos
           </h3>
           <Talks
             title={`Crafting the perfect portfolio website for developers`}
@@ -243,6 +243,13 @@ export default function Home() {
             company={`roc8.careers`}
             image={`/talks/roc8.png`}
             url={`https://www.youtube.com/watch?v=yKVCl1jFkQQ`}
+          />
+          <Talks
+            title={`How To Use Algochurn To Clear Technical Interviews With Ease.`}
+            description={`Algochurn is a free resource that helps front-end developers practice machine coding questions. Here I talk about how to effectively make use of Algochurn.`}
+            company={`Youtube`}
+            image={`/talks/algochurn-youtube.png`}
+            url={`https://www.youtube.com/watch?v=sZA-WrS39KI&t=19s`}
           />
         </div>
 
