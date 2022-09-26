@@ -251,6 +251,37 @@ export default function Home() {
             image={`/talks/algochurn-youtube.png`}
             url={`https://www.youtube.com/watch?v=sZA-WrS39KI&t=19s`}
           />
+          <Talks
+            title={`How To Implement Debouncing In React.`}
+            description={`Debouncing is a method of preventing a function from being invoked too often. In this video, I talk about how to create a custom debounce function from scratch.`}
+            company={`Youtube`}
+            image={`/talks/debouncing.png`}
+            url={`https://www.youtube.com/watch?v=uncrKqVtgrc`}
+          />
+          <div className="flex w-full justify-center">
+            <a
+              type="button"
+              href="https://www.youtube.com/channel/UC7MQDjVfjEPkHMe1lZGkDRA"
+              target="__blank"
+              className="flex items-center text-sm  mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100 self-center "
+            >
+              See All Videos
+              <svg
+                className="h-4 w-4 ml-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <Timeline />
