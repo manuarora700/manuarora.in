@@ -237,7 +237,7 @@ export default function Home() {
             Tech Talks and Videos
           </h3>
           <Talks
-            title={`Crafting the perfect portfolio website for developers`}
+            title={`Crafting The Perfect Portfolio Website For Developers`}
             description={` Talked about how to effectively utilise a portfolio website to
           put yourself in the best position to win.`}
             company={`roc8.careers`}
