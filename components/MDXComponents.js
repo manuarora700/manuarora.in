@@ -18,6 +18,7 @@ import Table from "@/components/Table";
 import VideoDemo from "./VideoDemo";
 import VideoComponent from "./VideoComponent";
 import Button from "./Button";
+import AnimatedGradient from "./SnippetsComponents/AnimatedGradient";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -50,6 +51,7 @@ const MDXComponents = {
   StepLargeCustom,
   VideoComponent,
   Button,
+  AnimatedGradient,
 };
 
 export default MDXComponents;

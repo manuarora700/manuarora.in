@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       animation: {
         blog: "blob 7s infinite",
+        border: "border 4s ease infinite",
       },
       keyframes: {
         blob: {
@@ -29,6 +30,10 @@ module.exports = {
           "100%": {
             transform: "translate(0px, 0px) ",
           },
+        },
+        border: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
         },
       },
       colors: {
