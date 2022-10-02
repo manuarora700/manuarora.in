@@ -26,6 +26,14 @@ export default function Snippets({ snippets }) {
           Utilities
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          {/* https://www.supercreative.design/weblist/1000-inspiring-websites */}
+          <ResourcesCard
+            title="1000+ Website Inspirations"
+            link=" https://www.supercreative.design/weblist/1000-inspiring-websites"
+            websiteLink="supercreative.design"
+            description="Beautiful and Modern Website Inspirations"
+          />
+
           <ResourcesCard
             title="Beautiful Mockups"
             link="https://shots.so"
