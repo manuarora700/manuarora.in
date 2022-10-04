@@ -28,8 +28,20 @@ export default function Snippets({ snippets }) {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
           {/* https://www.supercreative.design/weblist/1000-inspiring-websites */}
           <ResourcesCard
+            title="Lookup.design"
+            link="https://lookup.design/"
+            websiteLink="lookup.design"
+            description="Website components inspirations"
+          />
+          <ResourcesCard
+            title="Microcopy"
+            link="https://www.microcopy.me/"
+            websiteLink="microcopy.me"
+            description="Website copy instead of lorem ipsum."
+          />
+          <ResourcesCard
             title="1000+ Website Inspirations"
-            link=" https://www.supercreative.design/weblist/1000-inspiring-websites"
+            link="https://www.supercreative.design/weblist/1000-inspiring-websites"
             websiteLink="supercreative.design"
             description="Beautiful and Modern Website Inspirations"
           />
