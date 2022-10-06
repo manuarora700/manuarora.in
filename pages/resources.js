@@ -26,7 +26,12 @@ export default function Snippets({ snippets }) {
           Utilities
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
-          {/* https://www.supercreative.design/weblist/1000-inspiring-websites */}
+          <ResourcesCard
+            title="React Icons"
+            link=" https://react-icons.github.io/react-icons/"
+            websiteLink="react-icons.github.ion"
+            description="Great icon packs from many websites."
+          />
           <ResourcesCard
             title="Lookup.design"
             link="https://lookup.design/"
