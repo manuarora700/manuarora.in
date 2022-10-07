@@ -45,6 +45,10 @@ export default function Container(props) {
       link: "/snippets",
     },
     {
+      name: "Resources",
+      link: "/resources",
+    },
+    {
       name: "Projects",
       link: "/projects",
     },
@@ -121,7 +125,7 @@ export default function Container(props) {
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10"
+          className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           {mounted && (
@@ -150,11 +154,12 @@ export default function Container(props) {
             </svg>
           )}
         </button>
-        <div className="hidden sm:block">
+        <div className="hidden sm:block rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
           <Desktop
             links={links}
             hoveredIndex={hoveredIndex}
             setHoveredIndex={setHoveredIndex}
+            router={router}
           />
         </div>
         <div className="block sm:hidden" links={mobileLinks}>
@@ -270,7 +275,7 @@ export const Mobile = ({ links }) => {
   );
 };
 
-export const Desktop = ({ links, hoveredIndex, setHoveredIndex }) => {
+export const Desktop = ({ links, hoveredIndex, setHoveredIndex, router }) => {
   return (
     <>
       {links.map((navLink, index) => (
@@ -278,12 +283,12 @@ export const Desktop = ({ links, hoveredIndex, setHoveredIndex }) => {
           <a
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
-            className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+            className="relative rounded-lg px-3 inline-block py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
           >
             <AnimatePresence>
               {hoveredIndex === index && (
                 <motion.span
-                  className="absolute inset-0 rounded-lg bg-gray-100"
+                  className="absolute inset-0  transform bg-gray-50 dark:bg-zinc-800"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1, transition: { duration: 0.15 } }}
@@ -295,7 +300,18 @@ export const Desktop = ({ links, hoveredIndex, setHoveredIndex }) => {
               )}
             </AnimatePresence>
 
-            <span className="relative z-10">{navLink.name}</span>
+            <span
+              className={`relative z-10 ${
+                router.asPath === navLink.link
+                  ? "text-blue-600"
+                  : "text-gray-800 dark:text-gray-50"
+              }`}
+            >
+              {navLink.name}
+            </span>
+            {router.asPath === navLink.link && (
+              <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
+            )}
           </a>
         </NextLink>
       ))}

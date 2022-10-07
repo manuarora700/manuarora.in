@@ -109,10 +109,10 @@ export default function Home() {
             className="md:flex hidden md:w-1/4 flex-col relative"
             target="__blank"
           >
-            <div className="absolute w-full h-full rounded-full transform scale-110 shadow-xl bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500" />
+            {/* <div className="absolute w-full h-full rounded-lg transform scale-110 shadow-xl bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500" /> */}
             <img
               src="avatar-new.png"
-              className="rounded-full max-w-[200px]  z-0"
+              className="rounded-lg max-w-[200px] z-0 transform rotate-3 shadow-xl shadow-black/20"
             />
           </a>
         </div>
