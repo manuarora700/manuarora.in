@@ -49,6 +49,10 @@ export default function Container(props) {
       link: "/resources",
     },
     {
+      name: "Words",
+      link: "/words",
+    },
+    {
       name: "Projects",
       link: "/projects",
     },
@@ -90,6 +94,10 @@ export default function Container(props) {
     {
       name: "Dashboard",
       link: "/dashboard",
+    },
+    {
+      name: "Words",
+      link: "/words",
     },
   ];
 
@@ -303,8 +311,8 @@ export const Desktop = ({ links, hoveredIndex, setHoveredIndex, router }) => {
             <span
               className={`relative z-10 ${
                 router.asPath === navLink.link
-                  ? "text-blue-600"
-                  : "text-gray-800 dark:text-gray-50"
+                  ? "text-teal-600"
+                  : "text-gray-600 dark:text-gray-50"
               }`}
             >
               {navLink.name}

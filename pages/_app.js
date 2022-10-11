@@ -9,7 +9,9 @@ import Banner from "@/components/Banner";
 import MDXComponents from "@/components/MDXComponents";
 import Chat from "@/components/Chat";
 
-function MyApp({ Component, pageProps }) {
+import { SessionProvider } from "next-auth/react";
+
+function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -22,13 +24,15 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <ThemeProvider attribute="class">
-      <MDXProvider components={MDXComponents}>
-        {/* <Banner /> */}
-        <Component {...pageProps} />
-        <Chat />
-      </MDXProvider>
-    </ThemeProvider>
+    <SessionProvider session={session}>
+      <ThemeProvider attribute="class">
+        <MDXProvider components={MDXComponents}>
+          {/* <Banner /> */}
+          <Component {...pageProps} />
+          <Chat />
+        </MDXProvider>
+      </ThemeProvider>
+    </SessionProvider>
   );
 }
 

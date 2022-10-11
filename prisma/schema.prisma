@@ -1,0 +1,19 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+    provider             = "postgresql"
+    url                  = env("DATABASE_URL")
+    referentialIntegrity = "prisma"
+}
+
+model words {
+    id         BigInt   @id @default(autoincrement())
+    email      String   @db.VarChar(256)
+    body       String   @db.VarChar(500)
+    created_by String   @db.VarChar(256)
+    created_at DateTime @default(now())
+    updated_at DateTime @default(now())
+}
