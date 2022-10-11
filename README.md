@@ -63,14 +63,15 @@ To run the project locally, create a `.env.local` file and add the required API 
 ## Built Using
 
 - [Next.js](https://nextjs.org)
-
 - [Tailwindcss](https://tailwindcss.com)
-
 - [MDX](https://github.com/mdx-js/mdx)
-
 - [Vercel](https://vercel.com)
-
 - [Firebase](https://firebase.google.com/)
+- [Prisma](https://www.prisma.io/)
+- [Supabase](https://supabase.com/)
+- [Next Auth](https://next-auth.js.org/)
+
+# Inspiration
 
 Special thanks to [Lee Rob](https://github.com/leerob) for creating such a beautiful theme that is very well structured and looks amazing on all devices. All the design inspiration and MDX structure come from him.
 
