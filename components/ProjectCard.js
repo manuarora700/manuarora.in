@@ -2,13 +2,16 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
   // const tags = ["GitHub", "React", "JamStack"];
   return (
     <a
-      className="mb-4 hover:shadow rounded-md shadow-custom border-2 border-[#212121] transition duration-200"
+      className="mb-4 hover:shadow-lg rounded-xl  transition duration-200 relative border border-slate-200 dark:border-slate-800"
       href={href}
       aria-label={title}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="flex items-start border border-gray-200 dark:border-gray-800 rounded p-4">
+      <span className="absolute w-[40%] -bottom-px right-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
+      <span className="absolute w-px -left-px top-[50%] h-[40%] bg-gradient-to-b from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
+
+      <div className="flex items-start  dark:border-gray-800 rounded p-4 relative">
         {/* */}
         <div className="mt-2">
           {icon === "tailwindmasterkit" && (
