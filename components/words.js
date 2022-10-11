@@ -3,6 +3,7 @@ import { format } from "date-fns";
 import { signIn, useSession } from "next-auth/react";
 import useSWR, { useSWRConfig } from "swr";
 import { AiFillGithub } from "react-icons/ai";
+import { MdDeleteForever } from "react-icons/md";
 import fetcher from "lib/fetcher";
 import Image from "next/image";
 
@@ -15,7 +16,7 @@ const Form = {
 
 export default function Words({ fallbackData }) {
   const { data: session } = useSession();
-  console.log("session.user", session?.user);
+
   const { mutate } = useSWRConfig();
   const [form, setForm] = useState({ state: null, message: "" });
   const inputEl = useRef(null);
@@ -57,10 +58,6 @@ export default function Words({ fallbackData }) {
   return (
     <>
       <div className=" my-4 w-full  relative">
-        {/* <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
-          Anything you would like to share?
-        </h5> */}
-
         {!session && (
           // eslint-disable-next-line @next/next/no-html-link-for-pages
           <a
@@ -79,10 +76,6 @@ export default function Words({ fallbackData }) {
             className="relative my-4 flex flex-col items-start"
             onSubmit={leaveEntry}
           >
-            {/* <div
-              class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"
-              style={{ "background-position": "10px 10px" }}
-            ></div> */}
             <div className="w-full border border-slate-200 dark:border-slate-800 rounded-xl relative  mb-4 ">
               <textarea
                 ref={inputEl}
@@ -136,7 +129,7 @@ function WordsEntry({ entry, user }) {
   };
 
   return (
-    <div className="flex flex-col space-y-2">
+    <div className="flex flex-col space-y-2 relative w-full">
       <div className="prose dark:prose-dark w-full break-words">
         {entry.body}
       </div>
@@ -161,7 +154,7 @@ function WordsEntry({ entry, user }) {
               className="text-sm text-red-600 dark:text-red-400"
               onClick={deleteEntry}
             >
-              Delete
+              <MdDeleteForever className="text-red-500 h-4 w-4" />
             </button>
           </>
         )}
