@@ -4,6 +4,7 @@ import { signIn, useSession } from "next-auth/react";
 import useSWR, { useSWRConfig } from "swr";
 import { AiFillGithub } from "react-icons/ai";
 import fetcher from "lib/fetcher";
+import Image from "next/image";
 
 const Form = {
   Initial: "Initial",
@@ -140,6 +141,14 @@ function WordsEntry({ entry, user }) {
         {entry.body}
       </div>
       <div className="flex items-center space-x-3">
+        <Image
+          src={entry.image}
+          width="20"
+          height="20"
+          objectFit="cover"
+          className="rounded-full"
+        />
+
         <p className="text-sm text-gray-500">{entry.created_by}</p>
         <span className=" text-gray-200 dark:text-gray-800">/</span>
         <p className="text-sm text-gray-400 dark:text-gray-600">

@@ -13,6 +13,7 @@ export default async function handler(req, res) {
       entries.map((entry) => ({
         id: entry.id.toString(),
         body: entry.body,
+        image: entry.image,
         created_by: entry.created_by,
         updated_at: entry.updated_at,
       }))
@@ -20,7 +21,7 @@ export default async function handler(req, res) {
   }
 
   const session = await getSession({ req });
-  const { email, name } = session.user;
+  const { email, name, image } = session.user;
 
   if (!session) {
     return res.status(403).send("Unauthorized");
@@ -31,7 +32,7 @@ export default async function handler(req, res) {
       data: {
         email,
         body: (req.body.body || "").slice(0, 500),
-
+        image,
         created_by: name,
       },
     });
@@ -39,6 +40,7 @@ export default async function handler(req, res) {
     return res.status(200).json({
       id: newEntry.id.toString(),
       body: newEntry.body,
+      image: newEntry.image,
       created_by: newEntry.created_by,
       updated_at: newEntry.updated_at,
     });

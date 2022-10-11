@@ -4,6 +4,7 @@ module.exports = {
       "i.scdn.co", // Spotify Album Art
       "pbs.twimg.com", // Twitter Profile Picture
       "api.microlink.io", // Microlink Image Preview
+      "avatars.githubusercontent.com", // GitHub avatars
     ],
   },
   webpack: (config, { dev, isServer }) => {

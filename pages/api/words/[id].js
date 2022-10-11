@@ -17,6 +17,7 @@ export default async function handler(req, res) {
     return res.json({
       id: entry.id.toString(),
       body: entry.body,
+      image: entry.image,
       created_by: entry.created_by,
       updated_at: entry.updated_at,
     });
