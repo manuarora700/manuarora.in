@@ -102,7 +102,7 @@ export default function Container(props) {
   ];
 
   return (
-    <div className="bg-white dark:bg-black">
+    <div className="bg-white dark:bg-zinc-900">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -126,14 +126,14 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mt-4 md:mb-8 mx-auto bg-white dark:bg-black bg-opacity-60">
+      <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mt-4 md:mb-8 mx-auto bg-white dark:bg-zinc-900 bg-opacity-60">
         <a href="#skip" className="sr-only focus:not-sr-only">
           Skip to content
         </a>
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+          className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-900/90 dark:ring-white/10 dark:hover:ring-white/20"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           {mounted && (
@@ -162,7 +162,7 @@ export default function Container(props) {
             </svg>
           )}
         </button>
-        <div className="hidden sm:block rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+        <div className="hidden sm:block rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-900/90 dark:text-zinc-200 dark:ring-white/10">
           <Desktop
             links={links}
             hoveredIndex={hoveredIndex}
@@ -177,7 +177,7 @@ export default function Container(props) {
 
       <main
         id="skip"
-        className="flex flex-col justify-center bg-white dark:bg-black px-8 text-gray-900 dark:text-gray-100"
+        className="flex flex-col justify-center bg-white dark:bg-zinc-900 px-8 text-gray-900 dark:text-gray-100"
       >
         {children}
         <Footer />
@@ -296,7 +296,7 @@ export const Desktop = ({ links, hoveredIndex, setHoveredIndex, router }) => {
             <AnimatePresence>
               {hoveredIndex === index && (
                 <motion.span
-                  className="absolute inset-0  transform bg-gray-50 dark:bg-zinc-800"
+                  className="absolute inset-0  transform bg-gray-50 dark:bg-zinc-900"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1, transition: { duration: 0.15 } }}

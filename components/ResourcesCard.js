@@ -11,7 +11,7 @@ export default function ResourcesCard({
   return (
     <Link href={link}>
       <a
-        className="border border-grey-200 dark:border-gray-900 rounded p-4 w-full relative"
+        className="border border-grey-200 dark:border-zinc-800 rounded-xl p-4 w-full relative"
         {...rest}
         target="__blank"
       >

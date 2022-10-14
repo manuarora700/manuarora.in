@@ -1,6 +1,6 @@
 export default function MetricCard({ header, link, metric }) {
   return (
-    <div className="metric-card dark:border-gray-800  p-4 max-w-72 w-full rounded-md shadow-custom border-2 border-[#212121]">
+    <div className="metric-card dark:border-zinc-800  p-4 max-w-72 w-full rounded-xl shadow-custom border border-[#212121]">
       <a
         aria-label={header}
         target="_blank"

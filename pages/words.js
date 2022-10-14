@@ -12,10 +12,10 @@ export default function WordsPage({ fallbackData }) {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Words
         </h1>
-        <small className="text-slate-500 dark:text-slate-400">
+        <p className="text-slate-500 dark:text-slate-400">
           Write anything for future visitors of this website. I'd love a random
           joke though. 🤩
-        </small>
+        </p>
         <Words fallbackData={fallbackData} />
       </div>
     </Container>

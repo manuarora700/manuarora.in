@@ -93,7 +93,7 @@ const TwitterCard = ({ card }) => {
       animate="visible"
       exit="exit"
       key={card.id}
-      className=" rounded-lg px-8 py-4 border border-slate-200 dark:border-slate-700 z-[5] relative bg-white dark:bg-black"
+      className=" rounded-lg px-8 py-4 border border-slate-200 dark:border-slate-700 z-[5] relative bg-white dark:bg-zinc-900"
     >
       <span className="absolute w-[40%] -bottom-px right-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
       <span className="absolute w-px -left-px h-[40%] bg-gradient-to-b from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
