@@ -133,9 +133,9 @@ export default function Chat() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="mb-4 rounded-xl shadow-2xl bg-white dark:bg-gray-900  flex flex-col overflow-hidden mx-4 md:mx-0"
+            className="mb-4 rounded-xl shadow-2xl bg-white dark:bg-zinc-800  flex flex-col overflow-hidden mx-4 md:mx-0"
           >
-            <div className="p-4 bg-gray-100 dark:bg-gray-800">
+            <div className="p-4 bg-gray-100 dark:bg-zinc-700">
               <h2 className="text-gray-700 font-bold text-xl dark:text-white">
                 Have a question? Drop in your message 👇
               </h2>
@@ -151,7 +151,7 @@ export default function Chat() {
                 type="email"
                 value={formState.email.value}
                 onChange={(e) => onChangeHandler("email", e.target.value)}
-                className="text-black rounded-md border border-gray-200 py-1 px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm  dark:bg-gray-900 dark:border-gray-700 dark:text-white mb-1"
+                className="text-black rounded-md border border-gray-200 py-1 px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm  dark:bg-zinc-800 dark:border-gray-700 dark:text-white mb-1"
                 placeholder="johndoe@xyz.com"
               />
 
@@ -167,7 +167,7 @@ export default function Chat() {
                 rows="5"
                 value={formState.message.value}
                 onChange={(e) => onChangeHandler("message", e.target.value)}
-                className="text-black rounded-md border border-gray-200 py-1 px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm dark:bg-gray-900 dark:border-gray-700 dark:text-white mb-1"
+                className="text-black rounded-md border border-gray-200 py-1 px-2 focus:outline-none focus:border-gray-400 placeholder:text-sm dark:bg-zinc-800 dark:border-gray-700 dark:text-white mb-1"
                 placeholder="I'd love a compliment from you."
               />
               <small className="h-4 min-h-4 text-red-500 font-semibold mb-4">
@@ -175,7 +175,7 @@ export default function Chat() {
               </small>
               <button
                 onClick={handleSubmit}
-                className="text-black dark:text-white w-full px-4 py-4 border-2 border-black shadow-[-5px_5px_0px_0px_rgba(0,0,0)] rounded-md font-bold text-xl dark:border-gray-700 dark:shadow-[-5px_5px_0px_0px_#4b5563] mb-4 transition duration-200 hover:shadow-none dark:hover:shadow-none"
+                className="text-black dark:text-white w-full px-4 py-4 border-2 border-black  rounded-md font-bold text-xl dark:border-gray-700  mb-4 transition duration-200 hover:shadow-none dark:hover:shadow-none"
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>
@@ -194,7 +194,7 @@ export default function Chat() {
         )}
         <button
           onClick={handleButtonClick}
-          class="bg-gray-100 dark:bg-gray-900 w-14 h-14 rounded-full  flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200 shadow-lg"
+          class="bg-gray-100 dark:bg-zinc-800 w-14 h-14 rounded-full  flex items-center justify-center hover:scale-105 hover:shadow-xl transition duration-200 shadow-lg"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
