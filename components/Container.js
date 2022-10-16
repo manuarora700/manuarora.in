@@ -37,10 +37,6 @@ export default function Container(props) {
     },
 
     {
-      name: "Dashboard",
-      link: "/dashboard",
-    },
-    {
       name: "Snippets",
       link: "/snippets",
     },
@@ -90,10 +86,6 @@ export default function Container(props) {
     {
       name: "FreeCodeCamp",
       link: "/freecodecamp",
-    },
-    {
-      name: "Dashboard",
-      link: "/dashboard",
     },
     {
       name: "Words",
