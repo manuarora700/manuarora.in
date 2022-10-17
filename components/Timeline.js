@@ -141,7 +141,7 @@ export default function Timeline() {
   return (
     <>
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
-        Timeline
+        Life Changelog and Updates
       </h3>
       <Year>2022</Year>
       <ul>
