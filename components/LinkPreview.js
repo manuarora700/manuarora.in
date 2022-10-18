@@ -6,7 +6,7 @@ import Image from "next/image";
 import { encode } from "qss";
 import React from "react";
 
-export const LinkPreview = ({ children, url }) => {
+export const LinkPreview = ({ children, url, className }) => {
   const width = 200;
   const height = 125;
   const quality = 50;
@@ -73,10 +73,7 @@ export const LinkPreview = ({ children, url }) => {
           setOpen(open);
         }}
       >
-        <HoverCardPrimitive.Trigger
-          href={url}
-          className={cx(GRADIENT_LINK, FOCUS_VISIBLE_OUTLINE)}
-        >
+        <HoverCardPrimitive.Trigger className={className} href={url}>
           {children}
         </HoverCardPrimitive.Trigger>
 

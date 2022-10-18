@@ -118,14 +118,14 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mt-4 md:mb-8 mx-auto bg-white dark:bg-zinc-900 bg-opacity-60">
+      <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mt-4 md:mb-10  mx-auto bg-white dark:bg-zinc-900 bg-opacity-60">
         <a href="#skip" className="sr-only focus:not-sr-only">
           Skip to content
         </a>
         <button
           aria-label="Toggle Dark Mode"
           type="button"
-          className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-900/90 dark:ring-white/10 dark:hover:ring-white/20"
+          className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-900/90 dark:ring-teal-500/50 dark:hover:ring-white/20"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         >
           {mounted && (
@@ -134,7 +134,7 @@ export default function Container(props) {
               viewBox="0 0 24 24"
               fill="currentColor"
               stroke="currentColor"
-              className="h-4 w-4 text-gray-800 dark:text-gray-200"
+              className="h-4 w-4 text-gray-800 dark:text-teal-500"
             >
               {theme === "dark" ? (
                 <path

@@ -14,10 +14,13 @@ import { LinkPreview } from "@/components/LinkPreview";
 import { StaticLinkPreview } from "@/components/StaticLinkPreview";
 import { useTheme } from "next-themes";
 import Talks from "@/components/Talks";
+import CircleDivide from "@/components/CircleDivide";
+
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [colors, setColors] = useState([]);
-  // const [tempInterval, setTempInterval] = useState(null);
+  const [open, setOpen] = useState(false);
 
   let tempInterval;
 
@@ -31,77 +34,135 @@ export default function Home() {
   useEffect(() => {
     setColors(shuffleArray(LIGHT_COLORS));
   }, []);
+  const variants = {
+    hidden: { opacity: 0, y: "1vh" },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delayChildren: 0.1,
+        staggerChildren: 0.1,
+      },
+    },
+    // transition: { staggerChildren: 0.5 },
+    exit: { opacity: 0, y: "1vh" },
+  };
+
+  const itemA = {
+    hidden: { opacity: 0, scale: 0.5, y: "1vh" },
+    show: { opacity: 1, scale: 1, y: 0 },
+  };
+
   return (
     <Container
       title="Manu Arora - Developer, Writer, Creator"
       description="Full-Stack developer, JavaScript enthusiast, Freelancer, Tech Blogger and a Learner. I love building products and web apps that impact millions of lives."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <div className="flex flex-col md:flex-row justify-between items-start">
+        <div className="flex flex-col md:flex-row justify-between items-start space-x-14  w-full mb-10">
           <div className="flex md:w-3/4 flex-col">
-            <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-              Hey, I’m Manu Arora
+            <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
+              Manu Arora
             </h1>
-
-            <h2 className="text-gray-600 dark:text-gray-400 mb-16 mt-4 font-light tracking-wide leading-normal">
-              🖥 I’m a developer, writer, and a creator. <br />
-              🗒 I work at{" "}
-              <span className="font-bold">
-                <span className="text-blue-500">m</span>roads
-              </span>{" "}
-              as a{" "}
-              <span className="dark:text-white font-bold">
-                Senior Software Engineer.{" "}
-              </span>{" "}
-              <br />
-              🔨 Building{" "}
-              <LinkPreview url="https://algochurn.com">
-                <span className="text-black dark:text-white">Algochurn </span>
+            <div className="relative leading-7 items-center flex-wrap text-zinc-700 dark:text-zinc-400 mb-5">
+              Building
+              <LinkPreview
+                className={
+                  "inline-block px-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-zinc-300 dark:to-zinc-100"
+                }
+                url="https://algochurn.com"
+              >
+                Algochurn
               </LinkPreview>
-              //{" "}
-              <LinkPreview url="https://tailwindmasterkit.com">
-                <span className="text-black dark:text-white">
-                  Tailwind Master Kit <br />
-                </span>
-              </LinkPreview>
-              🧑🏻‍🏫 Mentoring folks at{" "}
-              <LinkPreview url="https://www.codementor.io/@manuarorawork?refer=badge">
-                <span className="text-black dark:text-white">Codementor</span>
-              </LinkPreview>{" "}
-              //{" "}
-              <LinkPreview url="https://mentorcruise.com/mentor/manuarora">
-                <span className="text-black dark:text-white">
-                  MentorCruise <br />
-                </span>
-              </LinkPreview>
-              💯 Embracing Entrepreneurship at{" "}
-              <LinkPreview url="https://www.placeholdertech.in">
-                <span className="text-black dark:text-white">
-                  PlaceholderTech <br />
-                </span>
-              </LinkPreview>
-              🐥 I{" "}
+              other
+              <span
+                className="font-bold cursor-pointer"
+                style={{ cursor: "🤩" }}
+                onMouseEnter={() => setOpen(true)}
+                onMouseLeave={() => setOpen(false)}
+              >
+                {" "}
+                cool things
+                <AnimatePresence>
+                  {open && (
+                    <motion.div
+                      key="modal"
+                      variants={variants}
+                      initial="hidden"
+                      animate="show"
+                      exit="exit"
+                      className="z-20 p-4 rounded-xl bg-white dark:bg-zinc-700 shadow-2xl absolute inset-x-0  w-full min-h-96 divide-y dark:divide-zinc-600 divide-zinc-100 text-xs md:text-sm"
+                    >
+                      <motion.p variants={itemA} className="font-normal py-3">
+                        Founder{" "}
+                        <Hyperlink
+                          text="@placeholdertech"
+                          link="https://placeholdertech.in"
+                        />{" "}
+                        and{" "}
+                        <Hyperlink
+                          text="@aceternity"
+                          link="https://aceternity.com"
+                        />
+                      </motion.p>
+                      <motion.p variants={itemA} className="font-normal py-3">
+                        Mentoring{" "}
+                        <Hyperlink
+                          text="@codementor"
+                          link="https://codementor.io/@manuarora"
+                        />{" "}
+                        and{" "}
+                        <Hyperlink
+                          text="@mentorcruise"
+                          link="https://mentorcruise.com/mentor/manuarora/"
+                        />
+                      </motion.p>
+                      <motion.p variants={itemA} className="font-normal py-3">
+                        Helping front-end developers{" "}
+                        <Hyperlink
+                          text="@algochurn"
+                          link="https://algochurn.com"
+                        />
+                      </motion.p>
+                      <motion.p variants={itemA} className="font-normal py-3">
+                        Web templates and components{" "}
+                        <Hyperlink
+                          text="@tailwindmasterkit"
+                          link="https://tailwindmasterkit.com"
+                        />
+                      </motion.p>
+                      <motion.p variants={itemA} className="font-normal py-3">
+                        Blogs{" "}
+                        <Hyperlink
+                          text="@freecodecamp"
+                          link="https://www.freecodecamp.org/news/author/manu/"
+                        />
+                      </motion.p>
+                      <motion.p variants={itemA} className="font-normal py-3">
+                        Tech videos and snippets{" "}
+                        <Hyperlink
+                          text="@youtube"
+                          link="https://www.youtube.com/channel/UC7MQDjVfjEPkHMe1lZGkDRA"
+                        />
+                      </motion.p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </span>
+            </div>
+            <p className="text-zinc-600 dark:text-zinc-500">
+              Senior Software Engineer building SaaS products and web apps. Find
+              me on{" "}
               <a
-                className="font-medium text-gray-700 transition-colors hover:text-gray-900 focus:text-gray-900 focus:outline-none dark:text-gray-300 dark:hover:text-gray-600"
+                href="https://twitter.com/mannupaaji"
+                className="font-bold group dark:text-zinc-400 font-inter relative inline-flex  overflow-hidden"
                 target="__blank"
               >
-                <LinkPreview url="https://twitter.com/mannupaaji">
-                  <span className=" text-blue-500 dark:text-blue-500">
-                    Tweet
-                  </span>
-                </LinkPreview>
+                <div className="absolute bg-teal-500/50 dark:bg-teal-500/30 inset-0 translate-y-5 group-hover:translate-y-0 transition duration-100 ease-out"></div>
+                <span className="relative">twitter</span>
               </a>{" "}
-              about technology, learning and{" "}
-              <StaticLinkPreview url="https://manuarora.in/radhey-bhaiya.jpeg">
-                <span
-                  onMouseEnter={play}
-                  onMouseLeave={play}
-                  className="text-black dark:text-white"
-                >
-                  memes.
-                </span>
-              </StaticLinkPreview>
-            </h2>
+              for tech updates and memes.
+            </p>
           </div>
 
           <a
@@ -290,3 +351,15 @@ export default function Home() {
     </Container>
   );
 }
+
+export const Hyperlink = ({ link, text }) => {
+  return (
+    <a
+      href={link}
+      className="inline-block font-bold text-zinc-700 dark:text-zinc-200 transform hover:scale-105 transition duration-200"
+      target="__blank"
+    >
+      {text}
+    </a>
+  );
+};

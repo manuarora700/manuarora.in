@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import ResourcesCard from "@/components/ResourcesCard";
 import { links } from "@/constants/links";
+import clsx from "clsx";
 
 export default function Links() {
   return (
@@ -20,9 +21,10 @@ export default function Links() {
             key={el?.href}
             href={el?.href}
             target="__blank"
-            className="dark:hover:bg-gray-700 dark:border-gray-600 border-2 border-gray-200 rounded-md py-2 px-4 w-full mb-4 hover:bg-gray-100"
+            className="dark:hover:bg-zinc-800 dark:border-zinc-800 border-2 border-gray-200 rounded-md py-2 w-full mb-4 hover:bg-gray-50 flex flex-row items-center space-x-2"
           >
             <span className="inline-block mr-2">{el?.icon}</span>{" "}
+            <el.icon className={clsx("h-5 w-5", el?.iconClass)} />
             <span className="font-bold">{el?.name}</span>
           </a>
         ))}

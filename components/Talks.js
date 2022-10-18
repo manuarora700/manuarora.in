@@ -13,11 +13,11 @@ const Talks = ({ url, company, image, title, description }) => {
           <h4 className="font-bold text-base md:text-xl tracking-tight text-black dark:text-white">
             {title}
           </h4>
-          <p className="text-gray-500 dark:text-gray-600 text-sm">
+          <p className="text-gray-500 dark:text-zinc-400 text-sm">
             {description}
           </p>
         </div>
-        <p className="text-gray-500 dark:text-gray-600 text-sm">{company}</p>
+        <p className="text-gray-500 dark:text-gray-400 text-sm">{company}</p>
       </div>
     </a>
   );
