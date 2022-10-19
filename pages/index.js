@@ -10,17 +10,13 @@ import { LIGHT_COLORS } from "@/lib/constants";
 import { shuffleArray } from "@/lib/shuffleArray";
 import { useEffect, useState } from "react";
 import { useIsFontReady } from "@/lib/useIsFontReady";
-import { LinkPreview } from "@/components/LinkPreview";
-import { StaticLinkPreview } from "@/components/StaticLinkPreview";
+
 import { useTheme } from "next-themes";
 import Talks from "@/components/Talks";
-import CircleDivide from "@/components/CircleDivide";
-
-import { motion, AnimatePresence } from "framer-motion";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [colors, setColors] = useState([]);
-  const [open, setOpen] = useState(false);
 
   let tempInterval;
 
@@ -34,24 +30,6 @@ export default function Home() {
   useEffect(() => {
     setColors(shuffleArray(LIGHT_COLORS));
   }, []);
-  const variants = {
-    hidden: { opacity: 0, y: "1vh" },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.1,
-      },
-    },
-    // transition: { staggerChildren: 0.5 },
-    exit: { opacity: 0, y: "1vh" },
-  };
-
-  const itemA = {
-    hidden: { opacity: 0, scale: 0.5, y: "1vh" },
-    show: { opacity: 1, scale: 1, y: 0 },
-  };
 
   return (
     <Container
@@ -59,124 +37,7 @@ export default function Home() {
       description="Full-Stack developer, JavaScript enthusiast, Freelancer, Tech Blogger and a Learner. I love building products and web apps that impact millions of lives."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <div className="flex flex-col md:flex-row justify-between items-start space-x-14  w-full mb-10">
-          <div className="flex md:w-3/4 flex-col">
-            <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
-              Manu Arora
-            </h1>
-            <div className="relative leading-7 items-center flex-wrap text-zinc-700 dark:text-zinc-400 mb-5">
-              Building
-              <LinkPreview
-                className={
-                  "inline-block px-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-zinc-300 dark:to-zinc-100"
-                }
-                url="https://algochurn.com"
-              >
-                Algochurn
-              </LinkPreview>
-              other
-              <span
-                className="font-bold cursor-pointer"
-                style={{ cursor: "🤩" }}
-                onMouseEnter={() => setOpen(true)}
-                onMouseLeave={() => setOpen(false)}
-              >
-                {" "}
-                cool things
-                <AnimatePresence>
-                  {open && (
-                    <motion.div
-                      key="modal"
-                      variants={variants}
-                      initial="hidden"
-                      animate="show"
-                      exit="exit"
-                      className="z-20 p-4 rounded-xl bg-white dark:bg-zinc-700 shadow-2xl absolute inset-x-0  w-full min-h-96 divide-y dark:divide-zinc-600 divide-zinc-100 text-xs md:text-sm"
-                    >
-                      <motion.p variants={itemA} className="font-normal py-3">
-                        Founder{" "}
-                        <Hyperlink
-                          text="@placeholdertech"
-                          link="https://placeholdertech.in"
-                        />{" "}
-                        and{" "}
-                        <Hyperlink
-                          text="@aceternity"
-                          link="https://aceternity.com"
-                        />
-                      </motion.p>
-                      <motion.p variants={itemA} className="font-normal py-3">
-                        Mentoring{" "}
-                        <Hyperlink
-                          text="@codementor"
-                          link="https://codementor.io/@manuarora"
-                        />{" "}
-                        and{" "}
-                        <Hyperlink
-                          text="@mentorcruise"
-                          link="https://mentorcruise.com/mentor/manuarora/"
-                        />
-                      </motion.p>
-                      <motion.p variants={itemA} className="font-normal py-3">
-                        Helping front-end developers{" "}
-                        <Hyperlink
-                          text="@algochurn"
-                          link="https://algochurn.com"
-                        />
-                      </motion.p>
-                      <motion.p variants={itemA} className="font-normal py-3">
-                        Web templates and components{" "}
-                        <Hyperlink
-                          text="@tailwindmasterkit"
-                          link="https://tailwindmasterkit.com"
-                        />
-                      </motion.p>
-                      <motion.p variants={itemA} className="font-normal py-3">
-                        Blogs{" "}
-                        <Hyperlink
-                          text="@freecodecamp"
-                          link="https://www.freecodecamp.org/news/author/manu/"
-                        />
-                      </motion.p>
-                      <motion.p variants={itemA} className="font-normal py-3">
-                        Tech videos and snippets{" "}
-                        <Hyperlink
-                          text="@youtube"
-                          link="https://www.youtube.com/channel/UC7MQDjVfjEPkHMe1lZGkDRA"
-                        />
-                      </motion.p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </span>
-            </div>
-            <p className="text-zinc-600 dark:text-zinc-500">
-              Senior Software Engineer building SaaS products and web apps. Find
-              me on{" "}
-              <a
-                href="https://twitter.com/mannupaaji"
-                className="font-bold group dark:text-zinc-400 font-inter relative inline-flex  overflow-hidden"
-                target="__blank"
-              >
-                <div className="absolute bg-teal-500/50 dark:bg-teal-500/30 inset-0 translate-y-5 group-hover:translate-y-0 transition duration-100 ease-out"></div>
-                <span className="relative">twitter</span>
-              </a>{" "}
-              for tech updates and memes.
-            </p>
-          </div>
-
-          <a
-            href="https://twitter.com/mannupaaji"
-            className="md:flex hidden md:w-1/4 flex-col relative"
-            target="__blank"
-          >
-            {/* <div className="absolute w-full h-full rounded-lg transform scale-110 shadow-xl bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500" /> */}
-            <img
-              src="avatar-new.png"
-              className="rounded-lg max-w-[200px] z-0 transform rotate-3 shadow-xl shadow-black/20"
-            />
-          </a>
-        </div>
+        <Header />
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
           Recent Blogs
         </h3>
@@ -351,15 +212,3 @@ export default function Home() {
     </Container>
   );
 }
-
-export const Hyperlink = ({ link, text }) => {
-  return (
-    <a
-      href={link}
-      className="inline-block font-bold text-zinc-700 dark:text-zinc-200 transform hover:scale-105 transition duration-200"
-      target="__blank"
-    >
-      {text}
-    </a>
-  );
-};
