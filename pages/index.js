@@ -159,6 +159,13 @@ export default function Home() {
             Tech Talks and Videos
           </h3>
           <Talks
+            title={`Components Of A Great Portfolio Website`}
+            description={`I talk about how to create a targeted website to land more job interviews and freelance clients with all the other things that matter. Hosted on codementor.`}
+            company={`codementor.io`}
+            image={`/talks/codementor.jpg`}
+            url={`https://www.youtube.com/watch?v=viXpJ5Xwtfs`}
+          />
+          <Talks
             title={`Crafting The Perfect Portfolio Website For Developers`}
             description={` Talked about how to effectively utilise a portfolio website to
           put yourself in the best position to win.`}
