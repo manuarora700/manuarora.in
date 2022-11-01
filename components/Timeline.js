@@ -145,7 +145,24 @@ export default function Timeline() {
       </h3>
       <Year>2022</Year>
       <ul>
-        <Step title="Built and launched Algochurn 🎉">
+        <Step title="Algochurn crosses 200 users 🤌🏻">
+          <a href="https://algochurn.com" target="__blank">
+            Algochurn
+          </a>{" "}
+          is now helping 200+ registered users and 14,000+ monthly users.
+        </Step>
+        <Step title="1,000+ Followers on Twitter 🌟">
+          Crossed 1,000 mark on{" "}
+          <a
+            href="https://www.twitter.com/mannupaaji"
+            className="font-semibold"
+            target="__blank"
+          >
+            Twitter
+          </a>
+          . You can help increase the count by following me. 😉
+        </Step>
+        <Step title="Built and launched Algochurn 🍾">
           Built{" "}
           <a href="https://algochurn.com" target="__blank">
             Algochurn
