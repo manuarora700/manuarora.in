@@ -136,7 +136,7 @@ const Header = () => {
         <a
           href="https://twitter.com/mannupaaji"
           target="__blank"
-          className="block relative z-10 overflow-hidden rounded shadow-xl ring-1 ring-slate-900/5 "
+          className="block relative z-[5] overflow-hidden rounded shadow-xl ring-1 ring-slate-900/5"
         >
           <img className="h-auto w-[50px] md:w-[150px]" src="avatar-new.png" />
         </a>
