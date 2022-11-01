@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LinkPreview } from "@/components/LinkPreview";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const variants = {
     hidden: { opacity: 0, y: "1vh" },
     show: {
@@ -22,6 +23,10 @@ const Header = () => {
     hidden: { opacity: 0, scale: 0.5, y: "1vh" },
     show: { opacity: 1, scale: 1, y: 0 },
   };
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <div className="flex flex-col md:flex-row justify-between items-start md:space-x-14  w-full mb-10">
       <div className="flex md:w-3/4 flex-col mt-6">
@@ -125,7 +130,9 @@ const Header = () => {
             className="font-bold group dark:text-zinc-400 font-inter relative inline-flex  overflow-hidden"
             target="__blank"
           >
-            <div className="absolute bg-teal-500/50 dark:bg-teal-500/30 inset-0 translate-y-5 group-hover:translate-y-0 transition duration-100 ease-out"></div>
+            {isMounted && (
+              <div className="absolute bg-teal-500/50 dark:bg-teal-500/30 inset-0 translate-y-5 group-hover:translate-y-0 transition duration-100 ease-out"></div>
+            )}
             <span className="relative">twitter</span>
           </a>{" "}
           for tech updates and memes.
