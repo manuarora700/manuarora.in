@@ -19,6 +19,7 @@ module.exports = {
       animation: {
         blog: "blob 7s infinite",
         border: "border 4s ease infinite",
+        "text-shimmer": "text-shimmer 2.5s ease-out infinite alternate",
       },
       keyframes: {
         blob: {
@@ -35,6 +36,12 @@ module.exports = {
             transform: "translate(0px, 0px) ",
           },
         },
+
+        "text-shimmer": {
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "-200% 0" },
+        },
+
         border: {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },

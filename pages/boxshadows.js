@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "@/components/Container";
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
@@ -9,9 +9,17 @@ import { useRouter } from "next/router";
 
 import cards from "@/constants/boxshadows/cards";
 import Footer from "@/components/Footer";
+import { GenerateBoxShadow } from "@/components/BoxShadows/GenerateBoxShadow";
+import { useTheme } from "next-themes";
 
 export default function BoxShadows() {
   const [visible, setVisible] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const scrollRef = useRef(null);
+
+  useEffect(() => setMounted(true), []);
+  const executeScroll = () => scrollRef.current.scrollIntoView();
 
   const onModalClick = () => {
     setVisible(!visible);
@@ -20,9 +28,14 @@ export default function BoxShadows() {
   return (
     <div>
       <Metadata />
-      <CustomNav onModalClick={onModalClick} />
+      <CustomNav
+        setTheme={setTheme}
+        theme={theme}
+        mounted={mounted}
+        onModalClick={onModalClick}
+      />
       <div className="light flex flex-col justify-center items-start  mx-auto mb-16">
-        <Header />
+        <Header executeScroll={executeScroll} />
         {visible && <Modal onModalClick={onModalClick} />}
 
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 items-center w-full gap-y-20 mb-40">
@@ -43,7 +56,7 @@ export default function BoxShadows() {
             />
           </>
         </div>
-
+        <GenerateBoxShadow ref={scrollRef} />
         <div className="w-full lg:max-w-2xl  px-4 sm:mx-auto">
           <Contact />
           <Footer />
@@ -157,7 +170,7 @@ const Card = ({ shadow, name, vanillaCSS, customCSS }) => {
   );
 };
 
-const Header = () => {
+const Header = ({ executeScroll }) => {
   return (
     <div className="mb-20 flex flex-col items-center justify-center w-full">
       <a
@@ -181,7 +194,7 @@ const Header = () => {
         A curated list of box shadows for TailwindCSS. Available in JIT 🚀 and
         vanilla CSS.
       </h2>
-      <p className="prose text-gray-700 font-light dark:text-gray-400 mb-20 text-center mx-auto">
+      <p className="prose text-gray-700 font-light dark:text-gray-400  text-center mx-auto">
         <span className="bg-gray-800 border border-gray-100 rounded-md px-1 py-1">
           🖱
         </span>{" "}
@@ -191,24 +204,40 @@ const Header = () => {
         </span>{" "}
         to bookmark this page.
       </p>{" "}
+      <div className="w-full items-center max-w-sm mx-auto flex flex-row space-x-2 text-xs text-gray-500 font-light dark:text-gray-400 my-10">
+        <div className="h-px w-full bg-slate-200 dark:bg-slate-700"></div>
+        <p>or</p>
+        <div className="h-px w-full bg-slate-200 dark:bg-slate-700"></div>
+      </div>
+      <button
+        onClick={executeScroll}
+        className="bg-black/90 px-4 py-2 rounded-md"
+      >
+        <div class=" animate-text-shimmer bg-clip-text text-transparent bg-[linear-gradient(110deg,#e2e8f0,45%,#1e293b,55%,#e2e8f0)] bg-[length:250%_100%]">
+          Tailwind Box Shadow Generator
+        </div>
+      </button>
     </div>
   );
 };
 
-const CustomNav = ({ onModalClick }) => {
+const CustomNav = ({ onModalClick, setTheme, theme, mounted }) => {
   return (
-    <nav className="w-full h-16 bg-white border-b border-t border-gray-100 px-4 md:px-20 flex flex-row justify-between items-center">
-      <Link href="/">
-        <a>
-          <Image
-            src="/logo.png"
-            className="h-full w-full rounded-md"
-            width="40px"
-            height="40px"
-          />
-        </a>
-      </Link>
+    <nav className="w-full h-16 bg-white dark:bg-zinc-700 dark:border-0 border-b border-t border-gray-100 px-4 md:px-20 flex flex-row justify-between items-center">
+      <div className="flex items-center space-x-2">
+        <Link href="/">
+          <a>
+            <Image
+              src="/logo.png"
+              className="h-full w-full rounded-md"
+              width="40px"
+              height="40px"
+            />
+          </a>
+        </Link>
+      </div>
       <div className="flex flex-row items-center">
+        {" "}
         <a
           href="https://github.com/manuarora700/manuarora.in/blob/master/pages/boxshadows.js"
           target="__blank"
@@ -217,18 +246,43 @@ const CustomNav = ({ onModalClick }) => {
           Code? Here.
         </a>
         <button
+          aria-label="Toggle Dark Mode"
+          type="button"
+          className="group rounded-full mr-4 bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-900/90 dark:ring-teal-500/50 dark:hover:ring-white/20"
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          {mounted && (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke="currentColor"
+              className="h-4 w-4 text-gray-800 dark:text-teal-500"
+            >
+              {theme === "dark" ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              )}
+            </svg>
+          )}
+        </button>
+        <button
           onClick={onModalClick}
           className="text-white hidden sm:block border border-gray-700 bg-black text-sm font-normal rounded-md px-2 py-2 mr-4"
         >
           Custom CSS to JIT 🚀
         </button>
-        {/* <a
-          href="https://www.producthunt.com/posts/tailwind-box-shadows"
-          target="__blank"
-          className="text-[#EA532A] text-sm font-bold border border-[#EA532A] rounded-md px-2 py-2"
-        >
-          Upvote on ProductHunt
-        </a> */}
         <a
           href="https://www.producthunt.com/posts/tailwind-box-shadows?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tailwind-box-shadows"
           target="_blank"
@@ -236,11 +290,7 @@ const CustomNav = ({ onModalClick }) => {
           <img
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=325075&theme=dark"
             alt="Tailwind Box Shadows - Curated list of box shadows for your cards to stand out | Product Hunt"
-            // style={"width: 250px; height: 54px;"}
-            // style={{ width: "250px", height: "54px" }}
             className="h-10 w-auto"
-            // width="250"
-            // height="54"
           />
         </a>
       </div>
