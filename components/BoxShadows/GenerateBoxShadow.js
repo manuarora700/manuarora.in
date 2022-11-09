@@ -207,7 +207,7 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
         />
       )}
       <div className="pt-10 pb-20">
-        <h2 className="font-bold text-xl md:text-3xl tracking-normal mb-4 text-black dark:text-white mx-auto mt-4 text-center ">
+        <h2 className="font-bold text-xl md:text-3xl tracking-normal mb-4 text-black dark:text-black mx-auto mt-4 text-center ">
           Box Shadow Generator for{" "}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
             TailwindCSS
