@@ -197,7 +197,10 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
   };
 
   return (
-    <div className="bg-gray-50 w-full px-4 lg:px-20  min-h-screen relative">
+    <div
+      ref={ref}
+      className="bg-gray-50 w-full px-4 lg:px-20  min-h-screen relative mb-20"
+    >
       <Toaster />
       {modal && (
         <PaletteModal
@@ -218,7 +221,7 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
           and Vanilla CSS with ease.
         </h4>
       </div>
-      <div ref={ref} className="w-fullitems-center flex flex-col lg:flex-row">
+      <div className="w-fullitems-center flex flex-col lg:flex-row">
         <div className="w-full lg:w-[60%]">
           <div class="relative flex  flex-col justify-center  py-6 sm:py-12">
             <div class="absolute inset-0  bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
@@ -311,7 +314,7 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
 
 const FormElement = ({ onChangeHandler, shadowElement }) => {
   return (
-    <div className="relative bg-zinc-100 rounded-md shadow shadow-black/10 p-2">
+    <div className="relative bg-white rounded-lg shadow-lg shadow-black/10 py-4 px-6">
       <button
         className="absolute right-2 top-2"
         onClick={() => onChangeHandler("delete", shadowElement)}
