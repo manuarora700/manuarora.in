@@ -63,7 +63,7 @@ const Header = () => {
                   exit="exit"
                   className="z-20  p-4 rounded-xl bg-white dark:bg-zinc-800 shadow-2xl absolute inset-x-0  w-full min-h-96 text-xs md:text-sm"
                 >
-                  <div className="bg-grid-slate-100 dark:bg-grid-zinc-700/30 absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]"></div>
+                  <div className="bg-grid-slate-50 dark:bg-grid-zinc-700/30 absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]"></div>
                   <motion.p variants={itemA} className="font-normal py-3">
                     Founder{" "}
                     <Hyperlink
@@ -100,6 +100,13 @@ const Header = () => {
                     />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
+                    Cool TailwindCSS Box Shadows{" "}
+                    <Hyperlink
+                      text="@boxshadows"
+                      link="https://www.manuarora.in/boxshadows"
+                    />
+                  </motion.p>
+                  <motion.p variants={itemA} className="font-normal py-3">
                     Blogs{" "}
                     <Hyperlink
                       text="@freecodecamp"
@@ -110,7 +117,7 @@ const Header = () => {
                     Tech videos and snippets{" "}
                     <Hyperlink
                       text="@youtube"
-                      link="https://www.youtube.com/channel/UC7MQDjVfjEPkHMe1lZGkDRA"
+                      link="https://www.youtube.com/@manuarora"
                     />
                   </motion.p>
 
