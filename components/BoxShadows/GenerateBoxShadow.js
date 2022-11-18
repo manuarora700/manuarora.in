@@ -148,7 +148,7 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
 
   const copyVanillaCSS = () => {
     let generatedShadow = `box-shadow: ${generateShadow()}`;
-    copyToClipboard(generateShadow);
+    copyToClipboard(generatedShadow);
   };
 
   const generateTailwindCSSJIT = () => {
