@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LinkPreview } from "@/components/LinkPreview";
+import { BlurImage } from "./BlurImage";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -38,11 +39,20 @@ const Header = () => {
           Building
           <LinkPreview
             className={
-              "inline-block px-1 font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-zinc-300 dark:to-zinc-100"
+              "inline-block px-2 py-0 font-bold bg-gray-100 dark:bg-zinc-700 dark:text-white rounded-md mx-1"
             }
             url="https://algochurn.com"
           >
             Algochurn
+          </LinkPreview>{" "}
+          |{" "}
+          <LinkPreview
+            className={
+              "inline-block px-2 py-0 font-bold bg-gray-100 dark:bg-zinc-700 dark:text-white rounded-md mx-1"
+            }
+            url="https://gomoonbeam.com"
+          >
+            Moonbeam
           </LinkPreview>
           other
           <span
@@ -150,9 +160,14 @@ const Header = () => {
         <a
           href="https://twitter.com/mannupaaji"
           target="__blank"
-          className="block relative z-[5] overflow-hidden rounded shadow-xl ring-1 ring-slate-900/5"
+          className="block  z-[5] overflow-hidden rounded shadow-xl ring-1 ring-slate-900/5  relative bg-white h-20 w-20"
         >
-          <img className="h-auto w-[50px] md:w-[150px]" src="avatar-new.png" />
+          <BlurImage
+            objectFit="cover"
+            layout="fill"
+            className="bg-gray-100 object-contain"
+            src="/avatar-new.png"
+          />
         </a>
         <div className="z-0">
           <div className="absolute left-0 -right-12 top-0 h-px bg-slate-900/[0.1] dark:bg-zinc-300/[0.1] [mask-image:linear-gradient(to_right,transparent,white_4rem,white_calc(100%-4rem),transparent)]"></div>
