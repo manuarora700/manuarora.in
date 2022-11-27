@@ -36,6 +36,16 @@ export default function Freelance() {
         </h2>
 
         <FreelanceCard
+          href={`https://gomoonbeam.com`}
+          techStack={["Next.js", "TailwindCSS", "React", "Stripe", "Vercel"]}
+          title="Moonbeam"
+          image={`/freelance/moonbeam.png`}
+          descriptions={[
+            "Write amazing long form content with generative AI and Moonbeam.",
+            "Blogs, Twitter Threads, Essays and much more.",
+          ]}
+        />
+        <FreelanceCard
           href={`https://app.pings.co`}
           techStack={[
             "Next.js",
