@@ -13,7 +13,8 @@ export default function Tweets({ tweets }) {
           Tweets
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-4">
-          Collection of my personal favourite tweets. 🕊
+          A collection of my favourite tweets. Might have some tech and design
+          knowledge.
         </p>
         <p className="text-gray-600 dark:text-gray-400 mb-4">
           Also, not to forget, built using the Twitter API V2 (Super easy, super
@@ -29,23 +30,15 @@ export default function Tweets({ tweets }) {
 
 export async function getStaticProps() {
   const tweets = await getTweets([
-    "1371103308425928708",
-    "826528907381739520",
-    "1308509070140162048",
-    "997895977179721728",
-    "1341090253864542208",
-    "1026872652290379776",
-    "1346113149112619016",
-    "1340107217970683906",
-    "992629481578745856",
-    "989142253468708864",
-    "1368058884837928970",
-    "1341962177272537089",
-    "1342869937841266688",
-    "1116362674319908864",
-    "1360610614490501126",
-    "1371103308425928708",
     "1487444357980762114",
+    "1601209526249586688",
+    "1601230902734254080",
+    "1600885184408309765",
+    "1593940652936527876",
+    "1215673997725196288",
+    "1589558362022240257",
+    "1588397944331722752",
+    "1440792546955825154",
   ]);
 
   return { props: { tweets } };
