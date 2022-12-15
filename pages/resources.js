@@ -26,6 +26,19 @@ export default function Snippets({ snippets }) {
           Utilities
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
+          {/*  */}
+          <ResourcesCard
+            title="Checkboxes Inspiration"
+            link="https://getcssscan.com/css-checkboxes-examples"
+            websiteLink="getcssscan.com/css-checkboxes-examples"
+            description="Click to copy checkbox styles"
+          />
+          <ResourcesCard
+            title="Buttons Inspiration"
+            link="https://getcssscan.com/css-buttons-examples"
+            websiteLink="getcssscan.com/css-buttons-examples"
+            description="Click to copy button styles"
+          />
           <ResourcesCard
             title="React Icons"
             link=" https://react-icons.github.io/react-icons/"
