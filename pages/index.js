@@ -77,36 +77,45 @@ export default function Home() {
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           Projects
         </h3>
-        <ProjectCard
-          title="Tailwind Master Kit"
-          description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
-          href="https://tailwindmasterkit.com/"
-          icon="tailwindmasterkit"
-          tags={["Tailwind", "Next.js", "Freemium"]}
-        />
 
-        <ProjectCard
-          title="Algochurn"
-          description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
-          href="https://algochurn.com"
-          icon="algochurn"
-          tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ProjectCard
+            title="Algochurn"
+            description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
+            href="https://algochurn.com"
+            icon="algochurn"
+            tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
+          />
+          <ProjectCard
+            title="Aceternity"
+            description="Building modern applications that scale well and are easy to maintain. Cutting edge websites with a pinch of magic, and a lot of love."
+            href="https://aceternity.com"
+            icon="aceternity"
+            tags={["Next.js", "React", "TailwindCSS", "Full-Stack"]}
+          />
 
-        <ProjectCard
-          title="PlaceholderTech"
-          description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
-          href="https://placeholdertech.in/"
-          icon="placeholdertech"
-          tags={["Web Dev Agency", "Products", "Freemium"]}
-        />
-        <ProjectCard
-          title="Feedmeback"
-          description="The easiest way to add comments or reviews to your static site. Built as part of React 2025."
-          href="https://feedmeback-beta.vercel.app/"
-          icon="fastfeedback"
-          tags={["Next.js", "Stripe", "TailwindCSS"]}
-        />
+          <ProjectCard
+            title="Tailwind Master Kit"
+            description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
+            href="https://tailwindmasterkit.com/"
+            icon="tailwindmasterkit"
+            tags={["Tailwind", "Next.js", "Freemium"]}
+          />
+          <ProjectCard
+            title="PlaceholderTech"
+            description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
+            href="https://placeholdertech.in/"
+            icon="placeholdertech"
+            tags={["Web Dev Agency", "Products", "Freemium"]}
+          />
+          <ProjectCard
+            title="Feedmeback"
+            description="The easiest way to add comments or reviews to your static site. Built as part of React 2025."
+            href="https://feedmeback-beta.vercel.app/"
+            icon="fastfeedback"
+            tags={["Next.js", "Stripe", "TailwindCSS"]}
+          />
+        </div>
         <Link href="/projects">
           <a
             type="button"
@@ -134,26 +143,28 @@ export default function Home() {
           Upcoming Projects
         </h3>
 
-        <ProjectCard
-          title="StyledNext"
-          description="Professional, modern and beautiful templates built with Next.js and TailwindCSS"
-          href="https://stylednext.com"
-          icon="vscode"
-          tags={["NextJS", "Tailwind", "Hackerearth"]}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ProjectCard
+            title="StyledNext"
+            description="Professional, modern and beautiful templates built with Next.js and TailwindCSS"
+            href="https://stylednext.com"
+            icon="vscode"
+            tags={["NextJS", "Tailwind", "Hackerearth"]}
+          />
 
-        <ProjectCard
-          title="VSCode Resume"
-          description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
-          href="#"
-          icon="vscode"
-        />
-        <ProjectCard
-          title="More projects coming soon.."
-          description="I get ideas all day 🙄, All of them are updated here as soon as I start working on them."
-          href="#"
-          icon="more"
-        />
+          <ProjectCard
+            title="VSCode Resume"
+            description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
+            href="#"
+            icon="vscode"
+          />
+          <ProjectCard
+            title="More projects coming soon.."
+            description="I get ideas all day 🙄, All of them are updated here as soon as I start working on them."
+            href="#"
+            icon="more"
+          />
+        </div>
         <div className=" my-6 md:my-10">
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 mt-8 text-black dark:text-white">
             Tech Talks and Videos

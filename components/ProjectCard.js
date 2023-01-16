@@ -2,7 +2,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
   // const tags = ["GitHub", "React", "JamStack"];
   return (
     <a
-      className="mb-4 hover:shadow-lg rounded-xl  transition duration-200 relative border border-slate-200 dark:border-slate-700"
+      className="mb-4 hover:shadow-lg rounded-xl  transition duration-200 relative border border-slate-200 dark:border-slate-700 w-full"
       href={href}
       aria-label={title}
       target="_blank"
@@ -11,9 +11,9 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
       <span className="absolute w-[40%] -bottom-px right-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
       <span className="absolute w-px -left-px top-[50%] h-[40%] bg-gradient-to-b from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
 
-      <div className="flex items-start  dark:border-gray-800 rounded p-4 relative">
+      <div className="flex flex-col items-start  dark:border-gray-800 rounded p-4 relative">
         {/* */}
-        <div className="mt-2">
+        <div className="my-4">
           {icon === "tailwindmasterkit" && (
             <div className="h-8 w-8 ml-2 mr-4">
               {/*  
@@ -44,24 +44,109 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
               </svg>
             </div>
           )}
+          {icon === "aceternity" && (
+            <div className="h-8 w-8 ml-2 mr-4">
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 62 61"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8"
+              >
+                <path
+                  d="M6.09521 5.98586C6.09521 5.98586 52.9961 16.1083 55.9639 27.9921C58.9317 39.876 7.14953 55.3998 7.14953 55.3998"
+                  stroke="url(#paint0_linear_101_8)"
+                  stroke-width="11"
+                  stroke-miterlimit="3.86874"
+                  stroke-linecap="round"
+                  style={{ mixBlendMode: "darken" }}
+                />
+                <defs>
+                  <linearGradient
+                    id="paint0_linear_101_8"
+                    x1="30.5444"
+                    y1="2.16844"
+                    x2="31.5724"
+                    y2="50.347"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#374151" />
+                    <stop offset="0.5" stop-color="#111827" />
+                    <stop offset="1" stop-color="#374151" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          )}
           {icon === "algochurn" && (
+            // <svg
+            //   width="204"
+            //   height="20"
+            //   viewBox="0 0 204 99"
+            //   fill="none"
+            //   className="h-10 w-10 mr-4  min-w-lg flex-shrink-0"
+            //   xmlns="http://www.w3.org/2000/svg"
+            // >
+            //   <rect width="204" height="99" rx="21" fill="none" />
+            //   <path
+            //     d="M15.2109 55.7564L44.2109 68.5263V60.1847L24.6236 52.3168V51.946L44.2109 44.0781V35.7365L15.2109 48.5064V55.7564ZM156.313 24.8409H148.754L135.16 75.3438H142.719L156.313 24.8409ZM191.25 55.7564V48.5064L162.25 35.7365V44.0781L181.837 51.946V52.3168L162.25 60.1847V68.5263L191.25 55.7564Z"
+            //     fill="#007EF3"
+            //   />
+            //   <path
+            //     d="M60.3587 69L63.4893 59.3814H78.7102L81.8409 69H91.3977L76.8565 26.8182H65.3636L50.8018 69H60.3587ZM65.755 52.4197L70.9453 36.4574H71.2749L76.4652 52.4197H65.755ZM131.71 41.5859C130.536 31.8438 123.163 26.2415 113.4 26.2415C102.257 26.2415 93.7509 34.1094 93.7509 47.9091C93.7509 61.6676 102.113 69.5767 113.4 69.5767C124.213 69.5767 130.742 62.3885 131.71 54.6236L122.689 54.5824C121.845 59.093 118.302 61.6882 113.544 61.6882C107.139 61.6882 102.793 56.9304 102.793 47.9091C102.793 39.1349 107.077 34.13 113.606 34.13C118.487 34.13 122.009 36.9517 122.689 41.5859H131.71Z"
+            //     fill="#000000"
+            //   />
+            // </svg>
+
             <svg
-              width="204"
-              height="20"
-              viewBox="0 0 204 99"
+              width="100"
+              height="100"
+              viewBox="0 0 100 100"
               fill="none"
-              className="w-10 mr-4  min-w-lg flex-shrink-0"
               xmlns="http://www.w3.org/2000/svg"
+              className="h-8 w-8"
             >
-              <rect width="204" height="99" rx="21" fill="none" />
+              <rect width="100" height="100" rx="12" fill="#0284C7" />
+              <g filter="url(#filter0_b_20_8)">
+                <path
+                  d="M0 5C0 2.23858 2.23858 0 5 0H95C97.7614 0 100 2.23858 100 5V17H0V5Z"
+                  fill="white"
+                  fill-opacity="0.87"
+                />
+              </g>
+              <circle cx="33" cy="8" r="4" fill="#16A34A" />
+              <circle cx="21" cy="8" r="4" fill="#6B7280" />
+              <circle cx="9" cy="8" r="4" fill="#EF4444" />
               <path
-                d="M15.2109 55.7564L44.2109 68.5263V60.1847L24.6236 52.3168V51.946L44.2109 44.0781V35.7365L15.2109 48.5064V55.7564ZM156.313 24.8409H148.754L135.16 75.3438H142.719L156.313 24.8409ZM191.25 55.7564V48.5064L162.25 35.7365V44.0781L181.837 51.946V52.3168L162.25 60.1847V68.5263L191.25 55.7564Z"
-                fill="#007EF3"
+                d="M44.088 64.208C44.088 65.488 44.2587 66.416 44.6 66.992C44.9627 67.568 45.5387 68.0053 46.328 68.304L44.248 74.96C42.2427 74.768 40.5467 74.3307 39.16 73.648C37.7947 72.944 36.7173 71.888 35.928 70.48C34.6267 72.0373 32.9627 73.2 30.936 73.968C28.9093 74.7147 26.84 75.088 24.728 75.088C21.2293 75.088 18.4347 74.096 16.344 72.112C14.2747 70.1067 13.24 67.536 13.24 64.4C13.24 60.7093 14.68 57.8613 17.56 55.856C20.4613 53.8507 24.536 52.848 29.784 52.848H34.36V51.568C34.36 49.7973 33.784 48.4853 32.632 47.632C31.5013 46.7787 29.8373 46.352 27.64 46.352C26.552 46.352 25.1547 46.512 23.448 46.832C21.7413 47.1307 20.0347 47.568 18.328 48.144L15.992 41.424C18.1893 40.592 20.472 39.9627 22.84 39.536C25.2293 39.1093 27.3627 38.896 29.24 38.896C34.296 38.896 38.0293 39.9307 40.44 42C42.872 44.048 44.088 47.0133 44.088 50.896V64.208ZM28.216 67.856C29.304 67.856 30.4453 67.536 31.64 66.896C32.8347 66.2347 33.7413 65.3067 34.36 64.112V58.608H31.864C29.048 58.608 26.9787 59.0453 25.656 59.92C24.3333 60.7733 23.672 62.032 23.672 63.696C23.672 64.9973 24.0667 66.0213 24.856 66.768C25.6667 67.4933 26.7867 67.856 28.216 67.856ZM70.591 67.12C71.9777 67.12 73.279 66.8533 74.495 66.32C75.7323 65.7653 76.959 65.0613 78.175 64.208L82.687 70.608C81.1937 71.888 79.3697 72.9547 77.215 73.808C75.0817 74.6613 72.6923 75.088 70.047 75.088C66.399 75.088 63.263 74.3413 60.639 72.848C58.015 71.3333 55.999 69.2427 54.591 66.576C53.183 63.888 52.479 60.7733 52.479 57.232C52.479 53.6907 53.1937 50.544 54.623 47.792C56.0737 45.0187 58.1217 42.8427 60.767 41.264C63.4337 39.6853 66.591 38.896 70.239 38.896C72.8203 38.896 75.1137 39.2587 77.119 39.984C79.1457 40.688 81.0017 41.744 82.687 43.152L78.303 49.232C77.151 48.4213 75.935 47.792 74.655 47.344C73.375 46.896 72.0417 46.672 70.655 46.672C68.3723 46.672 66.527 47.4827 65.119 49.104C63.7323 50.704 63.039 53.4133 63.039 57.232C63.039 59.728 63.3697 61.7013 64.031 63.152C64.6923 64.5813 65.5883 65.6053 66.719 66.224C67.871 66.8213 69.1617 67.12 70.591 67.12Z"
+                fill="white"
               />
-              <path
-                d="M60.3587 69L63.4893 59.3814H78.7102L81.8409 69H91.3977L76.8565 26.8182H65.3636L50.8018 69H60.3587ZM65.755 52.4197L70.9453 36.4574H71.2749L76.4652 52.4197H65.755ZM131.71 41.5859C130.536 31.8438 123.163 26.2415 113.4 26.2415C102.257 26.2415 93.7509 34.1094 93.7509 47.9091C93.7509 61.6676 102.113 69.5767 113.4 69.5767C124.213 69.5767 130.742 62.3885 131.71 54.6236L122.689 54.5824C121.845 59.093 118.302 61.6882 113.544 61.6882C107.139 61.6882 102.793 56.9304 102.793 47.9091C102.793 39.1349 107.077 34.13 113.606 34.13C118.487 34.13 122.009 36.9517 122.689 41.5859H131.71Z"
-                fill="#000000"
-              />
+              <defs>
+                <filter
+                  id="filter0_b_20_8"
+                  x="-15"
+                  y="-15"
+                  width="130"
+                  height="47"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="7.5" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_20_8"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_backgroundBlur_20_8"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
             </svg>
           )}
           {icon === "covidrescue" && (
@@ -338,7 +423,7 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
               <h4 className="text-lg font-bold tracking-tight text-gray-400 dark:text-gray-100">
                 {title}
               </h4>
-              <p className="leading-5 text-gray-500 dark:text-gray-300">
+              <p className="leading-7 text-gray-500 dark:text-gray-300">
                 {description}
               </p>
             </>
@@ -346,17 +431,17 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
 
           {icon != "more" && (
             <>
-              <h4 className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
+              <h4 className="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
                 {title}
               </h4>
-              <p className="leading-5 text-gray-700 dark:text-gray-300">
+              <p className="leading-6 pt-4 text-gray-700 dark:text-gray-300">
                 {description}
               </p>
-              <div className="pt-2 flex md:flex-row flex-wrap">
+              <div className="pt-4 flex md:flex-row flex-wrap">
                 {tags?.map((tag, idx) => (
                   <p
                     key={idx}
-                    className={`leading-5 dark:border dark:border-zinc-700 text-gray-700 dark:text-gray-300 dark:bg-transparent rounded-md text-xs italic bg-gray-50  mr-2 px-1`}
+                    className={`leading-5 mb-2 dark:border dark:border-zinc-700 text-gray-700 dark:text-gray-300 dark:bg-transparent rounded-md text-xs italic bg-gray-50  mr-2 px-1`}
                   >
                     {tag}
                   </p>

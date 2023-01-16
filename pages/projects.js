@@ -30,86 +30,102 @@ export default function projects() {
           Full-Stack
         </h3>
 
-        <ProjectCard
-          title="Tailwind Master Kit"
-          description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
-          href="https://tailwindmasterkit.com/"
-          icon="tailwindmasterkit"
-          tags={["Tailwind", "Next.js", "Freemium"]}
-        />
-        <ProjectCard
-          title="Algochurn"
-          description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
-          href="https://algochurn.com"
-          icon="algochurn"
-          tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
-        />
-        <ProjectCard
-          title="PlaceholderTech"
-          description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
-          href="https://placeholdertech.in/"
-          icon="placeholdertech"
-          tags={["Freelancing", "React", "Node", "Firebase"]}
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ProjectCard
+            title="Algochurn"
+            description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
+            href="https://algochurn.com"
+            icon="algochurn"
+            tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
+          />
+          <ProjectCard
+            title="Aceternity"
+            description="Building modern applications that scale well and are easy to maintain. Cutting edge websites with a pinch of magic, and a lot of love."
+            href="https://aceternity.com"
+            icon="aceternity"
+            tags={["Next.js", "React", "TailwindCSS", "Full-Stack"]}
+          />
+          <ProjectCard
+            title="Tailwind Master Kit"
+            description="Beautiful, Handcrafted, ready-to-use components and templates for your next Tailwind web app project."
+            href="https://tailwindmasterkit.com/"
+            icon="tailwindmasterkit"
+            tags={["Tailwind", "Next.js", "Freemium"]}
+          />
+          <ProjectCard
+            title="Algochurn"
+            description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
+            href="https://algochurn.com"
+            icon="algochurn"
+            tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
+          />
+          <ProjectCard
+            title="PlaceholderTech"
+            description="We build modern, blazing-fast web applications which helps your business grow and increase sales."
+            href="https://placeholdertech.in/"
+            icon="placeholdertech"
+            tags={["Freelancing", "React", "Node", "Firebase"]}
+          />
 
-        <ProjectCard
-          title="Covid Rescue"
-          description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
-          href="https://covidrescue.co.in/"
-          icon="covidrescue"
-          tags={["Open Source", "Next.js", "Twitter"]}
-        />
+          <ProjectCard
+            title="Covid Rescue"
+            description="Get Real-time verified leads on Oxygen, Beds, Remdesivir and more with location and resource filtering"
+            href="https://covidrescue.co.in/"
+            icon="covidrescue"
+            tags={["Open Source", "Next.js", "Twitter"]}
+          />
 
-        <ProjectCard
-          title="Golden Bells Academy"
-          description="✍🏻 An educational portal to watch educational videos, write and submit assignments, view results and more."
-          href="https://goldenbellsacademy.com/"
-          icon="gba"
-          tags={["commercial", "NextJS", "Firebase"]}
-        />
-        <ProjectCard
-          title="Devmedium"
-          description="📝 A Blogging application platform like Dev.to and Medium with Image uploads, real-time likes and custom usernames"
-          href="https://devmedium.vercel.app/"
-          icon="devmedium"
-          tags={["NextJS", "Firestore", "Firebase"]}
-        />
-        <ProjectCard
-          title="Playground"
-          description="An open-source playground to create HTML, CSS and Javascript components on the go."
-          href="https://play.placeholdertech.in/"
-          icon="play"
-          tags={["NextJS", "Tailwind", "Chakra", "MongoDB"]}
-        />
-        <ProjectCard
-          title="Feedmeback"
-          description="The easiest way to add comments or reviews to your static site. Built as part of React 2025."
-          href="https://feedmeback-beta.vercel.app/"
-          icon="fastfeedback"
-          tags={["NextJS", "Jamstack", "Firebase", "OAuth"]}
-        />
-        <ProjectCard
-          title="Music Streaming Application"
-          description="🎶 An Open-Source music streaming website (like spotify) with rich features like creating playlist, pause, play and user login/authentication."
-          href="https://github.com/manuarora700/music-streaming-project"
-          icon="music"
-          tags={["PHP", "MySQL", "Spotify-UI", "Minimal"]}
-        />
-        <ProjectCard
-          title="GitHub Lookup"
-          description="A minimal application to search for GitHub users with user details using the GitHub API"
-          href="https://github-lookup-new.netlify.app/"
-          icon="github"
-          tags={["React", "Front-end", "Custom-CSS"]}
-        />
+          <ProjectCard
+            title="Golden Bells Academy"
+            description="✍🏻 An educational portal to watch educational videos, write and submit assignments, view results and more."
+            href="https://goldenbellsacademy.com/"
+            icon="gba"
+            tags={["commercial", "NextJS", "Firebase"]}
+          />
+          <ProjectCard
+            title="Devmedium"
+            description="📝 A Blogging application platform like Dev.to and Medium with Image uploads, real-time likes and custom usernames"
+            href="https://devmedium.vercel.app/"
+            icon="devmedium"
+            tags={["NextJS", "Firestore", "Firebase"]}
+          />
+          <ProjectCard
+            title="Playground"
+            description="An open-source playground to create HTML, CSS and Javascript components on the go."
+            href="https://play.placeholdertech.in/"
+            icon="play"
+            tags={["NextJS", "Tailwind", "Chakra", "MongoDB"]}
+          />
+          <ProjectCard
+            title="Feedmeback"
+            description="The easiest way to add comments or reviews to your static site. Built as part of React 2025."
+            href="https://feedmeback-beta.vercel.app/"
+            icon="fastfeedback"
+            tags={["NextJS", "Jamstack", "Firebase", "OAuth"]}
+          />
+          <ProjectCard
+            title="Music Streaming Application"
+            description="🎶 An Open-Source music streaming website (like spotify) with rich features like creating playlist, pause, play and user login/authentication."
+            href="https://github.com/manuarora700/music-streaming-project"
+            icon="music"
+            tags={["PHP", "MySQL", "Spotify-UI", "Minimal"]}
+          />
+          <ProjectCard
+            title="GitHub Lookup"
+            description="A minimal application to search for GitHub users with user details using the GitHub API"
+            href="https://github-lookup-new.netlify.app/"
+            icon="github"
+            tags={["React", "Front-end", "Custom-CSS"]}
+          />
 
-        <ProjectCard
-          title="IPL Statistics"
-          description="A bundled web application to get details and statistics of Every player, Team and detailed analysis of each match played in IPL"
-          href="https://ipl-statistics.vercel.app/"
-          icon="ipl"
-          tags={["NextJS", "Vercel", "Dataset", "Real-world"]}
-        />
+          <ProjectCard
+            title="IPL Statistics"
+            description="A bundled web application to get details and statistics of Every player, Team and detailed analysis of each match played in IPL"
+            href="https://ipl-statistics.vercel.app/"
+            icon="ipl"
+            tags={["NextJS", "Vercel", "Dataset", "Real-world"]}
+          />
+        </div>
 
         <a
           href="https://github.com/manuarora700"
@@ -135,26 +151,28 @@ export default function projects() {
           Upcoming Projects
         </h3>
 
-        <ProjectCard
-          title="StyledNext"
-          description="Professional, modern and beautiful templates built with Next.js and TailwindCSS"
-          href="https://stylednext.com"
-          icon="vscode"
-          tags={["NextJS", "Tailwind", "Hackerearth"]}
-        />
-        <ProjectCard
-          title="VSCode Resume"
-          description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
-          href="#"
-          icon="vscode"
-          tags={["NextJS", "Tailwind", "Hackerearth"]}
-        />
-        <ProjectCard
-          title="More projects coming soon.."
-          description="I get ideas all day 🙄, All of them are updated here as soon as I start working on them."
-          href="#"
-          icon="more"
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <ProjectCard
+            title="StyledNext"
+            description="Professional, modern and beautiful templates built with Next.js and TailwindCSS"
+            href="https://stylednext.com"
+            icon="vscode"
+            tags={["NextJS", "Tailwind", "Hackerearth"]}
+          />
+          <ProjectCard
+            title="VSCode Resume"
+            description="A VSCode themed resume for all the web developers out there. A UI which looks exactly like a React file-system based VSCode window with create and update operations."
+            href="#"
+            icon="vscode"
+            tags={["NextJS", "Tailwind", "Hackerearth"]}
+          />
+          <ProjectCard
+            title="More projects coming soon.."
+            description="I get ideas all day 🙄, All of them are updated here as soon as I start working on them."
+            href="#"
+            icon="more"
+          />
+        </div>
 
         {/* 🎶 A music streaming website (like spotify) built using PHP, HTML/CSS, AJAX, JS, jQuery, JSON, mySQL and more. */}
         <Contact />
