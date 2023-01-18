@@ -21,6 +21,8 @@ import Button from "./Button";
 import AnimatedGradient from "./SnippetsComponents/AnimatedGradient";
 import TwitterCardsFramerMotionExample from "./SnippetsComponents/TwitterCardsFramerMotionExample";
 import MeteorEffect from "./MeteorEffect/MeteorEffect";
+import { CardHoverEffect } from "./CardHoverEffect/CardHoverEffect";
+import { PreviewContainer } from "./PreviewContainer/PreviewContainer";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -56,6 +58,8 @@ const MDXComponents = {
   AnimatedGradient,
   TwitterCardsFramerMotionExample,
   MeteorEffect,
+  CardHoverEffect,
+  PreviewContainer,
 };
 
 export default MDXComponents;
