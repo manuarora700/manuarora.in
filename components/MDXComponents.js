@@ -20,6 +20,7 @@ import VideoComponent from "./VideoComponent";
 import Button from "./Button";
 import AnimatedGradient from "./SnippetsComponents/AnimatedGradient";
 import TwitterCardsFramerMotionExample from "./SnippetsComponents/TwitterCardsFramerMotionExample";
+import MeteorEffect from "./MeteorEffect/MeteorEffect";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -54,6 +55,7 @@ const MDXComponents = {
   Button,
   AnimatedGradient,
   TwitterCardsFramerMotionExample,
+  MeteorEffect,
 };
 
 export default MDXComponents;

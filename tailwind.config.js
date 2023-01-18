@@ -20,6 +20,7 @@ module.exports = {
         blog: "blob 7s infinite",
         border: "border 4s ease infinite",
         "text-shimmer": "text-shimmer 2.5s ease-out infinite alternate",
+        "meteor-effect": "meteor 5s linear infinite",
       },
       keyframes: {
         blob: {
@@ -45,6 +46,14 @@ module.exports = {
         border: {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
+        },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: 1 },
+          "70%": { opacity: 1 },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: 0,
+          },
         },
       },
       colors: {
