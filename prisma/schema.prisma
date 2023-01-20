@@ -18,3 +18,10 @@ model words {
     created_at DateTime @default(now())
     updated_at DateTime @default(now())
 }
+
+model tweets {
+    id         BigInt   @id @default(autoincrement())
+    tweetId    String   @db.VarChar(256)
+    created_at DateTime @default(now())
+    updated_at DateTime @default(now())
+}

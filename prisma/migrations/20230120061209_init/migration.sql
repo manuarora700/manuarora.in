@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE "tweets" (
+    "id" BIGSERIAL NOT NULL,
+    "tweetId" VARCHAR(256) NOT NULL,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "tweets_pkey" PRIMARY KEY ("id")
+);
