@@ -29,6 +29,36 @@ export default function ProjectCard({ title, description, href, icon, tags }) {
           {/* */}
 
           <div className="my-4">
+            {icon === "moonbeam" && (
+              <svg
+                className={`h-8 w-12 min-w-lg text-gray-900 dark:text-gray-100`}
+                id="SvgjsSvg1001"
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                viewBox="0 0 82.43954467773438 36.907936096191406"
+              >
+                <defs id="SvgjsDefs1002"></defs>
+                <rect
+                  id="SvgjsRect1008"
+                  width="82.43954467773438"
+                  height="36.907936096191406"
+                  fill="none"
+                ></rect>
+                <g
+                  id="SvgjsG1009"
+                  transform="matrix(1,0,0,1,-28.194570541381836,-64.04541778564453)"
+                >
+                  <title>0578_ink_pen_verti</title>
+                  <path
+                    id="color_1"
+                    d="M110.63412,80.395c-.1825-.02539-18.34884-2.69087-27.68421-15.47783l-.63669-.87175H28.19457v36.90794H82.31322l.63669-.87176c9.33537-12.78754,27.50171-15.45243,27.68362-15.47783l-.29-2.10379ZM60.853,81.43629H47.71166V68.29555H60.853ZM32.44468,83.56194H45.5866V96.70327H32.44468ZM80.17576,96.70327H65.1031V68.29555H80.17576a42.1149,42.1149,0,0,0,15.99168,12.0788H80.5514a4.68191,4.68191,0,1,0,0,4.25012H96.16684A42.11772,42.11772,0,0,0,80.17576,96.70327Z"
+                    fill="currentColor"
+                  ></path>
+                </g>
+              </svg>
+            )}
             {icon === "tailwindmasterkit" && (
               <div className="h-8 w-8 ml-2 mr-4">
                 {/*  

@@ -80,11 +80,18 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <ProjectCard
-            title="Algochurn"
-            description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
-            href="https://algochurn.com"
-            icon="algochurn"
-            tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
+            title="Moonbeam"
+            description="Never write from scratch again. Kickstart your next great writing piece with Moonbeam. Your long-form writing AI assistant."
+            href="https://gomoonbeam.com"
+            icon="moonbeam"
+            tags={[
+              "Front-end",
+              "GPT-3",
+              "Next.js",
+              "React",
+              "TailwindCSS",
+              "Chrome Extension",
+            ]}
           />
           <ProjectCard
             title="Aceternity"
@@ -92,6 +99,13 @@ export default function Home() {
             href="https://aceternity.com"
             icon="aceternity"
             tags={["Next.js", "React", "TailwindCSS", "Full-Stack"]}
+          />
+          <ProjectCard
+            title="Algochurn"
+            description="Practice the most popular algorithmic questions and Front-end interview questions with an interactive IDE and learning environment."
+            href="https://algochurn.com"
+            icon="algochurn"
+            tags={["Next.js", "React", "TailwindCSS", "Monaco", "Algorithms"]}
           />
 
           <ProjectCard
