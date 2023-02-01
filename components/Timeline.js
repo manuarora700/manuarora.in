@@ -143,8 +143,23 @@ export default function Timeline() {
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
         Life Changelog and Updates
       </h3>
+      <Year>2023</Year>
+      <ul>
+        <Step title="300+ users on Algochurn 🤌🏻">
+          <a href="https://algochurn.com" target="__blank">
+            Algochurn
+          </a>{" "}
+          crossed 300 users and I couldn't be any happier.
+        </Step>
+      </ul>
       <Year>2022</Year>
       <ul>
+        <Step title="Started working on Moonbeam 🤩">
+          Started working on
+          <a href="https://gomoonbeam.com" target="__blank"></a>as a front-end
+          developer. Building a chrome extension was the most fun and
+          challenging part.
+        </Step>
         <Step title="Algochurn crosses 200 users 🤌🏻">
           <a href="https://algochurn.com" target="__blank">
             Algochurn
