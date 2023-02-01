@@ -156,10 +156,12 @@ export default function Timeline() {
       <Year>2022</Year>
       <ul>
         <Step title="Started working on Moonbeam 🤩">
-          Started working on
-          <a href="https://gomoonbeam.com" target="__blank"></a>as a front-end
-          developer. Building a chrome extension was the most fun and
-          challenging part.
+          Started working on{" "}
+          <a href="https://gomoonbeam.com" target="__blank">
+            Moonbeam{" "}
+          </a>
+          as a front-end developer. Building a chrome extension was the most fun
+          and challenging part.
         </Step>
         <Step title="Algochurn crosses 200 users 🤌🏻">
           <a href="https://algochurn.com" target="__blank">
