@@ -152,6 +152,7 @@ export default function Timeline() {
           crossed 300 users and I couldn't be any happier.
         </Step>
       </ul>
+      <Divider />
       <Year>2022</Year>
       <ul>
         <Step title="Started working on Moonbeam 🤩">
@@ -191,6 +192,7 @@ export default function Timeline() {
           applications. 🔥
         </Step>
       </ul>
+      <Divider />
       <Year>2021</Year>
       <ul>
         <Step title="Built Tailwind Master Kit 🪁">
@@ -211,7 +213,7 @@ export default function Timeline() {
           area and city.
         </Step>
       </ul>
-
+      <Divider />
       <Year>2020</Year>
       <ul>
         <Step title="Joined mroads 🎉">
