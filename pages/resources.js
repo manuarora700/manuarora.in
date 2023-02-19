@@ -27,6 +27,13 @@ export default function Snippets({ snippets }) {
         </h2>
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full mt-4">
           {/*  */}
+
+          <ResourcesCard
+            title="Colors and Fonts"
+            link=" https://www.colorsandfonts.com/"
+            websiteLink="colorsandfonts.com"
+            description="Great fonts and color palette inspirations"
+          />
           <ResourcesCard
             title="Checkboxes Inspiration"
             link="https://getcssscan.com/css-checkboxes-examples"
