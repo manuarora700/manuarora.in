@@ -12,7 +12,7 @@ import { MdComputer } from "react-icons/md";
 
 export const links = [
   {
-    id: 7,
+    id: 17,
     name: "Aceternity",
     href: "https://aceternity.com/?ref=instagram",
     icon: MdComputer,
