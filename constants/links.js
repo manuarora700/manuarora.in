@@ -8,8 +8,16 @@ import { BsFileEarmarkCode } from "react-icons/bs";
 import { SiAltiumdesigner } from "react-icons/si";
 import { FaFreeCodeCamp } from "react-icons/fa";
 import { BiCodeAlt, BiCodeCurly } from "react-icons/bi";
+import { MdComputer } from "react-icons/md";
 
 export const links = [
+  {
+    id: 7,
+    name: "Aceternity",
+    href: "https://aceternity.com/?ref=instagram",
+    icon: MdComputer,
+    iconClass: "text-gray-500",
+  },
   {
     id: 7,
     name: "Twitter",
