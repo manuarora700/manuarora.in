@@ -1546,14 +1546,13 @@
   integrity sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==
 
 "@tailwindcss/typography@github:tailwindcss/typography":
-  version "0.5.0"
-  resolved "git+ssh://git@github.com/tailwindcss/typography.git#61826feebf24cc1c09630fef4aa699afd58e5dac"
-  integrity sha512-lG87iLLyYY6tc7oN6kdL9j0ufgLVTNymEuYsNlMICw2TYf3ZmNOUlPuQ14JA7DluA4UJ7NNhacOPtJpeendfHw==
+  version "0.5.9"
+  resolved "git+ssh://git@github.com/tailwindcss/typography.git#4c3b76ccc8120f307514d5721598763fd09761c0"
   dependencies:
     lodash.castarray "^4.4.0"
     lodash.isplainobject "^4.0.6"
     lodash.merge "^4.6.2"
-    lodash.uniq "^4.5.0"
+    postcss-selector-parser "6.0.10"
 
 "@tootallnate/once@1":
   version "1.1.2"
@@ -2940,7 +2939,7 @@ lodash.once@^4.0.0:
   resolved "https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz"
   integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
 
-lodash.uniq@^4.5.0, lodash.uniq@4.5.0:
+lodash.uniq@4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
@@ -3436,6 +3435,14 @@ postcss-selector-parser@^6.0.10, postcss-selector-parser@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.11.tgz"
   integrity sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g==
+  dependencies:
+    cssesc "^3.0.0"
+    util-deprecate "^1.0.2"
+
+postcss-selector-parser@6.0.10:
+  version "6.0.10"
+  resolved "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.10.tgz"
+  integrity sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==
   dependencies:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
@@ -4099,7 +4106,7 @@ swr@^1.3.0:
   resolved "https://registry.npmjs.org/swr/-/swr-1.3.0.tgz"
   integrity sha512-dkghQrOl2ORX9HYrMDtPa7LTVHJjCTeZoB1dqTbnnEDlSvN8JEKpYIYurDfvbQFUUS8Cg8PceFVZNkW0KNNYPw==
 
-tailwindcss@^3.3.1, "tailwindcss@>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1", "tailwindcss@>=3.0.0 || >= 3.0.0-alpha.1 || insiders":
+tailwindcss@^3.3.1, "tailwindcss@>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1", "tailwindcss@>=3.0.0 || insiders":
   version "3.3.1"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.3.1.tgz"
   integrity sha512-Vkiouc41d4CEq0ujXl6oiGFQ7bA3WEhUZdTgXAhtKxSy49OmKs8rEfQmupsfF0IGW8fv2iQkp1EVUuapCFrZ9g==
