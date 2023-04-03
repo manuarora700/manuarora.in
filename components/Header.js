@@ -147,9 +147,6 @@ const Header = () => {
             className="font-bold group dark:text-zinc-400 font-inter relative inline-flex  overflow-hidden"
             target="__blank"
           >
-            {isMounted && (
-              <div className="absolute bg-teal-500/50 dark:bg-teal-500/30 inset-0 translate-y-5 group-hover:translate-y-0 transition duration-100 ease-out"></div>
-            )}
             <span className="relative">twitter</span>
           </a>{" "}
           for tech updates and memes.
