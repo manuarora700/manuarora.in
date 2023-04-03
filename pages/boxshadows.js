@@ -26,7 +26,17 @@ export default function BoxShadows() {
   };
 
   return (
-    <div>
+    <div className="relative antialiased">
+      <div className="bg-gradient-to-r from-zinc-800  to-zinc-900 text-center py-2 dark:text-white">
+        Professional, production ready Next.js and{" "}
+        <a
+          href="https://aceternity.com/templates?ref=manuarora"
+          target="__blank"
+          className="underline decoration-[2px] decoration-lime-500 dark:text-white"
+        >
+          Tailwind CSS templates here
+        </a>
+      </div>
       <Metadata />
       <CustomNav
         setTheme={setTheme}
@@ -173,18 +183,7 @@ const Card = ({ shadow, name, vanillaCSS, customCSS }) => {
 const Header = ({ executeScroll }) => {
   return (
     <div className="mb-20 flex flex-col items-center justify-center w-full">
-      <a
-        href="https://www.producthunt.com/posts/tailwind-box-shadows?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-tailwind-box-shadows"
-        target="_blank"
-      >
-        <img
-          src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=325075&theme=dark&period=daily"
-          alt="Tailwind Box Shadows - Curated list of box shadows for your cards to stand out | Product Hunt"
-          // style="width: 250px; height: 54px;"
-          className="h-12 w-auto mt-20 mb-0"
-        />
-      </a>
-      <h1 className="font-bold text-xl md:text-3xl tracking-normal mb-4 text-black dark:text-white mx-auto mt-4">
+      <h1 className="font-bold text-xl md:text-3xl tracking-normal mb-4 text-black dark:text-white mx-auto my-20">
         Box Shadows for{" "}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
           TailwindCSS
@@ -288,8 +287,9 @@ const CustomNav = ({ onModalClick, setTheme, theme, mounted }) => {
           target="_blank"
         >
           <img
-            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=325075&theme=dark"
+            src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=325075&theme=dark&period=daily"
             alt="Tailwind Box Shadows - Curated list of box shadows for your cards to stand out | Product Hunt"
+            // style="width: 250px; height: 54px;"
             className="h-10 w-auto"
           />
         </a>
@@ -325,7 +325,6 @@ const Metadata = () => {
         property="og:title"
         content={`Box Shadows - Beautiful box shadows for TailwindCSS`}
       />
-      {/* FIXME: Add Image */}
       <meta
         property="og:image"
         content={`https://manuarora.in/boxshadows.png`}
@@ -341,7 +340,6 @@ const Metadata = () => {
         content={`A curated list of box shadows for TailwindCSS. Available in classes, JIT
         and vanilla CSS. Click to copy styles and paste it in your HTML div section to apply box shadows instantly.`}
       />
-      {/* FIXME: Add Image */}
 
       <meta
         name="twitter:image"
