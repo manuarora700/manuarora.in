@@ -6,7 +6,7 @@ import Followers from "@/components/metrics/Followers";
 import Following from "@/components/metrics/Following";
 import Repositories from "@/components/metrics/Repositories";
 import TopTracks from "@/components/TopTracks";
-import TwitterStatistics from "@/components/metrics/TwitterStatistics";
+
 import Analytics from "@/components/metrics/Analytics";
 // import NowPlaying from "@/components/NowPlaying";
 // import TopTracks from "@/components/TopTracks";
@@ -41,13 +41,6 @@ export default function Dashboard() {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
           <Following />
           <Repositories />
-        </div>{" "}
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
-          <TwitterStatistics type="followers" />
-          <TwitterStatistics type="following" />
-        </div>{" "}
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
-          <TwitterStatistics type="total_tweets" />
           <Analytics />
         </div>{" "}
         <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
