@@ -71,7 +71,7 @@ export default function Chat() {
     }
     // Everything is fine - Proceed with the API call.
     setLoading(true);
-    const res = await fetch("/api/chat", {
+    const res = await fetch("/api/resend", {
       body: JSON.stringify({
         email: email.value,
         message: message.value,
