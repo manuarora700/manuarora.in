@@ -12,6 +12,7 @@ import { palette } from "./tailwindColorPalette";
 import { useOutsideClick } from "hooks/useOutsideClick";
 
 import styles from "./styles.module.css";
+import { FaRandom } from "react-icons/fa";
 
 export const GenerateBoxShadow = React.forwardRef((props, ref) => {
   let defaultBoxShadow = {
@@ -199,6 +200,27 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
     });
   };
 
+  const handleRandomize = () => {
+    let temp = [...boxShadow];
+    temp.forEach((el) => {
+      el.horizontalOffset = Math.floor(Math.random() * 41) - 20;
+      el.verticalOffset = Math.floor(Math.random() * 41) - 20;
+      el.blur = Math.floor(Math.random() * 50);
+      el.spread = Math.floor(Math.random() * 50);
+      el.color = randomColor();
+    });
+    setBoxShadow(temp);
+  };
+
+  const randomColor = () => {
+    let color = "#";
+    let letters = "0123456789ABCDEF";
+    for (let i = 0; i < 8; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+
   return (
     <div
       ref={ref}
@@ -279,6 +301,12 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
               <IoMdAdd className="stroke-[10px]" /> Add Shadow Layer
             </button>
             <div className="flex flex-row space-x-2">
+              <button
+                onClick={handleRandomize}
+                className="text-black flex flex-row space-x-2 items-center font-light bg-slate-100 px-2 py-1 rounded-md hover:bg-slate-200"
+              >
+                <FaRandom className="stroke-[1px] mr-2" /> Randomize
+              </button>
               <button
                 onClick={handleReset}
                 className="text-black flex flex-row space-x-2 items-center font-light bg-slate-100 px-2 py-1 rounded-md hover:bg-slate-200"
