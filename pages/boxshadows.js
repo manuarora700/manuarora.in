@@ -189,11 +189,11 @@ const Header = ({ executeScroll }) => {
           TailwindCSS
         </span>
       </h1>
-      <h2 className="prose text-gray-700 font-light dark:text-gray-400  text-center mx-auto">
+      <h2 className="prose text-gray-700 font-normal dark:text-gray-400  text-center mx-auto">
         A curated list of box shadows for TailwindCSS. Available in JIT 🚀 and
         vanilla CSS.
       </h2>
-      <p className="prose text-gray-700 font-light dark:text-gray-400  text-center mx-auto">
+      <p className="prose text-gray-700 font-normal dark:text-gray-400  text-center mx-auto">
         <span className="bg-gray-800 border border-gray-100 rounded-md px-1 py-1">
           🖱
         </span>{" "}
@@ -203,7 +203,7 @@ const Header = ({ executeScroll }) => {
         </span>{" "}
         to bookmark this page.
       </p>{" "}
-      <div className="w-full items-center max-w-sm mx-auto flex flex-row space-x-2 text-xs text-gray-500 font-light dark:text-gray-400 my-10">
+      <div className="w-full items-center max-w-sm mx-auto flex flex-row space-x-2 text-xs text-gray-500 font-normal dark:text-gray-400 my-10">
         <div className="h-px w-full bg-slate-200 dark:bg-slate-700"></div>
         <p>or</p>
         <div className="h-px w-full bg-slate-200 dark:bg-slate-700"></div>
@@ -389,7 +389,7 @@ const Modal = ({ onModalClick }) => {
   };
 
   return (
-    <div className="absolute inset-0 bg-black h-full w-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm z-10">
+    <div className="fixed inset-0 bg-black h-full w-full flex items-center justify-center bg-opacity-50 backdrop-blur-sm z-10">
       <button
         className="absolute top-2 right-2 px-4 py-2 rounded-md bg-black text-white cursor-pointer"
         onClick={onModalClick}
@@ -403,7 +403,7 @@ const Modal = ({ onModalClick }) => {
             type="text"
             rows="5"
             value={text}
-            className="text-white font-thin w-full px-2 ring-2 ring-black rounded-md bg-gray-900 mb-4"
+            className="text-white font-normal font-mono w-full px-2 ring-2 ring-black rounded-md bg-gray-900 mb-4"
             onChange={(e) => setText(e.target.value)}
             autoCorrect={false}
             spellCheck={false}
@@ -426,7 +426,7 @@ const Modal = ({ onModalClick }) => {
               <div className="bg-black rounded-md px-2 pb-10 pt-2 text-gray-400 font-mono  text-sm  w-full flex-wrap overflow-x-scroll">
                 {/* {output} */}
 
-                <pre className="font-light">
+                <pre className="font-normal">
                   {`<div className="${output}">
       <p>Code goes here...</p>
 </div>`}
@@ -440,7 +440,7 @@ const Modal = ({ onModalClick }) => {
               <div className="bg-black rounded-md px-2 pb-10 pt-2 text-gray-400 font-mono  text-sm  w-full flex-wrap overflow-x-scroll">
                 {/* {output} */}
 
-                <pre className="font-light">
+                <pre className="font-normal">
                   {`module.exports = {
   content: [],
   theme: {

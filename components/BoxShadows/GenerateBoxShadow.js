@@ -11,6 +11,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { palette } from "./tailwindColorPalette";
 import { useOutsideClick } from "hooks/useOutsideClick";
 
+import styles from "./styles.module.css";
+
 export const GenerateBoxShadow = React.forwardRef((props, ref) => {
   let defaultBoxShadow = {
     id: new Date().getTime(),
@@ -38,14 +40,13 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
         `${el.spread}px ` +
         `${el.color}`;
 
+      temp = el.inset ? `inset ${temp}` : temp;
       final.push(temp);
     });
-    console.log(final.join(","));
     return final.join(",");
   };
 
   const onChangeHandler = (action, data) => {
-    console.log({ action, data });
     switch (action) {
       case "horizontalOffset":
         findAndUpdateValue("horizontalOffset", data);
@@ -58,6 +59,9 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
         break;
       case "spread":
         findAndUpdateValue("spread", data);
+        break;
+      case "inset":
+        findAndUpdateValue("inset", data);
         break;
       case "color":
         findAndUpdateValue("color", data);
@@ -137,7 +141,6 @@ export const GenerateBoxShadow = React.forwardRef((props, ref) => {
     try {
       var successful = document.execCommand("copy");
       var msg = successful ? "successful" : "unsuccessful";
-      console.log("Fallback: Copying text command was " + msg);
     } catch (err) {
       console.error("Fallback: Oops, unable to copy", err);
     }
@@ -440,13 +443,71 @@ const FormElement = ({ onChangeHandler, shadowElement }) => {
           style={{ backgroundColor: shadowElement.color }}
         ></button>
       </div>
+      <div className="flex flex-row space-x-2 mb-2">
+        <label
+          className="border border-slate-700 px-2 py-0.5 text-xs rounded-md bg-slate-600 text-white"
+          htmlFor={`color-${shadowElement.id}`}
+        >
+          C
+        </label>
+        <input
+          value={shadowElement.color}
+          className="inline-block w-28 shadow rounded-md px-2 uppercase text-sm text-zinc-600 border border-transparent focus:outline-none focus:border-blue-700"
+          id={`color-${shadowElement.id}`}
+          type="text"
+          onChange={(e) =>
+            onChangeHandler("color", {
+              updatedValue: e.target.value,
+              ...shadowElement,
+            })
+          }
+        />
+        <button
+          onClick={() => onChangeHandler("color-button", shadowElement)}
+          className="p-3 w-10 rounded-md"
+          style={{ backgroundColor: shadowElement.color }}
+        ></button>
+      </div>
+      <div className="flex flex-row space-x-2 mb-2">
+        <div class={styles["checkbox-wrapper-1"]}>
+          <input
+            id={`inset-${shadowElement.id}`}
+            class={styles.substituted}
+            type="checkbox"
+            aria-hidden="true"
+            onChange={(e) =>
+              onChangeHandler("inset", {
+                updatedValue: e.target.checked,
+                ...shadowElement,
+              })
+            }
+          />
+          <label className="text-base" htmlFor={`inset-${shadowElement.id}`}>
+            Inset
+          </label>
+        </div>
+        {/* 
+        <input
+          min="0"
+          value={shadowElement.inset}
+          className="accent-sky-500 px-4 py-4 inline-block"
+          id={`inset-${shadowElement.id}`}
+          type="checkbox"
+          onChange={(e) =>
+            onChangeHandler("inset", {
+              updatedValue: e.target.checked,
+              ...shadowElement,
+            })
+          }
+        /> */}
+      </div>
     </div>
   );
 };
 
 const PaletteModal = React.forwardRef((props, ref) => {
   const { onChangeHandler, palette } = props;
-  console.log("palette", palette);
+
   return (
     <div className="h-full w-full absolute  z-20 inset-0  flex items-center justify-center bg-black/10">
       <div

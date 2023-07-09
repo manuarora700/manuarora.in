@@ -12,6 +12,11 @@ module.exports = {
     "./layouts/**/*.js",
     "./safelist.txt",
   ],
+  safelist: [
+    {
+      pattern: /shadow-/,
+    },
+  ],
   darkMode: "class",
   mode: "jit",
   theme: {

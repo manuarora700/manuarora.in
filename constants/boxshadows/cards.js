@@ -109,10 +109,25 @@ const cards = [
   },
   {
     name: "PurpleStamp",
-    shadow:
-      "shadow-[5px_5px_0px_0px_rgba(109,40,217)]",
+    shadow: "shadow-[5px_5px_0px_0px_rgba(109,40,217)]",
     vanillaCSS: `box-shadow: 5px 5px 0px 0px rgba(109,40,217);`,
-    customCSS: "text-purple-700 rotate-1 border-2 border-purple-700 rounded-md"
+    customCSS: "text-purple-700 rotate-1 border-2 border-purple-700 rounded-md",
+  },
+  {
+    name: "Stiglitz",
+    shadow: `shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]`,
+    vanillaCSS: `box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;`,
+  },
+  {
+    name: "Brutal",
+    vanillaCSS: `box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;`,
+    shadow:
+      "shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]",
+  },
+  {
+    name: "Intense",
+    vanillaCSS: `box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;`,
+    shadow: "shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]",
   },
 ];
 

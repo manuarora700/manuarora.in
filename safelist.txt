@@ -22,4 +22,7 @@ shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]
 shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px]
 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]
 shadow-[5px_5px_0px_0px_rgba(109,40,217)]
+shadow-[rgba(50,50,93,0.25)_0px_6px_12px_-2px,_rgba(0,0,0,0.3)_0px_3px_7px_-3px]
 text-purple-700 rotate-1 border-2 border-purple-700 rounded-md
+shadow-[rgba(6,_24,_44,_0.4)_0px_0px_0px_2px,_rgba(6,_24,_44,_0.65)_0px_4px_6px_-1px,_rgba(255,_255,_255,_0.08)_0px_1px_0px_inset]
+shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]
