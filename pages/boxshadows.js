@@ -149,8 +149,8 @@ const Card = ({ shadow, name, vanillaCSS, customCSS }) => {
       )}
     >
       <div
-        className={`absolute w-full h-full transition-all flex items-center justify-center duration-100 bg-green-500 transform translate-y-full ${
-          copied ? "translate-y-0" : ""
+        className={`absolute w-full h-full transition-all flex items-center justify-center duration-100 bg-green-500 transform  ${
+          copied ? "translate-y-0" : "translate-y-full"
         }`}
       >
         <p className="text-white">Copied! 🎉</p>
