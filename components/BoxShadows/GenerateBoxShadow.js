@@ -471,31 +471,7 @@ const FormElement = ({ onChangeHandler, shadowElement }) => {
           style={{ backgroundColor: shadowElement.color }}
         ></button>
       </div>
-      <div className="flex flex-row space-x-2 mb-2">
-        <label
-          className="border border-slate-700 px-2 py-0.5 text-xs rounded-md bg-slate-600 text-white"
-          htmlFor={`color-${shadowElement.id}`}
-        >
-          C
-        </label>
-        <input
-          value={shadowElement.color}
-          className="inline-block w-28 shadow rounded-md px-2 uppercase text-sm text-zinc-600 border border-transparent focus:outline-none focus:border-blue-700"
-          id={`color-${shadowElement.id}`}
-          type="text"
-          onChange={(e) =>
-            onChangeHandler("color", {
-              updatedValue: e.target.value,
-              ...shadowElement,
-            })
-          }
-        />
-        <button
-          onClick={() => onChangeHandler("color-button", shadowElement)}
-          className="p-3 w-10 rounded-md"
-          style={{ backgroundColor: shadowElement.color }}
-        ></button>
-      </div>
+
       <div className="flex flex-row space-x-2 mb-2">
         <div class={styles["checkbox-wrapper-1"]}>
           <input
