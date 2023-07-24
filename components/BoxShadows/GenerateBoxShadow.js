@@ -443,7 +443,7 @@ const FormElement = ({ onChangeHandler, shadowElement }) => {
           }
         />
         <p className="border border-slate-700 px-2 py-px rounded-md bg-slate-600 text-xs text-white">
-          {shadowElement.blur}px spread
+          {shadowElement.spread}px spread
         </p>
       </div>
       <div className="flex flex-row space-x-2 mb-2">
