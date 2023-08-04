@@ -159,11 +159,11 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <ProjectCard
-            title="StyledNext"
-            description="Professional, modern and beautiful templates built with Next.js and TailwindCSS"
-            href="https://stylednext.com"
+            title="Motion Components"
+            description="Professional, modern and beautiful framer motion components built with Next.js and TailwindCSS"
+            href="https://aceternity.com/components"
             icon="vscode"
-            tags={["NextJS", "Tailwind", "Hackerearth"]}
+            tags={["NextJS", "Tailwind", "framer-motion"]}
           />
 
           <ProjectCard

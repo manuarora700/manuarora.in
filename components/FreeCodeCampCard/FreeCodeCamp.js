@@ -4,7 +4,7 @@ import ProjectFCC from "./Project";
 
 export default function FreeCodeCamp({ showDesc = true }) {
   return (
-    <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+    <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 mt-20">
       <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-8 text-black dark:text-white">
         Free Code Camp
       </h1>

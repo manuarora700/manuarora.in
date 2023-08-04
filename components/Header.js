@@ -37,23 +37,25 @@ const Header = () => {
 
         <div className="relative leading-7 items-center flex-wrap text-zinc-700 dark:text-zinc-400 mb-5">
           Building
-          <LinkPreview
+          <a
             className={
-              "inline-block px-2 py-0 font-bold bg-gray-100 dark:bg-zinc-700 dark:text-white rounded-md mx-1"
+              "inline-block px-2 py-0 font-bold bg-gray-100 dark:bg-zinc-700 dark:text-white  mx-1"
             }
-            url="https://algochurn.com"
+            href="https://aceternity.com"
+            target="__blank"
           >
-            Algochurn
-          </LinkPreview>{" "}
-          |{" "}
-          <LinkPreview
+            Aceternity
+          </a>
+          ,
+          <a
             className={
-              "inline-block px-2 py-0 font-bold bg-gray-100 dark:bg-zinc-700 dark:text-white rounded-md mx-1"
+              "inline-block px-2 py-0 font-bold bg-gray-100 dark:bg-zinc-700 dark:text-white mx-1"
             }
-            url="https://gomoonbeam.com"
+            href="https://userogue.com"
+            target="__blank"
           >
-            Moonbeam
-          </LinkPreview>
+            Rogue
+          </a>
           other
           <span
             className="font-bold cursor-pointer text-zinc-800 dark:text-zinc-200"
@@ -100,7 +102,12 @@ const Header = () => {
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
                     Helping front-end developers{" "}
-                    <Hyperlink text="@algochurn" link="https://algochurn.com" />
+                    <Hyperlink text="@algochurn" link="https://algochurn.com" />{" "}
+                    and{" "}
+                    <Hyperlink
+                      text="@pixelperfect"
+                      link="https://app.pixelperfect.quest"
+                    />
                   </motion.p>
                   <motion.p variants={itemA} className="font-normal py-3">
                     Web templates and components{" "}
