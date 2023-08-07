@@ -14,7 +14,7 @@ const BlogPost = ({ title, summary, slug }) => {
     <Link href={`/blog/${slug}`} className="">
       <a
         className={twMerge(
-          "w-full bg-gray-100 rounded-md mb-4 p-4 border border-gray-200"
+          "w-full bg-gray-100 dark:bg-zinc-800 dark:border-zinc-700 rounded-md mb-4 p-4 border border-gray-200"
         )}
       >
         <div className="w-full">
