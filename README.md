@@ -32,7 +32,7 @@ The application is built with **Next.js/React/MDX** and friends
 
 ```bash
 
-git clone https://github.com/manuarora700/portfolio-website.git
+git clone https://github.com/manuarora700/manuarora.in.git
 
 cd portfolio-website
 
@@ -46,7 +46,7 @@ or use NPM
 
 ```bash
 
-git clone https://github.com/manuarora700/portfolio-website.git
+git clone https://github.com/manuarora700/manuarora.in.git
 
 cd portfolio-website
 
