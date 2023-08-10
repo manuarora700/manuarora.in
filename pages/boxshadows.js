@@ -28,13 +28,14 @@ export default function BoxShadows() {
   return (
     <div className="relative antialiased">
       <div className="bg-gradient-to-r from-zinc-800  to-zinc-900 text-center py-2 dark:text-white">
-        Professional, production ready Next.js and{" "}
+        Awesome Tailwindcss and{" "}
         <a
-          href="https://aceternity.com/templates?ref=manuarora"
+          href="https://aceternity.com/components?ref=manuarora"
           target="__blank"
+          rel="dofollow"
           className="underline decoration-[2px] decoration-lime-500 dark:text-white"
         >
-          Tailwind CSS templates here
+          Framer Motion Components
         </a>
       </div>
       <Metadata />
