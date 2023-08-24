@@ -11,7 +11,9 @@ const Friday = () => {
     if (day === 5) {
       setIsFriday(true);
       // redirect
-      router.push("https://www.youtube.com/shorts/bmqtEdHq-dg");
+      setTimeout(() => {
+        router.push("https://www.youtube.com/shorts/bmqtEdHq-dg");
+      }, 2000);
     }
   }, []);
 
