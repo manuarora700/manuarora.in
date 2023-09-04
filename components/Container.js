@@ -28,25 +28,12 @@ export default function Container(props) {
 
   const links = [
     {
-      name: "Home",
+      name: "buddhiv.github.io",
       link: "/",
     },
     {
-      name: "Blog",
-      link: "/blog",
-    },
-
-    {
-      name: "Snippets",
-      link: "/snippets",
-    },
-    {
-      name: "Resources",
-      link: "/resources",
-    },
-    {
-      name: "Words",
-      link: "/words",
+      name: "Experience",
+      link: "/experience",
     },
     {
       name: "Projects",
@@ -55,42 +42,17 @@ export default function Container(props) {
   ];
   const mobileLinks = [
     {
-      name: "Home",
+      name: "buddhiv.github.io",
       link: "/",
+    },
+    {
+      name: "Experience",
+      link: "/experience",
     },
     {
       name: "Projects",
       link: "/projects",
-    },
-    {
-      name: "Blog",
-      link: "/blog",
-    },
-
-    {
-      name: "Snippets",
-      link: "/snippets",
-    },
-    {
-      name: "Resources",
-      link: "/resources",
-    },
-    {
-      name: "Freelancing",
-      link: "/freelance",
-    },
-    {
-      name: "Box Shadows",
-      link: "/boxshadows",
-    },
-    {
-      name: "FreeCodeCamp",
-      link: "/freecodecamp",
-    },
-    {
-      name: "Words",
-      link: "/words",
-    },
+    }
   ];
 
   return (
@@ -118,7 +80,7 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mt-4 md:mb-10  mx-auto bg-white dark:bg-zinc-900 bg-opacity-60">
+      <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mb-10  mx-auto bg-white dark:bg-zinc-900 bg-opacity-60">
         <a href="#skip" className="sr-only focus:not-sr-only">
           Skip to content
         </a>
@@ -169,7 +131,7 @@ export default function Container(props) {
 
       <main
         id="skip"
-        className="flex flex-col justify-center bg-white dark:bg-zinc-900 px-8 text-gray-900 dark:text-gray-100 antialiased"
+        className="flex flex-col justify-center bg-white dark:bg-zinc-900 text-gray-900 dark:text-gray-100 antialiased"
       >
         {children}
         <Footer />
@@ -218,12 +180,12 @@ export const Mobile = ({ links }) => {
       >
         {links[0]?.name}
       </button>
-      <button
+      {/* <button
         onClick={() => handleClick(links[1].link)}
         className="relative rounded-lg px-1 py-1 sm:px-4 sm:py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
       >
         {links[1]?.name}
-      </button>
+      </button> */}
 
       <button
         onClick={() => setOpen(!open)}
@@ -257,7 +219,7 @@ export const Mobile = ({ links }) => {
             exit="exit"
             className="absolute inset-x-0 mx-auto top-20 flex flex-col w-[90%]   p-4 rounded-lg shadow-xl z-[999] bg-white dark:bg-gray-800 divide-y dark:divide-gray-700"
           >
-            {[...links].splice(2).map((el) => (
+            {[...links].splice(1).map((el) => (
               <button
                 key={el?.link}
                 onClick={() => handleClick(el.link)}
@@ -301,11 +263,10 @@ export const Desktop = ({ links, hoveredIndex, setHoveredIndex, router }) => {
             </AnimatePresence>
 
             <span
-              className={`relative z-10 ${
-                router.asPath === navLink.link
+              className={`relative z-10 ${router.asPath === navLink.link
                   ? "text-teal-600"
                   : "text-gray-600 dark:text-gray-50"
-              }`}
+                }`}
             >
               {navLink.name}
             </span>
