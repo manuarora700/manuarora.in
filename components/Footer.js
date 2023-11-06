@@ -96,17 +96,19 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <p className="flex flex-row text-gray-400">
-        Built with{" "}
-        <a href="https://nextjs.org" target="__blank">
-          <img src="/logos/nextjs.svg" className="h-6 w-6 mx-1" />
-        </a>{" "}
-        <a href="https://tailwindcss.com" target="__blank">
-          <img src="/logos/tailwind.svg" className="h-6 w-6 mx-1" />
+      <p className="flex flex-row text-gray-400 items-center">
+        Find me on
+        <a href="https://twitter.com" target="__blank">
+          {/* <img src="/logos/tailwind.svg" className="h-6 w-6 mx-1" /> */}
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4 mx-1">
+            <g>
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+            </g>
+          </svg>
         </a>{" "}
         and{" "}
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="__blank">
-          &nbsp; 💛
+        <a href="https://www.peerlist.io/manuarora" target="__blank">
+          <img src="/peerlist.png" className="h-5 w-5 mx-1" />
         </a>
       </p>
     </footer>
