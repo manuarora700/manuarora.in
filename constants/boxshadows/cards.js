@@ -1,5 +1,11 @@
 const cards = [
   {
+    name: "Standard",
+    shadow:
+      "shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
+    vanillaCSS: `box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08);`,
+  },
+  {
     name: "Aesthetic",
     shadow: "shadow-[0_3px_10px_rgb(0,0,0,0.2)]",
     vanillaCSS: `box-shadow: 0 3px 10px rgb(0,0,0,0.2);`,
