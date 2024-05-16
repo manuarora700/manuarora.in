@@ -14,4 +14,13 @@ module.exports = {
 
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: "/boxshadows",
+        destination: "https://ui.aceternity.com/tools/box-shadows",
+        permanent: true,
+      },
+    ];
+  },
 };
