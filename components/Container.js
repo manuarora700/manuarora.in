@@ -44,10 +44,7 @@ export default function Container(props) {
       name: "Resources",
       link: "/resources",
     },
-    {
-      name: "Words",
-      link: "/words",
-    },
+
     {
       name: "Projects",
       link: "/projects",
@@ -86,10 +83,6 @@ export default function Container(props) {
     {
       name: "FreeCodeCamp",
       link: "/freecodecamp",
-    },
-    {
-      name: "Words",
-      link: "/words",
     },
   ];
 
