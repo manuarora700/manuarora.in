@@ -94,6 +94,11 @@ export default function Footer() {
               Box Shadows
             </a>
           </Link>
+          <Link href="/design-inspiration">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Design Inspiration
+            </a>
+          </Link>
         </div>
       </div>
       <p className="flex flex-row text-gray-400 items-center">
@@ -109,6 +114,12 @@ export default function Footer() {
         and{" "}
         <a href="https://www.peerlist.io/manuarora" target="__blank">
           <img src="/peerlist.png" className="h-5 w-5 mx-1" />
+        </a>
+      </p>
+      <p className="flex flex-row text-gray-400 items-center mt-2">
+        Portfolio inspired by{" "}
+        <a href="https://leerob.io" className="ml-1" target="__blank">
+          Lee Rob
         </a>
       </p>
     </footer>
