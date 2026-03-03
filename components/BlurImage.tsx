@@ -1,9 +1,11 @@
 // @ts-nocheck
+"use client";
+
 import clsx from "clsx";
 import Image from "next/image";
 import React, { useState } from "react";
 
-export const BlurImage = ({ src, className, ...rest }) => {
+export const BlurImage = ({ src, className, alt = "", ...rest }) => {
   const [isLoading, setLoading] = useState(true);
   return (
     <Image
@@ -14,6 +16,7 @@ export const BlurImage = ({ src, className, ...rest }) => {
       )}
       onLoadingComplete={() => setLoading(false)}
       src={src}
+      alt={alt}
       loading="lazy"
       decoding="async"
       blurDataURL={src}

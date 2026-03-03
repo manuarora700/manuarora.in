@@ -66,10 +66,7 @@ To run the project locally, create a `.env.local` file and add the required API 
 - [Tailwindcss](https://tailwindcss.com)
 - [MDX](https://github.com/mdx-js/mdx)
 - [Vercel](https://vercel.com)
-- [Firebase](https://firebase.google.com/)
 - [Prisma](https://www.prisma.io/)
-- [Supabase](https://supabase.com/)
-- [Next Auth](https://next-auth.js.org/)
 
 # Inspiration
 

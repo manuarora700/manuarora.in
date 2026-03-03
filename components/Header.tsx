@@ -1,4 +1,6 @@
 // @ts-nocheck
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LinkPreview } from "@/components/LinkPreview";

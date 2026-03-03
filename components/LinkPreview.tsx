@@ -1,4 +1,6 @@
 // @ts-nocheck
+"use client";
+
 import { FOCUS_VISIBLE_OUTLINE, GRADIENT_LINK } from "@/lib/constants";
 import { Portal, Transition } from "@headlessui/react";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";

@@ -1,4 +1,6 @@
 // @ts-nocheck
+"use client";
+
 import { useState } from "react";
 import { BsPatchCheckFill } from "react-icons/bs";
 

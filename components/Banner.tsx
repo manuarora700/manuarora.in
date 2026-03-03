@@ -1,4 +1,6 @@
 // @ts-nocheck
+"use client";
+
 import React, { useState } from "react";
 import { LinkPreview } from "./LinkPreview";
 

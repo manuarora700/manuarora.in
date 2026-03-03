@@ -1,4 +1,6 @@
 // @ts-nocheck
+"use client";
+
 import { useTheme } from "next-themes";
 
 import React, { useEffect, useRef, useState } from "react";

@@ -1,4 +1,6 @@
 // @ts-nocheck
+"use client";
+
 import React, { useEffect, useState } from "react";
 
 import { FiTwitter } from "react-icons/fi";

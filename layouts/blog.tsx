@@ -17,7 +17,6 @@ export default function BlogLayout({ children, frontMatter }) {
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <Link href="/blog">
-
           <svg
             className="h-8 w-8 dark:text-white text-gray-500"
             xmlns="http://www.w3.org/2000/svg"
@@ -26,13 +25,12 @@ export default function BlogLayout({ children, frontMatter }) {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M7 16l-4-4m0 0l4-4m-4 4h18"
             />
           </svg>
-
         </Link>
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           {frontMatter.title}

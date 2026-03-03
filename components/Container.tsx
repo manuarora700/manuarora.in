@@ -1,8 +1,9 @@
 // @ts-nocheck
-import Head from "next/head";
-import { useRouter } from "next/router";
+"use client";
+
 import { useState, useEffect } from "react";
 import NextLink from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 
 import Footer from "@/components/Footer";
@@ -17,15 +18,8 @@ export default function Container(props) {
   useEffect(() => setMounted(true), []);
   let [hoveredIndex, setHoveredIndex] = useState(null);
 
-  const { children, ...customMeta } = props;
-  const router = useRouter();
-  const meta = {
-    title: "Manu Arora – Developer, writer, creator.",
-    description: `Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.`,
-    image: "https://manuarora.in/static/images/banner.png",
-    type: "website",
-    ...customMeta,
-  };
+  const { children } = props;
+  const pathname = usePathname();
 
   const links = [
     {
@@ -89,29 +83,6 @@ export default function Container(props) {
 
   return (
     <div className="bg-white dark:bg-zinc-900">
-      <Head>
-        <title>{meta.title}</title>
-        <meta name="robots" content="follow, index" />
-        <meta content={meta.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://manuarora.in${router.asPath}`}
-        />
-        <link rel="canonical" href={`https://manuarora.in${router.asPath}`} />
-        <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Manu Arora" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@mannupaaji" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
-        {meta.date && (
-          <meta property="article:published_time" content={meta.date} />
-        )}
-      </Head>
       <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 mt-0 mb-0 md:mt-4 md:mb-10  mx-auto bg-white/60 dark:bg-zinc-900">
         <a href="#skip" className="sr-only focus:not-sr-only">
           Skip to content
@@ -153,7 +124,7 @@ export default function Container(props) {
             links={links}
             hoveredIndex={hoveredIndex}
             setHoveredIndex={setHoveredIndex}
-            router={router}
+            pathname={pathname}
           />
         </div>
         <div className="block sm:hidden" links={mobileLinks}>
@@ -269,16 +240,17 @@ export const Mobile = ({ links }) => {
   );
 };
 
-export const Desktop = ({ links, hoveredIndex, setHoveredIndex, router }) => {
+export const Desktop = ({ links, hoveredIndex, setHoveredIndex, pathname }) => {
   return (
     <>
       {links.map((navLink, index) => (
         <NextLink
+          key={navLink.link}
           href={navLink.link}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
-          className="relative rounded-lg px-3 inline-block py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900">
-
+          className="relative rounded-lg px-3 inline-block py-2 text-sm text-gray-700 dark:text-gray-200 transition-all delay-150 hover:text-gray-900 dark:hover:text-gray-900"
+        >
           <AnimatePresence>
             {hoveredIndex === index && (
               <motion.span
@@ -295,17 +267,16 @@ export const Desktop = ({ links, hoveredIndex, setHoveredIndex, router }) => {
           </AnimatePresence>
           <span
             className={`relative z-10 ${
-              router.asPath === navLink.link
+              pathname === navLink.link
                 ? "text-teal-600"
                 : "text-gray-600 dark:text-gray-50"
             }`}
           >
             {navLink.name}
           </span>
-          {router.asPath === navLink.link && (
+          {pathname === navLink.link && (
             <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-blue-500/0 via-blue-500/40 to-blue-500/0 dark:from-blue-400/0 dark:via-blue-400/40 dark:to-blue-400/0"></span>
           )}
-
         </NextLink>
       ))}
     </>

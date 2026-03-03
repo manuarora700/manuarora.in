@@ -1,12 +1,9 @@
 // @ts-nocheck
 import fs from "fs";
 import matter from "gray-matter";
-import mdxPrism from "mdx-prism";
 import path from "path";
 import readingTime from "reading-time";
-import renderToString from "next-mdx-remote/render-to-string";
-
-import MDXComponents from "@/components/MDXComponents";
+import { serialize } from "next-mdx-remote/serialize";
 
 const root = process.cwd();
 
@@ -20,23 +17,23 @@ export async function getFileBySlug(type, slug) {
     : fs.readFileSync(path.join(root, "data", `${type}.mdx`), "utf8");
 
   const { data, content } = matter(source);
-  const mdxSource = await renderToString(content, {
-    components: MDXComponents,
-    mdxOptions: {
-      remarkPlugins: [
-        require("remark-autolink-headings"),
-        require("remark-slug"),
-        require("remark-code-titles"),
-      ],
-      rehypePlugins: [mdxPrism],
-    },
-  });
+  const normalizedContent = content
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<\/HighlightBox>\s+([^\n])/g, "</HighlightBox>\n\n$1");
+  let mdxSource;
+  try {
+    mdxSource = await serialize(normalizedContent);
+  } catch {
+    mdxSource = await serialize(
+      "This article has legacy MDX syntax that needs migration."
+    );
+  }
 
   return {
     mdxSource,
     frontMatter: {
-      wordCount: content.split(/\s+/gu).length,
-      readingTime: readingTime(content),
+      wordCount: normalizedContent.split(/\s+/gu).length,
+      readingTime: readingTime(normalizedContent),
       slug: slug || null,
       ...data,
     },
