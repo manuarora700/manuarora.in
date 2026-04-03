@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   images: {
     remotePatterns: [
+      { protocol: "https", hostname: "assets.aceternity.com" }, // Aceternity Avatar
       { protocol: "https", hostname: "i.scdn.co" }, // Spotify Album Art
       { protocol: "https", hostname: "pbs.twimg.com" }, // Twitter Profile Picture
       { protocol: "https", hostname: "api.microlink.io" }, // Microlink Image Preview

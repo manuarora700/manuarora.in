@@ -10,7 +10,9 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "prisma generate && next build --webpack",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "license": "MIT",
   "repository": {
@@ -30,6 +32,7 @@
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.3",
     "mini-svg-data-uri": "^1.4.4",
+    "motion": "^12.38.0",
     "next": "^16.1.6",
     "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.4.6",
@@ -58,7 +61,8 @@
     "@types/react-dom": "^19.2.3",
     "globby": "11.0.2",
     "image-size": "^0.9.3",
-    "prettier": "2.2.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.7.2",
     "prisma": "^4.4.0",
     "rehype": "^11.0.0",
     "remark-frontmatter": "^3.0.0",

@@ -9,7 +9,7 @@
   </url>
 
   <url>
-    <loc>https://manuarora.in/boxshadows</loc>
+    <loc>https://manuarora.in/demos</loc>
   </url>
 
   <url>
@@ -17,19 +17,19 @@
   </url>
 
   <url>
+    <loc>https://manuarora.in/boxshadows</loc>
+  </url>
+
+  <url>
     <loc>https://manuarora.in/freecodecamp</loc>
   </url>
 
   <url>
-    <loc>https://manuarora.in/demos</loc>
+    <loc>https://manuarora.in/freelance</loc>
   </url>
 
   <url>
     <loc>https://manuarora.in/friday</loc>
-  </url>
-
-  <url>
-    <loc>https://manuarora.in/freelance</loc>
   </url>
 
   <url>
@@ -41,11 +41,11 @@
   </url>
 
   <url>
-    <loc>https://manuarora.in/projects</loc>
+    <loc>https://manuarora.in/resources</loc>
   </url>
 
   <url>
-    <loc>https://manuarora.in/resources</loc>
+    <loc>https://manuarora.in/projects</loc>
   </url>
 
   <url>
@@ -57,19 +57,11 @@
   </url>
 
   <url>
-    <loc>https://manuarora.in/demos/demo/borderGradient</loc>
-  </url>
-
-  <url>
     <loc>https://manuarora.in/demos/demo/gradient</loc>
   </url>
 
   <url>
-    <loc>https://manuarora.in/demos/demo/loader</loc>
-  </url>
-
-  <url>
-    <loc>https://manuarora.in/demos/demo/movingcard</loc>
+    <loc>https://manuarora.in/demos/demo/borderGradient</loc>
   </url>
 
   <url>
@@ -77,7 +69,11 @@
   </url>
 
   <url>
-    <loc>https://manuarora.in/demos/demo/tailwindcard</loc>
+    <loc>https://manuarora.in/demos/demo/movingcard</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/demos/demo/loader</loc>
   </url>
 
   <url>
@@ -89,7 +85,35 @@
   </url>
 
   <url>
+    <loc>https://manuarora.in/demos/demo/tailwindcard</loc>
+  </url>
+
+  <url>
     <loc>https://manuarora.in/demos/demo/loader/Loader</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/blog/ace-the-javascript-interview</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/blog/blogging-platform-nextjs</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/blog/build-your-own-covid-leads-portal</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/blog/developer-portfolio-website</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/blog/how-to-effectively-freelance</loc>
+  </url>
+
+  <url>
+    <loc>https://manuarora.in/blog/top-5-nextjs-resources</loc>
   </url>
 
   <url>
@@ -156,29 +180,5 @@
 
   <url>
     <loc>https://manuarora.in/snippets/toast</loc>
-  </url>
-
-  <url>
-    <loc>https://manuarora.in/blog/ace-the-javascript-interview</loc>
-  </url>
-
-  <url>
-    <loc>https://manuarora.in/blog/blogging-platform-nextjs</loc>
-  </url>
-
-  <url>
-    <loc>https://manuarora.in/blog/build-your-own-covid-leads-portal</loc>
-  </url>
-
-  <url>
-    <loc>https://manuarora.in/blog/developer-portfolio-website</loc>
-  </url>
-
-  <url>
-    <loc>https://manuarora.in/blog/how-to-effectively-freelance</loc>
-  </url>
-
-  <url>
-    <loc>https://manuarora.in/blog/top-5-nextjs-resources</loc>
   </url>
 </urlset>
