@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import React from "react";
 import { Subheading } from "../subheading";
+import { formatPostDate } from "@/lib/format-post-date";
 
 export const BlogList = ({ posts }) => {
   return (
@@ -11,19 +11,13 @@ export const BlogList = ({ posts }) => {
         <Link
           href={`/blog/${post.slug}`}
           key={index}
-          className="group flex items-center justify-between gap-20 transition duration-200"
+          className="group flex items-center justify-between gap-20 transition-colors duration-200 md:gap-20"
         >
-          <span className="text-foreground truncate group-hover:text-black">
+          <span className="text-foreground group-hover:text-primary truncate">
             {post.title}
           </span>
-          <span className="text-foreground/50 shrink-0 font-mono text-xs font-light group-hover:text-black">
-            {(() => {
-              const date = new Date(post.publishedAt);
-              const day = String(date.getDate()).padStart(2, "0");
-              const month = String(date.getMonth() + 1).padStart(2, "0");
-              const year = date.getFullYear();
-              return `${day}-${month}-${year}`;
-            })()}
+          <span className="text-foreground/50 group-hover:text-primary shrink-0 font-mono text-xs font-light">
+            {formatPostDate(post.publishedAt)}
           </span>
         </Link>
       ))}

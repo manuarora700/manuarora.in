@@ -1,15 +1,27 @@
-// @ts-nocheck
 "use client";
 
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
-import BlogLayout from "@/layouts/blog";
 import MDXComponents from "@/components/MDXComponents";
+import { BlogArticleShell } from "@/components/new-components/blog/blog-article-shell";
 
-export default function BlogPostRenderer({ mdxSource, frontMatter }) {
+type BlogPostRendererProps = {
+  mdxSource: MDXRemoteSerializeResult;
+  frontMatter: {
+    title: string;
+    publishedAt: string;
+    summary?: string;
+    readingTime?: { text: string };
+  };
+};
+
+export default function BlogPostRenderer({
+  mdxSource,
+  frontMatter,
+}: BlogPostRendererProps) {
   return (
-    <BlogLayout frontMatter={frontMatter}>
+    <BlogArticleShell frontMatter={frontMatter}>
       <MDXRemote {...mdxSource} components={MDXComponents} />
-    </BlogLayout>
+    </BlogArticleShell>
   );
 }
