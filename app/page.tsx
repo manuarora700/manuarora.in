@@ -1,30 +1,35 @@
-// @ts-nocheck
-"use client";
-
 import Container from "@/components/Container";
-import Link from "next/link";
-import BlogPost from "@/components/BlogPost";
-import ProjectCard from "@/components/ProjectCard";
-import Timeline from "@/components/Timeline";
-import Contact from "@/components/Contact";
-
-import { LIGHT_COLORS } from "@/lib/constants";
-
-import { shuffleArray } from "@/lib/shuffleArray";
-import { useEffect, useState } from "react";
-import { useIsFontReady } from "@/lib/useIsFontReady";
-
-import { useTheme } from "next-themes";
-import Talks from "@/components/Talks";
 import { Header } from "@/components/new-components/header";
+import { Work } from "@/components/new-components/work";
+import { DottedSeparator } from "@/components/new-components/separator";
+import { Companies } from "@/components/new-components/companies";
+import { getAllFilesFrontMatter } from "@/lib/mdx";
+import { BlogList } from "@/components/new-components/blog/blog-list";
+import { WorkWithMe } from "@/components/new-components/work-with-me";
 
-export default function Home() {
+type HomeBlogPost = {
+  slug: string;
+  publishedAt: string;
+  title: string;
+};
+
+export default async function Home() {
+  const posts = ((await getAllFilesFrontMatter("blog")) as HomeBlogPost[]).sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
   return (
-    <Container
-      title="Manu Arora - Developer, Writer, Creator"
-      description="Full-Stack developer, JavaScript enthusiast, Freelancer, Tech Blogger and a Learner. I love building products and web apps that impact millions of lives."
-    >
+    <Container>
       <Header />
+
+      <DottedSeparator className="my-8" />
+      <Work />
+      <DottedSeparator className="my-8" />
+      <Companies />
+      <DottedSeparator className="my-8" />
+      <WorkWithMe />
+      <DottedSeparator className="my-8" />
+      <BlogList posts={posts} />
     </Container>
   );
 }
