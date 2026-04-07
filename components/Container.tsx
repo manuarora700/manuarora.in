@@ -17,9 +17,10 @@ export default function Container({
   ...rest
 }: {
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <main className={cn("mx-auto max-w-2xl pb-10", className)} {...rest}>
+    <main className={cn("mx-auto max-w-2xl", className)} {...rest}>
       {children}
     </main>
   );

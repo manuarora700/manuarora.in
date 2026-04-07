@@ -30,6 +30,7 @@ export default async function Home() {
       <WorkWithMe />
       <DottedSeparator className="my-8" />
       <BlogList posts={posts} />
+      <DottedSeparator className="my-8" />
     </Container>
   );
 }

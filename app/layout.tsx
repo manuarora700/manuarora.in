@@ -4,6 +4,7 @@ import "./globals.css";
 import { Schibsted_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/new-components/navbar";
+import { Footer } from "@/components/new-components/footer";
 export const metadata = {
   title: "Manu Arora - Developer, writer, creator.",
   description:
@@ -23,9 +24,10 @@ export default function RootLayout({ children }) {
       className={schibstedGrotesk.variable}
       suppressHydrationWarning
     >
-      <body className={cn("bg-white font-display")}>
+      <body className={cn("font-display bg-white")}>
         <Navbar />
         <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );
