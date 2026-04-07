@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Subheading } from "./subheading";
 import Link from "next/link";
 import { Box } from "./box";
@@ -22,6 +23,11 @@ type WorkItem = {
 
 export const WorkWithMe = () => {
   const [copied, setCopied] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleCopyEmail = async (email: string) => {
     try {
@@ -68,12 +74,17 @@ export const WorkWithMe = () => {
       ),
     },
   ];
+
+  const toast = (
+    <AnimatePresence mode="wait">
+      {copied ? <CopyAnimation key="copy-email-toast" /> : null}
+    </AnimatePresence>
+  );
+
   return (
     <section className="">
       <Subheading>Work with me</Subheading>
-      <AnimatePresence mode="wait">
-        {copied && <CopyAnimation />}
-      </AnimatePresence>
+      {mounted ? createPortal(toast, document.body) : null}
       <div className="mt-8 flex flex-col gap-6">
         {work.map((item) => {
           if (item.type === "copyEmail") {
@@ -134,7 +145,7 @@ const CopyAnimation = () => {
         filter: "blur(10px)",
       }}
       transition={SPRING_CONFIG}
-      className="fixed inset-x-0 bottom-20 z-50 mx-auto flex w-fit items-center justify-center gap-2 rounded-lg bg-linear-to-b from-blue-400 to-blue-600 p-4 text-center text-white shadow-lg ring-1 shadow-black/10 ring-white/50 ring-offset-2 ring-offset-blue-500 ring-inset"
+      className="pointer-events-none fixed inset-x-0 bottom-20 z-200 mx-auto flex w-fit items-center justify-center gap-2 rounded-lg bg-linear-to-b from-blue-400 to-blue-600 p-4 text-center text-white shadow-lg ring-1 shadow-black/10 ring-white/50 ring-offset-2 ring-offset-blue-500 ring-inset"
     >
       <EmailIcon /> Email Copied to clipboard
     </motion.div>

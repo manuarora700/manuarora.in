@@ -13,10 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { POP_IN_VARIANT, SPRING_CONFIG } from "@/lib/motion-config";
 
-import {
-  DottedUnderline,
-  type DottedUnderlineProps,
-} from "./dotted-underline";
+import { DottedUnderline, type DottedUnderlineProps } from "./dotted-underline";
 
 export type LinkPreviewDottedUnderline = DottedUnderlineProps & {
   /** Space below text for the strip (default 0.05rem). */
@@ -121,7 +118,7 @@ export const LinkPreview = ({
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
           className={cn(
-            "text-black group relative overflow-visible dark:text-white",
+            "group relative overflow-visible text-black dark:text-white",
             className,
           )}
           href={url}
@@ -150,44 +147,47 @@ export const LinkPreview = ({
           </span>
         </HoverCardPrimitive.Trigger>
 
-        <HoverCardPrimitive.Content
-          className="origin-(--radix-hover-card-content-transform-origin) perspective-distant"
-          side="top"
-          align="center"
-          sideOffset={10}
-        >
-          <AnimatePresence>
-            {isOpen && (
-              <motion.div
-                variants={POP_IN_VARIANT}
-                initial="initial"
-                animate="animate"
-                transition={SPRING_CONFIG}
-                
-                className="shadow-2xl rounded-xl"
-                style={{
-                  x: translateX,
-                }}
-              >
-                <a
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block  shadow rounded-xl  "
-                  style={{ fontSize: 0 }}
-                >
-                  <img
-                    src={isStatic ? imageSrc : src}
-                    width={width}
-                    height={height}
-                    className="rounded-lg"
-                    alt="preview image"
-                  />
-                </a>
-              </motion.div>
+        <HoverCardPrimitive.Portal>
+          <HoverCardPrimitive.Content
+            className={cn(
+              "z-100 origin-(--radix-hover-card-content-transform-origin) perspective-distant",
             )}
-          </AnimatePresence>
-        </HoverCardPrimitive.Content>
+            side="top"
+            align="center"
+            sideOffset={10}
+          >
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  variants={POP_IN_VARIANT}
+                  initial="initial"
+                  animate="animate"
+                  transition={SPRING_CONFIG}
+                  className="rounded-xl shadow-2xl"
+                  style={{
+                    x: translateX,
+                  }}
+                >
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block rounded-xl shadow"
+                    style={{ fontSize: 0 }}
+                  >
+                    <img
+                      src={isStatic ? imageSrc : src}
+                      width={width}
+                      height={height}
+                      className="rounded-lg"
+                      alt="preview image"
+                    />
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </HoverCardPrimitive.Content>
+        </HoverCardPrimitive.Portal>
       </HoverCardPrimitive.Root>
     </>
   );
