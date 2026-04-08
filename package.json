@@ -8,8 +8,8 @@
     "url": "https://manuarora.in"
   },
   "scripts": {
-    "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
     "start": "next start",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
