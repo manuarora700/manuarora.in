@@ -4,17 +4,18 @@ import { cn } from "@/lib/utils";
 import { IconSettingsFilled, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { DottedSeparator } from "./separator";
 
 type FontOption = "inter" | "schibsted" | "geist";
 type ColorOption = "regular" | "rose" | "emerald" | "blue";
 
 const FONTS: { id: FontOption; label: string; variable: string }[] = [
-  { id: "inter", label: "Inter", variable: "var(--font-inter)" },
   {
     id: "schibsted",
     label: "Schibsted",
     variable: "var(--font-schibsted-grotesk)",
   },
+  { id: "inter", label: "Inter", variable: "var(--font-inter)" },
   { id: "geist", label: "Geist", variable: "var(--font-geist-sans)" },
 ];
 
@@ -194,7 +195,6 @@ export const Settings = () => {
               transition={{ delay: 0.1, duration: 0.15 }}
             >
               <div className="mb-3">
-                <p className="mb-1.5 text-xs font-medium text-white">Font</p>
                 <div className="flex items-start gap-1.5">
                   {FONTS.map((f) => (
                     <button
@@ -202,9 +202,11 @@ export const Settings = () => {
                       onClick={() => handleFont(f.id)}
                       style={{ fontFamily: f.variable }}
                       className={cn(
-                        `rounded-md bg-white/80 px-2 py-1 text-xs font-bold shadow-sm ring-1 shadow-black/10 ring-black/10 transition-colors`,
-                        font === f.id &&
-                          "bg-neutral-100 shadow-black/15 ring-black/15",
+                        `rounded-md bg-linear-to-b px-2 py-1 text-xs font-light text-white shadow-sm ring-1 shadow-black/10 ring-black/10 transition-all duration-200`,
+                        font === f.id && colorConfig.gradientFrom,
+                        font === f.id && colorConfig.gradientTo,
+                        font === f.id && colorConfig.ringOffset,
+                        font === f.id && "shadow-black/60",
                       )}
                     >
                       {f.label}
@@ -212,9 +214,8 @@ export const Settings = () => {
                   ))}
                 </div>
               </div>
-
-              <div>
-                <p className="mb-1.5 text-xs font-medium text-white">Color</p>
+              <DottedSeparator />
+              <div className="mt-4">
                 <div className="flex gap-2">
                   {COLORS.map((c) => (
                     <button
