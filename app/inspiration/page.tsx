@@ -217,12 +217,16 @@ export default async function InspirationPage() {
               target="_blank"
               className="flex items-center gap-2"
             >
-              <div className="mr-2 flex size-8 items-center justify-center overflow-hidden rounded-md bg-linear-to-b from-neutral-50 to-neutral-100 shadow-sm ring-1 shadow-black/10 ring-black/10">
+              <div className="mr-2 flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md bg-linear-to-b from-neutral-50 to-neutral-100 shadow-sm ring-1 shadow-black/10 ring-black/10 md:size-8">
                 {item.src}
               </div>
-              <p className="text-foreground font-medium">{item.title}</p>
-              <div className="size-1 rounded-full bg-neutral-200"></div>
-              <p className="text-foreground/70">{item.description}</p>
+              <div className="flex flex-col items-center gap-2 md:flex-row">
+                <p className="text-foreground font-medium">{item.title}</p>
+                <div className="size-1 rounded-full bg-neutral-200"></div>
+                <p className="text-foreground/70 text-balance">
+                  {item.description}
+                </p>
+              </div>
             </Link>
           ))}
         </div>

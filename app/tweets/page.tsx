@@ -53,7 +53,7 @@ export default async function TweetsPage() {
     <main className="w-full px-4 py-6 sm:px-6 lg:px-8 xl:px-10">
       <Container>
         <Subheading>I post on twitter, you know.</Subheading>
-        <p className="text-foreground pt-4 text-base">
+        <p className="text-foreground pt-4 text-base text-balance">
           Most of the time I share my learnings on design engineering and
           building my SaaS. Sometimes I shitpost, Sometimes I rant, and
           sometimes I try to get as much fomo as I can.

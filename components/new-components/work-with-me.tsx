@@ -92,14 +92,14 @@ export const WorkWithMe = () => {
               <button
                 type="button"
                 onClick={() => handleCopyEmail(item.email)}
-                className="flex w-full cursor-pointer items-center gap-2 text-left"
+                className="flex w-full cursor-pointer flex-col items-start gap-1 text-left md:flex-row md:items-center md:gap-2"
                 key={item.title}
               >
                 <Box className={cn("", item.boxClassName)}>{item.skeleton}</Box>
                 <p className="text-foreground shrink-0 font-medium">
                   {item.title}
                 </p>
-                <div className="size-1 rounded-full bg-neutral-200"></div>
+                <div className="hiddem size-1 rounded-full bg-neutral-200 md:block"></div>
                 <p className="text-foreground/70">{item.description}</p>
               </button>
             );
@@ -109,14 +109,14 @@ export const WorkWithMe = () => {
             <Link
               href={item.href}
               target="_blank"
-              className="flex items-center gap-2"
+              className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2"
               key={item.title}
             >
               <Box className={cn("", item.boxClassName)}>{item.skeleton}</Box>
               <p className="text-foreground shrink-0 font-medium">
                 {item.title}
               </p>
-              <div className="size-1 rounded-full bg-neutral-200"></div>
+              <div className="hidden size-1 rounded-full bg-neutral-200 md:block"></div>
               <p className="text-foreground/70">{item.description}</p>
             </Link>
           );

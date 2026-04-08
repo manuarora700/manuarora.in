@@ -20,7 +20,7 @@ export default function Container({
   className?: string;
 }) {
   return (
-    <main className={cn("mx-auto max-w-2xl", className)} {...rest}>
+    <main className={cn("mx-auto max-w-2xl px-4", className)} {...rest}>
       {children}
     </main>
   );

@@ -4,58 +4,6 @@ import Link from "next/link";
 import { IconBrandYoutube } from "@tabler/icons-react";
 import { Subheading } from "./subheading";
 
-export const Work = () => {
-  return (
-    <div>
-      <Subheading>Things I do</Subheading>
-      <div className="mt-4 flex flex-col gap-4">
-        <Link
-          href="https://aceternity.com"
-          target="__blank"
-          className="flex items-center gap-2"
-        >
-          <Box className="mr-4">
-            <LogoSVGNew className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-          </Box>
-          <p className="text-foreground font-medium">Aceternity</p>
-          <div className="size-1 rounded-full bg-neutral-200"></div>
-          <p className="text-foreground/70">
-            Design + Dev studio for startups and enterprises.
-          </p>
-        </Link>
-        <Link
-          href="https://ui.aceternity.com"
-          target="__blank"
-          className="flex items-center gap-2"
-        >
-          <Box className="mr-4 bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500">
-            <LogoSVGNew className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-          </Box>
-          <p className="text-foreground font-medium">Aceternity UI</p>
-          <div className="size-1 rounded-full bg-neutral-200"></div>
-          <p className="text-foreground/70">
-            Component library for modern websites.
-          </p>
-        </Link>
-        <Link
-          href="https://youtube.com/@manuarora"
-          target="__blank"
-          className="flex items-center gap-2"
-        >
-          <Box className="mr-4 bg-linear-to-b from-red-400 to-red-600 ring-offset-red-500">
-            <IconBrandYoutube className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-          </Box>
-          <p className="text-foreground font-medium">YouTube</p>
-          <div className="size-1 rounded-full bg-neutral-200"></div>
-          <p className="text-foreground/70">
-            I talk about design enginering and SaaS.
-          </p>
-        </Link>
-      </div>
-    </div>
-  );
-};
-
 const LogoSVGNew = ({ className }: { className?: string }) => {
   return (
     <svg
@@ -77,5 +25,59 @@ const LogoSVGNew = ({ className }: { className?: string }) => {
       />
       <path d="M173 114L140.8 208H104L139.545 114H173Z" fill="currentColor" />
     </svg>
+  );
+};
+
+const workItems = [
+  {
+    href: "https://aceternity.com",
+    title: "Aceternity",
+    description: "Design + Dev studio for startups and enterprises.",
+    icon: (
+      <LogoSVGNew className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+    ),
+    boxClassName: "",
+  },
+  {
+    href: "https://ui.aceternity.com",
+    title: "Aceternity UI",
+    description: "Component library for modern websites.",
+    icon: (
+      <LogoSVGNew className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+    ),
+    boxClassName:
+      "bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500",
+  },
+  {
+    href: "https://youtube.com/@manuarora",
+    title: "YouTube",
+    description: "I talk about design enginering and SaaS.",
+    icon: (
+      <IconBrandYoutube className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+    ),
+    boxClassName: "bg-linear-to-b from-red-400 to-red-600 ring-offset-red-500",
+  },
+];
+
+export const Work = () => {
+  return (
+    <div>
+      <Subheading>Things I do</Subheading>
+      <div className="mt-4 flex flex-col gap-6 md:gap-4">
+        {workItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            target="__blank"
+            className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2"
+          >
+            <Box className={`mr-4 ${item.boxClassName}`}>{item.icon}</Box>
+            <p className="text-foreground font-medium">{item.title}</p>
+            <div className="hidden size-1 rounded-full bg-neutral-200 md:block"></div>
+            <p className="text-foreground/70">{item.description}</p>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 };

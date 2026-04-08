@@ -39,7 +39,7 @@ export const Navbar = () => {
     },
   ];
   return (
-    <nav className="mx-auto flex max-w-2xl flex-col items-start gap-4 pt-4 md:pt-8">
+    <nav className="mx-auto flex max-w-2xl flex-col items-start gap-4 px-4 pt-4 md:pt-8">
       <div className="flex items-center gap-2 perspective-distant">
         <motion.div
           variants={GENERAL_VARIANT}
