@@ -213,6 +213,7 @@ export default async function InspirationPage() {
         <div className="mt-8 flex flex-col gap-4">
           {items.map((item, index) => (
             <Link
+              key={item.href}
               href={item.href}
               target="_blank"
               className="flex items-center gap-2"
