@@ -1,12 +1,25 @@
-// @ts-nocheck
 "use client";
 
 import dynamic from "next/dynamic";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 
 const BlogPostRenderer = dynamic(() => import("./BlogPostRenderer"), {
   ssr: false,
 });
 
-export default function BlogPostClient({ mdxSource, frontMatter }) {
+type BlogPostClientProps = {
+  mdxSource: MDXRemoteSerializeResult;
+  frontMatter: {
+    title: string;
+    publishedAt: string;
+    summary?: string;
+    readingTime?: { text: string };
+  };
+};
+
+export default function BlogPostClient({
+  mdxSource,
+  frontMatter,
+}: BlogPostClientProps) {
   return <BlogPostRenderer mdxSource={mdxSource} frontMatter={frontMatter} />;
 }
