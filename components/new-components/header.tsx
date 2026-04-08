@@ -6,7 +6,9 @@ export const Header = () => {
     <div className="">
       <p className="text-foreground pt-4 text-base">
         I'm am a software engineer at heart, tinkering with AI and code almost
-        90% of the time.
+        90% of the time. I'm mostly active on{" "}
+        <LinkPreview url="https://x.com/mannupaaji">X / Twitter</LinkPreview>{" "}
+        where I share everything.
       </p>
       <div className="text-foreground pt-4 text-base">
         When I'm not coding, I usally talk about Design Engineering, AI Tools

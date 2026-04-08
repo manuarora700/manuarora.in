@@ -30,6 +30,7 @@
     "comma-number": "^2.0.1",
     "date-fns": "^2.19.0",
     "framer-motion": "^6.5.1",
+    "geist": "^1.7.0",
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.3",
     "mini-svg-data-uri": "^1.4.4",

@@ -20,17 +20,16 @@ export default async function Home() {
   );
   return (
     <Container>
-      <Header />
-
-      <DottedSeparator className="my-8" />
-      <Work />
-      <DottedSeparator className="my-8" />
-      <Companies />
-      <DottedSeparator className="my-8" />
-      <WorkWithMe />
-      <DottedSeparator className="my-8" />
-      <BlogList posts={posts} />
-      <DottedSeparator className="my-8" />
+        <Header />
+        <DottedSeparator className="my-8" />
+        <Work />
+        <DottedSeparator className="my-8" />
+        <Companies />
+        <DottedSeparator className="my-8" />
+        <WorkWithMe />
+        <DottedSeparator className="my-8" />
+        <BlogList posts={posts} />
+        <DottedSeparator className="my-8" />
     </Container>
   );
 }

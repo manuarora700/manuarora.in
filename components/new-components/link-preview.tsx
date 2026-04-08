@@ -118,7 +118,7 @@ export const LinkPreview = ({
         <HoverCardPrimitive.Trigger
           onMouseMove={handleMouseMove}
           className={cn(
-            "group relative overflow-visible text-black dark:text-white",
+            "group text-primary relative overflow-visible",
             className,
           )}
           href={url}

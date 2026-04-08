@@ -9,17 +9,16 @@ html {
   scroll-behavior: smooth;
 }
 
-/* body {
-  font-family: "Inter";
-} */
 :root {
   --primary-font: var(--font-schibsted-grotesk);
   --primary: var(--color-neutral-700);
   --foreground: var(--color-neutral-500);
+  --theme-bg: var(--color-white);
 }
 
 @theme inline {
   --font-display: var(--primary-font);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-theme-bg: var(--theme-bg);
 }
