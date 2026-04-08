@@ -1,9 +1,19 @@
-import Container from "@/components/Container";
-import { Box } from "@/components/new-components/box";
-import { PosthogIcon } from "@/components/new-components/icons/general";
-import { LinkPreview } from "@/components/new-components/link-preview";
-import { DottedSeparator } from "@/components/new-components/separator";
+import type { Metadata } from "next";
+import Container from "@/components/container";
+import { Box } from "@/components/box";
+import { PosthogIcon } from "@/components/icons/general";
+import { LinkPreview } from "@/components/link-preview";
+import { DottedSeparator } from "@/components/separator";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Inspiration - Manu Arora",
+  description:
+    "People, products, and websites that inspire my design engineering taste.",
+  alternates: {
+    canonical: "/inspiration",
+  },
+};
 
 export default async function InspirationPage() {
   const items = [

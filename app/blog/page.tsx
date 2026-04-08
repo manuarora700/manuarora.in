@@ -1,16 +1,17 @@
-import Container from "@/components/Container";
-import { Subheading } from "@/components/new-components/subheading";
-import { DottedSeparator } from "@/components/new-components/separator";
-import {
-  BlogIndex,
-  type BlogIndexPost,
-} from "@/components/new-components/blog/blog-index";
+import type { Metadata } from "next";
+import Container from "@/components/container";
+import { Subheading } from "@/components/subheading";
+import { DottedSeparator } from "@/components/separator";
+import { BlogIndex, type BlogIndexPost } from "@/components/blog/blog-index";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 
-export const metadata = {
-  title: "Blog – Manu Arora",
+export const metadata: Metadata = {
+  title: "Blog - Manu Arora",
   description:
     "Notes on software, design engineering, freelancing, and things I learn while building.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default async function BlogPage() {

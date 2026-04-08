@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import { getTweet } from "react-tweet/api";
 import { MinimalTweetCard } from "@/components/minimal-tweet-card";
-import { Subheading } from "@/components/new-components/subheading";
-import Container from "@/components/Container";
-import Divider from "@/components/Divider";
-import { DottedSeparator } from "@/components/new-components/separator";
+import { Subheading } from "@/components/subheading";
+import Container from "@/components/container";
+import { DottedSeparator } from "@/components/separator";
+
+export const metadata: Metadata = {
+  title: "Tweets - Manu Arora",
+  description:
+    "A curated timeline of my tweets on design engineering, building, and the occasional rant.",
+  alternates: {
+    canonical: "/tweets",
+  },
+};
 
 const tweetUrls = [
   "https://x.com/mannupaaji/status/2041530769009705360",

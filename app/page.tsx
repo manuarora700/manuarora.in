@@ -1,16 +1,25 @@
-import Container from "@/components/Container";
-import { Header } from "@/components/new-components/header";
-import { Work } from "@/components/new-components/work";
-import { DottedSeparator } from "@/components/new-components/separator";
-import { Companies } from "@/components/new-components/companies";
+import type { Metadata } from "next";
+import Container from "@/components/container";
+import { Header } from "@/components/header";
+import { Work } from "@/components/work";
+import { DottedSeparator } from "@/components/separator";
+import { Companies } from "@/components/companies";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
-import { BlogList } from "@/components/new-components/blog/blog-list";
-import { WorkWithMe } from "@/components/new-components/work-with-me";
+import { BlogList } from "@/components/blog/blog-list";
+import { WorkWithMe } from "@/components/work-with-me";
 
 type HomeBlogPost = {
   slug: string;
   publishedAt: string;
   title: string;
+};
+
+export const metadata: Metadata = {
+  title: "Manu Arora",
+  description: "Founder, Creator, YouTuber, Shitposter, and a Learner.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default async function Home() {
@@ -20,16 +29,16 @@ export default async function Home() {
   );
   return (
     <Container>
-        <Header />
-        <DottedSeparator className="my-8" />
-        <Work />
-        <DottedSeparator className="my-8" />
-        <Companies />
-        <DottedSeparator className="my-8" />
-        <WorkWithMe />
-        <DottedSeparator className="my-8" />
-        <BlogList posts={posts} />
-        <DottedSeparator className="my-8" />
+      <Header />
+      <DottedSeparator className="my-8" />
+      <Work />
+      <DottedSeparator className="my-8" />
+      <Companies />
+      <DottedSeparator className="my-8" />
+      <WorkWithMe />
+      <DottedSeparator className="my-8" />
+      <BlogList posts={posts} />
+      <DottedSeparator className="my-8" />
     </Container>
   );
 }

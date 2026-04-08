@@ -1,10 +1,20 @@
-import Container from "@/components/Container";
-import { Companies } from "@/components/new-components/companies";
-import { CopyEmailInline } from "@/components/new-components/copy-email-inline";
-import { Focus } from "@/components/new-components/focus";
-import { LinkPreview } from "@/components/new-components/link-preview";
+import type { Metadata } from "next";
+import Container from "@/components/container";
+import { Companies } from "@/components/companies";
+import { CopyEmailInline } from "@/components/copy-email-inline";
+import { Focus } from "@/components/focus";
+import { LinkPreview } from "@/components/link-preview";
 
-import { DottedSeparator } from "@/components/new-components/separator";
+import { DottedSeparator } from "@/components/separator";
+
+export const metadata: Metadata = {
+  title: "Sponsor - Manu Arora",
+  description:
+    "Partner with me to feature products I genuinely use and recommend to my audience.",
+  alternates: {
+    canonical: "/sponsor",
+  },
+};
 
 export default async function SponsorsPage() {
   return (

@@ -2,8 +2,8 @@
 
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
 
-import MDXComponents from "@/components/MDXComponents";
-import { BlogArticleShell } from "@/components/new-components/blog/blog-article-shell";
+import MDXComponents from "@/components/mdx-components";
+import { BlogArticleShell } from "@/components/blog/blog-article-shell";
 
 type BlogPostRendererProps = {
   mdxSource: MDXRemoteSerializeResult;

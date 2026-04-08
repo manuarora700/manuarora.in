@@ -108,6 +108,7 @@ export function MinimalTweetCard({ tweet, href }: MinimalTweetCardProps) {
   return (
     <Link
       href={href}
+      target="_blank"
       className="mb-4 inline-block w-full min-w-0 break-inside-avoid align-top"
     >
       <article className="relative rounded-lg bg-white p-3 text-sm shadow-sm ring-1 shadow-black/10 ring-black/10">

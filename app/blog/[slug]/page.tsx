@@ -35,17 +35,21 @@ export async function generateMetadata({
     : undefined;
 
   return {
-    title: `${title} – Manu Arora`,
+    title,
     description: summary,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
-      title: `${title} – Manu Arora`,
+      title,
       description: summary,
       type: "article",
+      url: `${siteUrl}/blog/${slug}`,
       ...(ogImage ? { images: [{ url: ogImage }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} – Manu Arora`,
+      title,
       description: summary,
       ...(ogImage ? { images: [ogImage] } : {}),
     },

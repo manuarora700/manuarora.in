@@ -1,16 +1,38 @@
 import Providers from "./providers";
 import "./globals.css";
 
+import type { Metadata } from "next";
 import { Inter, Schibsted_Grotesk } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "@/lib/utils";
-import { Navbar } from "@/components/new-components/navbar";
-import { Footer } from "@/components/new-components/footer";
-import { Settings } from "@/components/new-components/settings";
-export const metadata = {
-  title: "Manu Arora - Developer, writer, creator.",
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { Settings } from "@/components/settings";
+const siteUrl = "https://manuarora.in";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Manu Arora - Developer, writer, creator.",
+    template: "%s – Manu Arora",
+  },
   description:
     "Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.",
+  openGraph: {
+    title: "Manu Arora - Developer, writer, creator.",
+    description:
+      "Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.",
+    url: siteUrl,
+    siteName: "Manu Arora",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manu Arora - Developer, writer, creator.",
+    description:
+      "Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.",
+  },
 };
 
 const inter = Inter({
