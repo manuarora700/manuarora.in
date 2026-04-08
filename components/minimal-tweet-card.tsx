@@ -11,7 +11,7 @@ type MinimalTweetCardProps = {
 function TweetBody({ tweet }: { tweet: EnrichedTweet }) {
   return (
     <p
-      className="pointer-events-none text-sm leading-snug wrap-break-word whitespace-pre-wrap text-neutral-800"
+      className="text-foreground pointer-events-none text-sm leading-snug wrap-break-word whitespace-pre-wrap"
       lang={tweet.lang}
       dir="auto"
     >
@@ -108,7 +108,7 @@ export function MinimalTweetCard({ tweet, href }: MinimalTweetCardProps) {
   return (
     <Link
       href={href}
-      className="mb-4 inline-block w-full min-w-0 [vertical-align:top] break-inside-avoid"
+      className="mb-4 inline-block w-full min-w-0 break-inside-avoid align-top"
     >
       <article className="relative rounded-lg bg-white p-3 text-sm shadow-sm ring-1 shadow-black/10 ring-black/10">
         {/* <a
@@ -139,11 +139,11 @@ export function MinimalTweetCard({ tweet, href }: MinimalTweetCardProps) {
                 href={profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="pointer-events-auto relative z-20 block truncate font-semibold text-neutral-900 hover:underline"
+                className="text-foreground pointer-events-auto relative z-20 block truncate font-semibold hover:underline"
               >
                 {tweet.user.name}
               </a>
-              <p className="truncate text-neutral-500">
+              <p className="text-foreground/40 truncate">
                 @{tweet.user.screen_name}
               </p>
             </div>
