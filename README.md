@@ -1,79 +1,31 @@
-<p align="center">
-  <a href="https://github.com/manuarora700/portfolio-website">
-    <img src="https://manuarora.in/logo.png" alt="Logo" width="80" height="80">
-  </a>
-  </p>
-
-# UPDATE 🚀
-
-Added [Tailwind Box Shadows](https://manuarora.in/boxshadows) - Get a curated list of box shadows - Click to copy and paste to enable box shadows on your cards seamlessly! Comes with a feature to convert vanilla CSS code to Tailwind JIT code.
-
 # manuarora.in
 
-This is my personal website. Here I write blogs, add code snippets, code live demos, and add resources for everybody else to look and refer.
-
-The application is built with **Next.js/React/MDX** and friends
+My personal website and blog. Built with Next.js, Tailwind CSS v4, and MDX.
 
 ## Overview
 
-- `pages/api/*` - API routes for the [`Dashboard`](https://manuarora.in/dashboard). Contains Twitter, Spotify, and Google Analytics APIs.
+- `app/blog/*` - Blog posts rendered using MDX
+- `app/tweets` - Curated [tweets](https://manuarora.in/tweets)
+- `app/inspiration` - Design [inspiration](https://manuarora.in/inspiration)
+- `app/sponsor` - [Sponsor](https://manuarora.in/sponsor) page
+- `components/*` - Reusable UI components
 
-- `pages/blog/*` - Static pages rendered using MDX
-
-- `pages/resources` - [Resources](https://manuarora.in/resources) page
-
-- `pages/snippets` - [Snippets](https://manuarora.in/snippets) page to see all the ready to use code snippets.
-
-- `pages/tweets` - my favourite [Tweets](https://manuarora.in/tweets) from the twitter world.
-
-- `pages/*` - All other static pages.
-
-## Installation
+## Getting Started
 
 ```bash
-
 git clone https://github.com/manuarora700/manuarora.in.git
-
-cd portfolio-website
-
-yarn
-
-yarn dev
-
-```
-
-or use NPM
-
-```bash
-
-git clone https://github.com/manuarora700/manuarora.in.git
-
-cd portfolio-website
-
+cd manuarora.in
 npm install
-
 npm run dev
-
 ```
 
-### Running locally
+The dev server runs on [http://localhost:3000](http://localhost:3000) using Turbopack.
 
-To run the project locally, create a `.env.local` file and add the required API credentials there. Reference [`.env.example`](https://github.com/manuarora700/portfolio-website/blob/master/.env.example) from the source for the list of API keys required.
+## Built With
 
-## Built Using
-
-- [Next.js](https://nextjs.org)
-- [Tailwindcss](https://tailwindcss.com)
-- [MDX](https://github.com/mdx-js/mdx)
+- [Next.js 16](https://nextjs.org) (App Router)
+- [Turbopack](https://turbo.build/pack)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [MDX](https://mdxjs.com) via next-mdx-remote
+- [Motion](https://motion.dev) (Framer Motion)
 - [Vercel](https://vercel.com)
-- [Prisma](https://www.prisma.io/)
-
-# Inspiration
-
-Special thanks to [Lee Rob](https://github.com/leerob) for creating such a beautiful theme that is very well structured and looks amazing on all devices. All the design inspiration and MDX structure come from him.
-
-If you're interested in learning Next.js and building real-world applications with it, I strongly suggest taking Lee's course [React 2025](https://react2025.com). I have taken it myself and can vouch for it.
-
-# Support
-
-<a href="https://www.buymeacoffee.com/manuarora" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
