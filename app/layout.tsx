@@ -2,12 +2,15 @@ import Providers from "./providers";
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter, Schibsted_Grotesk } from "next/font/google";
+import { Inter, Schibsted_Grotesk, Geist } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Settings } from "@/components/settings";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
 const siteUrl = "https://manuarora.in";
 
 export const metadata: Metadata = {
@@ -52,10 +55,10 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={cn(
-        inter.variable,
-        schibstedGrotesk.variable,
-        GeistSans.variable,
-      )}
+              inter.variable,
+              schibstedGrotesk.variable,
+              GeistSans.variable,
+            , "font-sans", geist.variable)}
       suppressHydrationWarning
     >
       <body className={cn("font-display bg-theme-bg")}>
