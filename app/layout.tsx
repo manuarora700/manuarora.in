@@ -2,6 +2,7 @@ import Providers from "./providers";
 import "./globals.css";
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Schibsted_Grotesk, Geist } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "@/lib/utils";
@@ -9,7 +10,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Settings } from "@/components/settings";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const siteUrl = "https://manuarora.in";
 
@@ -55,10 +56,11 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={cn(
-              inter.variable,
-              schibstedGrotesk.variable,
-              GeistSans.variable,
-            , "font-sans", geist.variable)}
+        inter.variable,
+        schibstedGrotesk.variable,
+        GeistSans.variable,
+        "font-sans",
+      )}
       suppressHydrationWarning
     >
       <body className={cn("font-display bg-theme-bg")}>
@@ -66,6 +68,11 @@ export default function RootLayout({ children }) {
         <Navbar />
         <Providers>{children}</Providers>
         <Footer />
+        <Script
+          src="https://analytics.aceternity.com/js/script.js"
+          data-domain="manuarora.in"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
