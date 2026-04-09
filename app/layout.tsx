@@ -12,6 +12,9 @@ import { Settings } from "@/components/settings";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
+const analyticsDomain = process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN;
+const analyticsScriptUrl = process.env.NEXT_PUBLIC_ANALYTICS_SCRIPT_URL;
+
 const siteUrl = "https://manuarora.in";
 
 export const metadata: Metadata = {
@@ -68,11 +71,13 @@ export default function RootLayout({ children }) {
         <Navbar />
         <Providers>{children}</Providers>
         <Footer />
-        <Script
-          src="https://analytics.aceternity.com/js/script.js"
-          data-domain="manuarora.in"
-          strategy="afterInteractive"
-        />
+        {analyticsDomain && analyticsScriptUrl ? (
+          <Script
+            src={analyticsScriptUrl}
+            data-domain={analyticsDomain}
+            strategy="afterInteractive"
+          />
+        ) : null}
       </body>
     </html>
   );
