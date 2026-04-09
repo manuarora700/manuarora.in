@@ -7,7 +7,13 @@ import { useEffect, useRef, useState } from "react";
 import { DottedSeparator } from "./separator";
 
 type FontOption = "inter" | "schibsted" | "geist";
-type ColorOption = "regular" | "rose" | "emerald" | "blue";
+type ColorOption =
+  | "regular"
+  | "rose"
+  | "emerald"
+  | "blue"
+  | "amber"
+  | "violet";
 
 const FONTS: { id: FontOption; label: string; variable: string }[] = [
   {
@@ -33,62 +39,107 @@ const COLORS: {
 }[] = [
   {
     id: "regular",
-    label: "Regular",
-    swatch: "bg-neutral-500",
-    bg: "var(--color-white)",
-    primary: "var(--color-neutral-700)",
-    foreground: "var(--color-neutral-500)",
-    gradientFrom: "from-blue-400",
-    gradientTo: "to-blue-600",
-    ringOffset: "ring-offset-blue-500",
-    activeRing: "ring-blue-500",
+    label: "Paper",
+    swatch: "bg-stone-500",
+    bg: "var(--color-stone-50)",
+    primary: "var(--color-stone-800)",
+    foreground: "var(--color-stone-600)",
+    gradientFrom: "from-stone-500",
+    gradientTo: "to-neutral-800",
+    ringOffset: "ring-offset-stone-600",
+    activeRing: "ring-stone-600",
   },
   {
     id: "rose",
-    label: "Rose",
-    swatch: "bg-rose-500",
+    label: "Bloom",
+    swatch: "bg-fuchsia-500",
     bg: "var(--color-rose-50)",
-    primary: "var(--color-rose-700)",
-    foreground: "var(--color-rose-500)",
+    primary: "var(--color-rose-900)",
+    foreground: "var(--color-rose-600)",
     gradientFrom: "from-rose-400",
-    gradientTo: "to-rose-600",
-    ringOffset: "ring-offset-rose-500",
-    activeRing: "ring-rose-500",
+    gradientTo: "to-fuchsia-700",
+    ringOffset: "ring-offset-fuchsia-500",
+    activeRing: "ring-fuchsia-500",
   },
   {
     id: "emerald",
-    label: "Emerald",
-    swatch: "bg-emerald-500",
-    bg: "var(--color-emerald-50)",
-    primary: "var(--color-emerald-700)",
-    foreground: "var(--color-emerald-500)",
-    gradientFrom: "from-emerald-400",
-    gradientTo: "to-emerald-600",
-    ringOffset: "ring-offset-emerald-500",
-    activeRing: "ring-emerald-500",
+    label: "Lagoon",
+    swatch: "bg-teal-500",
+    bg: "var(--color-teal-50)",
+    primary: "var(--color-teal-900)",
+    foreground: "var(--color-teal-600)",
+    gradientFrom: "from-teal-400",
+    gradientTo: "to-cyan-700",
+    ringOffset: "ring-offset-teal-500",
+    activeRing: "ring-teal-500",
   },
   {
     id: "blue",
-    label: "Blue",
-    swatch: "bg-blue-500",
-    bg: "var(--color-blue-50)",
-    primary: "var(--color-blue-700)",
-    foreground: "var(--color-blue-500)",
-    gradientFrom: "from-blue-400",
-    gradientTo: "to-blue-600",
-    ringOffset: "ring-offset-blue-500",
-    activeRing: "ring-blue-500",
+    label: "Nocturne",
+    swatch: "bg-indigo-500",
+    bg: "var(--color-indigo-50)",
+    primary: "var(--color-indigo-950)",
+    foreground: "var(--color-indigo-600)",
+    gradientFrom: "from-indigo-400",
+    gradientTo: "to-violet-700",
+    ringOffset: "ring-offset-indigo-500",
+    activeRing: "ring-indigo-500",
+  },
+  {
+    id: "amber",
+    label: "Honey",
+    swatch: "bg-amber-500",
+    bg: "var(--color-amber-50)",
+    primary: "var(--color-amber-950)",
+    foreground: "var(--color-amber-700)",
+    gradientFrom: "from-amber-400",
+    gradientTo: "to-orange-600",
+    ringOffset: "ring-offset-amber-500",
+    activeRing: "ring-amber-500",
+  },
+  {
+    id: "violet",
+    label: "Lilac",
+    swatch: "bg-violet-500",
+    bg: "var(--color-violet-50)",
+    primary: "var(--color-violet-950)",
+    foreground: "var(--color-violet-600)",
+    gradientFrom: "from-violet-400",
+    gradientTo: "to-purple-700",
+    ringOffset: "ring-offset-violet-500",
+    activeRing: "ring-violet-500",
   },
 ];
 
 const STORAGE_KEY = "site-settings";
+
+function isColorOption(value: unknown): value is ColorOption {
+  return (
+    typeof value === "string" &&
+    COLORS.some((c) => c.id === value)
+  );
+}
 
 function loadSettings(): { font: FontOption; color: ColorOption } {
   if (typeof window === "undefined")
     return { font: "schibsted", color: "regular" };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      const parsed = JSON.parse(raw) as {
+        font?: FontOption;
+        color?: unknown;
+      };
+      const color = isColorOption(parsed.color)
+        ? parsed.color
+        : "regular";
+      const font =
+        parsed.font &&
+        FONTS.some((f) => f.id === parsed.font)
+          ? parsed.font
+          : "schibsted";
+      return { font, color };
+    }
   } catch {}
   return { font: "schibsted", color: "regular" };
 }
