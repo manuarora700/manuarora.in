@@ -46,7 +46,7 @@ export const Navbar = () => {
           animate="animate"
           exit="exit"
           transition={SPRING_CONFIG}
-          className="rounded-md bg-white shadow-md"
+          className="rounded-md bg-white shadow-md dark:bg-neutral-800"
         >
           <Image
             src="https://assets.aceternity.com/avatars/manu.webp"
@@ -56,7 +56,7 @@ export const Navbar = () => {
             className="aspect-square size-6 rounded-md shadow-2xl"
           />
         </motion.div>
-        <h1 className="text-xl text-neutral-700 md:text-2xl">
+        <h1 className="text-xl text-neutral-700 dark:text-neutral-200 md:text-2xl">
           Manu Arora <span className="text-foreground/50">aka</span>{" "}
           <span className="italic">Paaji</span>
         </h1>

@@ -217,7 +217,7 @@ export const Settings = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
             className={cn(
-              "fixed top-5 right-5 flex aspect-square size-8 items-center justify-center rounded-lg bg-white bg-linear-to-b align-middle ring-1 ring-white/20 ring-offset-2 ring-inset",
+              "fixed top-5 right-5 flex aspect-square size-8 items-center justify-center rounded-lg bg-linear-to-b align-middle ring-1 ring-white/20 ring-offset-2 ring-inset",
               colorConfig.gradientFrom,
               colorConfig.gradientTo,
               colorConfig.ringOffset,
@@ -234,7 +234,7 @@ export const Settings = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
             className={cn(
-              "fixed top-4 right-4 w-56 rounded-xl border border-neutral-200 bg-white bg-linear-to-b p-4 shadow-sm ring-1 ring-white/20 ring-offset-2 ring-inset",
+              "fixed top-4 right-4 w-56 rounded-xl border border-neutral-200 bg-linear-to-b p-4 shadow-sm ring-1 ring-white/20 ring-offset-2 ring-inset dark:border-neutral-700",
               colorConfig.gradientFrom,
               colorConfig.gradientTo,
               colorConfig.ringOffset,

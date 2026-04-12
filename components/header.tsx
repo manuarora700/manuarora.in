@@ -11,7 +11,7 @@ export const Header = () => {
         where I share everything.
       </div>
       <div className="text-foreground pt-4 text-base">
-        When I'm not coding, I usally talk about Design Engineering, AI Tools
+        When I'm not coding, I usually talk about Design Engineering, AI Tools
         and Front-end design taste at my{" "}
         <LinkPreview url="https://www.youtube.com/@manuarora">
           YouTube Channel.

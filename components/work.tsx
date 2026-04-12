@@ -51,7 +51,7 @@ const workItems = [
   {
     href: "https://youtube.com/@manuarora",
     title: "YouTube",
-    description: "I talk about design enginering and SaaS.",
+    description: "I talk about design engineering and SaaS.",
     icon: (
       <IconBrandYoutube className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
     ),
@@ -68,7 +68,7 @@ export const Work = () => {
           <Link
             key={item.href}
             href={item.href}
-            target="__blank"
+            target="_blank"
             className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2"
           >
             <Box className={`mr-4 ${item.boxClassName}`}>{item.icon}</Box>

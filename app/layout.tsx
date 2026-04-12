@@ -69,7 +69,9 @@ export default function RootLayout({ children }) {
       <body className={cn("font-display bg-theme-bg")}>
         <Settings />
         <Navbar />
-        <Providers>{children}</Providers>
+        <main>
+          <Providers>{children}</Providers>
+        </main>
         <Footer />
         {analyticsDomain && analyticsScriptUrl ? (
           <Script

@@ -25,8 +25,8 @@ export default async function SponsorsPage() {
           <LinkPreview url="https://www.youtube.com/@manuarora">
             YouTube Channel
           </LinkPreview>{" "}
-          channel that I like and use myself. I've been using a lot of products
-          and would love to feature them in my videos.
+          that I like and use myself. I've been using a lot of products and
+          would love to feature them in my videos.
         </div>
         <div className="text-foreground pt-4 text-base">
           It should collectively help my audience to build better products. If

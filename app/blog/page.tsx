@@ -22,7 +22,7 @@ export default async function BlogPage() {
       <Container className="min-h-screen">
         <Subheading className="mt-4">My thoughts on things</Subheading>
         <p className="text-foreground pt-4 text-base">
-          I occasionaly write here and talk about things that I want to share on
+          I occasionally write here and talk about things that I want to share on
           my personal space.
         </p>
 

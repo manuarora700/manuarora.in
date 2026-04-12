@@ -59,7 +59,7 @@ export default async function TweetsPage() {
   );
 
   return (
-    <main className="w-full px-4 py-6 sm:px-6 lg:px-8 xl:px-10">
+    <div className="w-full px-4 py-6 sm:px-6 lg:px-8 xl:px-10">
       <Container>
         <Subheading>I post on twitter, you know.</Subheading>
         <p className="text-foreground pt-4 text-base text-balance">
@@ -82,6 +82,6 @@ export default async function TweetsPage() {
       <Container>
         <DottedSeparator className="my-8" />
       </Container>
-    </main>
+    </div>
   );
 }
