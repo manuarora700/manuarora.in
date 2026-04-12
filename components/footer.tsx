@@ -10,8 +10,8 @@ export const Footer = () => {
     <Container className="pb-10">
       <footer className="my-8 flex flex-col items-center gap-2">
         <Signature />
-        <div className="my-4 flex flex-col items-center">
-          <div className="text-foreground/50 text-sm">
+        <div className="my-4 flex flex-col items-center justify-center gap-2">
+          <div className="text-foreground/50 text-center text-sm text-balance">
             Built by yours truly. Here's the{" "}
             <LinkPreview url="https://github.com/manuarora700/manuarora.in">
               code
@@ -22,7 +22,7 @@ export const Footer = () => {
             </LinkPreview>{" "}
             explaining the code.
           </div>
-          <div className="text-foreground/50 text-sm">
+          <div className="text-foreground/50 text-sm text-balance">
             Website heavily inspired by{" "}
             <LinkPreview url="https://designerdada.com">
               Akash Bhadange
