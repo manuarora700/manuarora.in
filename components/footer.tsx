@@ -8,18 +8,26 @@ import { LinkPreview } from "./link-preview";
 export const Footer = () => {
   return (
     <Container className="pb-10">
-      <footer className="flex flex-col items-center gap-2">
+      <footer className="my-8 flex flex-col items-center gap-2">
         <Signature />
-        <div className="text-foreground/50 mt-4 mb-4 text-sm">
-          Built by yours truly. Here's the{" "}
-          <LinkPreview url="https://github.com/manuarora700/manuarora.in">
-            code
-          </LinkPreview>{" "}
-          and{" "}
-          <LinkPreview url="https://www.youtube.com/@manuarora">
-            video
-          </LinkPreview>{" "}
-          explaining the code.
+        <div className="my-4 flex flex-col items-center">
+          <div className="text-foreground/50 text-sm">
+            Built by yours truly. Here's the{" "}
+            <LinkPreview url="https://github.com/manuarora700/manuarora.in">
+              code
+            </LinkPreview>{" "}
+            and{" "}
+            <LinkPreview url="https://www.youtube.com/@manuarora">
+              video
+            </LinkPreview>{" "}
+            explaining the code.
+          </div>
+          <div className="text-foreground/50 text-sm">
+            Website heavily inspired by{" "}
+            <LinkPreview url="https://designerdada.com">
+              Akash Bhadange
+            </LinkPreview>{" "}
+          </div>
         </div>
       </footer>
     </Container>

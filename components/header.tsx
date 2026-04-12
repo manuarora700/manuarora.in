@@ -5,8 +5,8 @@ export const Header = () => {
   return (
     <div className="">
       <div className="text-foreground pt-4 text-base">
-        I'm am a software engineer at heart, tinkering with AI and code almost
-        90% of the time. I'm mostly active on{" "}
+        I'm a software engineer at heart, tinkering with AI and code almost 90%
+        of the time. I'm mostly active on{" "}
         <LinkPreview url="https://x.com/mannupaaji">X / Twitter</LinkPreview>{" "}
         where I share everything.
       </div>
