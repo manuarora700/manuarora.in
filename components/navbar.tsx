@@ -13,30 +13,17 @@ function isActivePath(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+const links = [
+  { title: "Home", href: "/" },
+  { title: "Tweets", href: "/tweets" },
+  { title: "Inspiration", href: "/inspiration" },
+  { title: "Blog", href: "/blog" },
+  { title: "Sponsor", href: "/sponsor" },
+];
+
 export const Navbar = () => {
   const pathname = usePathname();
-  const links = [
-    {
-      title: "Home",
-      href: "/",
-    },
-    {
-      title: "Tweets",
-      href: "/tweets",
-    },
-    {
-      title: "Inspiration",
-      href: "/inspiration",
-    },
-    {
-      title: "Blog",
-      href: "/blog",
-    },
-    {
-      title: "Sponsor",
-      href: "/sponsor",
-    },
-  ];
+
   return (
     <nav className="mx-auto flex max-w-2xl flex-col items-start gap-4 px-4 pt-4 md:pt-8">
       <div className="flex items-center gap-2 perspective-distant">
@@ -50,15 +37,16 @@ export const Navbar = () => {
         >
           <Image
             src="https://assets.aceternity.com/avatars/manu.webp"
-            alt="Manu Arora"
+            alt=""
             width={40}
             height={40}
             className="aspect-square size-6 rounded-md shadow-2xl"
           />
         </motion.div>
-        <h1 className="text-xl text-neutral-700 dark:text-neutral-200 md:text-2xl">
-          Manu Arora <span className="text-foreground/50">aka</span>{" "}
-          <span className="italic">Paaji</span>
+        <h1 className="text-foreground text-xl font-medium tracking-tight md:text-2xl">
+          Manu Arora{" "}
+          <span className="text-foreground/50 font-normal">aka</span>{" "}
+          <span className="font-normal italic">Paaji</span>
         </h1>
       </div>
       <div className="flex items-center gap-4">
@@ -79,7 +67,9 @@ export const Navbar = () => {
               <DottedUnderline
                 className={cn(
                   "mask-x-from-90% transition-opacity duration-300",
-                  active ? "opacity-100" : "opacity-0 group-hover:opacity-100",
+                  active
+                    ? "opacity-100"
+                    : "opacity-0 group-hover:opacity-100",
                 )}
               />
             </Link>

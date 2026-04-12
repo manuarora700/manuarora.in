@@ -70,14 +70,16 @@ export const Companies = () => {
   return (
     <section>
       <Subheading>Companies I've worked with</Subheading>
-      <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
-        {companies.map((company, indx) => (
-          <div key={company.title}>
+      <div className="mt-6 grid grid-cols-2 gap-6 md:grid-cols-3">
+        {companies.map((company) => (
+          <div key={company.title} className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
               <Box className={company.boxClassName}>{company.skeleton}</Box>
-              <p className="text-foreground font-medium">{company.title}</p>
+              <p className="text-foreground text-sm font-medium">
+                {company.title}
+              </p>
             </div>
-            <p className="text-foreground/70 mt-4 text-balance">
+            <p className="text-foreground/70 text-sm text-pretty">
               {company.description}
             </p>
           </div>

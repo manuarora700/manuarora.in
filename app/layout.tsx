@@ -62,7 +62,7 @@ export default function RootLayout({ children }) {
         inter.variable,
         schibstedGrotesk.variable,
         GeistSans.variable,
-        "font-sans",
+        "font-sans antialiased",
       )}
       suppressHydrationWarning
     >

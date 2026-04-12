@@ -2,16 +2,15 @@
 import React from "react";
 import Container from "./container";
 import { motion } from "motion/react";
-import Link from "next/link";
 import { LinkPreview } from "./link-preview";
 
 export const Footer = () => {
   return (
     <Container className="pb-10">
-      <footer className="my-8 flex flex-col items-center gap-2">
+      <footer className="my-8 flex flex-col items-center gap-4">
         <Signature />
-        <div className="my-4 flex flex-col items-center justify-center gap-2">
-          <div className="text-foreground/50 text-center text-sm text-balance">
+        <div className="flex flex-col items-center gap-1.5">
+          <p className="text-foreground/40 text-center text-sm text-balance">
             Built by yours truly. Here's the{" "}
             <LinkPreview url="https://github.com/manuarora700/manuarora.in">
               code
@@ -20,14 +19,14 @@ export const Footer = () => {
             <LinkPreview url="https://www.youtube.com/@manuarora">
               video
             </LinkPreview>{" "}
-            explaining the code.
-          </div>
-          <div className="text-foreground/50 text-sm text-balance">
+            explaining it.
+          </p>
+          <p className="text-foreground/40 text-sm text-balance">
             Website heavily inspired by{" "}
             <LinkPreview url="https://designerdada.com">
               Akash Bhadange
-            </LinkPreview>{" "}
-          </div>
+            </LinkPreview>
+          </p>
         </div>
       </footer>
     </Container>

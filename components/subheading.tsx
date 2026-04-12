@@ -11,7 +11,7 @@ export const Subheading = ({
   return (
     <h2
       className={cn(
-        "text-foreground/40 font-mono text-sm uppercase",
+        "text-foreground/40 font-mono text-sm uppercase tracking-wide",
         className,
       )}
     >
