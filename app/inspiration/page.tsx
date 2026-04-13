@@ -209,6 +209,49 @@ export default async function InspirationPage() {
         <img src="/inspiration/naval.jpg" alt="Naval" className="size-full" />
       ),
     },
+    {
+      title: "Autosend",
+      description: "Landing page that I love, software that I admire.",
+      href: "https://autosend.com",
+      src: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="139"
+          height="28"
+          fill="none"
+          viewBox="0 0 24 24"
+          className="size-4"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="m14 13-2-3-2 3"
+          ></path>
+          <path
+            stroke="currentColor"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M14.5 5.5C14.5 8 12 10 12 10S9.5 8 9.5 5.5 10.62 2 12 2s2.5 1 2.5 3.5ZM18.5 15.5C16 15.5 14 13 14 13s2-2.5 4.5-2.5S22 11.62 22 13s-1 2.5-3.5 2.5ZM5.5 15.5C8 15.5 10 13 10 13s-2-2.5-4.5-2.5S2 11.62 2 13s1 2.5 3.5 2.5Z"
+          ></path>
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M16 22s-3-6-6-9"
+          ></path>
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M8 22s3-6 6-9"
+          ></path>
+        </svg>
+      ),
+    },
   ];
   return (
     <>
@@ -226,7 +269,7 @@ export default async function InspirationPage() {
               key={item.href}
               href={item.href}
               target="_blank"
-              className="flex items-center gap-2"
+              className="group flex items-center gap-2"
             >
               <div className="mr-2 flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md bg-linear-to-b from-neutral-50 to-neutral-100 shadow-sm ring-1 shadow-black/10 ring-black/10 md:size-8">
                 {item.src}
@@ -234,7 +277,7 @@ export default async function InspirationPage() {
               <div className="flex flex-col items-start gap-2 md:flex-row md:items-center">
                 <p className="text-foreground font-medium">{item.title}</p>
                 <div className="hidden size-1 rounded-full bg-neutral-200 md:block"></div>
-                <p className="text-foreground/70 text-balance">
+                <p className="text-foreground/70 group-hover:text-primary text-balance transition-transform duration-300 group-hover:translate-x-1">
                   {item.description}
                 </p>
               </div>
