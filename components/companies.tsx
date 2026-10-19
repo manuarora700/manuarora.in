@@ -2,6 +2,7 @@ import React from "react";
 import { Subheading } from "./subheading";
 import {
   CursorIcon,
+  FigmaIcon,
   FireworksIcon,
   HostingerIcon,
   NeonIcon,
@@ -75,6 +76,15 @@ export const Companies = () => {
       ),
       boxClassName:
         "bg-linear-to-b from-indigo-400 to-indigo-600 ring-offset-indigo-500",
+    },
+    {
+      title: "Figma",
+      description: "Collaborative design and prototyping platform.",
+      skeleton: (
+        <FigmaIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+      ),
+      boxClassName:
+        "bg-linear-to-b from-rose-400 to-rose-600 ring-offset-rose-500",
     },
   ];
   return (

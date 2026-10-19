@@ -127,6 +127,22 @@ export const ReplitIcon = (props: React.SVGProps<SVGSVGElement>) => {
   );
 };
 
+export const FigmaIcon = (props: React.SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      fill="none"
+      viewBox="0 0 38 57"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0ZM0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0ZM19 0v19h9.5a9.5 9.5 0 1 0 0-19H19ZM0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5ZM0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5Z"
+      />
+    </svg>
+  );
+};
+
 export const FireworksIcon = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
