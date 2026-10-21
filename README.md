@@ -1,12 +1,12 @@
 # manuarora.in
 
-My personal website and blog. Built with Next.js, Tailwind CSS v4, and MDX.
+My personal website and blog. Built with TanStack Start, Tailwind CSS v4, and MDX.
 
 ## Overview
 
-- `app/blog/*` - Blog posts rendered using MDX
-- `app/inspiration` - Design [inspiration](https://manuarora.in/inspiration)
-- `app/sponsor` - [Sponsor](https://manuarora.in/sponsor) page
+- `app/routes/*` - File-based routes (server-rendered)
+- `app/routes/blog.$slug.tsx` - Blog posts rendered from MDX in `data/blog`
+- `app/routes/sponsor.tsx` - [Sponsor](https://manuarora.in/sponsor) page
 - `components/*` - Reusable UI components
 
 ## Getting Started
@@ -18,13 +18,14 @@ npm install
 npm run dev
 ```
 
-The dev server runs on [http://localhost:3000](http://localhost:3000) using Turbopack.
+The dev server runs on [http://localhost:3000](http://localhost:3000).
+
+`npm run build` creates a server build in `.output`. Run it with `npm start`.
 
 ## Built With
 
-- [Next.js 16](https://nextjs.org) (App Router)
-- [Turbopack](https://turbo.build/pack)
+- [TanStack Start](https://tanstack.com/start) (SSR) on [Vite](https://vite.dev) and [Nitro](https://nitro.build)
 - [Tailwind CSS v4](https://tailwindcss.com)
-- [MDX](https://mdxjs.com) via next-mdx-remote
+- [MDX](https://mdxjs.com)
 - [Motion](https://motion.dev) (Framer Motion)
 - [Vercel](https://vercel.com)

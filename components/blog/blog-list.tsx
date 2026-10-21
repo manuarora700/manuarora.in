@@ -1,5 +1,4 @@
-"use client";
-import Link from "next/link";
+import { Link } from "@tanstack/react-router";
 import { Subheading } from "../subheading";
 import { formatPostDate } from "@/lib/format-post-date";
 
@@ -9,7 +8,8 @@ export const BlogList = ({ posts }) => {
       <Subheading>Writing</Subheading>
       {posts.slice(0, 3).map((post, index) => (
         <Link
-          href={`/blog/${post.slug}`}
+          to="/blog/$slug"
+          params={{ slug: post.slug }}
           key={index}
           className="group flex items-center justify-between gap-20 transition-colors duration-200 md:gap-20"
         >

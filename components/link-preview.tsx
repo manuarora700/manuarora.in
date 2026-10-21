@@ -1,4 +1,3 @@
-"use client";
 import * as HoverCardPrimitive from "@radix-ui/react-hover-card";
 
 import { encode } from "qss";
@@ -31,8 +30,7 @@ type LinkPreviewProps = {
   /** Dotted SVG underline under the label (on by default). Pass `false` to disable. */
   dottedUnderline?: LinkPreviewDottedUnderline | false;
 } & (
-  | { isStatic: true; imageSrc: string }
-  | { isStatic?: false; imageSrc?: never }
+  { isStatic: true; imageSrc: string } | { isStatic?: false; imageSrc?: never }
 );
 
 export const LinkPreview = ({
@@ -103,9 +101,9 @@ export const LinkPreview = ({
   return (
     <>
       {isMounted ? (
-        <div className="hidden">
+        <span className="hidden">
           <img src={src} width={width} height={height} alt="hidden image" />
-        </div>
+        </span>
       ) : null}
 
       <HoverCardPrimitive.Root

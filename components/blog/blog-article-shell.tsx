@@ -1,6 +1,3 @@
-"use client";
-
-import Link from "next/link";
 import { format, parseISO } from "date-fns";
 import { IconArrowLeft } from "@tabler/icons-react";
 import Container from "@/components/container";

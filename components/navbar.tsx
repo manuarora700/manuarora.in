@@ -1,10 +1,7 @@
-"use client";
 import React from "react";
-import Image from "next/image";
 import { motion } from "motion/react";
 import { GENERAL_VARIANT, SPRING_CONFIG } from "@/lib/motion-config";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { DottedUnderline } from "./dotted-underline";
 
@@ -15,13 +12,12 @@ function isActivePath(pathname: string, href: string) {
 
 const links = [
   { title: "Home", href: "/" },
-  { title: "Inspiration", href: "/inspiration" },
   { title: "Blog", href: "/blog" },
   { title: "Sponsor", href: "/sponsor" },
 ];
 
 export const Navbar = () => {
-  const pathname = usePathname();
+  const pathname = useLocation({ select: (location) => location.pathname });
 
   return (
     <nav className="mx-auto flex max-w-2xl flex-col items-start gap-4 px-4 pt-4 md:pt-8">
@@ -34,7 +30,7 @@ export const Navbar = () => {
           transition={SPRING_CONFIG}
           className="rounded-md bg-white shadow-md dark:bg-neutral-800"
         >
-          <Image
+          <img
             src="https://assets.aceternity.com/avatars/manu.webp"
             alt=""
             width={40}
@@ -43,8 +39,7 @@ export const Navbar = () => {
           />
         </motion.div>
         <h1 className="text-foreground text-xl font-medium tracking-tight md:text-2xl">
-          Manu Arora{" "}
-          <span className="text-foreground/50 font-normal">aka</span>{" "}
+          Manu Arora <span className="text-foreground/50 font-normal">aka</span>{" "}
           <span className="font-normal italic">Paaji</span>
         </h1>
       </div>
@@ -54,7 +49,7 @@ export const Navbar = () => {
           return (
             <Link
               key={link.href}
-              href={link.href}
+              to={link.href}
               className={cn(
                 "group relative transition-colors",
                 active
@@ -66,9 +61,7 @@ export const Navbar = () => {
               <DottedUnderline
                 className={cn(
                   "mask-x-from-90% transition-opacity duration-300",
-                  active
-                    ? "opacity-100"
-                    : "opacity-0 group-hover:opacity-100",
+                  active ? "opacity-100" : "opacity-0 group-hover:opacity-100",
                 )}
               />
             </Link>

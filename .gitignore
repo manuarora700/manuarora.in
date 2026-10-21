@@ -8,9 +8,13 @@
 # testing
 /coverage
 
-# next.js
+# tanstack start / vite / nitro
+/.output/
 /.next/
-/out/
+/.nitro/
+/.tanstack/
+/dist/
+*.tsbuildinfo
 
 # production
 /build

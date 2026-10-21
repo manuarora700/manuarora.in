@@ -1,5 +1,3 @@
-"use client";
-
 import { useMemo, useState } from "react";
 import { IconSearch } from "@tabler/icons-react";
 import { BlogPostLink } from "./blog-post-link";

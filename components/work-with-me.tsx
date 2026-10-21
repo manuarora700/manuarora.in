@@ -1,9 +1,6 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Subheading } from "./subheading";
-import Link from "next/link";
 import { Box } from "./box";
 import { cn } from "@/lib/utils";
 import {
@@ -106,9 +103,10 @@ export const WorkWithMe = () => {
           }
 
           return (
-            <Link
+            <a
               href={item.href}
               target="_blank"
+              rel="noopener noreferrer"
               className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2"
               key={item.title}
             >
@@ -118,7 +116,7 @@ export const WorkWithMe = () => {
               </p>
               <div className="hidden size-1 rounded-full bg-neutral-200 md:block"></div>
               <p className="text-foreground/70">{item.description}</p>
-            </Link>
+            </a>
           );
         })}
       </div>

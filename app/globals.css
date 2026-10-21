@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/schibsted-grotesk";
+@import "@fontsource-variable/geist";
 
 @plugin "@tailwindcss/typography";
 
@@ -12,6 +15,10 @@ html {
 }
 
 :root {
+  --font-inter: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-schibsted-grotesk:
+    "Schibsted Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-geist-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --primary-font: var(--font-schibsted-grotesk);
   --primary: oklch(0.205 0 0);
   --theme-bg: var(--color-white);

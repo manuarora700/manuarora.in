@@ -1,8 +1,5 @@
 // @ts-nocheck
-"use client";
-
-import Link from "next/link";
-import NextImage from "next/image";
+import { Link } from "@tanstack/react-router";
 
 import StepLarge from "@/components/step-large";
 import StepLargeCustom from "@/components/step-large-custom";
@@ -15,23 +12,20 @@ import Button from "./button";
 
 const TweetEmbed = () => null;
 
-const MdxImage = ({ width, height, alt = "", ...props }) => {
-  if (width && height) {
-    return <NextImage width={width} height={height} alt={alt} {...props} />;
+const MdxImage = ({ alt = "", priority, ...props }) => (
+  <img alt={alt} loading="lazy" decoding="async" {...props} />
+);
+
+const CustomLink = ({ href, ...props }) => {
+  if (href?.startsWith("#")) {
+    return <a href={href} {...props} />;
   }
 
-  return <img alt={alt} loading="lazy" {...props} />;
-};
-
-const CustomLink = (props) => {
-  const href = props.href;
-  const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
-
-  if (isInternalLink) {
-    return <Link href={href} {...props}></Link>;
+  if (href?.startsWith("/")) {
+    return <Link to={href} {...props}></Link>;
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+  return <a href={href} target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
 const MDXComponents = {

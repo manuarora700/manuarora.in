@@ -1,7 +1,9 @@
-.next
+.output
+.nitro
+.tanstack
 node_modules
-out
 build
 coverage
 .vercel
 *.lock
+app/routeTree.gen.ts

@@ -1,4 +1,3 @@
-"use client";
 import { SPRING_CONFIG } from "@/lib/motion-config";
 import { cn } from "@/lib/utils";
 import { IconSettingsFilled, IconX } from "@tabler/icons-react";

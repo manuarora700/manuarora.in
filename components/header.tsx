@@ -4,30 +4,29 @@ import { LinkPreview } from "./link-preview";
 export const Header = () => {
   return (
     <div>
-      <div className="text-foreground pt-4 text-base">
-        I'm a software engineer at heart, tinkering with AI and code almost
-        90% of the time. I'm mostly active on{" "}
-        <LinkPreview url="https://x.com/mannupaaji">
-          X / Twitter
-        </LinkPreview>{" "}
-        where I share everything.
-      </div>
-      <div className="text-foreground pt-4 text-base">
-        When I'm not coding, I usually talk about Design Engineering, AI
-        Tools and Front-end design taste at my{" "}
+      <p className="text-foreground pt-4 text-base text-pretty">
+        I make videos on{" "}
         <LinkPreview url="https://www.youtube.com/@manuarora">
-          YouTube Channel.
-        </LinkPreview>
-      </div>
-      <div className="text-foreground pt-4 text-base">
-        I've been building my own component library{" "}
-        <LinkPreview url="https://ui.aceternity.com">
-          Aceternity UI
+          YouTube
         </LinkPreview>{" "}
-        for the past 4 years. It has got around 3M page views and 200k
-        unique visitors a month. My favourite thing is to update this library
-        everyday with new components and features.
-      </div>
+        about design engineering and building beautiful interfaces with AI. Most
+        days, I'm shipping new components to{" "}
+        <LinkPreview url="https://ui.aceternity.com">Aceternity UI</LinkPreview>{" "}
+        or adding sites to{" "}
+        <span className="whitespace-nowrap">
+          <LinkPreview url="https://vibrant.design">Vibrant</LinkPreview>,
+        </span>{" "}
+        my collection of the best-looking websites on the internet.
+      </p>
+      <p className="text-foreground pt-4 text-base text-pretty">
+        Need a website built? My studio{" "}
+        <LinkPreview url="https://aceternity.com">Aceternity</LinkPreview> does
+        that. Want a second pair of eyes on your product?{" "}
+        <LinkPreview url="https://cal.com/manu-arora-lacvgj/hour">
+          Book a call
+        </LinkPreview>{" "}
+        with me.
+      </p>
     </div>
   );
 };

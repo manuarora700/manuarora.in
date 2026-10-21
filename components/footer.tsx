@@ -1,14 +1,45 @@
-"use client";
 import React from "react";
 import Container from "./container";
 import { motion } from "motion/react";
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconBrandX,
+  IconBrandYoutube,
+} from "@tabler/icons-react";
 import { LinkPreview } from "./link-preview";
+import { SOCIALS } from "@/lib/site";
+
+const socials = [
+  { ...SOCIALS.x, Icon: IconBrandX },
+  { ...SOCIALS.youtube, Icon: IconBrandYoutube },
+  { ...SOCIALS.github, Icon: IconBrandGithub },
+  { ...SOCIALS.linkedin, Icon: IconBrandLinkedin },
+];
 
 export const Footer = () => {
   return (
     <Container className="pb-10">
       <footer className="my-8 flex flex-col items-center gap-4">
         <Signature />
+        <nav aria-label="Social links">
+          <ul className="flex flex-wrap items-center justify-center gap-1">
+            {socials.map(({ label, handle, href, Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  aria-label={`${label}: ${handle}`}
+                  className="text-foreground/60 hover:text-primary flex h-10 items-center gap-1.5 rounded-md px-2.5 text-sm transition-colors duration-150 hover:bg-black/[0.04] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--primary) dark:hover:bg-white/[0.05]"
+                >
+                  <Icon aria-hidden className="size-4" stroke={1.5} />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
         <div className="flex flex-col items-center gap-1.5">
           <p className="text-foreground/40 text-center text-sm text-balance">
             Built by yours truly. Here's the{" "}
